@@ -1,23 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Quote, Sparkles, Star, Award } from "lucide-react";
-
-interface ContentData {
-  title: string;
-  sections: Section[];
-}
-
-interface Section {
-  id: string;
-  title: string;
-  subtitle: string;
-  content: Content[];
-}
+import contentData from "./data/nha-nuoc-content.json";
 
 interface Content {
   type: string;
@@ -28,15 +16,11 @@ interface Content {
   items?: any[];
 }
 
-interface NhaNuocPresentationProps {
-  data: ContentData;
-}
-
-export default function NhaNuocPresentation({ data }: NhaNuocPresentationProps) {
+export default function Content4Page() {
   const [currentSection, setCurrentSection] = useState(0);
 
   const nextSection = () => {
-    if (currentSection < data.sections.length - 1) {
+    if (currentSection < contentData.sections.length - 1) {
       setCurrentSection(currentSection + 1);
     }
   };
@@ -177,7 +161,7 @@ export default function NhaNuocPresentation({ data }: NhaNuocPresentationProps) 
     }
   };
 
-  const currentSectionData = data.sections[currentSection];
+  const currentSectionData = contentData.sections[currentSection];
 
   return (
     <div className="container mx-auto px-6 py-12 min-h-screen">
@@ -190,14 +174,14 @@ export default function NhaNuocPresentation({ data }: NhaNuocPresentationProps) 
             <Star className="w-8 h-8 text-amber-400" />
           </div>
           <h1 className="text-5xl font-extrabold text-amber-100 text-center leading-relaxed drop-shadow-lg">
-            {data.title}
+            {contentData.title}
           </h1>
         </div>
 
         {/* Navigation Tabs */}
         <Tabs value={currentSection.toString()} className="mb-8">
           <TabsList className="grid w-full grid-cols-4 h-auto bg-gradient-to-r from-amber-900/50 via-orange-900/50 to-red-900/50 backdrop-blur-xl border-2 border-amber-600/50 p-3 rounded-xl shadow-xl">
-            {data.sections.map((section, idx) => (
+            {contentData.sections.map((section, idx) => (
               <TabsTrigger
                 key={section.id}
                 value={idx.toString()}
@@ -251,13 +235,13 @@ export default function NhaNuocPresentation({ data }: NhaNuocPresentationProps) 
 
           <div className="text-xl font-bold text-amber-100 flex items-center gap-2">
             <Star className="w-6 h-6 text-amber-400" />
-            Phần {currentSection + 1} / {data.sections.length}
+            Phần {currentSection + 1} / {contentData.sections.length}
             <Star className="w-6 h-6 text-amber-400" />
           </div>
 
           <Button
             onClick={nextSection}
-            disabled={currentSection === data.sections.length - 1}
+            disabled={currentSection === contentData.sections.length - 1}
             size="lg"
             className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white border-none disabled:opacity-30 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transition-all duration-300 font-bold text-base px-6 py-6"
           >

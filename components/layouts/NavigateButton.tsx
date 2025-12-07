@@ -13,7 +13,7 @@ const NavigateButton = () => {
 
   const routes = [
     { name: "Trang chủ", path: "/", icon: Home },
-    { name: "Nhà Nước", path: "/nha-nuoc", icon: Landmark },
+
     { name: "Game", path: "/game", icon: Gamepad2 },
     { name: "Tài Liệu", path: "/tai-lieu", icon: BookOpen },
     { name: "Used AI", path: "/used-ai", icon: Bot },
@@ -151,19 +151,17 @@ const NavigateButton = () => {
                 itemsRef.current[index] = el;
               }}
               href={route.path}
-              className={`group relative flex items-center justify-center w-12 h-12 rounded-xl transition-colors duration-300 ${
-                isActive
+              className={`group relative flex items-center justify-center w-12 h-12 rounded-xl transition-colors duration-300 ${isActive
                   ? "bg-amber-600/60 shadow-lg shadow-amber-600/30"
                   : "bg-amber-800/30 hover:bg-amber-700/50"
-              }`}
+                }`}
               title={route.name}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
             >
               <Icon
-                className={`w-6 h-6 ${
-                  isActive ? "text-amber-200" : "text-amber-500"
-                }`}
+                className={`w-6 h-6 ${isActive ? "text-amber-200" : "text-amber-500"
+                  }`}
                 strokeWidth={2}
               />
 
