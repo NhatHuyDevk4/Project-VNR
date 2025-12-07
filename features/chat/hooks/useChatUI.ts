@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useChat } from "@/providers/ChatProvider";
 import { useAutoSendMode } from "./useAutoSendMode";
 
@@ -21,8 +21,18 @@ export function useChatUI() {
 
   const [inputValue, setInputValue] = useState("");
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const prevLoadingRef = useRef(false);
 
   const currentSession = sessions.find((s) => s.id === currentSessionId);
+
+  // Clear input when AI finishes responding
+  useEffect(() => {
+    if (prevLoadingRef.current && !isLoading) {
+      // Was loading, now finished
+      setInputValue("");
+    }
+    prevLoadingRef.current = isLoading;
+  }, [isLoading]);
 
   const handleSend = async () => {
     if (!inputValue.trim() || isLoading) return;
