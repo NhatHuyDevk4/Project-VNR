@@ -18,6 +18,7 @@ const NavigateButton = () => {
     { name: "Tài Liệu", path: "/tai-lieu", icon: BookOpen },
     { name: "Used AI", path: "/used-ai", icon: Bot },
     { name: "Board", path: "/board", icon: ClipboardList },
+    { name: "Contents", path: "/contents", icon: ClipboardList },
   ];
 
   // Initial animation on mount
@@ -26,10 +27,10 @@ const NavigateButton = () => {
       // Animate container
       gsap.fromTo(
         navRef.current,
-        { 
-          x: 100, 
+        {
+          x: 100,
           opacity: 0,
-          scale: 0.8
+          scale: 0.8,
         },
         {
           x: 0,
@@ -69,6 +70,11 @@ const NavigateButton = () => {
     const icon = item.querySelector("svg");
     const tooltip = item.querySelector(".tooltip");
 
+    // Kill any ongoing animations to prevent overlap
+    gsap.killTweensOf(item);
+    if (icon) gsap.killTweensOf(icon);
+    if (tooltip) gsap.killTweensOf(tooltip);
+
     gsap.to(item, {
       scale: 1.1,
       duration: 0.3,
@@ -100,6 +106,11 @@ const NavigateButton = () => {
 
     const icon = item.querySelector("svg");
     const tooltip = item.querySelector(".tooltip");
+
+    // Kill any ongoing animations to prevent overlap
+    gsap.killTweensOf(item);
+    if (icon) gsap.killTweensOf(icon);
+    if (tooltip) gsap.killTweensOf(tooltip);
 
     gsap.to(item, {
       scale: 1,
