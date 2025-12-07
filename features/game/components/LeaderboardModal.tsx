@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { X, Trophy, Medal, Award, Clock } from 'lucide-react';
 import { getTopLeaderboard } from '../lib/storage';
 import { LeaderboardEntry } from '@/types/game';
@@ -31,140 +30,117 @@ export default function LeaderboardModal({ isOpen, onClose, currentUserId }: Lea
   const getRankIcon = (rank: number) => {
     switch (rank) {
       case 1:
-        return <Trophy className="w-6 h-6 text-yellow-500" />;
+        return <Trophy className="w-6 h-6 text-amber-400" />;
       case 2:
-        return <Medal className="w-6 h-6 text-gray-400" />;
+        return <Medal className="w-6 h-6 text-gray-300" />;
       case 3:
-        return <Award className="w-6 h-6 text-amber-600" />;
+        return <Award className="w-6 h-6 text-amber-500" />;
       default:
-        return <span className="w-6 h-6 flex items-center justify-center font-bold text-gray-600">{rank}</span>;
+        return <span className="w-6 h-6 flex items-center justify-center font-bold text-white/70">{rank}</span>;
     }
   };
 
   const getRankBg = (rank: number) => {
     switch (rank) {
       case 1:
-        return 'bg-gradient-to-r from-yellow-100 to-yellow-200 border-yellow-400';
+        return 'bg-gradient-to-r from-amber-500/30 to-amber-400/30 border-amber-400';
       case 2:
-        return 'bg-gradient-to-r from-gray-100 to-gray-200 border-gray-400';
+        return 'bg-gradient-to-r from-gray-500/20 to-gray-400/20 border-gray-400';
       case 3:
-        return 'bg-gradient-to-r from-amber-100 to-amber-200 border-amber-400';
+        return 'bg-gradient-to-r from-amber-600/20 to-amber-500/20 border-amber-500';
       default:
-        return 'bg-white border-gray-200';
+        return 'bg-white/10 border-white/30';
     }
   };
 
+  if (!isOpen) return null;
+
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <>
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-black/70 z-50 backdrop-blur-sm"
-          />
+    <>
+      {/* Backdrop */}
+      <div
+        onClick={onClose}
+        className="fixed inset-0 bg-black/80 z-50 backdrop-blur-md"
+      />
 
-          {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          >
-            <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-[#DC143C] to-[#8B0000] p-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Trophy className="w-8 h-8 text-[#FFD700]" />
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#FFD700]">
-                      Bảng xếp hạng
-                    </h2>
-                  </div>
-                  <button
-                    onClick={onClose}
-                    className="p-2 hover:bg-white/20 rounded-lg transition-colors"
-                  >
-                    <X className="w-6 h-6 text-white" />
-                  </button>
-                </div>
-                <p className="text-white/80 mt-2">Top 10 người chơi nhanh nhất</p>
+      {/* Modal */}
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden border-2 border-amber-500/30">
+          {/* Header */}
+          <div className="bg-gradient-to-r from-amber-900/90 to-amber-800/90 backdrop-blur-md p-6 border-b-2 border-amber-500/30">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Trophy className="w-8 h-8 text-amber-400" />
+                <h2 className="text-2xl md:text-3xl font-bold text-amber-300">
+                  Bảng xếp hạng
+                </h2>
               </div>
-
-              {/* Content */}
-              <div className="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
-                {entries.length === 0 ? (
-                  <div className="text-center py-12">
-                    <Trophy className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                    <p className="text-gray-500 text-lg">Chưa có người chơi nào</p>
-                    <p className="text-gray-400 text-sm mt-2">Hãy là người đầu tiên!</p>
-                  </div>
-                ) : (
-                  <div className="space-y-3">
-                    {entries.map((entry, index) => {
-                      const rank = index + 1;
-                      const isCurrentUser = entry.id === currentUserId;
-
-                      return (
-                        <motion.div
-                          key={entry.id}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.05 }}
-                          className={`
-                            flex items-center gap-4 p-4 rounded-lg border-2 transition-all
-                            ${getRankBg(rank)}
-                            ${isCurrentUser ? 'ring-4 ring-[#FFD700] scale-105' : ''}
-                          `}
-                        >
-                          {/* Rank */}
-                          <div className="flex-shrink-0">
-                            {getRankIcon(rank)}
-                          </div>
-
-                          {/* Name */}
-                          <div className="flex-1 min-w-0">
-                            <p className={`font-bold truncate ${rank <= 3 ? 'text-lg' : 'text-base'}`}>
-                              {entry.name}
-                              {isCurrentUser && (
-                                <span className="ml-2 text-xs bg-[#FFD700] text-[#DC143C] px-2 py-1 rounded-full">
-                                  Bạn
-                                </span>
-                              )}
-                            </p>
-                            <p className="text-sm text-gray-600">{entry.date}</p>
-                          </div>
-
-                          {/* Time */}
-                          <div className="flex items-center gap-2 bg-white/50 px-3 py-2 rounded-lg">
-                            <Clock className="w-4 h-4 text-gray-600" />
-                            <span className="font-mono font-bold text-gray-800">
-                              {formatTime(entry.time)}
-                            </span>
-                          </div>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-
-              {/* Footer */}
-              <div className="p-6 bg-gray-50 border-t">
-                <button
-                  onClick={onClose}
-                  className="w-full btn-revolutionary"
-                >
-                  Đóng
-                </button>
-              </div>
+              <button
+                onClick={onClose}
+                className="p-2 hover:bg-white/20 rounded-lg transition-colors border border-white/20"
+              >
+                <X className="w-6 h-6 text-white" />
+              </button>
             </div>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+            <p className="text-white/80 mt-2">Top 10 người chơi nhanh nhất</p>
+          </div>
+
+          {/* Content */}
+          <div className="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+            {entries.length === 0 ? (
+              <div className="text-center py-12">
+                <Trophy className="w-16 h-16 text-white/30 mx-auto mb-4" />
+                <p className="text-white/70 text-lg">Chưa có người chơi nào</p>
+                <p className="text-white/50 text-sm mt-2">Hãy là người đầu tiên!</p>
+              </div>
+            ) : (
+              <div className="space-y-3">
+                {entries.map((entry, index) => {
+                  const rank = index + 1;
+                  const isCurrentUser = entry.id === currentUserId;
+
+                  return (
+                    <div
+                      key={entry.id}
+                      className={`
+                        flex items-center gap-4 p-4 rounded-xl border-2 transition-all backdrop-blur-sm
+                        ${getRankBg(rank)}
+                        ${isCurrentUser ? 'ring-4 ring-amber-400 scale-105' : ''}
+                      `}
+                    >
+                      {/* Rank */}
+                      <div className="flex-shrink-0">
+                        {getRankIcon(rank)}
+                      </div>
+
+                      {/* Name */}
+                      <div className="flex-1 min-w-0">
+                        <p className={`font-bold truncate text-white ${rank <= 3 ? 'text-lg' : 'text-base'}`}>
+                          {entry.name}
+                          {isCurrentUser && (
+                            <span className="ml-2 text-xs bg-amber-400 text-amber-900 px-2 py-1 rounded-full">
+                              Bạn
+                            </span>
+                          )}
+                        </p>
+                        <p className="text-sm text-white/60">{entry.date}</p>
+                      </div>
+
+                      {/* Time */}
+                      <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-lg border border-white/30">
+                        <Clock className="w-4 h-4 text-white/80" />
+                        <span className="font-mono font-bold text-white">
+                          {formatTime(entry.time)}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

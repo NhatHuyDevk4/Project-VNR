@@ -176,8 +176,9 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
 
     if (!currentQuestion) return null;
 
-    const normalizedAnswer = answer.trim().toLowerCase();
-    const normalizedCorrect = currentQuestion.correct_answer.trim().toLowerCase();
+    // Normalize: trim, lowercase, and replace multiple spaces with single space
+    const normalizedAnswer = answer.trim().toLowerCase().replace(/\s+/g, ' ');
+    const normalizedCorrect = currentQuestion.correct_answer.trim().toLowerCase().replace(/\s+/g, ' ');
 
     if (normalizedAnswer === normalizedCorrect) {
       dispatch({ type: 'ANSWER_CORRECT' });

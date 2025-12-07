@@ -139,7 +139,7 @@
   },
   {
     "id": 22,
-    "content": "Cuộc Tổng tuyển cử đầu tiên diễn ra ngày …(dd-mm-yy)",
+    "content": "Cuộc Tổng tuyển cử đầu tiên diễn ra ngày …(dd",
     "type": "text",
     "correct_answer": "6-1-1946"
   },
@@ -171,7 +171,7 @@
     "id": 27,
     "content": "Tác phẩm nào Hồ Chí Minh viết “Đảng mà không có chủ nghĩa cũng như người không có trí khôn”?",
     "type": "text",
-    "correct_answer": "Đường cách mệnh"
+    "correct_answer": "Đường Kách mệnh"
   },
   {
     "id": 28,

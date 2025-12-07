@@ -36,26 +36,26 @@ export default function GameHeader({
   const stageName = stage === 1 ? 'Trắc nghiệm' : stage === 2 ? 'Điền từ' : 'Ghép hình';
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-[#DC143C] to-[#8B0000] border-b-4 border-[#FFD700] shadow-lg">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-amber-900/90 to-amber-800/90 backdrop-blur-md border-b-2 border-amber-500/30 shadow-lg">
       <div className="container mx-auto px-4 py-3">
         {/* Top Row */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-4">
-            <Star className="w-8 h-8 text-[#FFD700] fill-[#FFD700]" />
+            <Star className="w-8 h-8 text-amber-400 fill-amber-400" />
             <div>
-              <h2 className="text-[#FFD700] font-bold text-lg">Màn {stage}: {stageName}</h2>
+              <h2 className="text-amber-300 font-bold text-lg">Màn {stage}: {stageName}</h2>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2 bg-white/10 px-3 py-2 rounded-lg">
-              <Clock className="w-5 h-5 text-[#FFD700]" />
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg border border-white/20">
+              <Clock className="w-5 h-5 text-amber-300" />
               <span className="text-white font-mono font-bold">{formattedTime}</span>
             </div>
 
             <button
               onClick={handlePauseToggle}
-              className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+              className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors border border-white/20"
               aria-label={isPaused ? 'Resume' : 'Pause'}
             >
               {isPaused ? (
@@ -67,7 +67,7 @@ export default function GameHeader({
 
             <button
               onClick={onShowInstructions}
-              className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
+              className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors border border-white/20"
               aria-label="Instructions"
             >
               <HelpCircle className="w-5 h-5 text-white" />
@@ -87,9 +87,9 @@ export default function GameHeader({
             </span>
           </div>
 
-          <div className="w-full bg-white/20 rounded-full h-3 overflow-hidden">
+          <div className="w-full bg-white/20 backdrop-blur-sm rounded-full h-3 overflow-hidden border border-white/30">
             <div
-              className="h-full bg-gradient-to-r from-[#FFD700] to-[#DAA520] transition-all duration-500 ease-out"
+              className="h-full bg-gradient-to-r from-amber-400 to-amber-500 transition-all duration-500 ease-out shadow-lg"
               style={{ width: `${(collectedPieces / totalPieces) * 100}%` }}
             />
           </div>
