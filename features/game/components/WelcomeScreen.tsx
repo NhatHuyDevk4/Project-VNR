@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Star, Trophy, HelpCircle } from 'lucide-react';
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import { Star, Trophy, HelpCircle } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 interface WelcomeScreenProps {
   onStart: () => void;
@@ -10,7 +10,11 @@ interface WelcomeScreenProps {
   onShowLeaderboard: () => void;
 }
 
-export default function WelcomeScreen({ onStart, onShowInstructions, onShowLeaderboard }: WelcomeScreenProps) {
+export default function WelcomeScreen({
+  onStart,
+  onShowInstructions,
+  onShowLeaderboard,
+}: WelcomeScreenProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLHeadingElement>(null);
@@ -31,7 +35,7 @@ export default function WelcomeScreen({ onStart, onShowInstructions, onShowLeade
             opacity: 1,
             duration: 0.8,
             delay: index * 0.1,
-            ease: 'back.out(1.7)',
+            ease: "back.out(1.7)",
           }
         );
       }
@@ -42,7 +46,7 @@ export default function WelcomeScreen({ onStart, onShowInstructions, onShowLeade
       gsap.fromTo(
         titleRef.current,
         { opacity: 0, y: -30 },
-        { opacity: 1, y: 0, duration: 0.8, delay: 0.3, ease: 'power3.out' }
+        { opacity: 1, y: 0, duration: 0.8, delay: 0.3, ease: "power3.out" }
       );
     }
 
@@ -60,7 +64,14 @@ export default function WelcomeScreen({ onStart, onShowInstructions, onShowLeade
       gsap.fromTo(
         buttonRef.current,
         { opacity: 0, y: 20, scale: 0.9 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: 0.7, ease: 'back.out(1.5)' }
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          delay: 0.7,
+          ease: "back.out(1.5)",
+        }
       );
     }
 
@@ -75,18 +86,41 @@ export default function WelcomeScreen({ onStart, onShowInstructions, onShowLeade
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+    <div
+      ref={containerRef}
+      className="min-h-screen flex items-center justify-center p-6 relative overflow-hidden"
+    >
       {/* Decorative stars with amber theme */}
-      <div ref={(el) => starsRef.current[0] = el} className="absolute top-8 left-8">
+      <div
+        ref={(el) => {
+          starsRef.current[0] = el;
+        }}
+        className="absolute top-8 left-8"
+      >
         <Star className="w-16 h-16 text-amber-400 fill-amber-400 drop-shadow-lg" />
       </div>
-      <div ref={(el) => starsRef.current[1] = el} className="absolute top-8 right-8">
+      <div
+        ref={(el) => {
+          starsRef.current[1] = el;
+        }}
+        className="absolute top-8 right-8"
+      >
         <Star className="w-16 h-16 text-amber-400 fill-amber-400 drop-shadow-lg" />
       </div>
-      <div ref={(el) => starsRef.current[2] = el} className="absolute bottom-8 left-1/4">
+      <div
+        ref={(el) => {
+          starsRef.current[2] = el;
+        }}
+        className="absolute bottom-8 left-1/4"
+      >
         <Star className="w-12 h-12 text-amber-300 fill-amber-300 opacity-60" />
       </div>
-      <div ref={(el) => starsRef.current[3] = el} className="absolute bottom-8 right-1/4">
+      <div
+        ref={(el) => {
+          starsRef.current[3] = el;
+        }}
+        className="absolute bottom-8 right-1/4"
+      >
         <Star className="w-12 h-12 text-amber-300 fill-amber-300 opacity-60" />
       </div>
 
@@ -103,7 +137,8 @@ export default function WelcomeScreen({ onStart, onShowInstructions, onShowLeade
           ref={subtitleRef}
           className="text-xl md:text-2xl font-semibold text-white/90 mb-12 px-4 leading-relaxed"
         >
-          Đảng Cộng sản Việt Nam và<br />
+          Đảng Cộng sản Việt Nam và
+          <br />
           Nhà nước của nhân dân, do nhân dân, vì nhân dân
         </h2>
 

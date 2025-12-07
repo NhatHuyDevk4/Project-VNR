@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import WelcomeScreen from './components/WelcomeScreen';
-import Stage1MultipleChoice from './components/Stage1MultipleChoice';
-import GameHeader from './components/GameHeader';
-import InstructionsModal from './components/InstructionsModal';
-import LeaderboardModal from './components/LeaderboardModal';
-import { useGameContext } from './context/GameContext';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { useState } from "react";
+import WelcomeScreen from "./components/WelcomeScreen";
+import Stage1MultipleChoice from "./components/Stage1MultipleChoice";
+import GameHeader from "./components/GameHeader";
+import InstructionsModal from "./components/InstructionsModal";
+import LeaderboardModal from "./components/LeaderboardModal";
+import { useGame } from "./context/GameContext";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export default function GamePage() {
-  const { state, startGame, answerQuestion, nextQuestion } = useGameContext();
+  const { state, startGame, answerQuestion, nextQuestion } = useGame();
   const [showInstructions, setShowInstructions] = useState(false);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
 
-  if (state.stage === 'welcome') {
+  if (state.stage === "welcome") {
     return (
       <>
         <WelcomeScreen
@@ -23,13 +23,23 @@ export default function GamePage() {
           onShowInstructions={() => setShowInstructions(true)}
           onShowLeaderboard={() => setShowLeaderboard(true)}
         />
-        {showInstructions && <InstructionsModal onClose={() => setShowInstructions(false)} />}
-        {showLeaderboard && <LeaderboardModal onClose={() => setShowLeaderboard(false)} />}
+        {showInstructions && (
+          <InstructionsModal
+            isOpen={showInstructions}
+            onClose={() => setShowInstructions(false)}
+          />
+        )}
+        {showLeaderboard && (
+          <LeaderboardModal
+            isOpen={showLeaderboard}
+            onClose={() => setShowLeaderboard(false)}
+          />
+        )}
       </>
     );
   }
 
-  if (typeof state.stage === 'number' && state.stage >= 1 && state.stage <= 3) {
+  if (typeof state.stage === "number" && state.stage >= 1 && state.stage <= 3) {
     const currentQuestion = state.selectedQuestions[state.currentQuestionIndex];
 
     if (!currentQuestion) {
@@ -72,7 +82,12 @@ export default function GamePage() {
           Thoát
         </Link>
 
-        {showInstructions && <InstructionsModal onClose={() => setShowInstructions(false)} />}
+        {showInstructions && (
+          <InstructionsModal
+            isOpen={showInstructions}
+            onClose={() => setShowInstructions(false)}
+          />
+        )}
       </>
     );
   }
