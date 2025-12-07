@@ -62,7 +62,7 @@ export default function Stage2FillInBlank({ question, onAnswer, onNext, attempts
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4 pt-[140px]">
       <div className="w-full max-w-3xl">
         <QuestionCard question={question.content} questionNumber={question.id}>
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">

@@ -95,7 +95,7 @@ export default function Stage3PuzzleGame({ collectedPieces, imageId, onComplete 
   const imageUrl = `/image/anh${imageId}.jpg`;
 
   return (
-    <div className="min-h-screen p-4 overflow-hidden">
+    <div className="min-h-screen p-4 pt-[140px] overflow-hidden">
       <DndContext
         sensors={sensors}
         onDragStart={handleDragStart}
