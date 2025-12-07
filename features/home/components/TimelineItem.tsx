@@ -9,9 +9,10 @@ import Link from "next/link";
 interface TimelineItemProps {
   post: PostType;
   index: number;
+  linkPrefix?: string;
 }
 
-export const TimelineItem: React.FC<TimelineItemProps> = ({ post, index }) => {
+export const TimelineItem: React.FC<TimelineItemProps> = ({ post, index, linkPrefix = "/timeline" }) => {
   const itemRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
@@ -78,7 +79,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ post, index }) => {
       {/* Content Card */}
       <div ref={cardRef} className={`w-5/12 ${isEven ? "text-right pr-8" : "text-left pl-8"}`}>
         <Link 
-          href={`/timeline/${post.slug}`}
+          href={`${linkPrefix}/${post.slug}`}
           className="block group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/20 cursor-pointer"
         >
           {/* Milestone Badge */}
