@@ -1,6 +1,5 @@
-export { ChatBox, type ChatBoxHandle } from "./ChatBox";
-export { ChatMessage } from "./ChatMessage";
-export { ChatInput } from "./ChatInput";
-export { ConversationList } from "./ConversationList";
-export { TextExplainer } from "./TextExplainer";
-
+export { default as ChatSidebar } from "./ChatSidebar";
+export { default as ChatHeader } from "./ChatHeader";
+export { default as ChatMessages } from "./ChatMessages";
+export { default as ChatInput } from "./ChatInput";
+export { default as AutoSendToggle } from "./AutoSendToggle";

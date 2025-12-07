@@ -1,41 +1,42 @@
-import React, { useState, useRef, KeyboardEvent } from "react";
+"use client";
+
+import React, { useRef } from "react";
 import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 interface ChatInputProps {
-  onSend: (message: string) => void;
-  disabled?: boolean;
+  value: string;
+  onChange: (value: string) => void;
+  onSend: () => void;
+  isLoading: boolean;
 }
 
-export const ChatInput: React.FC<ChatInputProps> = ({ onSend, disabled = false }) => {
-  const [message, setMessage] = useState("");
+export default function ChatInput({
+  value,
+  onChange,
+  onSend,
+  isLoading,
+}: ChatInputProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const handleSend = () => {
-    if (message.trim() && !disabled) {
-      onSend(message.trim());
-      setMessage("");
-      if (textareaRef.current) {
-        textareaRef.current.style.height = "auto";
-      }
-    }
-  };
-
-  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      handleSend();
+      onSend();
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value);
-    
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    onChange(e.target.value);
+
     // Auto-resize textarea
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 100)}px`;
+      textareaRef.current.style.height = `${Math.min(
+        textareaRef.current.scrollHeight,
+        100
+      )}px`;
     }
   };
 
@@ -44,11 +45,11 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, disabled = false }
       <div className="flex items-end gap-2">
         <textarea
           ref={textareaRef}
-          value={message}
-          onChange={handleChange}
+          value={value}
+          onChange={handleInputChange}
           onKeyDown={handleKeyDown}
-          placeholder="Type a message..."
-          disabled={disabled}
+          placeholder="Nhập tin nhắn..."
+          disabled={isLoading}
           rows={1}
           className={cn(
             "flex-1 resize-none rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-800",
@@ -59,8 +60,8 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, disabled = false }
           style={{ minHeight: "36px", maxHeight: "100px" }}
         />
         <Button
-          onClick={handleSend}
-          disabled={!message.trim() || disabled}
+          onClick={onSend}
+          disabled={!value.trim() || isLoading}
           size="icon"
           className="shrink-0 bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-md"
         >
@@ -69,4 +70,4 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, disabled = false }
       </div>
     </div>
   );
-};
+}
