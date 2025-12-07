@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { DndContext, DragEndEvent, DragOverlay, PointerSensor, useSensor, useSensors, useDroppable } from '@dnd-kit/core';
-import { motion } from 'framer-motion';
 import PuzzleBoard from './PuzzleBoard';
 import PuzzlePiece from './PuzzlePiece';
 import { generatePuzzlePieces, checkPiecePlacement, GRID_ROWS, GRID_COLS, getGridPosition } from '../lib/puzzleUtils';
@@ -14,8 +13,9 @@ function DroppableSlot({ id, children }: { id: string; children: React.ReactNode
   return (
     <div
       ref={setNodeRef}
-      className={`relative bg-white/5 border transition-colors ${isOver ? 'border-[#FFD700] bg-[#FFD700]/20' : 'border-[#FFD700]/30'
-        }`}
+      className={`relative bg-white/5 border transition-colors rounded-lg ${
+        isOver ? 'border-amber-400 bg-amber-400/20 shadow-lg shadow-amber-400/50' : 'border-amber-500/30'
+      }`}
       style={{ width: '120px', height: '120px' }}
     >
       {children}
@@ -94,25 +94,21 @@ export default function Stage3PuzzleGame({ collectedPieces, onComplete }: Stage3
   const imageUrl = '/image/anh1.jpg';
 
   return (
-    <div className="min-h-screen revolutionary-gradient p-4 overflow-hidden">
+    <div className="min-h-screen p-4 overflow-hidden">
       <DndContext
         sensors={sensors}
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
       >
         <div className="container mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-6"
-          >
-            <h1 className="text-3xl md:text-4xl font-bold text-[#FFD700] mb-2">
+          <div className="text-center mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-amber-300 mb-2">
               Màn 3: Ghép hình
             </h1>
             <p className="text-white text-lg">
               Đã ghép: {placedPieces.size}/{collectedPieces.length} mảnh
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid lg:grid-cols-2 gap-8 items-start">
             {/* Puzzle Board */}
@@ -145,7 +141,7 @@ export default function Stage3PuzzleGame({ collectedPieces, onComplete }: Stage3
 
             {/* Available Pieces */}
             <div className="flex flex-col items-center">
-              <h3 className="text-xl font-bold text-[#FFD700] mb-4">
+              <h3 className="text-xl font-bold text-amber-300 mb-4">
                 Mảnh ghép chưa đặt
               </h3>
               <div className="grid grid-cols-3 gap-4">

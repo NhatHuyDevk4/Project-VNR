@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { Question, FeedbackType } from '@/types/game';
 import QuestionCard from './QuestionCard';
 import AnswerFeedback from './AnswerFeedback';
@@ -63,15 +62,15 @@ export default function Stage1MultipleChoice({ question, onAnswer, onNext, attem
   };
 
   const getButtonClass = (option: string) => {
-    const baseClass = 'w-full text-left p-4 rounded-lg font-semibold text-lg transition-all duration-300 border-2';
+    const baseClass = 'w-full text-left p-4 rounded-xl font-semibold text-lg transition-all duration-300 border-2';
 
     if (!selectedAnswer) {
-      return `${baseClass} bg-white hover:bg-[#FFD700]/20 border-[#DC143C] hover:border-[#FFD700] hover:scale-102`;
+      return `${baseClass} bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30 hover:border-amber-400 hover:scale-102`;
     }
 
     if (option === selectedAnswer) {
       if (feedback === 'correct') {
-        return `${baseClass} bg-green-500 text-white border-green-600 scale-105`;
+        return `${baseClass} bg-green-500 text-white border-green-600 scale-105 shadow-lg shadow-green-500/50`;
       } else if (feedback === 'wrong') {
         return `${baseClass} bg-red-500 text-white border-red-600 animate-shake`;
       }
@@ -79,33 +78,26 @@ export default function Stage1MultipleChoice({ question, onAnswer, onNext, attem
 
     // Show correct answer after 2 failed attempts
     if (showCorrectAnswer && option === question.correct_answer) {
-      return `${baseClass} bg-green-500 text-white border-green-600`;
+      return `${baseClass} bg-green-500 text-white border-green-600 shadow-lg shadow-green-500/50`;
     }
 
-    return `${baseClass} bg-gray-200 border-gray-300 opacity-50`;
+    return `${baseClass} bg-white/10 border-white/20 opacity-50 text-white/70`;
   };
 
   return (
-    <div className="min-h-screen revolutionary-gradient flex items-center justify-center p-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-3xl"
-      >
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="w-full max-w-3xl">
         <QuestionCard question={question.content} questionNumber={question.id}>
           <div className="space-y-3 mt-6">
             {question.options?.map((option, index) => (
-              <motion.button
+              <button
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
                 onClick={() => handleAnswerClick(option.charAt(0))}
                 disabled={isDisabled}
                 className={getButtonClass(option.charAt(0))}
               >
                 {option}
-              </motion.button>
+              </button>
             ))}
           </div>
 
@@ -116,7 +108,7 @@ export default function Stage1MultipleChoice({ question, onAnswer, onNext, attem
             />
           )}
         </QuestionCard>
-      </motion.div>
+      </div>
     </div>
   );
 }

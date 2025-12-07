@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { Question, FeedbackType } from '@/types/game';
 import QuestionCard from './QuestionCard';
 import AnswerFeedback from './AnswerFeedback';
@@ -63,12 +62,8 @@ export default function Stage2FillInBlank({ question, onAnswer, onNext, attempts
   };
 
   return (
-    <div className="min-h-screen revolutionary-gradient flex items-center justify-center p-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-3xl"
-      >
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="w-full max-w-3xl">
         <QuestionCard question={question.content} questionNumber={question.id}>
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
             <div>
@@ -78,20 +73,18 @@ export default function Stage2FillInBlank({ question, onAnswer, onNext, attempts
                 onChange={(e) => setAnswer(e.target.value)}
                 disabled={isDisabled}
                 placeholder="Nhập đáp án..."
-                className="w-full p-4 text-lg border-2 border-[#DC143C] rounded-lg focus:outline-none focus:border-[#FFD700] focus:ring-2 focus:ring-[#FFD700]/50 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                className="w-full p-4 text-lg bg-white/20 backdrop-blur-sm border-2 border-white/30 rounded-xl focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/50 disabled:bg-white/10 disabled:cursor-not-allowed text-white placeholder:text-white/50 transition-all"
                 autoFocus
               />
             </div>
 
-            <motion.button
+            <button
               type="submit"
               disabled={!answer.trim() || isDisabled}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full btn-revolutionary disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-amber-500/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
             >
               Xác nhận
-            </motion.button>
+            </button>
           </form>
 
           {feedback && (
@@ -101,7 +94,7 @@ export default function Stage2FillInBlank({ question, onAnswer, onNext, attempts
             />
           )}
         </QuestionCard>
-      </motion.div>
+      </div>
     </div>
   );
 }
