@@ -1,6 +1,7 @@
 "use client";
 
-import { posts } from "@/common/constants/posts";
+import { posts as defaultPosts } from "@/common/constants/posts";
+import { PostType } from "@/common/types/post.type";
 import { TimelineItem } from "@/features/home/components/TimelineItem";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -12,7 +13,12 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const TimelineSection = () => {
+interface TimelineSectionProps {
+  posts?: PostType[];
+  linkPrefix?: string;
+}
+
+const TimelineSection = ({ posts = defaultPosts, linkPrefix = "/timeline" }: TimelineSectionProps) => {
   const lineRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -87,7 +93,7 @@ const TimelineSection = () => {
           {/* Timeline Items */}
           <div className="relative pt-8">
             {sortedPosts.map((post, index) => (
-              <TimelineItem key={post.id} post={post} index={index} />
+              <TimelineItem key={post.id} post={post} index={index} linkPrefix={linkPrefix} />
             ))}
           </div>
 
