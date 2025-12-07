@@ -1,5 +1,5 @@
 import MainLayout from "@/components/layouts/MainLayout";
-import NhaNuocPresentation from "@/components/NhaNuocPresentation";
+import NhaNuocPresentation from "@/features/content3/NhaNuocPresentation";
 import contentData from "@/data/nha-nuoc-content.json";
 
 export default function NhaNuocPage() {
