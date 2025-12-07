@@ -1,164 +1,243 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { X, CheckCircle, Edit3, Puzzle } from 'lucide-react';
-import { setInstructionsSeen } from '../lib/storage';
+import { useEffect } from "react";
+import { CheckCircle, Edit3, Puzzle, Lightbulb, Trophy } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { setInstructionsSeen } from "../lib/storage";
 
 interface InstructionsModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function InstructionsModal({ isOpen, onClose }: InstructionsModalProps) {
+export default function InstructionsModal({
+  isOpen,
+  onClose,
+}: InstructionsModalProps) {
   useEffect(() => {
     if (isOpen) {
       setInstructionsSeen(true);
     }
   }, [isOpen]);
 
-  const handleClose = () => {
-    onClose();
-  };
-
-  if (!isOpen) return null;
-
   return (
-    <>
-      {/* Backdrop */}
-      <div
-        onClick={handleClose}
-        className="fixed inset-0 bg-black/80 z-50 backdrop-blur-md"
-      />
+    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
+      <DialogContent className="max-w-[90vw] lg:max-w-7xl max-h-[95vh] overflow-y-auto bg-gradient-to-br from-amber-950/98 to-red-950/98 backdrop-blur-xl border-4 border-amber-500/60 shadow-2xl [&>button]:hidden">
+        <DialogHeader className="relative">
+          {/* Custom Close Button */}
+          <button
+            onClick={onClose}
+            className="absolute -top-2 -right-2 z-50 bg-gradient-to-br from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-amber-300 rounded-full p-3 shadow-lg border-2 border-amber-500/50 transition-all hover:scale-110 hover:rotate-90"
+            aria-label="Đóng"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={3}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
 
-      {/* Modal */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border-2 border-amber-500/30">
-          {/* Header */}
-          <div className="sticky top-0 bg-gradient-to-r from-amber-900/90 to-amber-800/90 backdrop-blur-md p-6 rounded-t-2xl border-b-2 border-amber-500/30">
-            <div className="flex items-center justify-between">
-              <h2 className="text-2xl md:text-3xl font-bold text-amber-300">
-                Hướng dẫn chơi
-              </h2>
-              <button
-                onClick={handleClose}
-                className="p-2 hover:bg-white/20 rounded-lg transition-colors border border-white/20"
-              >
-                <X className="w-6 h-6 text-white" />
-              </button>
-            </div>
-          </div>
+          <DialogTitle className="text-5xl font-bold text-amber-300 flex items-center gap-4 pr-12">
+            <Trophy className="w-12 h-12 text-amber-400" />
+            Hướng dẫn chơi
+          </DialogTitle>
+          <DialogDescription className="text-amber-200/90 text-xl pt-2">
+            Làm theo 3 bước để hoàn thành trò chơi và lên bảng xếp hạng
+          </DialogDescription>
+        </DialogHeader>
 
-              {/* Content */}
-              <div className="p-6 space-y-6">
-                {/* Stage 1 */}
-                <div className="border-2 border-[#DC143C] rounded-lg p-4">
+        <div className="space-y-6 py-6">
+          {/* Stage 1 */}
+          <div className="group hover:scale-[1.01] transition-transform">
+            <div className="bg-gradient-to-br from-red-900/40 to-red-950/40 backdrop-blur-sm rounded-xl p-8 border-2 border-red-500/50 shadow-xl">
+              <div className="flex items-start gap-5 mb-4">
+                <div className="bg-gradient-to-br from-red-500 to-red-600 p-4 rounded-xl shadow-lg">
+                  <CheckCircle className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
-                    <CheckCircle className="w-8 h-8 text-[#DC143C]" />
-                    <h3 className="text-xl font-bold text-[#DC143C]">
-                      Màn 1: Trắc nghiệm (9 mảnh ghép)
+                    <h3 className="text-2xl font-bold text-amber-300">
+                      Màn 1: Trắc nghiệm
                     </h3>
+                    <Badge className="bg-amber-500 text-amber-950 text-base px-3 py-1">
+                      9 mảnh
+                    </Badge>
                   </div>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#FFD700] font-bold">•</span>
-                      <span>Trả lời các câu hỏi trắc nghiệm về tư tưởng Hồ Chí Minh</span>
+                  <ul className="space-y-3 text-white/90 text-base">
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber-400 font-bold text-xl mt-0.5">
+                        ★
+                      </span>
+                      <span>
+                        Trả lời câu hỏi trắc nghiệm về tư tưởng Hồ Chí Minh
+                      </span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#FFD700] font-bold">•</span>
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber-400 font-bold text-xl mt-0.5">
+                        ★
+                      </span>
                       <span>Chọn đáp án đúng trong 4 lựa chọn A, B, C, D</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#FFD700] font-bold">•</span>
-                      <span>Mỗi câu trả lời đúng sẽ nhận được 1 mảnh ghép</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#FFD700] font-bold">•</span>
-                      <span>Bạn có tối đa 2 lần thử cho mỗi câu hỏi</span>
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber-400 font-bold text-xl mt-0.5">
+                        ★
+                      </span>
+                      <span>Mỗi câu đúng nhận 1 mảnh ghép, có 2 lần thử</span>
                     </li>
                   </ul>
                 </div>
-
-                {/* Stage 2 */}
-                <div className="border-2 border-[#DC143C] rounded-lg p-4">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Edit3 className="w-8 h-8 text-[#DC143C]" />
-                    <h3 className="text-xl font-bold text-[#DC143C]">
-                      Màn 2: Điền từ (9 mảnh ghép)
-                    </h3>
-                  </div>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#FFD700] font-bold">•</span>
-                      <span>Hoàn thành các câu hỏi điền từ vào chỗ trống</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#FFD700] font-bold">•</span>
-                      <span>Nhập đáp án vào ô trống và nhấn "Xác nhận"</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#FFD700] font-bold">•</span>
-                      <span>Mỗi câu đúng sẽ nhận thêm 1 mảnh ghép</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#FFD700] font-bold">•</span>
-                      <span>Bạn cũng có 2 lần thử cho mỗi câu</span>
-                    </li>
-                  </ul>
-                </div>
-
-            {/* Stage 3 */}
-            <div className="bg-white/10 backdrop-blur-sm border-2 border-amber-500/30 rounded-xl p-4">
-              <div className="flex items-center gap-3 mb-3">
-                <Puzzle className="w-8 h-8 text-amber-400" />
-                <h3 className="text-xl font-bold text-amber-300">
-                  Màn 3: Ghép hình
-                </h3>
               </div>
-              <ul className="space-y-2 text-white/90">
-                <li className="flex items-start gap-2">
-                  <span className="text-amber-400 font-bold">•</span>
-                  <span>Sử dụng các mảnh ghép đã thu thập để hoàn thành bức tranh</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-amber-400 font-bold">•</span>
-                  <span>Kéo và thả các mảnh ghép vào đúng vị trí</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-amber-400 font-bold">•</span>
-                  <span>Mảnh ghép sẽ tự động khóa khi đặt đúng vị trí</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-amber-400 font-bold">•</span>
-                  <span>Hoàn thành tất cả để chiến thắng!</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Tips */}
-            <div className="bg-amber-500/20 backdrop-blur-sm border-2 border-amber-400/50 rounded-xl p-4">
-              <h3 className="text-lg font-bold text-amber-300 mb-2">
-                💡 Mẹo chơi
-              </h3>
-              <ul className="space-y-1 text-white/80 text-sm">
-                <li>• Đọc kỹ câu hỏi trước khi trả lời</li>
-                <li>• Thời gian chơi được tính để xếp hạng</li>
-                <li>• Bạn có thể tạm dừng game bất cứ lúc nào</li>
-                <li>• Càng trả lời đúng nhiều, càng có nhiều mảnh ghép</li>
-              </ul>
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="p-6 bg-gradient-to-r from-amber-900/50 to-amber-800/50 backdrop-blur-md rounded-b-2xl border-t-2 border-amber-500/30">
-            <button
-              onClick={handleClose}
-              className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-amber-500/50"
-            >
-              Đã hiểu, bắt đầu chơi!
-            </button>
+          {/* Stage 2 */}
+          <div className="group hover:scale-[1.01] transition-transform">
+            <div className="bg-gradient-to-br from-amber-900/40 to-amber-950/40 backdrop-blur-sm rounded-xl p-8 border-2 border-amber-500/50 shadow-xl">
+              <div className="flex items-start gap-5 mb-4">
+                <div className="bg-gradient-to-br from-amber-500 to-amber-600 p-4 rounded-xl shadow-lg">
+                  <Edit3 className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    <h3 className="text-2xl font-bold text-amber-300">
+                      Màn 2: Điền từ
+                    </h3>
+                    <Badge className="bg-amber-500 text-amber-950 text-base px-3 py-1">
+                      9 mảnh
+                    </Badge>
+                  </div>
+                  <ul className="space-y-3 text-white/90 text-base">
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber-400 font-bold text-xl mt-0.5">
+                        ★
+                      </span>
+                      <span>Hoàn thành câu hỏi điền từ vào chỗ trống</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber-400 font-bold text-xl mt-0.5">
+                        ★
+                      </span>
+                      <span>
+                        Nhập đáp án chính xác (không phân biệt hoa thường)
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber-400 font-bold text-xl mt-0.5">
+                        ★
+                      </span>
+                      <span>Mỗi câu đúng nhận 1 mảnh ghép, có 2 lần thử</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stage 3 */}
+          <div className="group hover:scale-[1.01] transition-transform">
+            <div className="bg-gradient-to-br from-yellow-900/40 to-yellow-950/40 backdrop-blur-sm rounded-xl p-8 border-2 border-yellow-500/50 shadow-xl">
+              <div className="flex items-start gap-5 mb-4">
+                <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 p-4 rounded-xl shadow-lg">
+                  <Puzzle className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    <h3 className="text-2xl font-bold text-amber-300">
+                      Màn 3: Ghép hình
+                    </h3>
+                    <Badge className="bg-amber-500 text-amber-950 text-base px-3 py-1">
+                      18 mảnh
+                    </Badge>
+                  </div>
+                  <ul className="space-y-3 text-white/90 text-base">
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber-400 font-bold text-xl mt-0.5">
+                        ★
+                      </span>
+                      <span>
+                        Sử dụng 18 mảnh ghép đã thu thập để hoàn thành bức tranh
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber-400 font-bold text-xl mt-0.5">
+                        ★
+                      </span>
+                      <span>
+                        Kéo và thả mảnh ghép vào đúng vị trí trên bảng
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-amber-400 font-bold text-xl mt-0.5">
+                        ★
+                      </span>
+                      <span>Mảnh ghép tự động khóa khi đặt đúng chỗ</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <Separator className="my-8 bg-amber-500/30" />
+
+          {/* Tips */}
+          <div className="bg-gradient-to-br from-amber-800/30 to-red-900/30 backdrop-blur-sm rounded-xl p-8 border-2 border-amber-400/40">
+            <div className="flex items-center gap-4 mb-6">
+              <Lightbulb className="w-8 h-8 text-amber-400" />
+              <h3 className="text-2xl font-bold text-amber-300">
+                Mẹo chơi hiệu quả
+              </h3>
+            </div>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-base text-white/90">
+              <li className="flex items-start gap-3">
+                <span className="text-amber-400 font-bold text-xl">✓</span>
+                <span>Đọc kỹ câu hỏi trước khi trả lời</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-amber-400 font-bold text-xl">✓</span>
+                <span>Thời gian chơi ảnh hưởng đến xếp hạng</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-amber-400 font-bold text-xl">✓</span>
+                <span>Có thể tạm dừng game bất cứ lúc nào</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-amber-400 font-bold text-xl">✓</span>
+                <span>Càng đúng nhiều, điểm càng cao</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </>
+
+        <DialogFooter className="pt-4">
+          <Button
+            onClick={onClose}
+            className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-amber-300 font-bold text-2xl py-8 shadow-2xl shadow-red-900/60 border-4 border-amber-500/60 hover:scale-[1.02] transition-all hover:shadow-amber-500/30"
+            size="lg"
+          >
+            <Trophy className="w-7 h-7 mr-3" />
+            Đã hiểu, bắt đầu chơi ngay! 🎮
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }
