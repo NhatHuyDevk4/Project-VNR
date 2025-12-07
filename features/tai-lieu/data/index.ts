@@ -134,4 +134,3 @@ export function getPostBySlug(slug: string): PostType | undefined {
 export function getAllPosts(): PostType[] {
   return posts;
 }
-

@@ -10,8 +10,8 @@ export const CONTENT_ROUTES = [
     number: "02",
   },
   {
-    name: "Content 3",
-    path: "/contents/content-3",
+    name: "Nguyên tắc tổ chức và sinh hoạt cơ bản của Đảng",
+    path: "/contents/nguyen-tac-to-chuc-cua-dang",
     number: "03",
   },
   {

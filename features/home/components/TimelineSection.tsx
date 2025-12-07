@@ -1,12 +1,11 @@
 "use client";
 
-import { posts as defaultPosts } from "@/common/constants/posts";
+import { posts as defaultPosts } from "@/features/tai-lieu/data";
 import { PostType } from "@/common/types/post.type";
 import { TimelineItem } from "@/features/home/components/TimelineItem";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Clock } from "lucide-react";
 
 // Register GSAP ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -19,6 +18,7 @@ interface TimelineSectionProps {
 }
 
 const TimelineSection = ({ posts = defaultPosts, linkPrefix = "/timeline" }: TimelineSectionProps) => {
+  
   const lineRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 

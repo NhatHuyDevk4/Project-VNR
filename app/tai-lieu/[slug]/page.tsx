@@ -1,8 +1,7 @@
 "use client";
 
 import { use } from "react";
-import { notFound } from "next/navigation";
-import Link from "next/link";
+import { notFound, useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
@@ -16,6 +15,7 @@ export default function TaiLieuSlugPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const router = useRouter();
   const { slug } = use(params);
   const post = getPostBySlug(slug);
 
@@ -27,12 +27,15 @@ export default function TaiLieuSlugPage({
     <>
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="max-w-4xl mx-auto">
-          <Link
-            href="/tai-lieu"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 sm:mb-8 transition-colors"
+          <button
+            onClick={() => router.back()}
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 sm:mb-8 transition-colors group"
           >
-            <span>←</span> Quay lại danh sách
-          </Link>
+            <span className="group-hover:-translate-x-1 transition-transform">
+              ←
+            </span>{" "}
+            Quay lại
+          </button>
 
           <div
             className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/20"

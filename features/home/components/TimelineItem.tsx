@@ -12,7 +12,11 @@ interface TimelineItemProps {
   linkPrefix?: string;
 }
 
-export const TimelineItem: React.FC<TimelineItemProps> = ({ post, index, linkPrefix = "/timeline" }) => {
+export const TimelineItem: React.FC<TimelineItemProps> = ({
+  post,
+  index,
+  linkPrefix = "/timeline",
+}) => {
   const itemRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
@@ -24,8 +28,8 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ post, index, linkPre
       if (cardRef.current) {
         gsap.fromTo(
           cardRef.current,
-          { 
-            opacity: 0, 
+          {
+            opacity: 0,
             x: isEven ? -80 : 80,
           },
           {
@@ -46,9 +50,9 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ post, index, linkPre
       if (circleRef.current) {
         gsap.fromTo(
           circleRef.current,
-          { 
+          {
             scale: 0,
-            opacity: 0
+            opacity: 0,
           },
           {
             scale: 1,
@@ -77,15 +81,24 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ post, index, linkPre
       }`}
     >
       {/* Content Card */}
-      <div ref={cardRef} className={`w-5/12 ${isEven ? "text-right pr-8" : "text-left pl-8"}`}>
-        <Link 
+      <div
+        ref={cardRef}
+        className={`w-5/12 ${isEven ? "text-right pr-8" : "text-left pl-8"}`}
+      >
+        <Link
           href={`${linkPrefix}/${post.slug}`}
           className="block group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/20 cursor-pointer"
         >
           {/* Milestone Badge */}
-          <div className={`flex items-center gap-2 mb-3 ${isEven ? "justify-end" : "justify-start"}`}>
+          <div
+            className={`flex items-center gap-2 mb-3 ${
+              isEven ? "justify-end" : "justify-start"
+            }`}
+          >
             <Calendar className="w-4 h-4 text-amber-400" />
-            <span className="text-amber-400 font-bold text-sm">{post.milestone}</span>
+            <span className="text-amber-400 font-bold text-sm">
+              {post.milestone}
+            </span>
           </div>
 
           {/* Title */}
@@ -102,17 +115,23 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ post, index, linkPre
 
           {/* Image */}
           {post.image && post.image.length > 0 && (
-            <div className="mb-4 overflow-hidden rounded-lg">
+            <div className="mb-4 overflow-hidden rounded-lg bg-amber-900/20">
               <img
                 src={post.image[0]}
                 alt={post.title}
                 className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                crossOrigin="anonymous"
               />
             </div>
           )}
 
           {/* Read More Button */}
-          <div className={`flex items-center gap-2 ${isEven ? "justify-end" : "justify-start"}`}>
+          <div
+            className={`flex items-center gap-2 ${
+              isEven ? "justify-end" : "justify-start"
+            }`}
+          >
             <span className="text-amber-300 text-sm font-medium group-hover:text-amber-200 transition-colors">
               Xem chi tiết
             </span>
@@ -123,9 +142,9 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ post, index, linkPre
 
       {/* Center Circle Node */}
       <div className="w-2/12 flex justify-center relative z-10">
-        <div 
+        <div
           ref={circleRef}
-          className="w-6 h-6 bg-amber-500 rounded-full border-4 border-amber-900/40 shadow-lg shadow-amber-500/50 group-hover:scale-125 transition-transform duration-300" 
+          className="w-6 h-6 bg-amber-500 rounded-full border-4 border-amber-900/40 shadow-lg shadow-amber-500/50 group-hover:scale-125 transition-transform duration-300"
         />
       </div>
 

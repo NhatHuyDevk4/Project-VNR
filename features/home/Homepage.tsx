@@ -1,8 +1,11 @@
 import AnimatedTitle from "./components/AnimatedTitle";
 import ScrollDownButton from "@/features/home/components/ScrollDownButton";
 import TimelineSection from "./components/TimelineSection";
+import { getAllPosts } from "@/features/tai-lieu/data";
 
 const Homepage = () => {
+  const posts = getAllPosts();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section with Animated Title */}
@@ -19,7 +22,7 @@ const Homepage = () => {
       </div>
 
       {/* Timeline Section */}
-      <TimelineSection />
+      <TimelineSection posts={posts} linkPrefix="/tai-lieu"/>
     </div>
   );
 };
