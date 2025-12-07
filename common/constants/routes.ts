@@ -1,7 +1,7 @@
 export const CONTENT_ROUTES = [
   {
-    name: "Content 1",
-    path: "/contents/content-1",
+    name: "Tính tất yếu và vai trò lãnh đạo của Đảng Cộng sản Việt Nam",
+    path: "/contents/tinh-tat-yeu-va-vai-tro-lanh-dao",
     number: "01",
   },
   {
