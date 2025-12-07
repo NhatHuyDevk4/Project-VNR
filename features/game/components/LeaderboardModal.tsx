@@ -1,146 +1,202 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { X, Trophy, Medal, Award, Clock } from 'lucide-react';
-import { getTopLeaderboard } from '../lib/storage';
-import { LeaderboardEntry } from '@/types/game';
+import { useState, useEffect } from "react";
+import { X, Trophy, Clock, Medal, Award, TrendingUp } from "lucide-react";
+import { getCurrentPlayer } from "@/lib/idb/playerIdb";
+import { getTopPlayers, type LeaderboardEntry } from "@/actions/gameActions";
 
 interface LeaderboardModalProps {
   isOpen: boolean;
   onClose: () => void;
-  currentUserId?: string;
 }
 
-export default function LeaderboardModal({ isOpen, onClose, currentUserId }: LeaderboardModalProps) {
+export default function LeaderboardModal({
+  isOpen,
+  onClose,
+}: LeaderboardModalProps) {
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [currentDeviceId, setCurrentDeviceId] = useState<string | null>(null);
+  const [playerRank, setPlayerRank] = useState<{
+    rank: number;
+    total: number;
+  } | null>(null);
 
   useEffect(() => {
     if (isOpen) {
-      const topEntries = getTopLeaderboard(10);
-      setEntries(topEntries);
+      loadLeaderboard();
     }
   }, [isOpen]);
 
-  const formatTime = (seconds: number): string => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
-  };
+  const loadLeaderboard = async () => {
+    setIsLoading(true);
+    try {
+      // Get current player
+      const player = await getCurrentPlayer();
+      if (player) {
+        setCurrentDeviceId(player.deviceId);
+      }
 
-  const getRankIcon = (rank: number) => {
-    switch (rank) {
-      case 1:
-        return <Trophy className="w-6 h-6 text-amber-400" />;
-      case 2:
-        return <Medal className="w-6 h-6 text-gray-300" />;
-      case 3:
-        return <Award className="w-6 h-6 text-amber-500" />;
-      default:
-        return <span className="w-6 h-6 flex items-center justify-center font-bold text-white/70">{rank}</span>;
+      // Get top players from Server Action
+      const result = await getTopPlayers(100);
+      if (result.success && result.data) {
+        setEntries(result.data);
+
+        // Calculate player rank
+        if (player) {
+          const rank = result.data.findIndex(
+            (p: LeaderboardEntry) => p.device_id === player.deviceId
+          );
+          if (rank !== -1) {
+            setPlayerRank({ rank: rank + 1, total: result.data.length });
+          }
+        }
+      }
+    } catch (error) {
+      console.error("Error loading leaderboard:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const getRankBg = (rank: number) => {
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
+  };
+
+  const getMedalIcon = (rank: number) => {
     switch (rank) {
       case 1:
-        return 'bg-gradient-to-r from-amber-500/30 to-amber-400/30 border-amber-400';
+        return <Medal className="w-6 h-6 text-yellow-400" />;
       case 2:
-        return 'bg-gradient-to-r from-gray-500/20 to-gray-400/20 border-gray-400';
+        return <Medal className="w-6 h-6 text-gray-400" />;
       case 3:
-        return 'bg-gradient-to-r from-amber-600/20 to-amber-500/20 border-amber-500';
+        return <Medal className="w-6 h-6 text-amber-600" />;
       default:
-        return 'bg-white/10 border-white/30';
+        return <span className="text-white/60 font-bold">{rank}</span>;
     }
   };
 
   if (!isOpen) return null;
 
   return (
-    <>
-      {/* Backdrop */}
-      <div
-        onClick={onClose}
-        className="fixed inset-0 bg-black/80 z-50 backdrop-blur-md"
-      />
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div className="bg-gradient-to-br from-amber-900/95 to-amber-950/95 backdrop-blur-xl rounded-2xl shadow-2xl border-2 border-amber-500/50 p-6 md:p-8 max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <Trophy className="w-8 h-8 text-amber-400" />
+            <h2 className="text-3xl font-bold text-amber-300">Bảng xếp hạng</h2>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+        </div>
 
-      {/* Modal */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden border-2 border-amber-500/30">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-amber-900/90 to-amber-800/90 backdrop-blur-md p-6 border-b-2 border-amber-500/30">
+        {/* Player Rank Card */}
+        {playerRank && (
+          <div className="mb-4 p-4 bg-gradient-to-r from-amber-500/20 to-amber-600/20 border-2 border-amber-500/40 rounded-xl">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <Trophy className="w-8 h-8 text-amber-400" />
-                <h2 className="text-2xl md:text-3xl font-bold text-amber-300">
-                  Bảng xếp hạng
-                </h2>
+                <Award className="w-6 h-6 text-amber-400" />
+                <div>
+                  <p className="text-white font-semibold">Xếp hạng của bạn</p>
+                  <p className="text-white/60 text-sm">
+                    {playerRank.rank} / {playerRank.total} người chơi
+                  </p>
+                </div>
               </div>
-              <button
-                onClick={onClose}
-                className="p-2 hover:bg-white/20 rounded-lg transition-colors border border-white/20"
-              >
-                <X className="w-6 h-6 text-white" />
-              </button>
+              <div className="flex items-center gap-2 text-amber-300">
+                <TrendingUp className="w-5 h-5" />
+                <span className="text-2xl font-bold">#{playerRank.rank}</span>
+              </div>
             </div>
-            <p className="text-white/80 mt-2">Top 10 người chơi nhanh nhất</p>
           </div>
+        )}
 
-          {/* Content */}
-          <div className="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
-            {entries.length === 0 ? (
-              <div className="text-center py-12">
-                <Trophy className="w-16 h-16 text-white/30 mx-auto mb-4" />
-                <p className="text-white/70 text-lg">Chưa có người chơi nào</p>
-                <p className="text-white/50 text-sm mt-2">Hãy là người đầu tiên!</p>
-              </div>
-            ) : (
-              <div className="space-y-3">
-                {entries.map((entry, index) => {
-                  const rank = index + 1;
-                  const isCurrentUser = entry.id === currentUserId;
+        {/* Leaderboard List */}
+        <div className="flex-1 overflow-y-auto">
+          {isLoading ? (
+            <div className="text-center py-12">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-amber-500 border-t-transparent"></div>
+              <p className="text-white/60 mt-4">Đang tải bảng xếp hạng...</p>
+            </div>
+          ) : entries.length === 0 ? (
+            <div className="text-center py-12">
+              <Trophy className="w-16 h-16 text-white/20 mx-auto mb-4" />
+              <p className="text-white/60 text-lg">Chưa có người chơi nào</p>
+              <p className="text-white/40 text-sm mt-2">
+                Hãy là người đầu tiên!
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {entries.map((entry, index) => {
+                const isCurrentPlayer = entry.device_id === currentDeviceId;
+                return (
+                  <div
+                    key={entry.device_id}
+                    className={`flex items-center gap-4 p-4 rounded-xl transition-all ${
+                      isCurrentPlayer
+                        ? "bg-gradient-to-r from-green-500/30 to-green-600/30 border-2 border-green-500/60 shadow-lg"
+                        : index < 3
+                        ? "bg-gradient-to-r from-amber-500/20 to-amber-600/20 border-2 border-amber-500/40"
+                        : "bg-white/10 border border-white/20"
+                    }`}
+                  >
+                    {/* Rank */}
+                    <div className="w-10 flex items-center justify-center">
+                      {getMedalIcon(index + 1)}
+                    </div>
 
-                  return (
-                    <div
-                      key={entry.id}
-                      className={`
-                        flex items-center gap-4 p-4 rounded-xl border-2 transition-all backdrop-blur-sm
-                        ${getRankBg(rank)}
-                        ${isCurrentUser ? 'ring-4 ring-amber-400 scale-105' : ''}
-                      `}
-                    >
-                      {/* Rank */}
-                      <div className="flex-shrink-0">
-                        {getRankIcon(rank)}
-                      </div>
-
-                      {/* Name */}
-                      <div className="flex-1 min-w-0">
-                        <p className={`font-bold truncate text-white ${rank <= 3 ? 'text-lg' : 'text-base'}`}>
+                    {/* Name & Stats */}
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2">
+                        <p className="text-white font-semibold text-lg">
                           {entry.name}
-                          {isCurrentUser && (
-                            <span className="ml-2 text-xs bg-amber-400 text-amber-900 px-2 py-1 rounded-full">
-                              Bạn
-                            </span>
-                          )}
                         </p>
-                        <p className="text-sm text-white/60">{entry.date}</p>
+                        {isCurrentPlayer && (
+                          <span className="text-xs bg-green-500/30 text-green-300 px-2 py-0.5 rounded-full border border-green-500/50">
+                            Bạn
+                          </span>
+                        )}
                       </div>
-
-                      {/* Time */}
-                      <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-lg border border-white/30">
-                        <Clock className="w-4 h-4 text-white/80" />
-                        <span className="font-mono font-bold text-white">
-                          {formatTime(entry.time)}
+                      <div className="flex items-center gap-4 text-sm text-white/60 mt-1">
+                        <span>
+                          ✓ {entry.correct_answers} | ✗ {entry.wrong_answers}
                         </span>
+                        <span>•</span>
+                        <span>{entry.score} điểm</span>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
+
+                    {/* Time */}
+                    <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
+                      <Clock className="w-4 h-4 text-amber-400" />
+                      <span className="text-white font-bold">
+                        {formatTime(entry.duration)}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* Footer */}
+        <div className="mt-6 pt-4 border-t border-white/20">
+          <p className="text-center text-white/60 text-sm">
+            {entries.length > 0
+              ? `Top ${entries.length} người chơi`
+              : "Chưa có dữ liệu"}
+          </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
