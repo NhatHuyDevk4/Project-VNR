@@ -15,8 +15,8 @@ export const CONTENT_ROUTES = [
     number: "03",
   },
   {
-    name: "Nguyên tắc",
-    path: "/contents/nguyen-tac",
+    name: "Bản chất giai cấp công nhân của Nhà nước và nguyên lý Nhà nước của nhân dân",
+    path: "/contents/Ban-chat-nha-nuoc",
     number: "04",
   },
 ] as const;
