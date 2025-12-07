@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { MessageSquare, Bot, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChatMessage } from "@/lib/idb/chatIdb";
@@ -65,24 +65,40 @@ export default function ChatMessages({
                 <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />
               </div>
             )}
-            <div className="flex flex-col max-w-[85%] sm:max-w-[80%]">
+            <div className="flex flex-col max-w-[90%] sm:max-w-[85%] min-w-0">
               <div
                 className={cn(
-                  "rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 shadow-lg backdrop-blur-sm",
+                  "rounded-2xl px-3.5 sm:px-4 py-3 sm:py-3.5 shadow-lg backdrop-blur-sm overflow-hidden",
                   isUser
                     ? "bg-gradient-to-br from-amber-600 to-amber-700 text-white rounded-br-md"
-                    : "bg-white/90 text-gray-800 rounded-bl-md border border-amber-700/20"
+                    : "bg-white/95 text-gray-800 rounded-bl-md border border-amber-700/20"
                 )}
               >
                 {isUser ? (
-                  <p className="text-sm whitespace-pre-wrap wrap-break-word leading-relaxed">
+                  <p className="text-sm whitespace-pre-wrap break-words leading-relaxed">
                     {message.content}
                   </p>
                 ) : (
-                  <div className="text-sm prose prose-sm max-w-none prose-p:my-2 prose-ul:my-2 prose-ol:my-2 prose-li:my-0.5 prose-headings:my-2 prose-pre:my-2 prose-blockquote:my-2 prose-strong:text-amber-700 prose-headings:text-amber-800">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                      {message.content}
-                    </ReactMarkdown>
+                  <div className="text-sm w-full overflow-hidden">
+                    <div
+                      className="prose prose-sm max-w-none
+                      prose-p:my-1 prose-p:leading-relaxed prose-p:text-gray-800 prose-p:break-words
+                      prose-ul:my-1.5 prose-ul:pl-4 prose-li:my-0.5 prose-li:text-gray-800
+                      prose-ol:my-1.5 prose-ol:pl-4
+                      prose-headings:my-1.5 prose-headings:font-semibold prose-headings:text-amber-800
+                      prose-h1:text-base prose-h2:text-sm prose-h3:text-sm
+                      prose-strong:text-amber-700 prose-strong:font-semibold
+                      prose-blockquote:my-1.5 prose-blockquote:border-l-4 prose-blockquote:border-amber-500 prose-blockquote:pl-3 prose-blockquote:italic prose-blockquote:text-gray-700
+                      prose-code:text-amber-700 prose-code:bg-amber-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs
+                      prose-pre:my-1.5 prose-pre:bg-gray-100 prose-pre:p-2 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:text-xs
+                      prose-a:text-amber-600 prose-a:underline hover:prose-a:text-amber-700
+                      [&>*:first-child]:mt-0 [&>*:last-child]:mb-0
+                      [&_p]:break-words [&_li]:break-words [&_strong]:break-words [&_a]:break-all"
+                    >
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {message.content}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                 )}
               </div>

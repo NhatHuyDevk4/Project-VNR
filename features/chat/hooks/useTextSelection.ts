@@ -31,12 +31,17 @@ export function useTextSelection(
 
   useEffect(() => {
     if (!isEnabled) {
+      console.log("Text selection is disabled");
       return;
     }
+
+    console.log("Text selection hook initialized");
 
     const handleSelection = () => {
       const selection = window.getSelection();
       const text = selection?.toString().trim();
+
+      console.log("Selection detected:", text);
 
       if (text && text.length > 0) {
         setSelectedText(text);
@@ -45,10 +50,12 @@ export function useTextSelection(
         const rect = range?.getBoundingClientRect();
 
         if (rect) {
-          setPosition({
+          const pos = {
             x: rect.left + rect.width / 2,
             y: rect.bottom + window.scrollY + 10,
-          });
+          };
+          console.log("Setting position:", pos);
+          setPosition(pos);
           setIsVisible(true);
 
           // Call callback if provided

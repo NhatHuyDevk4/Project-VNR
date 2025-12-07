@@ -49,8 +49,8 @@ export default function ChatUI() {
   }
 
   const chatWidth = isHistoryOpen
-    ? "w-full sm:w-[700px]"
-    : "w-full sm:w-[420px]";
+    ? "w-full sm:w-[750px] lg:w-[850px]"
+    : "w-full sm:w-[480px] lg:w-[520px]";
 
   return (
     <>
@@ -65,10 +65,10 @@ export default function ChatUI() {
           // Desktop: positioned bottom-right
           "sm:bottom-[88px] sm:right-6",
           chatWidth,
-          "sm:h-[650px] h-full"
+          "sm:h-[700px] lg:h-[750px] h-full"
         )}
       >
-        <div className="bg-white/95 backdrop-blur-xl sm:rounded-3xl shadow-2xl border border-amber-700/30 flex flex-col h-full overflow-hidden">
+        <div className="bg-white/95 backdrop-blur-xl sm:rounded-3xl shadow-2xl border border-amber-700/30 flex flex-col h-full overflow-hidden max-h-screen sm:max-h-[700px] lg:max-h-[750px]">
           <ChatHeader
             title={currentSession?.title || "Trợ lý AI"}
             isHistoryOpen={isHistoryOpen}

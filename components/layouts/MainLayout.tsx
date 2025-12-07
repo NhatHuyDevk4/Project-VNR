@@ -5,6 +5,7 @@ import { ReactNode } from "react";
 import NavigateButton from "./NavigateButton";
 import MusicPlay from "../MusicPlay";
 import { ChatProvider } from "@/providers/ChatProvider";
+import { ChatUI, TextExplainerUI } from "@/features/chat";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -37,6 +38,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
         {/* Content Layer */}
         <div className="relative z-10">{children}</div>
+        <ChatUI />
+        <TextExplainerUI />
       </div>
     </ChatProvider>
   );
