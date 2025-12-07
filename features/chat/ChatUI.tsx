@@ -35,36 +35,42 @@ export default function ChatUI() {
 
   if (!isChatOpen) {
     return (
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3">
         <button
           onClick={toggleChat}
-          className="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110"
+          className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white rounded-full shadow-2xl shadow-amber-600/30 flex items-center justify-center transition-all hover:scale-110 backdrop-blur-sm"
           aria-label="Open chat"
         >
-          <MessageSquare className="w-6 h-6" />
+          <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
         <AutoSendToggle enabled={isAutoSendEnabled} onToggle={toggleAutoSend} />
       </div>
     );
   }
 
-  const chatWidth = isHistoryOpen ? "w-[700px]" : "w-[400px]";
+  const chatWidth = isHistoryOpen
+    ? "w-full sm:w-[700px]"
+    : "w-full sm:w-[420px]";
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3">
         <AutoSendToggle enabled={isAutoSendEnabled} onToggle={toggleAutoSend} />
       </div>
       <div
         className={cn(
-          "fixed bottom-[88px] right-6 z-50 transition-all duration-300",
+          "fixed z-50 transition-all duration-300",
+          // Mobile: full screen
+          "inset-0 sm:inset-auto",
+          // Desktop: positioned bottom-right
+          "sm:bottom-[88px] sm:right-6",
           chatWidth,
-          "h-[600px]"
+          "sm:h-[650px] h-full"
         )}
       >
-        <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col h-full overflow-hidden">
+        <div className="bg-white/95 backdrop-blur-xl sm:rounded-3xl shadow-2xl border border-amber-700/30 flex flex-col h-full overflow-hidden">
           <ChatHeader
-            title={currentSession?.title || "Chat Assistant"}
+            title={currentSession?.title || "Trợ lý AI"}
             isHistoryOpen={isHistoryOpen}
             onToggleHistory={() => setIsHistoryOpen(!isHistoryOpen)}
             onNewChat={handleNewChat}

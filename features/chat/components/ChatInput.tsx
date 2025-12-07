@@ -41,7 +41,7 @@ export default function ChatInput({
   };
 
   return (
-    <div className="border-t border-gray-200 bg-white p-3">
+    <div className="border-t border-amber-700/20 bg-white/50 backdrop-blur-sm p-3 sm:p-4">
       <div className="flex items-end gap-2">
         <textarea
           ref={textareaRef}
@@ -52,20 +52,20 @@ export default function ChatInput({
           disabled={isLoading}
           rows={1}
           className={cn(
-            "flex-1 resize-none rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-800",
-            "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:border-blue-500",
+            "flex-1 resize-none rounded-xl border border-amber-700/20 bg-white/80 backdrop-blur-sm px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-gray-800",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:border-amber-500",
             "disabled:cursor-not-allowed disabled:opacity-50",
-            "placeholder:text-gray-400"
+            "placeholder:text-gray-400 shadow-sm"
           )}
-          style={{ minHeight: "36px", maxHeight: "100px" }}
+          style={{ minHeight: "40px", maxHeight: "120px" }}
         />
         <Button
           onClick={onSend}
           disabled={!value.trim() || isLoading}
           size="icon"
-          className="shrink-0 bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-md"
+          className="shrink-0 h-10 w-10 sm:h-11 sm:w-11 bg-gradient-to-br from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white border-0 shadow-lg shadow-amber-600/30 transition-all hover:scale-105"
         >
-          <Send className="w-4 h-4" />
+          <Send className="w-4 h-4 sm:w-5 sm:h-5" />
         </Button>
       </div>
     </div>
