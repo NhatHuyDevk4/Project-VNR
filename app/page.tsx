@@ -1,5 +1,8 @@
-import { redirect } from 'next/navigation';
+import MainLayout from "@/components/layouts/MainLayout";
+import Homepage from "@/features/home/Homepage";
 
 export default function Home() {
-  redirect('/game');
+  return (
+      <Homepage />
+  );
 }

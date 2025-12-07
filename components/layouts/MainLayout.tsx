@@ -1,0 +1,40 @@
+import Image from "next/image";
+import { ReactNode } from "react";
+import NavigateButton from "./NavigateButton";
+import MusicPlay from "../MusicPlay";
+
+interface MainLayoutProps {
+  children: ReactNode;
+}
+
+const MainLayout = ({ children }: MainLayoutProps) => {
+  return (
+    <div className="relative min-h-screen w-full overflow-hidden">
+      {/* Background Image Layer */}
+      <div className="fixed inset-0 z-0">
+        <Image
+          src="/images/bg-1.png"
+          alt="Background"
+          fill
+          priority
+          quality={90}
+          className="object-cover"
+          sizes="100vw"
+        />
+        {/* Optional: Add overlay for better content readability */}
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* Navigation Sidebar */}
+      <NavigateButton />
+
+      {/* Music Player */}
+      <MusicPlay />
+
+      {/* Content Layer */}
+      <div className="relative z-10">{children}</div>
+    </div>
+  );
+};
+
+export default MainLayout;
