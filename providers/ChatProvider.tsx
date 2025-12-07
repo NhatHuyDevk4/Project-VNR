@@ -46,19 +46,15 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
 
-  // Load sessions on mount
-  useEffect(() => {
-    loadSessions();
-  }, []);
-
-  // Load messages when session changes
-  useEffect(() => {
-    if (currentSessionId) {
-      loadMessages(currentSessionId);
-    } else {
-      setMessages([]);
+  // Define callbacks first
+  const loadMessages = useCallback(async (sessionId: string) => {
+    try {
+      const sessionMessages = await getMessages(sessionId);
+      setMessages(sessionMessages);
+    } catch (error) {
+      console.error("Failed to load messages:", error);
     }
-  }, [currentSessionId]);
+  }, []);
 
   const loadSessions = useCallback(async () => {
     try {
@@ -74,14 +70,20 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     }
   }, [currentSessionId]);
 
-  const loadMessages = useCallback(async (sessionId: string) => {
-    try {
-      const sessionMessages = await getMessages(sessionId);
-      setMessages(sessionMessages);
-    } catch (error) {
-      console.error("Failed to load messages:", error);
-    }
+  // Load sessions on mount
+  useEffect(() => {
+    loadSessions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Load messages when session changes
+  useEffect(() => {
+    if (currentSessionId) {
+      loadMessages(currentSessionId);
+    } else {
+      setMessages([]);
+    }
+  }, [currentSessionId, loadMessages]);
 
   const createNewSession = useCallback(
     async (firstMessage: string): Promise<string> => {
@@ -147,8 +149,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            sessionId,
-            message: content.trim(),
+            question: content.trim(),
             history: messages.map((m) => ({
               role: m.role,
               content: m.content,
@@ -166,7 +167,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         const assistantMessage: ChatMessage = {
           sessionId,
           role: "assistant",
-          content: data.response,
+          content: data.answer || data.response,
           createdAt: new Date().toISOString(),
         };
         await saveMessage(assistantMessage);

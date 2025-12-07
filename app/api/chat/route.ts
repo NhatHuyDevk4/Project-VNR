@@ -1,108 +1,131 @@
-import { NextRequest, NextResponse } from "next/server";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { getRetriever } from "@/utils/retriever";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { embedder } from "@/lib/embed";
+import { supabase } from "@/lib/supabase";
+import { NextResponse } from "next/server";
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
+export function buildPrompt(
+  context: string,
+  history: Array<{ role: string; content: string }>,
+  question: string
+) {
+  const his = history
+    ?.map((m) => `${m.role === "user" ? "Người dùng" : "Trợ lý"}: ${m.content}`)
+    .join("\n");
 
-interface Message {
-  role: "user" | "assistant";
-  content: string;
+  return `Vai trò:
+Bạn là **trợ lý ảo thông minh, thân thiện và học thuật**,
+chuyên giải thích các khái niệm, tư tưởng, giá trị trong **Tư tưởng Hồ Chí Minh**.
+Bạn có khả năng diễn đạt tự nhiên, mạch lạc và giàu cảm xúc, giúp sinh viên hiểu sâu vấn đề.
+
+Phong cách:
+- Viết bằng **tiếng Việt chuẩn, học thuật nhưng dễ hiểu**.
+- Có thể **nhấn mạnh** bằng cách sử dụng các dấu như **in đậm**, *nghiêng*, hoặc liệt kê rõ ràng.
+- Nếu nội dung dài, hãy chia nhỏ từng ý, đảm bảo đủ và dễ theo dõi.
+- Giữ **tôn trọng và thiện chí**, ngay cả khi người dùng hỏi ngoài lề.
+
+Quy tắc nội dung:
+1. Luôn dựa vào **CONTEXT** được cung cấp để trả lời.  
+2. Nếu câu hỏi **liên quan** đến Tư tưởng Hồ Chí Minh:
+   - Giải thích kỹ, có ví dụ minh họa.
+   - Kết nối câu trả lời với thực tiễn (nếu phù hợp).
+3. Nếu câu hỏi **ngoài phạm vi**, hãy:
+   - Trả lời ngắn gọn, lịch sự (có thể 1–2 câu thú vị hoặc định hướng học tập),
+   - Sau đó gợi ý quay lại đúng chủ đề, ví dụ:
+     > "Câu hỏi này khá thú vị! Tuy nhiên, lĩnh vực đó nằm ngoài phạm vi Tư tưởng Hồ Chí Minh. Bạn muốn mình giải thích về khía cạnh tư tưởng, đạo đức, văn hóa tương ứng không?"
+
+Dữ liệu cuộc trò chuyện trước:
+${his ? his + "\n" : "(chưa có)"}
+
+CONTEXT từ tài liệu:
+${context}
+
+CÂU HỎI MỚI:
+${question}`.trim();
 }
 
-interface ChatRequest {
-  sessionId: string;
-  message: string;
-  history?: Message[];
+async function callGeminiWithRetry(url: string, payload: any, retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (res.ok) return await res.json();
+
+    const text = await res.text();
+    console.error(`Gemini API error (attempt ${attempt}):`, text);
+
+    if (res.status === 429 && attempt < retries) {
+      const delay = 2000 * attempt;
+      console.log(`Waiting ${delay / 1000}s before retry...`);
+      await new Promise((r) => setTimeout(r, delay));
+      continue;
+    }
+
+    throw new Error(`Gemini API failed: ${text}`);
+  }
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(req: Request) {
   try {
-    const body: ChatRequest = await request.json();
-    const { message, history = [] } = body;
+    const { question, history = [] } = await req.json();
 
-    if (!message?.trim()) {
+    if (!question?.trim()) {
+      return NextResponse.json({ error: "Thiếu câu hỏi!" }, { status: 400 });
+    }
+
+    // Lấy embedding cho câu hỏi
+    const questionEmbedding = await embedder.embedQuery(question);
+
+    // Tìm context trong Supabase (CHÚ Ý: stringify embedding)
+    const { data: matches, error } = await supabase.rpc("match_documents", {
+      query_embedding: JSON.stringify(questionEmbedding),
+      match_count: 5,
+    });
+
+    if (error) {
+      console.error("Supabase RPC error:", error);
       return NextResponse.json(
-        { error: "Message is required" },
-        { status: 400 }
+        { error: "Lỗi khi truy vấn cơ sở dữ liệu" },
+        { status: 500 }
       );
     }
 
-    // Get relevant context from vector store
-    let context = "";
-    try {
-      const retriever = await getRetriever();
-      const docs = await retriever.invoke(message);
-
-      if (docs && docs.length > 0) {
-        context = docs
-          .map((doc, idx) => `[Tài liệu ${idx + 1}]:\n${doc.pageContent}`)
-          .join("\n\n");
-      }
-    } catch (error) {
-      console.error("Error retrieving context:", error);
+    if (!matches?.length) {
+      return NextResponse.json({
+        answer:
+          "Xin lỗi, tôi không tìm thấy thông tin phù hợp trong tài liệu về Tư tưởng Hồ Chí Minh.",
+      });
     }
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    // Ghép context
+    const context = matches
+      .map((m: { content: string }) => (m?.content ?? "").trim())
+      .filter(Boolean)
+      .join("\n---\n");
 
-    // System prompt
-    const systemPrompt = `Bạn là một trợ lý AI thông minh và hữu ích. Nhiệm vụ của bạn là trả lời câu hỏi của người dùng một cách chính xác, chi tiết và dễ hiểu.
+    // Build prompt gộp (system + user)
+    const prompt = buildPrompt(context, history, question);
 
-${
-  context
-    ? `Dưới đây là một số tài liệu tham khảo có thể hữu ích:\n\n${context}\n\n`
-    : ""
-}
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GOOGLE_API_KEY}`;
 
-Hãy trả lời câu hỏi dựa trên thông tin được cung cấp (nếu có) và kiến thức của bạn. Nếu bạn không chắc chắn về câu trả lời, hãy thành thật nói rằng bạn không biết.`;
-
-    // Build chat history
-    const chatHistory = history.map((msg) => ({
-      role: msg.role === "user" ? "user" : "model",
-      parts: [{ text: msg.content }],
-    }));
-
-    const chat = model.startChat({
-      history: [
-        {
-          role: "user",
-          parts: [{ text: systemPrompt }],
-        },
-        {
-          role: "model",
-          parts: [
-            {
-              text: "Tôi hiểu. Tôi sẽ trả lời câu hỏi của bạn một cách chính xác và hữu ích nhất có thể.",
-            },
-          ],
-        },
-        ...chatHistory,
-      ],
-      generationConfig: {
-        maxOutputTokens: 2048,
-        temperature: 0.7,
-        topP: 0.8,
-        topK: 40,
-      },
+    const json = await callGeminiWithRetry(endpoint, {
+      contents: [{ role: "user", parts: [{ text: prompt }] }],
     });
 
-    // Send message and get response
-    const result = await chat.sendMessage(message);
-    const response = result.response;
-    const text = response.text();
+    const answer =
+      json?.candidates?.[0]?.content?.parts
+        ?.map((p: { text: string }) => p.text)
+        .join("\n")
+        .trim() || "Xin lỗi, tôi chưa có dữ liệu phù hợp để trả lời.";
 
     return NextResponse.json({
-      response: text,
-      sessionId: body.sessionId,
+      answer,
+      contextSnippet: context.slice(0, 500),
     });
-  } catch (error) {
-    console.error("Chat API error:", error);
-
-    return NextResponse.json(
-      {
-        error: "Đã có lỗi xảy ra khi xử lý yêu cầu",
-        details: error instanceof Error ? error.message : "Unknown error",
-      },
-      { status: 500 }
-    );
+  } catch (e) {
+    console.error("Server error:", e);
+    return NextResponse.json({ error: "Lỗi máy chủ nội bộ" }, { status: 500 });
   }
 }

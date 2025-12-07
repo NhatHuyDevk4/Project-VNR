@@ -4,6 +4,8 @@ import React, { useRef, useEffect } from "react";
 import { MessageSquare, Bot, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChatMessage } from "@/lib/idb/chatIdb";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface ChatMessagesProps {
   messages: ChatMessage[];
@@ -72,9 +74,17 @@ export default function ChatMessages({
                     : "bg-white text-gray-800 rounded-bl-sm border border-gray-200"
                 )}
               >
-                <p className="text-sm whitespace-pre-wrap wrap-break-word leading-relaxed">
-                  {message.content}
-                </p>
+                {isUser ? (
+                  <p className="text-sm whitespace-pre-wrap wrap-break-word leading-relaxed">
+                    {message.content}
+                  </p>
+                ) : (
+                  <div className="text-sm prose prose-sm max-w-none prose-p:my-2 prose-ul:my-2 prose-ol:my-2 prose-li:my-0.5 prose-headings:my-2 prose-pre:my-2 prose-blockquote:my-2">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {message.content}
+                    </ReactMarkdown>
+                  </div>
+                )}
               </div>
               <span
                 className={cn(
