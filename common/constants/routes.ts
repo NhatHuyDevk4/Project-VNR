@@ -19,6 +19,16 @@ export const CONTENT_ROUTES = [
     path: "/contents/Ban-chat-nha-nuoc",
     number: "04",
   },
+   {
+    name: "Nhà nước do nhân dân('Dân làm chủ') và Nhà nước vì nhân dân",
+    path: "/contents/Ban-chat-nha-nuoc",
+    number: "05",
+  },
+  {
+    name: "Xây dựng Nhà nước pháp quyền xã hội chủ nghĩa",
+    path: "/contents/Xay-dung-Nha-nuoc-phap-quyen",
+    number: "06",
+  },
 ] as const;
 
 export type ContentRoute = (typeof CONTENT_ROUTES)[number];
