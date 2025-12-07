@@ -1,17 +1,25 @@
+import AnimatedTitle from "./components/AnimatedTitle";
+import ScrollDownButton from "@/features/home/components/ScrollDownButton";
+import TimelineSection from "./components/TimelineSection";
+
 const Homepage = () => {
   return (
-    <div className="container mx-auto px-6 py-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-6xl font-bold text-white mb-6 text-center">
-          Chào mừng! 
-        </h1>
+    <div className="min-h-screen">
+      {/* Hero Section with Animated Title */}
+      <div className="min-h-screen flex items-center justify-center px-6 relative">
+        <div className="max-w-6xl w-full">
+          {/* Animated Title */}
+          <AnimatedTitle />
+        </div>
 
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-          <p className="text-white/90 text-xl leading-relaxed text-center">
-            Chọn một mục từ menu phía trên để bắt đầu
-          </p>
+        {/* Scroll Down Button - Fixed at bottom of hero section */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <ScrollDownButton />
         </div>
       </div>
+
+      {/* Timeline Section */}
+      <TimelineSection />
     </div>
   );
 };
