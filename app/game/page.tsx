@@ -110,6 +110,7 @@ function GameContent() {
             />
             <Stage3PuzzleGame
               collectedPieces={state.collectedPieces}
+              imageId={state.selectedImageId}
               onComplete={completeGame}
             />
           </>

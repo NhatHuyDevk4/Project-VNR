@@ -25,10 +25,11 @@ function DroppableSlot({ id, children }: { id: string; children: React.ReactNode
 
 interface Stage3Props {
   collectedPieces: number[];
+  imageId: number;
   onComplete: () => void;
 }
 
-export default function Stage3PuzzleGame({ collectedPieces, onComplete }: Stage3Props) {
+export default function Stage3PuzzleGame({ collectedPieces, imageId, onComplete }: Stage3Props) {
   const [pieces, setPieces] = useState<PuzzlePieceType[]>([]);
   const [placedPieces, setPlacedPieces] = useState<Set<number>>(new Set());
   const [activePiece, setActivePiece] = useState<PuzzlePieceType | null>(null);
@@ -91,7 +92,7 @@ export default function Stage3PuzzleGame({ collectedPieces, onComplete }: Stage3
     }
   };
 
-  const imageUrl = '/image/anh1.jpg';
+  const imageUrl = `/image/anh${imageId}.jpg`;
 
   return (
     <div className="min-h-screen revolutionary-gradient p-4 overflow-hidden">

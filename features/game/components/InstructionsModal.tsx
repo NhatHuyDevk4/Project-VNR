@@ -64,13 +64,13 @@ export default function InstructionsModal({ isOpen, onClose }: InstructionsModal
                   <div className="flex items-center gap-3 mb-3">
                     <CheckCircle className="w-8 h-8 text-[#DC143C]" />
                     <h3 className="text-xl font-bold text-[#DC143C]">
-                      Màn 1: Trắc nghiệm
+                      Màn 1: Trắc nghiệm (9 mảnh ghép)
                     </h3>
                   </div>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-start gap-2">
                       <span className="text-[#FFD700] font-bold">•</span>
-                      <span>Trả lời 9 câu hỏi trắc nghiệm về tư tưởng Hồ Chí Minh</span>
+                      <span>Trả lời các câu hỏi trắc nghiệm về tư tưởng Hồ Chí Minh</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-[#FFD700] font-bold">•</span>
@@ -92,13 +92,13 @@ export default function InstructionsModal({ isOpen, onClose }: InstructionsModal
                   <div className="flex items-center gap-3 mb-3">
                     <Edit3 className="w-8 h-8 text-[#DC143C]" />
                     <h3 className="text-xl font-bold text-[#DC143C]">
-                      Màn 2: Điền từ
+                      Màn 2: Điền từ (9 mảnh ghép)
                     </h3>
                   </div>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-start gap-2">
                       <span className="text-[#FFD700] font-bold">•</span>
-                      <span>Hoàn thành 9 câu hỏi điền từ vào chỗ trống</span>
+                      <span>Hoàn thành các câu hỏi điền từ vào chỗ trống</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-[#FFD700] font-bold">•</span>

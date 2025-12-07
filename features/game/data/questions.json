@@ -139,7 +139,7 @@
   },
   {
     "id": 22,
-    "content": "Cuộc Tổng tuyển cử đầu tiên diễn ra ngày …",
+    "content": "Cuộc Tổng tuyển cử đầu tiên diễn ra ngày …(dd-mm-yy)",
     "type": "text",
     "correct_answer": "6-1-1946"
   },

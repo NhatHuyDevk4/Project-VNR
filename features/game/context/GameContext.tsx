@@ -17,7 +17,7 @@ interface GameContextType {
 }
 
 type GameAction =
-  | { type: 'START_GAME'; payload: { questions: Question[] } }
+  | { type: 'START_GAME'; payload: { questions: Question[]; imageId: number } }
   | { type: 'ANSWER_CORRECT' }
   | { type: 'ANSWER_WRONG' }
   | { type: 'NEXT_QUESTION' }
@@ -39,6 +39,7 @@ const initialState: GameState = {
   timer: 0,
   isPaused: false,
   isTimerRunning: false,
+  selectedImageId: 1,
 };
 
 function gameReducer(state: GameState, action: GameAction): GameState {
@@ -48,6 +49,7 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         ...initialState,
         stage: 1,
         selectedQuestions: action.payload.questions,
+        selectedImageId: action.payload.imageId,
         isTimerRunning: true,
       };
 
@@ -159,7 +161,10 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     const textQuestions = selectRandomQuestions(15, 'text', usedIds);
     const allQuestions = [...mcQuestions, ...textQuestions];
 
-    dispatch({ type: 'START_GAME', payload: { questions: allQuestions } });
+    // Random select image from 1-16
+    const randomImageId = Math.floor(Math.random() * 16) + 1;
+
+    dispatch({ type: 'START_GAME', payload: { questions: allQuestions, imageId: randomImageId } });
   }, [selectRandomQuestions]);
 
   const answerQuestion = useCallback((answer: string): FeedbackType => {
