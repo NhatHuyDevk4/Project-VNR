@@ -100,7 +100,7 @@ const TypewriterText = ({
 
 const AnimatedTitle = () => {
   const text =
-    "Chương IV TƯ TƯỞNG HỒ CHÍ MINH VỀ ĐẢNG CỘNG SẢN VIỆT NAM VÀ NHÀ NƯỚC CỦA NHÂN DÂN, DO NHÂN DÂN, VÌ NHÂN DÂN";
+    "Chương IV: TƯ TƯỞNG HỒ CHÍ MINH VỀ ĐẢNG CỘNG SẢN VIỆT NAM VÀ NHÀ NƯỚC CỦA NHÂN DÂN, DO NHÂN DÂN, VÌ NHÂN DÂN";
   const titleRef = useRef<HTMLHeadingElement>(null);
   const charsRef = useRef<(HTMLSpanElement | null)[]>([]);
   const underlineContainerRef = useRef<HTMLDivElement>(null);
