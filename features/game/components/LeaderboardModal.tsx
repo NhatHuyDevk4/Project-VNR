@@ -3,17 +3,7 @@
 import { useState, useEffect } from "react";
 import { X, Trophy, Clock, Medal, Award, TrendingUp } from "lucide-react";
 import { getCurrentPlayer } from "@/lib/idb/playerIdb";
-
-interface LeaderboardEntry {
-  device_id: string;
-  name: string;
-  score: number;
-  duration: number;
-  correct_answers: number;
-  wrong_answers: number;
-  created_at?: string;
-  updated_at?: string;
-}
+import { getTopPlayers, type LeaderboardEntry } from "@/actions/gameActions";
 
 interface LeaderboardModalProps {
   isOpen: boolean;
@@ -47,14 +37,8 @@ export default function LeaderboardModal({
         setCurrentDeviceId(player.deviceId);
       }
 
-      // Get top players from API
-      const response = await fetch("/api/game?limit=100");
-      if (!response.ok) {
-        console.error("Failed to fetch leaderboard");
-        return;
-      }
-
-      const result = await response.json();
+      // Get top players from Server Action
+      const result = await getTopPlayers(100);
       if (result.success && result.data) {
         setEntries(result.data);
 

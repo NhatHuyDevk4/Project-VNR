@@ -74,24 +74,25 @@ AS $$
 DECLARE
   v_new_score INT;
   v_existing_score INT;
+  v_existing_duration INT;
   v_is_new_record BOOLEAN := false;
 BEGIN
   -- Calculate new score
   v_new_score := calculate_game_score(p_correct, p_wrong, p_duration);
   
   -- Check if entry exists
-  SELECT leaderboard.score INTO v_existing_score
-  FROM public.leaderboard
-  WHERE leaderboard.device_id = p_device_id;
+  SELECT l.score, l.duration INTO v_existing_score, v_existing_duration
+  FROM public.leaderboard l
+  WHERE l.device_id = p_device_id;
   
   IF v_existing_score IS NULL THEN
     -- New entry
     INSERT INTO public.leaderboard (device_id, name, score, duration, correct_answers, wrong_answers)
     VALUES (p_device_id, p_name, v_new_score, p_duration, p_correct, p_wrong);
     v_is_new_record := true;
-  ELSIF v_new_score > v_existing_score OR (v_new_score = v_existing_score AND p_duration < (SELECT duration FROM public.leaderboard WHERE leaderboard.device_id = p_device_id)) THEN
+  ELSIF v_new_score > v_existing_score OR (v_new_score = v_existing_score AND p_duration < v_existing_duration) THEN
     -- Better score or same score but faster time
-    UPDATE public.leaderboard
+    UPDATE public.leaderboard l
     SET 
       name = p_name,
       score = v_new_score,
@@ -99,7 +100,7 @@ BEGIN
       correct_answers = p_correct,
       wrong_answers = p_wrong,
       updated_at = NOW()
-    WHERE leaderboard.device_id = p_device_id;
+    WHERE l.device_id = p_device_id;
     v_is_new_record := true;
   END IF;
   

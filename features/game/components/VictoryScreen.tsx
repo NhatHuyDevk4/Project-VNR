@@ -12,15 +12,7 @@ import {
 } from "lucide-react";
 import { useTimer } from "../hooks/useTimer";
 import { getCurrentPlayer } from "@/lib/idb/playerIdb";
-
-// Calculate score locally
-function calculateScore(
-  correctAnswers: number,
-  wrongAnswers: number,
-  duration: number
-): number {
-  return correctAnswers * 100 - wrongAnswers * 10 - Math.floor(duration / 10);
-}
+import { submitGameScore, calculateScore } from "@/actions/gameActions";
 
 interface VictoryScreenProps {
   correctAnswers: number;
@@ -46,8 +38,11 @@ export default function VictoryScreen({
 
   useEffect(() => {
     // Calculate score
-    const score = calculateScore(correctAnswers, wrongAnswers, time);
-    setCalculatedScore(score);
+    const calcScore = async () => {
+      const score = await calculateScore(correctAnswers, wrongAnswers, time);
+      setCalculatedScore(score);
+    };
+    calcScore();
 
     // Auto-submit score
     submitScoreToLeaderboard();
@@ -80,31 +75,20 @@ export default function VictoryScreen({
         return;
       }
 
-      const response = await fetch("/api/game", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          deviceId: player.deviceId,
-          name: player.name,
-          correctAnswers,
-          wrongAnswers,
-          duration: time,
-        }),
-      });
+      const result = await submitGameScore(
+        player.deviceId,
+        player.name,
+        correctAnswers,
+        wrongAnswers,
+        time
+      );
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        setError(errorData.error || "Không thể lưu điểm");
-        return;
-      }
-
-      const result = await response.json();
       if (result.success && result.data) {
         setSaved(true);
         setIsNewRecord(result.data.is_new_record);
         setError("");
       } else {
-        setError("Không thể lưu điểm");
+        setError(result.error || "Không thể lưu điểm");
       }
     } catch (err) {
       console.error("Error submitting score:", err);

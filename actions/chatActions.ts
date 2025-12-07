@@ -1,11 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+"use server";
+
 import { embedder } from "@/lib/embed";
 import { supabase } from "@/lib/supabase";
-import { NextResponse } from "next/server";
 
-export function buildPrompt(
+interface ChatHistory {
+  role: string;
+  content: string;
+}
+
+function buildPrompt(
   context: string,
-  history: Array<{ role: string; content: string }>,
+  history: ChatHistory[],
   question: string
 ) {
   const his = history
@@ -43,7 +48,11 @@ CÂU HỎI MỚI:
 ${question}`.trim();
 }
 
-async function callGeminiWithRetry(url: string, payload: any, retries = 3) {
+async function callGeminiWithRetry(
+  url: string,
+  payload: Record<string, unknown>,
+  retries = 3
+) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     const res = await fetch(url, {
       method: "POST",
@@ -67,18 +76,23 @@ async function callGeminiWithRetry(url: string, payload: any, retries = 3) {
   }
 }
 
-export async function POST(req: Request) {
+/**
+ * Send chat message and get AI response
+ * Server Action - không expose endpoint
+ */
+export async function sendChatMessage(
+  question: string,
+  history: ChatHistory[] = []
+): Promise<{ answer?: string; error?: string; contextSnippet?: string }> {
   try {
-    const { question, history = [] } = await req.json();
-
     if (!question?.trim()) {
-      return NextResponse.json({ error: "Thiếu câu hỏi!" }, { status: 400 });
+      return { error: "Thiếu câu hỏi!" };
     }
 
     // Lấy embedding cho câu hỏi
     const questionEmbedding = await embedder.embedQuery(question);
 
-    // Tìm context trong Supabase (CHÚ Ý: stringify embedding)
+    // Tìm context trong Supabase
     const { data: matches, error } = await supabase.rpc("match_documents", {
       query_embedding: JSON.stringify(questionEmbedding),
       match_count: 5,
@@ -86,17 +100,14 @@ export async function POST(req: Request) {
 
     if (error) {
       console.error("Supabase RPC error:", error);
-      return NextResponse.json(
-        { error: "Lỗi khi truy vấn cơ sở dữ liệu" },
-        { status: 500 }
-      );
+      return { error: "Lỗi khi truy vấn cơ sở dữ liệu" };
     }
 
     if (!matches?.length) {
-      return NextResponse.json({
+      return {
         answer:
           "Xin lỗi, tôi không tìm thấy thông tin phù hợp trong tài liệu về Tư tưởng Hồ Chí Minh.",
-      });
+      };
     }
 
     // Ghép context
@@ -105,7 +116,7 @@ export async function POST(req: Request) {
       .filter(Boolean)
       .join("\n---\n");
 
-    // Build prompt gộp (system + user)
+    // Build prompt
     const prompt = buildPrompt(context, history, question);
 
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GOOGLE_API_KEY}`;
@@ -120,12 +131,12 @@ export async function POST(req: Request) {
         .join("\n")
         .trim() || "Xin lỗi, tôi chưa có dữ liệu phù hợp để trả lời.";
 
-    return NextResponse.json({
+    return {
       answer,
       contextSnippet: context.slice(0, 500),
-    });
+    };
   } catch (e) {
     console.error("Server error:", e);
-    return NextResponse.json({ error: "Lỗi máy chủ nội bộ" }, { status: 500 });
+    return { error: "Lỗi máy chủ nội bộ" };
   }
 }

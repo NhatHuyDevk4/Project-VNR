@@ -122,14 +122,6 @@ export default function PlayerNameModal({
               {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
             </div>
 
-            {/* Device ID Info */}
-            <div className="p-3 bg-white/10 rounded-lg border border-white/20">
-              <p className="text-xs text-white/60 mb-1">Device ID của bạn:</p>
-              <p className="text-xs text-amber-300 font-mono break-all">
-                {deviceId}
-              </p>
-            </div>
-
             {/* Submit Button */}
             <Button
               type="submit"
