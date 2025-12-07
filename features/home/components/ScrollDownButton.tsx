@@ -37,11 +37,7 @@ const ScrollDownButton = () => {
   };
 
   return (
-    <div
-      ref={buttonRef}
-      onClick={handleClick}
-      className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 cursor-pointer group"
-    >
+    <div ref={buttonRef} onClick={handleClick} className="cursor-pointer group">
       {/* Glow effect */}
       <div className="absolute inset-0 bg-amber-500/30 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 

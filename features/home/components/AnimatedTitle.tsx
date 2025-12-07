@@ -139,8 +139,8 @@ const AnimatedTitle = () => {
             y: 0,
             scale: 1,
             rotationX: 0,
-            duration: 0.6,
-            stagger: 0.1,
+            duration: 0.2, // 0.6 / 3 = 0.2
+            stagger: 0.033, // 0.1 / 3 ≈ 0.033
             ease: "back.out(1.7)",
             onComplete: () => {
               // Start wave animation after entrance
@@ -154,7 +154,7 @@ const AnimatedTitle = () => {
                   repeat: -1,
                   yoyo: true,
                   ease: "linear",
-                  delay: index * 0.1,
+                  delay: index * 0.033, // Also speed up wave delay
                   keyframes: [
                     { color: "#2D1810" },
                     { color: "#8B4513" },
@@ -172,7 +172,7 @@ const AnimatedTitle = () => {
                   repeat: -1,
                   yoyo: true,
                   ease: "power1.inOut",
-                  delay: index * 0.05,
+                  delay: index * 0.017, // 0.05 / 3 ≈ 0.017
                 });
               });
             },

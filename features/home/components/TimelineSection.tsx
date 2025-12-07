@@ -1,8 +1,7 @@
 "use client";
 
 import { posts } from "@/common/constants/posts";
-import { TimelineItem } from "../home/components/TimelineItem";
-import Link from "next/link";
+import { TimelineItem } from "@/features/home/components/TimelineItem";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,7 +12,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const TimelinePage = () => {
+const TimelineSection = () => {
   const lineRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -22,24 +21,33 @@ const TimelinePage = () => {
     if (headerRef.current) {
       gsap.fromTo(
         headerRef.current,
-        { opacity: 0, y: -50 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+        { opacity: 0, y: -30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: "top 85%",
+            once: true,
+          },
+        }
       );
     }
 
-    // Animate center line
+    // Scroll-linked timeline line - grows as you scroll through timeline
     if (lineRef.current) {
-      gsap.fromTo(
-        lineRef.current,
-        { scaleY: 0 },
-        {
-          scaleY: 1,
-          duration: 2,
-          ease: "power2.inOut",
-          transformOrigin: "top center",
-          delay: 0.5,
-        }
-      );
+      gsap.to(lineRef.current, {
+        scaleY: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: lineRef.current,
+          start: "top bottom", // Start when timeline enters viewport
+          end: "bottom top", // End when timeline exits viewport
+          scrub: 0.3, // Smooth scroll-linked
+        },
+      });
     }
   }, []);
 
@@ -51,23 +59,17 @@ const TimelinePage = () => {
   });
 
   return (
-    <div className="container mx-auto px-6 py-12">
+    <div className="container mx-auto px-6 py-24">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-colors"
-          >
-            <span>←</span> Quay lại
-          </Link>
-
           <div className="flex items-center justify-center gap-4 mb-4">
-            <Clock className="w-12 h-12 text-amber-400" />
-            <h1 className="text-6xl font-bold text-white">Timeline</h1>
+            <h2 className="text-5xl md:text-6xl font-bold text-amber-100">
+              Timeline
+            </h2>
           </div>
 
-          <p className="text-white/80 text-xl max-w-2xl mx-auto">
+          <p className="text-amber-200/80 text-xl max-w-2xl mx-auto">
             Hành trình 7 cột mốc quan trọng trong tư tưởng Hồ Chí Minh về xây
             dựng Đảng và Nhà nước
           </p>
@@ -78,7 +80,8 @@ const TimelinePage = () => {
           {/* Center vertical line */}
           <div
             ref={lineRef}
-            className="absolute left-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-amber-500 via-amber-600 to-amber-700 transform -translate-x-1/2 rounded-full shadow-lg shadow-amber-500/50"
+            className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-500 via-amber-600 to-amber-700 transform -translate-x-1/2 rounded-full shadow-lg shadow-amber-500/50"
+            style={{ transformOrigin: "top center", transform: "scaleY(0)" }}
           />
 
           {/* Timeline Items */}
@@ -100,4 +103,4 @@ const TimelinePage = () => {
   );
 };
 
-export default TimelinePage;
+export default TimelineSection;
