@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trò chơi Tư tưởng Hồ Chí Minh
 
-## Getting Started
+Game giáo dục về chủ đề "Đảng Cộng sản Việt Nam và Nhà nước của nhân dân, do nhân dân, vì nhân dân"
 
-First, run the development server:
+## 🎮 Tính năng
+
+- **3 màn chơi**:
+  - Màn 1: Trắc nghiệm (9 mảnh ghép)
+  - Màn 2: Điền từ (9 mảnh ghép)
+  - Màn 3: Ghép hình (18 mảnh)
+
+- **100 câu hỏi** ngẫu nhiên mỗi lần chơi
+- **Timer** đếm thời gian hoàn thành
+- **Bảng xếp hạng** top 10 người chơi nhanh nhất
+- **Giao diện cách mạng** với màu đỏ-vàng
+- **Responsive** trên mọi thiết bị
+
+## 🚀 Cài đặt
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Truy cập: `http://localhost:3000/game`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Cấu trúc dự án
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── app/
+│   ├── game/page.tsx       # Game page
+│   ├── page.tsx            # Home (redirect to /game)
+│   ├── layout.tsx          # Root layout
+│   └── globals.css         # Global styles
+├── features/game/          # Game feature module
+│   ├── components/         # 12 UI components
+│   ├── context/            # State management
+│   ├── hooks/              # Custom hooks
+│   └── lib/                # Utilities
+├── data/
+│   └── questions.json      # 100 câu hỏi
+├── types/
+│   └── game.ts             # TypeScript types
+└── public/
+    └── image/anh1.jpg      # Puzzle image
+```
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: Next.js 16 (App Router)
+- **UI**: React 19, TypeScript
+- **Styling**: Tailwind CSS 4
+- **Animation**: Framer Motion
+- **Drag & Drop**: @dnd-kit
+- **Icons**: Lucide React
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Cách chơi
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Màn 1**: Trả lời đúng 9 câu trắc nghiệm để thu thập 9 mảnh ghép
+2. **Màn 2**: Điền đúng 9 từ vào chỗ trống để thu thập 9 mảnh ghép tiếp theo
+3. **Màn 3**: Kéo thả 18 mảnh ghép vào đúng vị trí để hoàn thành bức tranh
+4. Nhập tên và lưu điểm vào bảng xếp hạng!
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
