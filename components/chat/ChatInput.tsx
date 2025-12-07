@@ -1,4 +1,7 @@
 import React, { useState, useRef, KeyboardEvent } from "react";
+import { Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface ChatInputProps {
   onSend: (message: string) => void;
@@ -37,7 +40,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, disabled = false }
   };
 
   return (
-    <div className="border-t bg-white p-3">
+    <div className="border-t border-gray-200 bg-white p-3">
       <div className="flex items-end gap-2">
         <textarea
           ref={textareaRef}
@@ -47,18 +50,22 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, disabled = false }
           placeholder="Type a message..."
           disabled={disabled}
           rows={1}
-          className="flex-1 resize-none rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-50 disabled:cursor-not-allowed"
+          className={cn(
+            "flex-1 resize-none rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-800",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:border-blue-500",
+            "disabled:cursor-not-allowed disabled:opacity-50",
+            "placeholder:text-gray-400"
+          )}
           style={{ minHeight: "36px", maxHeight: "100px" }}
         />
-        <button
+        <Button
           onClick={handleSend}
           disabled={!message.trim() || disabled}
-          className="h-9 px-4 bg-blue-500 text-white rounded-lg font-medium text-sm hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center justify-center shrink-0"
+          size="icon"
+          className="shrink-0 bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-md"
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-          </svg>
-        </button>
+          <Send className="w-4 h-4" />
+        </Button>
       </div>
     </div>
   );
