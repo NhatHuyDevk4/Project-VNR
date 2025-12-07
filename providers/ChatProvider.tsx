@@ -162,7 +162,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         const assistantMessage: ChatMessage = {
           sessionId,
           role: "assistant",
-          content: data.answer || data.response,
+          content: data.answer || "Xin lỗi, tôi không thể trả lời câu hỏi này.",
           createdAt: new Date().toISOString(),
         };
         await saveMessage(assistantMessage);
