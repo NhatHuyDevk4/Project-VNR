@@ -7,16 +7,21 @@ interface CardProps {
   children: ReactNode;
   delay?: number;
   className?: string;
+  variant?: "quote" | "list"; // Add variant support
 }
 
-const Card = ({ children, delay = 0, className = "" }: CardProps) => {
+const Card = ({
+  children,
+  delay = 0,
+  className = "",
+  variant = "quote",
+}: CardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const leftQuoteRef = useRef<HTMLDivElement>(null);
   const rightQuoteRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!cardRef.current || !leftQuoteRef.current || !rightQuoteRef.current)
-      return;
+    if (!cardRef.current) return;
 
     const tl = gsap.timeline({ delay });
 
@@ -37,24 +42,39 @@ const Card = ({ children, delay = 0, className = "" }: CardProps) => {
       }
     );
 
-    // Quote marks animation
-    tl.fromTo(
-      [leftQuoteRef.current, rightQuoteRef.current],
-      {
-        opacity: 0,
-        scale: 0.8,
-      },
-      {
-        opacity: 0.3,
-        scale: 1,
-        duration: 0.6,
-        ease: "back.out(1.7)",
-        stagger: 0.1,
-      },
-      "-=0.4"
-    );
-  }, [delay]);
+    // Quote marks animation (only for quote variant)
+    if (variant === "quote" && leftQuoteRef.current && rightQuoteRef.current) {
+      tl.fromTo(
+        [leftQuoteRef.current, rightQuoteRef.current],
+        {
+          opacity: 0,
+          scale: 0.8,
+        },
+        {
+          opacity: 0.3,
+          scale: 1,
+          duration: 0.6,
+          ease: "back.out(1.7)",
+          stagger: 0.1,
+        },
+        "-=0.4"
+      );
+    }
+  }, [delay, variant]);
 
+  if (variant === "list") {
+    // Simple card without quotes
+    return (
+      <div
+        ref={cardRef}
+        className={`relative rounded-xl border-2 border-amber-800/30 bg-black/10 p-8 shadow-xl shadow-black/20 ${className}`}
+      >
+        {children}
+      </div>
+    );
+  }
+
+  // Quote variant (original)
   return (
     <div className={`relative max-w-4xl mx-auto ${className}`}>
       {/* Left Quote Mark */}

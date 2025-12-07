@@ -10,7 +10,7 @@ const Homepage = () => {
       </div>
 
       {/* Scroll Down Button */}
-      {/* <ScrollDownButton /> */}
+      <ScrollDownButton />
     </div>
   );
 };
