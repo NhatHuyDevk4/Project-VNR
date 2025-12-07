@@ -5,8 +5,8 @@ export const CONTENT_ROUTES = [
     number: "01",
   },
   {
-    name: "Content 2",
-    path: "/contents/content-2",
+    name: "Đảng phải trong sạch, vững mạnh",
+    path: "/contents/dang-phai-trong-sach-vung-manh",
     number: "02",
   },
   {
