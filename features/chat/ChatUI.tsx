@@ -49,8 +49,8 @@ export default function ChatUI() {
   }
 
   const chatWidth = isHistoryOpen
-    ? "w-full sm:w-[750px] lg:w-[850px]"
-    : "w-full sm:w-[480px] lg:w-[520px]";
+    ? "w-full sm:w-[720px] lg:w-[800px]"
+    : "w-full sm:w-[450px] lg:w-[480px]";
 
   return (
     <>
@@ -59,16 +59,17 @@ export default function ChatUI() {
       </div>
       <div
         className={cn(
-          "fixed z-50 transition-all duration-300",
+          "fixed z-50 transition-all duration-300 ease-out",
           // Mobile: full screen
           "inset-0 sm:inset-auto",
-          // Desktop: positioned bottom-right
-          "sm:bottom-[88px] sm:right-6",
+          // Desktop: positioned bottom-right với khoảng cách hợp lý
+          "sm:bottom-20 sm:right-6",
           chatWidth,
-          "sm:h-[700px] lg:h-[750px] h-full"
+          // Chiều cao được điều chỉnh để vừa màn hình và thấy nút close
+          "h-full sm:h-[580px] lg:h-[620px]"
         )}
       >
-        <div className="bg-white/95 backdrop-blur-xl sm:rounded-3xl shadow-2xl border border-amber-700/30 flex flex-col h-full overflow-hidden max-h-screen sm:max-h-[700px] lg:max-h-[750px]">
+        <div className="bg-white sm:rounded-2xl lg:rounded-3xl shadow-xl border border-gray-200 flex flex-col h-full overflow-hidden">
           <ChatHeader
             title={currentSession?.title || "Trợ lý AI"}
             isHistoryOpen={isHistoryOpen}
@@ -77,7 +78,7 @@ export default function ChatUI() {
             onClose={closeChat}
           />
 
-          <div className="flex flex-1 overflow-hidden">
+          <div className="flex flex-1 overflow-hidden min-h-0">
             {isHistoryOpen && (
               <ChatSidebar
                 sessions={sessions}
@@ -87,7 +88,7 @@ export default function ChatUI() {
               />
             )}
 
-            <div className="flex-1 flex flex-col">
+            <div className="flex-1 flex flex-col min-w-0">
               <ChatMessages messages={messages} isLoading={isLoading} />
               <ChatInput
                 value={inputValue}
