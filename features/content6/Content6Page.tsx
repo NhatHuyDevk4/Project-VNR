@@ -8,6 +8,7 @@ import HeroHeader from "./components/HeroHeader";
 import ConstitutionalSection from "./components/ConstitutionalSection";
 import SupremacySection from "./components/SupremacySection";
 import HumanisticSection from "./components/HumanisticSection";
+import ContentNavigation from "@/components/ContentNavigation";
 
 const iconMap = {
   scale: Scale,
@@ -72,6 +73,9 @@ export default function Content6Page() {
               )}
             </TabsContent>
           </Tabs>
+
+          {/* Content Navigation */}
+          <ContentNavigation />
         </div>
       </div>
     </div>

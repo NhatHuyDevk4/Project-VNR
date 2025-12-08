@@ -5,6 +5,7 @@ import VirtuesSection from './components/VirtuesSection';
 import CivilizedPartySection from './components/CivilizedPartySection';
 import WarningSection from './components/WarningSection';
 import ConclusionSection from './components/ConclusionSection';
+import ContentNavigation from '@/components/ContentNavigation';
 
 const Content2Page = () => {
   // Type-safe data extraction
@@ -61,6 +62,9 @@ const Content2Page = () => {
 
           {/* Conclusion */}
           <ConclusionSection text={contentData.conclusion.text} />
+
+          {/* Content Navigation */}
+          <ContentNavigation />
         </div>
       </div>
     </div>

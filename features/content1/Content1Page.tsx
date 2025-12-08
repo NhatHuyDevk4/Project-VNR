@@ -3,6 +3,7 @@
 import { useState } from "react";
 import contentData from "./data/content.json";
 import { Anchor, Compass, Ship, Users, Sparkles, BookOpen, Award, Target } from "lucide-react";
+import ContentNavigation from "@/components/ContentNavigation";
 
 export default function Content1Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -249,6 +250,9 @@ export default function Content1Page() {
               </div>
             </div>
           </div>
+
+          {/* Content Navigation */}
+          <ContentNavigation />
         </div>
       </div>
     </div>
