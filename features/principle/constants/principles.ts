@@ -17,27 +17,22 @@ export const PRINCIPLES_DATA: Principle[] = [
     title: "Nguyên tắc Tập trung dân chủ",
     subtitle: "Nền tảng của sự thống nhất",
     description:
-      "Tập trung dân chủ là nguyên tắc tổ chức cơ bản, được Hồ Chí Minh xác định là điều kiện tiên quyết để tổ chức Đảng trong sạch, vững mạnh.",
+      "Hồ Chí Minh đưa ra quan điểm về tập trung dân chủ với hai mặt khăng khít: Tập trung trên nền tảng dân chủ và Dân chủ phải đi đến tập trung.",
     points: [
       {
         label: "Tập trung trên cơ sở dân chủ",
         content:
-          "Phải phát huy tinh thần trách nhiệm và tính tích cực của mọi đảng viên, tạo điều kiện để tất cả mọi đảng viên đều có ý kiến ở trong Đảng.",
+          "Khuyến khích đảng viên bày tỏ hết ý kiến trong Đảng để tạo tinh thần trách nhiệm và tính tích cực. Ý kiến sau khi thảo luận được cấp trên lắng nghe, rồi mới tập trung.",
       },
       {
         label: "Dân chủ đi đến tập trung",
         content:
-          "Sau khi đã thảo luận và bày tỏ ý kiến, khi đi đến tập trung thì mọi người phải chấp hành thống nhất, hành động đồng nhất.",
+          "Tập trung dân chủ là điều kiện tiên quyết để Đảng trong sạch và vững mạnh. Cần tránh hai căn bệnh: (1) Độc đoán, chuyên quyền, coi thường tập thể; (2) Dựa dẫm tập thể, không dám quyết đoán.",
       },
       {
-        label: "Về lãnh đạo",
+        label: "Tổ chức và kỷ luật",
         content:
-          "Trong hoạt động, Đảng phải tuân thủ nguyên tắc tập thể lãnh đạo, cá nhân phụ trách.",
-      },
-      {
-        label: "Hai điều cần tránh",
-        content:
-          "(1) Độc đoán, chuyên quyền, coi thường tập thể; (2) Dựa dẫm, buông xuôi, không dám quyết đoán.",
+          "Tập thể lãnh đạo, cá nhân phụ trách. Cá nhân phục tùng tổ chức, thiểu số phục tùng đa số, cấp dưới phục tùng cấp trên, toàn Đảng phục tùng Trung ương.",
       },
     ],
   },
@@ -46,27 +41,22 @@ export const PRINCIPLES_DATA: Principle[] = [
     title: "Nguyên tắc Tự phê bình và Phê bình",
     subtitle: '"Thang thuốc tốt nhất"',
     description:
-      "Hồ Chí Minh coi tự phê bình và phê bình là nguyên tắc sinh hoạt nhằm tự làm trong sạch Đảng, đồng thời là phương pháp để củng cố đoàn kết và thống nhất nội bộ.",
+      "Hồ Chí Minh coi tự phê bình và phê bình là phương pháp và công cụ không thể thiếu để xây dựng Đảng, như 'mỗi ngày phải rửa mặt'.",
     points: [
       {
         label: "Vai trò củng cố đoàn kết",
         content:
-          'Người khẳng định tự phê bình và phê bình là "thang thuốc tốt nhất" để củng cố đoàn kết và thống nhất trong Đảng.',
+          'Phê bình là "thang thuốc" tốt nhất để củng cố đoàn kết và thống nhất. Giúp phần tốt nảy nở như hoa mùa xuân, còn phần xấu mất dần đi.',
       },
       {
-        label: "Tính thường xuyên",
+        label: "Yêu cầu phương pháp",
         content:
-          'Tự phê bình được xem là việc làm thường xuyên, ví như "như rửa mặt mỗi ngày phải rửa mặt".',
+          'Phê bình phải trung thực, kiên quyết, đúng người, đúng việc, có văn hóa. Đồng thời giữ được "tình đồng chí thương yêu lẫn nhau".',
       },
       {
-        label: "Mục đích xây dựng",
+        label: "Mục đích",
         content:
-          "Phê bình phải giúp cho mọi người như nở hoa mùa xuân và xua cái xấu đi.",
-      },
-      {
-        label: "Yêu cầu về tinh thần",
-        content:
-          'Việc phê bình phải trung thực, kiên quyết, đúng người, đúng việc và phải có văn hóa. Đặc biệt, cần giữ "tình đồng chí thương yêu lẫn nhau".',
+          "Tăng cường sức mạnh của Đảng, đảm bảo sự thống nhất và đoàn kết, sửa chữa sai lầm, khuyết điểm.",
       },
     ],
   },
@@ -75,22 +65,22 @@ export const PRINCIPLES_DATA: Principle[] = [
     title: "Nguyên tắc Kỷ luật nghiêm minh, tự giác",
     subtitle: "Sức mạnh đồng nhất",
     description:
-      "Kỷ luật nghiêm minh và tự giác là yếu tố tạo nên sức mạnh đồng nhất, phân biệt Đảng Cộng sản với các tổ chức quần chúng khác.",
+      "Để Đảng là một khối thống nhất và hành động theo một ý chí duy nhất, Đảng phải xây dựng trên nguyên tắc kỷ luật nghiêm minh và tự giác.",
     points: [
       {
-        label: "Tính nghiêm khắc và tự giác",
+        label: "Tính nghiêm minh",
         content:
-          'Đảng tổ chức nghiêm khắc. Kỷ luật của Đảng đòi hỏi sự tuân thủ tuyệt đối từ trên xuống dưới, nhưng đó phải là kỷ luật tự giác, tức là "lòng tự giác của đảng viên về nhiệm vụ của họ đối với Đảng".',
+          '"Đảng tổ chức rất nghiêm, khác với các đảng phái khác". Chấp hành kỷ luật là điều kiện bắt buộc. Không có kỷ luật sắt, Đảng không thể thắng lợi.',
       },
       {
-        label: "Nguồn gốc sức mạnh",
+        label: "Tính tự giác",
         content:
-          'Sức mạnh của một đảng cộng sản bắt nguồn từ kỷ luật. Khi đảng viên có ý chí và hành động đồng nhất, "muốn đồng người như một", thì Đảng mới có sức mạnh.',
+          "Kỷ luật phải là kỷ luật tự giác, nền tảng là lòng tự giác của đảng viên về nhiệm vụ đối với Đảng. Khi giác ngộ kỷ luật, mới thật sự tạo sức mạnh cho Đảng.",
       },
       {
-        label: "Kết quả",
+        label: "Thực hiện nghiêm",
         content:
-          "Kỷ luật tự giác giúp Đảng trở nên mới mẻ và bền bỉ, thực sự tạo sức mạnh cho Đảng.",
+          "Kỷ luật phải được thực hiện nghiêm từ trên xuống dưới, đảm bảo sự thống nhất trong hành động.",
       },
     ],
   },
