@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Quote, Sparkles, Star, Award } from "lucide-react";
 import contentData from "./data/nha-nuoc-content.json";
+import ContentNavigation from "@/components/ContentNavigation";
 
 interface Content {
   type: string;
@@ -249,6 +250,9 @@ export default function Content4Page() {
             <ChevronRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
+
+        {/* Content Navigation */}
+        <ContentNavigation />
       </div>
     </div>
   );
