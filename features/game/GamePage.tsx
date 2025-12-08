@@ -104,11 +104,36 @@ export default function GamePage() {
 
       case 1:
       case 2: {
-        const offset = state.stage === 1 ? 0 : 15;
+        // Check if already have enough pieces for this stage
+        const requiredPieces = state.stage === 1 ? 14 : 18;
+        if (state.collectedPieces.length >= requiredPieces) {
+          // Show transitioning message
+          return (
+            <div className="min-h-screen flex items-center justify-center">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold text-amber-300 mb-4">
+                  Đang chuyển màn...
+                </h2>
+                <p className="text-white">Bạn đã thu thập đủ {requiredPieces} mảnh ghép!</p>
+              </div>
+            </div>
+          );
+        }
+
+        const offset = state.stage === 1 ? 0 : 50;
         const actualIndex = offset + state.currentQuestionIndex;
         const currentQuestion = state.selectedQuestions[actualIndex];
 
-        if (!currentQuestion) return null;
+        if (!currentQuestion) {
+          console.error('No question found!', {
+            stage: state.stage,
+            currentQuestionIndex: state.currentQuestionIndex,
+            offset,
+            actualIndex,
+            totalQuestions: state.selectedQuestions.length
+          });
+          return null;
+        }
 
         const StageComponent =
           state.stage === 1 ? Stage1MultipleChoice : Stage2FillInBlank;
