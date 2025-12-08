@@ -9,6 +9,7 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import TextExplainerUI from "@/features/chat/TextExplainerUI";
 import { getPostBySlug } from "@/features/tai-lieu/data";
+import AudioPlayer from "@/components/AudioPlayer";
 
 export default function TaiLieuSlugPage({
   params,
@@ -42,10 +43,17 @@ export default function TaiLieuSlugPage({
             data-page-content
           >
             <div className="mb-6">
-              <div className="inline-block px-3 py-1 bg-amber-600/20 backdrop-blur-sm border border-amber-600/30 rounded-full mb-4">
-                <span className="text-amber-200 text-sm font-medium">
-                  {post.milestone}
-                </span>
+              <div className="flex items-center gap-2 justify-between">
+                <div className="inline-block px-3 py-1 bg-amber-600/20 backdrop-blur-sm border border-amber-600/30 rounded-full mb-4">
+                  <span className="text-amber-200 text-sm font-medium">
+                    {post.milestone}
+                  </span>
+                </div>
+                {post.audio && (
+                  <div className="mb-4">
+                    <AudioPlayer src={post.audio} title={post.title} />
+                  </div>
+                )}
               </div>
               <h1
                 className="text-3xl sm:text-4xl font-bold text-white mb-4"
@@ -68,7 +76,7 @@ export default function TaiLieuSlugPage({
               </div>
             )}
 
-            <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-white/90 prose-strong:text-amber-200 prose-li:text-white/90 prose-blockquote:border-amber-500 prose-blockquote:text-white/80">
+            <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-white/90 prose-strong:text-amber-200 prose-li:text-white/90 prose-blockquote:border-amber-500 prose-blockquote:text-white/80 text-white">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm, remarkMath]}
                 rehypePlugins={[rehypeKatex]}

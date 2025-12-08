@@ -6,6 +6,7 @@ export const posts: PostType[] = [
     slug: "cot-moc-1-tinh-tat-yeu-thanh-lap-dang",
     title: "Cột mốc 1: Tính tất yếu thành lập Đảng Cộng sản Việt Nam",
     milestone: "1927",
+    audio: "/audio/cotmoc1.mp3",
     shortDescription:
       "Trong tác phẩm Đường Kách mệnh (1927), Nguyễn Ái Quốc khẳng định vai trò tiên quyết của Đảng đối với sự nghiệp giải phóng dân tộc bằng những luận điểm khoa học.",
     content:
@@ -23,6 +24,7 @@ export const posts: PostType[] = [
     slug: "cot-moc-2-xay-dung-dang-trong-sach-vung-manh",
     title: "Cột mốc 2: Bản chất của Đảng - Đạo đức và Văn minh",
     milestone: "1960",
+    audio: "/audio/cotmoc2.mp3",
     shortDescription:
       "Tổng kết 30 năm lãnh đạo, Hồ Chí Minh đúc kết bản chất của Đảng không chỉ ở quyền lực chính trị, mà còn ở tầm vóc văn hóa và đạo đức.",
     content:
@@ -40,6 +42,7 @@ export const posts: PostType[] = [
     slug: "cot-moc-3-tu-tuong-ve-can-bo-va-cong-tac-can-bo",
     title: "Cột mốc 3: Cán bộ - Cái gốc của mọi công việc",
     milestone: "1947",
+    audio: "/audio/cotmoc3.mp3",
     shortDescription:
       "Trong tác phẩm 'Sửa đổi lối làm việc' (1947), Hồ Chí Minh đặt nền tảng cho khoa học tổ chức cán bộ với mối quan hệ biện chứng giữa Đức và Tài.",
     content:
@@ -57,6 +60,7 @@ export const posts: PostType[] = [
     slug: "cot-moc-4-nha-nuoc-cua-dan-do-dan-vi-dan",
     title: "Cột mốc 4: Thiết lập Nhà nước kiểu mới",
     milestone: "1945",
+    audio: "/audio/cotmoc4.mp3",
     shortDescription:
       "Cuộc cách mạng về thể chế: Chuyển từ người dân mất nước (thần dân) thành người làm chủ vận mệnh quốc gia (công dân).",
     content:
@@ -75,6 +79,7 @@ export const posts: PostType[] = [
     slug: "cot-moc-5-nha-nuoc-phap-quyen-nhan-nghia",
     title: "Cột mốc 5: Tư tưởng Pháp quyền Nhân nghĩa",
     milestone: "1946",
+    audio: "/audio/cotmoc5.mp3",
     shortDescription:
       "Sự kết hợp độc đáo giữa 'Thần linh pháp quyền' (thượng tôn pháp luật) và đạo lý truyền thống của dân tộc.",
     content:
@@ -93,6 +98,7 @@ export const posts: PostType[] = [
     slug: "cot-moc-6-kiem-soat-quyen-luc-nha-nuoc",
     title: "Cột mốc 6: Kiểm soát quyền lực - Chống tha hóa",
     milestone: "1946–1969",
+    audio: "/audio/cotmoc6.mp3",
     shortDescription:
       "Nhận diện sớm nguy cơ tha hóa của quyền lực và thiết lập 'lồng cơ chế' để nhốt quyền lực.",
     content:
@@ -110,6 +116,7 @@ export const posts: PostType[] = [
     slug: "cot-moc-7-phong-chong-tham-nhung-lang-phi",
     title: "Cột mốc 7: Tuyên chiến với giặc nội xâm",
     milestone: "1952",
+    audio: "/audio/cotmoc7.mp3",
     shortDescription:
       "Tham ô, lãng phí và bệnh quan liêu là kẻ thù của nhân dân, của bộ đội và của Chính phủ.",
     content:
