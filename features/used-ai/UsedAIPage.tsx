@@ -11,7 +11,7 @@ const UsedAIPage = () => {
           <span>←</span> Quay lại
         </Link>
 
-        <h1 className="text-5xl font-bold text-white mb-6">🤖 Used AI</h1>
+        <h1 className="text-5xl font-bold text-white mb-6">Used AI</h1>
 
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
           <p className="text-white/90 text-lg leading-relaxed">
