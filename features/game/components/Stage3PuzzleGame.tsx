@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { DndContext, DragEndEvent, DragOverlay, PointerSensor, useSensor, useSensors, useDroppable } from '@dnd-kit/core';
 import PuzzleBoard from './PuzzleBoard';
 import PuzzlePiece from './PuzzlePiece';
+import ImageReveal from './ImageReveal';
 import { generatePuzzlePieces, checkPiecePlacement, GRID_ROWS, GRID_COLS, getGridPosition } from '../lib/puzzleUtils';
 import { PuzzlePiece as PuzzlePieceType } from '@/types/game';
 
@@ -13,9 +14,8 @@ function DroppableSlot({ id, children }: { id: string; children: React.ReactNode
   return (
     <div
       ref={setNodeRef}
-      className={`relative bg-white/5 border transition-colors rounded-lg ${
-        isOver ? 'border-amber-400 bg-amber-400/20 shadow-lg shadow-amber-400/50' : 'border-amber-500/30'
-      }`}
+      className={`relative bg-white/5 border transition-colors rounded-lg ${isOver ? 'border-amber-400 bg-amber-400/20 shadow-lg shadow-amber-400/50' : 'border-amber-500/30'
+        }`}
       style={{ width: '120px', height: '120px' }}
     >
       {children}
@@ -33,6 +33,8 @@ export default function Stage3PuzzleGame({ collectedPieces, imageId, onComplete 
   const [pieces, setPieces] = useState<PuzzlePieceType[]>([]);
   const [placedPieces, setPlacedPieces] = useState<Set<number>>(new Set());
   const [activePiece, setActivePiece] = useState<PuzzlePieceType | null>(null);
+  const [showImageReveal, setShowImageReveal] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -48,12 +50,19 @@ export default function Stage3PuzzleGame({ collectedPieces, imageId, onComplete 
   }, [collectedPieces]);
 
   useEffect(() => {
-    if (placedPieces.size === collectedPieces.length && collectedPieces.length > 0) {
+    if (placedPieces.size === collectedPieces.length && collectedPieces.length > 0 && !isCompleted) {
+      setIsCompleted(true);
+      // Show the reveal modal directly with image
       setTimeout(() => {
-        onComplete();
-      }, 1000);
+        setShowImageReveal(true);
+      }, 500);
     }
-  }, [placedPieces, collectedPieces.length, onComplete]);
+  }, [placedPieces, collectedPieces.length, isCompleted]);
+
+  const handleCloseReveal = () => {
+    setShowImageReveal(false);
+    onComplete();
+  };
 
   const handleDragStart = (event: any) => {
     const pieceId = parseInt(event.active.id.replace('piece-', ''));
@@ -93,92 +102,99 @@ export default function Stage3PuzzleGame({ collectedPieces, imageId, onComplete 
   };
 
   const imageUrl = `/image/anh${imageId}.jpg`;
+  const imageName = `anh${imageId}.jpg`;
 
   return (
-    <div className="min-h-screen p-4 pt-[140px] overflow-hidden">
-      <DndContext
-        sensors={sensors}
-        onDragStart={handleDragStart}
-        onDragEnd={handleDragEnd}
-      >
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-amber-300 mb-2">
-              Màn 3: Ghép hình
-            </h1>
-            <p className="text-white text-lg">
-              Đã ghép: {placedPieces.size}/{collectedPieces.length} mảnh
-            </p>
-          </div>
+    <>
+      {showImageReveal && (
+        <ImageReveal imageName={imageName} onClose={handleCloseReveal} />
+      )}
 
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Puzzle Board */}
-            <div className="flex justify-center">
-              <PuzzleBoard rows={GRID_ROWS} cols={GRID_COLS}>
-                {Array.from({ length: GRID_ROWS * GRID_COLS }).map((_, index) => {
-                  const { row, col } = getGridPosition(index);
-                  const placedPiece = pieces.find(
-                    p => p.isPlaced && p.correctPosition.row === row && p.correctPosition.col === col
-                  );
-
-                  return (
-                    <DroppableSlot key={index} id={`slot-${index}`}>
-                      {placedPiece && (
-                        <PuzzlePiece
-                          id={placedPiece.id}
-                          row={row}
-                          col={col}
-                          totalRows={GRID_ROWS}
-                          totalCols={GRID_COLS}
-                          isPlaced={true}
-                          imageUrl={imageUrl}
-                        />
-                      )}
-                    </DroppableSlot>
-                  );
-                })}
-              </PuzzleBoard>
+      <div className="min-h-screen p-4 overflow-hidden">
+        <DndContext
+          sensors={sensors}
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+        >
+          <div className="container mx-auto max-w-7xl">
+            <div className="text-center mb-6">
+              <h1 className="text-3xl md:text-4xl font-bold text-amber-300 mb-2">
+                Màn 3: Ghép hình
+              </h1>
+              <p className="text-white text-lg">
+                Đã ghép: {placedPieces.size}/{collectedPieces.length} mảnh
+              </p>
             </div>
 
-            {/* Available Pieces */}
-            <div className="flex flex-col items-center">
-              <h3 className="text-xl font-bold text-amber-300 mb-4">
-                Mảnh ghép chưa đặt
-              </h3>
-              <div className="grid grid-cols-3 gap-4">
-                {pieces
-                  .filter(p => !p.isPlaced)
-                  .map(piece => (
-                    <PuzzlePiece
-                      key={`available-${piece.id}`}
-                      id={piece.id}
-                      row={piece.correctPosition.row}
-                      col={piece.correctPosition.col}
-                      totalRows={GRID_ROWS}
-                      totalCols={GRID_COLS}
-                      isPlaced={false}
-                      imageUrl={imageUrl}
-                    />
-                  ))}
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
+              {/* Puzzle Board */}
+              <div className="flex justify-center">
+                <PuzzleBoard rows={GRID_ROWS} cols={GRID_COLS}>
+                  {Array.from({ length: GRID_ROWS * GRID_COLS }).map((_, index) => {
+                    const { row, col } = getGridPosition(index);
+                    const placedPiece = pieces.find(
+                      p => p.isPlaced && p.correctPosition.row === row && p.correctPosition.col === col
+                    );
+
+                    return (
+                      <DroppableSlot key={index} id={`slot-${index}`}>
+                        {placedPiece && (
+                          <PuzzlePiece
+                            id={placedPiece.id}
+                            row={row}
+                            col={col}
+                            totalRows={GRID_ROWS}
+                            totalCols={GRID_COLS}
+                            isPlaced={true}
+                            imageUrl={imageUrl}
+                          />
+                        )}
+                      </DroppableSlot>
+                    );
+                  })}
+                </PuzzleBoard>
+              </div>
+
+              {/* Available Pieces */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-xl font-bold text-amber-300 mb-4">
+                  Mảnh ghép chưa đặt
+                </h3>
+                <div className="grid grid-cols-3 gap-4">
+                  {pieces
+                    .filter(p => !p.isPlaced)
+                    .map(piece => (
+                      <PuzzlePiece
+                        key={`available-${piece.id}`}
+                        id={piece.id}
+                        row={piece.correctPosition.row}
+                        col={piece.correctPosition.col}
+                        totalRows={GRID_ROWS}
+                        totalCols={GRID_COLS}
+                        isPlaced={false}
+                        imageUrl={imageUrl}
+                      />
+                    ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <DragOverlay>
-          {activePiece && (
-            <PuzzlePiece
-              id={activePiece.id}
-              row={activePiece.correctPosition.row}
-              col={activePiece.correctPosition.col}
-              totalRows={GRID_ROWS}
-              totalCols={GRID_COLS}
-              isPlaced={false}
-              imageUrl={imageUrl}
-            />
-          )}
-        </DragOverlay>
-      </DndContext>
-    </div>
+          <DragOverlay>
+            {activePiece && (
+              <PuzzlePiece
+                id={activePiece.id}
+                row={activePiece.correctPosition.row}
+                col={activePiece.correctPosition.col}
+                totalRows={GRID_ROWS}
+                totalCols={GRID_COLS}
+                isPlaced={false}
+                imageUrl={imageUrl}
+              />
+            )}
+          </DragOverlay>
+        </DndContext>
+      </div>
+    </>
   );
 }
