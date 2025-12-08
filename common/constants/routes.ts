@@ -29,6 +29,12 @@ export const CONTENT_ROUTES = [
     path: "/contents/Xay-dung-Nha-nuoc-phap-quyen",
     number: "06",
   },
+  {
+    name: "Nhà nước trong sạch, vững mạnh",
+    path: "/contents/Nha-nuoc-trong-sach-vung-manh",
+    number: "07",
+  }
+
 ] as const;
 
 export type ContentRoute = (typeof CONTENT_ROUTES)[number];

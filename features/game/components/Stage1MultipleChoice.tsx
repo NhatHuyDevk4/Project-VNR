@@ -85,7 +85,7 @@ export default function Stage1MultipleChoice({ question, onAnswer, onNext, attem
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4 pt-[140px]">
       <div className="w-full max-w-3xl">
         <QuestionCard question={question.content} questionNumber={question.id}>
           <div className="space-y-3 mt-6">

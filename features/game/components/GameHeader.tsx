@@ -36,7 +36,7 @@ export default function GameHeader({
   const stageName = stage === 1 ? 'Trắc nghiệm' : stage === 2 ? 'Điền từ' : 'Ghép hình';
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-amber-900/90 to-amber-800/90 backdrop-blur-md border-b-2 border-amber-500/30 shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-amber-900/90 to-amber-800/90 backdrop-blur-md border-b-2 border-amber-500/30 shadow-lg">
       <div className="container mx-auto px-4 py-3">
         {/* Top Row */}
         <div className="flex items-center justify-between mb-3">
