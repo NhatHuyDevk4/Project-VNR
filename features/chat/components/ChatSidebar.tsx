@@ -36,17 +36,17 @@ export default function ChatSidebar({
   };
 
   return (
-    <div className="w-full sm:w-[280px] border-r border-amber-700/20 bg-white/30 backdrop-blur-sm flex flex-col">
-      <div className="p-3 sm:p-4 border-b border-amber-700/20 bg-white/40 backdrop-blur-sm">
-        <h2 className="text-sm font-semibold text-gray-800">Lịch sử chat</h2>
+    <div className="w-full sm:w-[280px] border-r border-amber-600/30 bg-amber-900/20 backdrop-blur-sm flex flex-col">
+      <div className="p-3 sm:p-4 border-b border-amber-600/30">
+        <h2 className="text-sm font-semibold text-amber-100">Lịch sử chat</h2>
       </div>
       <div className="flex-1 overflow-y-auto">
         {sessions.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full px-4 text-center">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-amber-600/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 shadow-lg border border-amber-700/30">
-              <MessageSquare className="w-6 h-6 sm:w-7 sm:h-7 text-amber-600" />
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-amber-600/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 shadow-lg border border-amber-500/30">
+              <MessageSquare className="w-6 h-6 sm:w-7 sm:h-7 text-amber-300" />
             </div>
-            <p className="text-xs text-gray-600">Chưa có lịch sử chat</p>
+            <p className="text-xs text-amber-200/70">Chưa có lịch sử chat</p>
           </div>
         ) : (
           <div className="p-2 space-y-1.5">
@@ -56,25 +56,25 @@ export default function ChatSidebar({
                 className={cn(
                   "group relative rounded-xl p-2.5 sm:p-3 cursor-pointer transition-all",
                   currentSessionId === session.id
-                    ? "bg-gradient-to-br from-amber-600/20 to-amber-700/20 border border-amber-600/30 shadow-md"
-                    : "hover:bg-white/40 border border-transparent backdrop-blur-sm"
+                    ? "bg-amber-600/30 border border-amber-500/50 shadow-md"
+                    : "hover:bg-amber-800/20 border border-transparent"
                 )}
                 onClick={() => onSelectSession(session.id)}
               >
                 <div className="flex items-start justify-between mb-1">
-                  <h3 className="font-medium text-xs truncate flex-1 text-gray-800 pr-2">
+                  <h3 className="font-medium text-xs truncate flex-1 text-amber-100 pr-2">
                     {session.title}
                   </h3>
                   <div className="flex items-center gap-1">
-                    <span className="text-xs text-gray-600 shrink-0">
+                    <span className="text-xs text-amber-300/70 shrink-0">
                       {formatDate(session.updatedAt)}
                     </span>
                     <button
                       onClick={(e) => onDeleteSession(session.id, e)}
-                      className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-100 rounded transition-all"
+                      className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-500/20 rounded transition-all"
                       title="Xóa"
                     >
-                      <Trash2 className="w-3 h-3 text-red-600" />
+                      <Trash2 className="w-3 h-3 text-red-400" />
                     </button>
                   </div>
                 </div>

@@ -45,7 +45,7 @@ const ScrollDownButton = () => {
       <div className="relative flex flex-col items-center gap-2">
         {/* Text */}
         <span className="text-amber-200 text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity">
-          Scroll Down
+          Cuộn để xem
         </span>
 
         {/* Arrow icon */}

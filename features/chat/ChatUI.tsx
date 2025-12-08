@@ -69,7 +69,7 @@ export default function ChatUI() {
           "h-full sm:h-[580px] lg:h-[620px]"
         )}
       >
-        <div className="bg-white sm:rounded-2xl lg:rounded-3xl shadow-xl border border-gray-200 flex flex-col h-full overflow-hidden">
+        <div className="bg-gradient-to-br from-amber-950/95 to-amber-900/95 backdrop-blur-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl border-2 border-amber-500/50 flex flex-col h-full overflow-hidden">
           <ChatHeader
             title={currentSession?.title || "Trợ lý AI"}
             isHistoryOpen={isHistoryOpen}

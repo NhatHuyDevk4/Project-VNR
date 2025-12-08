@@ -2,6 +2,13 @@
 
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { Dancing_Script } from "next/font/google";
+
+// Font configuration
+const dancingScript = Dancing_Script({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin", "vietnamese"],
+});
 
 // Typewriter Text Component with GSAP
 interface TypewriterTextProps {
@@ -139,8 +146,8 @@ const AnimatedTitle = () => {
             y: 0,
             scale: 1,
             rotationX: 0,
-            duration: 0.2, // 0.6 / 3 = 0.2
-            stagger: 0.033, // 0.1 / 3 ≈ 0.033
+            duration: 0.2, // Increased from 0.2 for slower animation
+            stagger: 0.05, // Increased from 0.033 for slower stagger
             ease: "back.out(1.7)",
             onComplete: () => {
               // Start wave animation after entrance
@@ -154,7 +161,7 @@ const AnimatedTitle = () => {
                   repeat: -1,
                   yoyo: true,
                   ease: "linear",
-                  delay: index * 0.033, // Also speed up wave delay
+                  delay: index * 0.07, // Increased from 0.033 for slower wave
                   keyframes: [
                     { color: "#2D1810" },
                     { color: "#8B4513" },
@@ -172,7 +179,7 @@ const AnimatedTitle = () => {
                   repeat: -1,
                   yoyo: true,
                   ease: "power1.inOut",
-                  delay: index * 0.017, // 0.05 / 3 ≈ 0.017
+                  delay: index * 0.07, // Increased from 0.017 for slower wave
                 });
               });
             },
@@ -282,9 +289,8 @@ const AnimatedTitle = () => {
         <div className="flex justify-center items-center w-full">
           <h1
             ref={titleRef}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl font-bold leading-relaxed relative"
+            className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-extrabold leading-relaxed relative ${dancingScript.className}`}
             style={{
-              // fontFamily: "'Dancing Script', cursive",
               letterSpacing: "0.02em",
               wordSpacing: "0.1em",
               textAlign: "center",
@@ -293,22 +299,31 @@ const AnimatedTitle = () => {
               lineHeight: "1.6",
             }}
           >
-            {text.split("").map((char, index) => (
+            {text.split(" ").map((word, wIndex) => (
               <span
-                key={index}
-                ref={(el) => {
-                  charsRef.current[index] = el;
-                }}
-                className="inline-block"
+                key={wIndex}
                 style={{
-                  textShadow: "1px 1px 2px rgba(0,0,0,0.1)",
-                  willChange: "color, transform, opacity",
-                  minWidth: char === " " ? "0.2em" : "auto",
                   display: "inline-block",
-                  color: "#2D1810",
+                  whiteSpace: "nowrap",
+                  marginRight: "0.25em",
                 }}
               >
-                {char === " " ? "\u00A0" : char}
+                {word.split("").map((char, cIndex) => (
+                  <span
+                    key={cIndex}
+                    ref={(el) => {
+                      charsRef.current.push(el);
+                    }}
+                    className="inline-block"
+                    style={{
+                      textShadow: "1px 1px 2px rgba(0,0,0,0.1)",
+                      willChange: "color, transform, opacity",
+                      color: "#2D1810",
+                    }}
+                  >
+                    {char}
+                  </span>
+                ))}
               </span>
             ))}
           </h1>
@@ -398,11 +413,11 @@ const AnimatedTitle = () => {
         </div>
 
         {/* Card Container for Quote */}
-        <div className="relative rounded-2xl border-2 border-amber-700/40 bg-black/20 backdrop-blur-sm p-6 sm:p-8 md:p-10">
+        <div className="relative rounded-2xl border-2 border-amber-700/40 bg-black/20 backdrop-blur-sm p-3">
           <TypewriterText
-            text="Khám phá hành trình xây dựng và phát triển đất nước"
+            text="Bao nhiêu lợi ích đều vì dân. Bao nhiêu quyền hạn đều của dân. Công việc đổi mới xây dựng là trách nhiệm của dân."
             delay={5.5}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal leading-relaxed text-center"
+            className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal leading-relaxed text-center ${dancingScript.className}`}
             style={{
               // fontFamily: "'Dancing Script', cursive",
               color: "#D97706",
