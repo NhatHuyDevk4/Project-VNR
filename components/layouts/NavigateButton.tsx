@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Gamepad2, BookOpen, Bot, ClipboardList, Landmark } from "lucide-react";
+import {
+  Home,
+  Gamepad2,
+  BookOpen,
+  Bot,
+  ClipboardList,
+  Landmark,
+} from "lucide-react";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
@@ -17,7 +24,12 @@ const NavigateButton = () => {
     { name: "Game", path: "/game", icon: Gamepad2 },
     { name: "Tài Liệu", path: "/tai-lieu", icon: BookOpen },
     { name: "Used AI", path: "/used-ai", icon: Bot },
-    { name: "Board", path: "/board", icon: Landmark },
+    {
+      name: "Board",
+      path: "https://museum-3d.vercel.app/",
+      icon: Landmark,
+      external: true,
+    },
     { name: "Contents", path: "/contents", icon: ClipboardList },
   ];
 
@@ -151,9 +163,12 @@ const NavigateButton = () => {
                 itemsRef.current[index] = el;
               }}
               href={route.path}
+              {...(route.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
               className={`group relative flex items-center justify-center w-12 h-12 rounded-xl transition-colors duration-300 ${isActive
-                ? "bg-amber-600/60 shadow-lg shadow-amber-600/30"
-                : "bg-amber-800/30 hover:bg-amber-700/50"
+                  ? "bg-amber-600/60 shadow-lg shadow-amber-600/30"
+                  : "bg-amber-800/30 hover:bg-amber-700/50"
                 }`}
               title={route.name}
               onMouseEnter={() => handleMouseEnter(index)}

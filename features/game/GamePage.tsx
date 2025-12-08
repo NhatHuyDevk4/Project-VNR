@@ -46,7 +46,10 @@ export default function GamePage() {
         (p) => p >= stageOffset && p < stageOffset + 9
       ).length;
 
-      if (piecesInCurrentStage >= 9) {
+      // Stage 1: need 14 pieces total, Stage 2: need 18 pieces total
+      const requiredPieces = state.stage === 1 ? 14 : 18;
+
+      if (state.collectedPieces.length >= requiredPieces) {
         setTimeout(() => {
           nextStage();
         }, 1500);

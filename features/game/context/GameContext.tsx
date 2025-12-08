@@ -54,16 +54,14 @@ function gameReducer(state: GameState, action: GameAction): GameState {
       };
 
     case 'ANSWER_CORRECT': {
-      // Calculate unique piece ID based on stage
-      // Each stage has 9 pieces (0-8 for stage 1, 9-17 for stage 2)
-      const offset = state.stage === 1 ? 0 : 9;
-      const piecesInStage = state.collectedPieces.filter(
-        p => p >= offset && p < offset + 9
-      ).length;
+      // Stage 1: collect up to 14 pieces (0-13)
+      // Stage 2: collect up to 18 pieces total (14-17)
+      const maxPiecesForStage = state.stage === 1 ? 14 : 18;
+      const currentTotalPieces = state.collectedPieces.length;
 
-      // Only add piece if we don't have 9 pieces yet
-      const pieceId = offset + piecesInStage;
-      const newCollectedPieces = piecesInStage < 9
+      // Only add piece if we haven't reached the max for this stage
+      const pieceId = currentTotalPieces;
+      const newCollectedPieces = currentTotalPieces < maxPiecesForStage
         ? [...state.collectedPieces, pieceId]
         : state.collectedPieces;
 
