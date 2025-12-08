@@ -19,7 +19,7 @@ export default function ImageReveal({ imageName, onClose }: ImageRevealProps) {
   if (!imageData) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fadeIn p-4 overflow-y-auto">
+    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fadeIn p-4 overflow-y-auto">
       <div
         className={`relative max-w-xl w-full my-8 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
