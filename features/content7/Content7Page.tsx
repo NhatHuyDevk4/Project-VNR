@@ -3,6 +3,7 @@
 import contentData from "./data/content.json";
 import HeroHeader from "./components/HeroHeader";
 import Section from "./components/Section";
+import ContentNavigation from "@/components/ContentNavigation";
 
 export default function Content7Page() {
   return (
@@ -24,6 +25,9 @@ export default function Content7Page() {
               />
             ))}
           </div>
+
+          {/* Content Navigation */}
+          <ContentNavigation />
         </div>
       </div>
     </div>

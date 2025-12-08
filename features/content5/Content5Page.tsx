@@ -8,6 +8,7 @@ import HeroHeader from "./components/HeroHeader";
 import ByPeopleSection from "./components/ByPeopleSection";
 import ForPeopleSection from "./components/ForPeopleSection";
 import ConclusionSection from "./components/ConclusionSection";
+import ContentNavigation from "@/components/ContentNavigation";
 
 const iconMap = {
   users: Users,
@@ -66,6 +67,9 @@ export default function Content5Page() {
 
           {/* Conclusion Section */}
           <ConclusionSection data={contentData.conclusion} />
+
+          {/* Content Navigation */}
+          <ContentNavigation />
         </div>
       </div>
     </div>
