@@ -166,17 +166,19 @@ const NavigateButton = () => {
               {...(route.external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
-              className={`group relative flex items-center justify-center w-12 h-12 rounded-xl transition-colors duration-300 ${isActive
+              className={`group relative flex items-center justify-center w-12 h-12 rounded-xl transition-colors duration-300 ${
+                isActive
                   ? "bg-amber-600/60 shadow-lg shadow-amber-600/30"
                   : "bg-amber-800/30 hover:bg-amber-700/50"
-                }`}
+              }`}
               title={route.name}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
             >
               <Icon
-                className={`w-6 h-6 ${isActive ? "text-amber-200" : "text-amber-500"
-                  }`}
+                className={`w-6 h-6 ${
+                  isActive ? "text-amber-200" : "text-amber-500"
+                }`}
                 strokeWidth={2}
               />
 
