@@ -120,7 +120,7 @@ export default function GamePage() {
           );
         }
 
-        const offset = state.stage === 1 ? 0 : 50;
+        const offset = state.stage === 1 ? 0 : 60;
         const actualIndex = offset + state.currentQuestionIndex;
         const currentQuestion = state.selectedQuestions[actualIndex];
 

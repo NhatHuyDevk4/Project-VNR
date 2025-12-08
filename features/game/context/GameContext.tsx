@@ -146,11 +146,9 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     }
   }, [state.isTimerRunning, state.isPaused]);
 
-  const selectRandomQuestions = useCallback((count: number, type: 'MC' | 'text', excludeIds: number[]): Question[] => {
+  const shuffleQuestions = useCallback((type: 'MC' | 'text'): Question[] => {
     const allQuestions = questionsData as Question[];
-    const filtered = allQuestions.filter(
-      q => q.type === type && !excludeIds.includes(q.id)
-    );
+    const filtered = allQuestions.filter(q => q.type === type);
 
     // Fisher-Yates shuffle
     const shuffled = [...filtered];
@@ -159,28 +157,29 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
 
-    return shuffled.slice(0, count);
+    return shuffled;
   }, []);
 
   const startGame = useCallback(() => {
-    // Select MANY questions to ensure enough for wrong answers
-    // Stage 1 needs 14 correct, Stage 2 needs 4 more correct (18 total)
-    // Select 50 of each type to be safe
-    const mcQuestions = selectRandomQuestions(50, 'MC', []);
-    const usedIds = mcQuestions.map(q => q.id);
-    const textQuestions = selectRandomQuestions(50, 'text', usedIds);
+    // Stage 1: Shuffle all MC questions
+    // Stage 2: Shuffle all text questions
+    // No need to specify count - just shuffle and use as needed
+    const mcQuestions = shuffleQuestions('MC');
+    const textQuestions = shuffleQuestions('text');
     const allQuestions = [...mcQuestions, ...textQuestions];
 
     // Random select image from 1-16
     const randomImageId = Math.floor(Math.random() * 16) + 1;
 
     dispatch({ type: 'START_GAME', payload: { questions: allQuestions, imageId: randomImageId } });
-  }, [selectRandomQuestions]);
+  }, [shuffleQuestions]);
 
   const answerQuestion = useCallback((answer: string): FeedbackType => {
     // Calculate the actual index in the selectedQuestions array
-    // Stage 1: 0-49 (MC), Stage 2: 50-99 (text)
-    const offset = state.stage === 1 ? 0 : state.stage === 2 ? 50 : 0;
+    // Stage 1: MC questions (from start)
+    // Stage 2: text questions (after all MC questions)
+    const mcCount = state.selectedQuestions.filter(q => q.type === 'MC').length;
+    const offset = state.stage === 1 ? 0 : state.stage === 2 ? mcCount : 0;
     const actualIndex = offset + state.currentQuestionIndex;
     const currentQuestion = state.selectedQuestions[actualIndex];
 
