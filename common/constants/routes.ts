@@ -21,7 +21,7 @@ export const CONTENT_ROUTES = [
   },
    {
     name: "Nhà nước do nhân dân('Dân làm chủ') và Nhà nước vì nhân dân",
-    path: "/contents/Ban-chat-nha-nuoc",
+    path: "/contents/Nha-nuoc-do-nhan-dan-va-nha-nuoc-vi-nhan-dan",
     number: "05",
   },
   {
