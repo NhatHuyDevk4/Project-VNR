@@ -82,21 +82,21 @@ export default function ChatInput({
   };
 
   return (
-    <div className="border-t border-amber-100 bg-white/80 backdrop-blur-md px-4 py-3">
+    <div className="border-t border-amber-600/30 bg-amber-900/20 backdrop-blur-md px-4 py-3">
       {/* Listening indicator */}
       {isListening && (
-        <div className="mb-2 flex items-center gap-2 text-xs text-red-600 animate-pulse">
-          <div className="w-2 h-2 bg-red-600 rounded-full animate-ping" />
+        <div className="mb-2 flex items-center gap-2 text-xs text-red-400 animate-pulse">
+          <div className="w-2 h-2 bg-red-500 rounded-full animate-ping" />
           <span className="font-medium">Đang nghe...</span>
         </div>
       )}
 
       <div
         className={cn(
-          "flex items-end gap-2 bg-white rounded-2xl border shadow-sm transition-all duration-200 px-3 py-2",
+          "flex items-end gap-2 bg-amber-950/40 rounded-2xl border shadow-sm transition-all duration-200 px-3 py-2 backdrop-blur-sm",
           isListening
-            ? "border-red-400 shadow-lg ring-2 ring-red-200"
-            : "border-amber-200/60 focus-within:border-amber-400 focus-within:shadow-md"
+            ? "border-red-500/50 shadow-lg ring-2 ring-red-500/20"
+            : "border-amber-600/30 focus-within:border-amber-500/50 focus-within:shadow-md"
         )}
       >
         {/* Mic button */}
@@ -108,7 +108,7 @@ export default function ChatInput({
               "shrink-0 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-200",
               isListening
                 ? "bg-red-500 hover:bg-red-600 text-white shadow-md animate-pulse"
-                : "bg-gray-100 hover:bg-amber-100 text-gray-600 hover:text-amber-600",
+                : "bg-amber-800/40 hover:bg-amber-700/40 text-amber-300 hover:text-amber-200",
               isLoading && "opacity-50 cursor-not-allowed"
             )}
             title={isListening ? "Dừng ghi âm" : "Nói để nhập text"}
@@ -133,10 +133,10 @@ export default function ChatInput({
           disabled={isLoading}
           rows={1}
           className={cn(
-            "flex-1 resize-none bg-transparent text-sm text-gray-800",
+            "flex-1 resize-none bg-transparent text-sm text-amber-100",
             "focus:outline-none",
             "disabled:cursor-not-allowed disabled:opacity-50",
-            "placeholder:text-gray-400"
+            "placeholder:text-amber-300/40"
           )}
           style={{ minHeight: "24px", maxHeight: "120px" }}
         />
@@ -147,8 +147,8 @@ export default function ChatInput({
           className={cn(
             "shrink-0 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-200",
             canSend
-              ? "bg-gradient-to-br from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
-              : "bg-gray-100 text-gray-400 cursor-not-allowed"
+              ? "bg-gradient-to-br from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
+              : "bg-amber-900/40 text-amber-500/40 cursor-not-allowed"
           )}
           aria-label="Gửi tin nhắn"
         >

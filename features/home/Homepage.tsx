@@ -1,6 +1,8 @@
 import AnimatedTitle from "./components/AnimatedTitle";
 import ScrollDownButton from "@/features/home/components/ScrollDownButton";
 import TimelineSection from "./components/TimelineSection";
+import YouTubeEmbed from "./components/YouTubeEmbed";
+import ImageGallery from "./components/ImageGallery";
 import { getAllPosts } from "@/features/tai-lieu/data";
 
 const Homepage = () => {
@@ -22,7 +24,13 @@ const Homepage = () => {
       </div>
 
       {/* Timeline Section */}
-      <TimelineSection posts={posts} linkPrefix="/tai-lieu"/>
+      <TimelineSection posts={posts} linkPrefix="/tai-lieu" />
+
+      {/* Image Gallery Section */}
+      {/* <ImageGallery /> */}
+
+      {/* YouTube Video Section */}
+      <YouTubeEmbed videoId="iaq7bAmjYmE" title="HCM Video" />
     </div>
   );
 };
