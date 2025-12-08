@@ -15,7 +15,9 @@ const TaiLieuPage = () => {
             href="/"
             className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 sm:mb-8 transition-colors group"
           >
-            <span className="group-hover:-translate-x-1 transition-transform">←</span>
+            <span className="group-hover:-translate-x-1 transition-transform">
+              ←
+            </span>
             <span>Quay lại</span>
           </Link>
 
@@ -35,8 +37,8 @@ const TaiLieuPage = () => {
               Tư tưởng Hồ Chí Minh là hệ thống quan điểm toàn diện và sâu sắc về
               những vấn đề cơ bản của cách mạng Việt Nam, là kết quả của sự vận
               dụng sáng tạo chủ nghĩa Mác - Lênin vào điều kiện cụ thể của Việt
-              Nam, kế thừa và phát triển các giá trị truyền thống tốt đẹp của dân
-              tộc, tiếp thu tinh hoa văn hóa nhân loại.
+              Nam, kế thừa và phát triển các giá trị truyền thống tốt đẹp của
+              dân tộc, tiếp thu tinh hoa văn hóa nhân loại.
             </p>
           </div>
         </div>
