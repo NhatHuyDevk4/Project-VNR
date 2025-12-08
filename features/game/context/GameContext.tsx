@@ -80,12 +80,22 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         attempts: state.attempts + 1,
       };
 
-    case 'NEXT_QUESTION':
+    case 'NEXT_QUESTION': {
+      // Check if already have enough pieces for current stage
+      const requiredPieces = state.stage === 1 ? 14 : 18;
+
+      // Don't go to next question if already have enough pieces
+      if (state.collectedPieces.length >= requiredPieces) {
+        return state; // Stop asking questions
+      }
+
+      // No limit on number of questions - keep going until enough pieces
       return {
         ...state,
         currentQuestionIndex: state.currentQuestionIndex + 1,
         attempts: 0,
       };
+    }
 
     case 'NEXT_STAGE':
       return {
@@ -153,10 +163,12 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const startGame = useCallback(() => {
-    // Select more questions than needed (15 per stage) to allow for wrong answers
-    const mcQuestions = selectRandomQuestions(15, 'MC', []);
+    // Select MANY questions to ensure enough for wrong answers
+    // Stage 1 needs 14 correct, Stage 2 needs 4 more correct (18 total)
+    // Select 50 of each type to be safe
+    const mcQuestions = selectRandomQuestions(50, 'MC', []);
     const usedIds = mcQuestions.map(q => q.id);
-    const textQuestions = selectRandomQuestions(15, 'text', usedIds);
+    const textQuestions = selectRandomQuestions(50, 'text', usedIds);
     const allQuestions = [...mcQuestions, ...textQuestions];
 
     // Random select image from 1-16
@@ -167,8 +179,8 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
 
   const answerQuestion = useCallback((answer: string): FeedbackType => {
     // Calculate the actual index in the selectedQuestions array
-    // Stage 1: 0-14 (MC), Stage 2: 15-29 (text)
-    const offset = state.stage === 1 ? 0 : state.stage === 2 ? 15 : 0;
+    // Stage 1: 0-49 (MC), Stage 2: 50-99 (text)
+    const offset = state.stage === 1 ? 0 : state.stage === 2 ? 50 : 0;
     const actualIndex = offset + state.currentQuestionIndex;
     const currentQuestion = state.selectedQuestions[actualIndex];
 
