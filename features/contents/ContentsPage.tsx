@@ -85,7 +85,7 @@ const ContentsPage = () => {
           ref={titleRef}
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-amber-100 mb-4 text-center"
         >
-          Nội Dung
+          Về thời bao cấp
         </h1>
 
         {/* Subtitle */}
@@ -93,7 +93,7 @@ const ContentsPage = () => {
           ref={subtitleRef}
           className="text-amber-200/70 text-center mb-16 text-lg"
         >
-          Chọn nội dung để xem chi tiết
+          Bối cảnh lịch sử và ý nghĩa ẩm thực thời bao cấp Việt Nam
         </p>
 
         {/* Content List */}

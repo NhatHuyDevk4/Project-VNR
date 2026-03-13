@@ -20,17 +20,10 @@ const NavigateButton = () => {
 
   const routes = [
     { name: "Trang chủ", path: "/", icon: Home },
-
     { name: "Game", path: "/game", icon: Gamepad2 },
-    { name: "Tài Liệu", path: "/tai-lieu", icon: BookOpen },
-    { name: "Used AI", path: "/used-ai", icon: Bot },
-    {
-      name: "Board",
-      path: "https://museum-3d.vercel.app/",
-      icon: Landmark,
-      external: true,
-    },
-    { name: "Contents", path: "/contents", icon: ClipboardList },
+    { name: "Món ăn", path: "/tai-lieu", icon: BookOpen },
+    { name: "Hỏi đáp", path: "/used-ai", icon: Bot },
+    { name: "Về thời bao cấp", path: "/contents", icon: ClipboardList },
   ];
 
   // Initial animation on mount

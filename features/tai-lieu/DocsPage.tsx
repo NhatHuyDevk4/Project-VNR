@@ -23,7 +23,7 @@ const TaiLieuPage = () => {
 
           <div className="mb-8 sm:mb-12">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-amber-200 to-amber-400 bg-clip-text text-transparent">
-              Tư tưởng Hồ Chí Minh
+              Hương Vị Bao Cấp
             </h1>
             <div className="h-1 w-24 bg-gradient-to-r from-amber-500 to-amber-700 rounded-full"></div>
           </div>
@@ -34,11 +34,10 @@ const TaiLieuPage = () => {
               Giới thiệu
             </h2>
             <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-              Tư tưởng Hồ Chí Minh là hệ thống quan điểm toàn diện và sâu sắc về
-              những vấn đề cơ bản của cách mạng Việt Nam, là kết quả của sự vận
-              dụng sáng tạo chủ nghĩa Mác - Lênin vào điều kiện cụ thể của Việt
-              Nam, kế thừa và phát triển các giá trị truyền thống tốt đẹp của
-              dân tộc, tiếp thu tinh hoa văn hóa nhân loại.
+              Hương Vị Bao Cấp là dự án lưu lại và chia sẻ những câu chuyện ẩm thực
+              thời tem phiếu (1976–1986). Gạo, thịt, đường được cấp theo định lượng;
+              bữa ăn gia đình phải độn thêm bo bo, khoai, sắn — đơn giản, no lòng và
+              đầy hoài niệm. Ẩm thực thời ấy là ký ức, văn hóa và sự thích nghi của cả một thế hệ.
             </p>
           </div>
         </div>

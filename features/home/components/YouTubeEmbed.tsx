@@ -18,7 +18,7 @@ const YouTubeEmbed = ({
             Video
           </h2>
           <p className="text-amber-200/80 text-lg">
-            Các nguyên tắc cốt lõi
+            Ẩm thực và ký ức thời bao cấp
           </p>
         </div>
 

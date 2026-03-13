@@ -30,7 +30,7 @@ const Homepage = () => {
       {/* <ImageGallery /> */}
 
       {/* YouTube Video Section */}
-      <YouTubeEmbed videoId="iaq7bAmjYmE" title="HCM Video" />
+      <YouTubeEmbed videoId="iaq7bAmjYmE" title="Hương vị bao cấp — Ẩm thực thời tem phiếu" />
     </div>
   );
 };

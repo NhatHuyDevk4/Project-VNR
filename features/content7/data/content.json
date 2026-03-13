@@ -1,175 +1,63 @@
 {
-  "documentTitle": "Nhà nước trong sạch, vững mạnh theo tư tưởng Hồ Chí Minh",
+  "documentTitle": "Bối cảnh và ý nghĩa ẩm thực thời bao cấp",
   "documentId": "content7",
   "uiStructure": [
     {
       "sectionId": "section-3",
-      "sectionTitle": "Nhà nước trong sạch, vững mạnh",
+      "sectionTitle": "Thời bao cấp — Tem phiếu và bữa ăn",
       "icon": "government",
       "children": [
         {
           "subsectionId": "3a",
-          "title": "a. Kiểm soát quyền lực nhà nước",
+          "title": "a. Tem phiếu và định lượng",
           "type": "accordion",
           "contentBlocks": [
-            {
-              "type": "paragraph",
-              "content": "Để giữ vững bản chất của Nhà nước, bảo đảm cho Nhà nước hoạt động có hiệu quả, phòng chống thoái hóa, biến chất trong đội ngũ cán bộ Nhà nước, Hồ Chí Minh rất chú trọng vấn đề kiểm soát quyền lực nhà nước."
-            },
-            {
-              "type": "paragraph",
-              "content": "Theo quan điểm của Hồ Chí Minh, kiểm soát quyền lực nhà nước là tất yếu. Các cơ quan nhà nước, cán bộ nhà nước, dù ít hay nhiều đều nắm giữ quyền lực trong tay. Quyền lực này là do nhân dân ủy thác cho. Nhưng một khi đã nắm giữ quyền lực, cơ quan nhà nước hay cán bộ nhà nước đều có thể trở nên lạm quyền. Người chỉ rõ:"
-            },
-            {
-              "type": "quote",
-              "author": "Hồ Chí Minh",
-              "content": "Dân ghét các ông chủ tịch, các ông Ủy viên vì cái tật ngông nghênh, cậy thế, cậy quyền. Những ông này không hiểu nhiệm vụ và chính sách của Việt Minh, nên khi nắm được chút quyền trong tay vẫn hay lạm dụng."
-            },
-            {
-              "type": "paragraph",
-              "content": "Vì thế, để đảm bảo tất cả mọi quyền lực thuộc về nhân dân, cần kiểm soát quyền lực nhà nước."
-            },
-            {
-              "type": "subtitle",
-              "text": "Các hình thức kiểm soát quyền lực theo tư tưởng Hồ Chí Minh"
-            },
-            {
-              "type": "cards",
-              "cards": [
-                {
-                  "title": "1. Đảng Cộng sản Việt Nam kiểm soát Nhà nước",
-                  "icon": "party",
-                  "content": "Đảng là đội tiền phong, Đảng cầm quyền nên có quyền và trách nhiệm kiểm soát Nhà nước. Công tác kiểm tra phải có hệ thống, người kiểm tra phải có uy tín, kiểm tra từ trên xuống và từ dưới lên, phải “khéo kiểm soát”.",
-                  "quote": "Muốn hoàn thành tốt mọi việc, thì toàn thể đảng viên và cán bộ phải chấp hành nghiêm chỉnh đường lối và chính sách của Đảng. Và muốn như vậy, các cấp ủy đảng phải tăng cường công tác kiểm tra..."
-                },
-                {
-                  "title": "2. Kiểm soát nội tại trong bộ máy Nhà nước",
-                  "icon": "balance-scale",
-                  "content": "Hiến pháp 1946 quy định Nghị viện nhân dân có quyền kiểm soát và phê bình Chính phủ. Các chức danh không được tín nhiệm đều có thể bị bãi miễn, thể hiện cơ chế kiểm soát quyền lực từ bên trong bộ máy Nhà nước."
-                },
-                {
-                  "title": "3. Nhân dân kiểm soát quyền lực nhà nước",
-                  "icon": "people",
-                  "content": "Nhân dân là chủ thể tối cao của quyền lực. Phải tổ chức để quần chúng tham gia kiểm soát, đôn đốc cán bộ — đây là phương thức kiểm soát sâu rộng và hiệu quả nhất.",
-                  "quote": "Phải tổ chức sự kiểm soát, mà muốn kiểm soát đúng thì cũng phải có quần chúng giúp mới được."
-                }
-              ]
-            }
+            {"type": "paragraph", "content": "Thời bao cấp (khoảng 1976–1986), kinh tế Việt Nam vận hành theo cơ chế kế hoạch hóa, phân phối theo tem phiếu. Gạo, thịt, đường, vải vóc… đều được cấp theo định lượng, không đủ cho nhu cầu hàng ngày."},
+            {"type": "paragraph", "content": "Bữa ăn của nhiều gia đình phải \"độn\" thêm bo bo, khoai, sắn, và không ít lần phải ăn cháo cám để no bụng. Ẩm thực thời ấy không chỉ là chuyện no đói — mà còn là ký ức, văn hóa và sự thích nghi của cả một thế hệ."},
+            {"type": "quote", "author": "Ký ức ẩm thực", "content": "Nồi cơm độn khoai vừa thơm gạo vừa ngọt khoai, là bữa cơm 'đủ no' của nhiều thế hệ."},
+            {"type": "subtitle", "text": "Các món ăn đặc trưng thời bao cấp"},
+            {"type": "cards", "cards": [
+              {"title": "1. Bo bo", "icon": "party", "content": "Hạt ngô xay vỡ, nấu thay cơm hoặc trộn với gạo. Khi gạo khan hiếm, bo bo trở thành \"cứu tinh\" của nhiều gia đình.", "quote": "Nấu bo bo thay cơm, hoặc trộn bo bo với gạo để có nồi cơm no hơn."},
+              {"title": "2. Cơm độn khoai", "icon": "balance-scale", "content": "Cơm nấu cùng khoai lang (hoặc khoai sọ) để tăng thể tích, no lâu hơn khi gạo không đủ. Các bà các mẹ mua thêm khoai — rẻ và no — rồi nấu chung với gạo."},
+              {"title": "3. Cháo cám và bánh bột mì hấp", "icon": "people", "content": "Cháo cám là món \"cùng đường\" khi thiếu gạo. Bánh bột mì hấp đơn giản — bột, đường, men — là món quà vặt trẻ con mong đợi.", "quote": "Món dễ làm, nguyên liệu ít, in đậm trong ký ức ẩm thực thời đó."}
+            ]}
           ]
         },
         {
           "subsectionId": "3b",
-          "title": "b. Phòng, chống tiêu cực trong Nhà nước",
+          "title": "b. Ý nghĩa văn hóa và kết nối thế hệ",
           "type": "accordion",
           "contentBlocks": [
-            {
-              "type": "paragraph",
-              "content": "Trong quá trình lãnh đạo xây dựng Nhà nước Việt Nam, Hồ Chí Minh thường nói đến những tiêu cực sau đây và nhắc nhở mọi người đề phòng và khắc phục."
-            },
-            {
-              "type": "highlightBox",
-              "title": "Các loại tiêu cực chính",
-              "items": [
-                "Đặc quyền, đặc lợi, cửa quyền, hách dịch, chủ nghĩa cá nhân",
-                "Tham ô, lãng phí, quan liêu – “giặc nội xâm”, “giặc ở trong lòng”",
-                "Tư túng, chia rẽ, kéo bè kéo cánh",
-                "Kiêu ngạo, “vác mặt quan cách mạng”"
-              ]
-            },
-            {
-              "type": "quote",
-              "author": "Hồ Chí Minh",
-              "content": "Tham ô, lãng phí và bệnh quan liêu, dù cố ý hay không, cũng là bạn đồng minh của thực dân và phong kiến. Tội lỗi ấy cũng nặng như tội lỗi Việt gian."
-            },
-            {
-              "type": "paragraph",
-              "content": "Ngay từ những năm đầu lập nước, Hồ Chí Minh đã ban hành nhiều sắc lệnh nghiêm khắc như Sắc lệnh phạt tội đưa và nhận hối lộ (5–20 năm tù khổ sai) và quy định tội tham ô có thể bị xử tử."
-            },
-            {
-              "type": "subtitle",
-              "text": "5 biện pháp lớn phòng, chống tiêu cực"
-            },
-            {
-              "type": "numberedCards",
-              "items": [
-                {
-                  "number": 1,
-                  "title": "Thực hành dân chủ rộng rãi",
-                  "content": "Dân chủ là chìa khóa để chống tiêu cực. Dân biết – dân bàn – dân làm – dân kiểm tra giúp hạn chế tối đa sự lạm quyền."
-                },
-                {
-                  "number": 2,
-                  "title": "Pháp quyền nghiêm minh",
-                  "content": "Pháp luật phải được thực thi công bằng, không ngoại lệ, không vùng cấm – đúng tinh thần pháp quyền Hồ Chí Minh."
-                },
-                {
-                  "number": 3,
-                  "title": "Giáo dục là chính",
-                  "content": "Tăng cường giáo dục đạo đức cách mạng, tu dưỡng lương tâm nghề nghiệp.",
-                  "quote": "Cán bộ có quyền mà thiếu lương tâm là có dịp đục khoét, ăn của đút, ‘dĩ công vi tư’."
-                },
-                {
-                  "number": 4,
-                  "title": "Cán bộ nêu gương",
-                  "content": "Cán bộ càng giữ chức vụ cao càng phải gương mẫu, nói đi đôi với làm, đặt lợi ích tập thể lên trên lợi ích cá nhân."
-                },
-                {
-                  "number": 5,
-                  "title": "Phát huy chủ nghĩa yêu nước",
-                  "content": "Lòng yêu nước là động lực quan trọng giúp mỗi người vượt qua cám dỗ, giữ phẩm chất trong sạch."
-                }
-              ]
-            }
+            {"type": "paragraph", "content": "Dự án Hương Vị Bao Cấp mong muốn lưu lại và chia sẻ những câu chuyện ẩm thực thời tem phiếu, kết nối lịch sử với thế hệ trẻ qua website và trải nghiệm thực tế."},
+            {"type": "highlightBox", "title": "Những giá trị cần ghi nhớ", "items": [
+              "Ký ức ẩm thực — bo bo, cơm độn khoai, cháo cám in đậm trong tâm trí",
+              "Sự thích nghi — gia đình nào cũng phải độn thêm, tận dụng nguyên liệu tại chỗ",
+              "Tình thương — bữa ăn đơn giản nhưng đầy tình thương của các bà các mẹ",
+              "Văn hóa — ẩm thực thời ấy là một phần không thể thiếu của văn hóa Việt Nam"
+            ]},
+            {"type": "subtitle", "text": "Nguyên tắc bữa ăn thời bao cấp"},
+            {"type": "numberedCards", "items": [
+              {"number": 1, "title": "Đơn giản, no lòng", "content": "Không cầu kỳ — mục tiêu là no bụng, giữ sức cho cả gia đình."},
+              {"number": 2, "title": "Tiết kiệm, không lãng phí", "content": "Gạo, ngô, khoai, sắn được tận dụng tối đa. Không đòi hỏi xa xỉ."},
+              {"number": 3, "title": "Chia sẻ trong gia đình", "content": "Mỗi suất định lượng ít ỏi được chia đều. Các bà các mẹ thường nhường phần cho con cháu, ông bà."},
+              {"number": 4, "title": "Kết nối thế hệ", "content": "Lưu lại và truyền lại những câu chuyện ẩm thực cho thế hệ trẻ."},
+              {"number": 5, "title": "Văn hóa ẩm thực Việt Nam", "content": "Cơm độn khoai, bo bo, cháo cám là một phần quan trọng của văn hóa ẩm thực Việt Nam thời kỳ bao cấp."}
+            ]}
           ]
         }
       ]
     },
     {
       "sectionId": "section-III",
-      "sectionTitle": "III. VẬN DỤNG TƯ TƯỞNG HỒ CHÍ MINH VÀO XÂY DỰNG ĐẢNG & NHÀ NƯỚC HIỆN NAY",
+      "sectionTitle": "Hương Vị Bao Cấp — Dự án và ý nghĩa",
       "icon": "flag",
       "children": [
-        {
-          "subsectionId": "III-1",
-          "title": "1. Xây dựng Đảng thật sự trong sạch, vững mạnh",
-          "type": "accordion",
-          "contentBlocks": [
-            {
-              "type": "list",
-              "style": "check",
-              "items": [
-                "Đề ra đường lối đúng đắn trên cơ sở chủ nghĩa Mác – Lênin và tư tưởng Hồ Chí Minh",
-                "Thể chế hóa và tổ chức thực hiện hiệu quả; nêu cao vai trò người đứng đầu",
-                "Thường xuyên chỉnh đốn Đảng, tự phê bình và phê bình nghiêm túc",
-                "Tăng cường kiểm tra, giám sát để xây dựng Đảng là “đạo đức, là văn minh”",
-                "Đảng viên, sinh viên đảng viên phải là tấm gương sáng về đạo đức, học tập và lối sống"
-              ]
-            }
-          ]
-        },
-        {
-          "subsectionId": "III-2",
-          "title": "2. Xây dựng Nhà nước thật sự trong sạch, vững mạnh",
-          "type": "accordion",
-          "contentBlocks": [
-            {
-              "type": "list",
-              "style": "number",
-              "items": [
-                "Hoàn thiện hệ thống pháp luật; thi hành pháp luật nghiêm minh",
-                "Hoàn thiện cơ chế kiểm soát quyền lực giữa lập pháp – hành pháp – tư pháp",
-                "Xây dựng đội ngũ cán bộ đủ đức – đủ tài; đẩy mạnh thi tuyển, bầu cử minh bạch",
-                "Đẩy mạnh phòng chống tham nhũng, lãng phí, quan liêu; thực hành tiết kiệm",
-                "Đổi mới phương thức lãnh đạo của Đảng; Đảng gương mẫu tuân thủ Hiến pháp và pháp luật",
-                "Khẳng định: Đảng trong sạch, vững mạnh là điều kiện tiên quyết để xây dựng Nhà nước trong sạch, vững mạnh theo tư tưởng Hồ Chí Minh"
-              ]
-            }
-          ]
-        }
+        {"subsectionId": "III-1", "title": "1. Mục tiêu dự án", "type": "accordion", "contentBlocks": [{"type": "list", "style": "check", "items": ["Lưu lại và chia sẻ câu chuyện ẩm thực thời tem phiếu", "Kết nối lịch sử với thế hệ trẻ qua website và trải nghiệm thực tế", "Ghi nhận sự kiên cường, tình thương và sức sống của người Việt trong giai đoạn khó khăn", "Bảo tồn ký ức về bo bo, cơm độn khoai, cháo cám, bánh bột mì hấp"]}]},
+        {"subsectionId": "III-2", "title": "2. Các món ăn tiêu biểu", "type": "accordion", "contentBlocks": [{"type": "list", "style": "number", "items": ["Bo bo — món ăn từ ngô thời tem phiếu", "Cơm độn khoai — no lòng thời bao cấp", "Cháo cám — ký ức một thời kham khổ", "Bánh bột mì hấp — quà vặt thời bao cấp", "Ẩm thực thời ấy là ký ức, văn hóa và sự thích nghi của cả một thế hệ."]}]}
       ]
     }
   ],
-  "searchIndex": "tư tưởng hồ chí minh, nhà nước trong sạch vững mạnh, kiểm soát quyền lực, phòng chống tham nhũng, tham ô lãng phí quan liêu, chỉnh đốn đảng, dân chủ, pháp quyền, nêu gương",
+  "searchIndex": "hương vị bao cấp, tem phiếu, bo bo, cơm độn khoai, cháo cám, ẩm thực, ký ức",
   "lastUpdated": "2025-12-08",
   "totalSections": 2,
   "totalSubsections": 4

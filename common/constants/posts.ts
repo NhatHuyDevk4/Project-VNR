@@ -3,214 +3,147 @@ import { PostType } from "../types/post.type";
 export const posts: PostType[] = [
   {
     id: 1,
-    slug: "cot-moc-1-tinh-tat-yeu-thanh-lap-dang",
-    title: "Cột mốc 1: Tính tất yếu thành lập Đảng Cộng sản Việt Nam",
-    milestone: "1927",
+    slug: "bo-bo",
+    title: "Bo bo — Món ăn đặc trưng thời bao cấp từ ngô",
+    milestone: "1976–1986",
     shortDescription:
-      "Quan điểm trong Đường cách mệnh (1927) về vai trò quyết định của Đảng đối với cách mạng Việt Nam.",
+      "Khi gạo khan hiếm, ngô được dùng thay thế hoặc độn vào cơm. Bo bo (hạt ngô xay vỡ) trở thành \"cứu tinh\" của nhiều gia đình thời tem phiếu.",
     content: `
-## Nội dung chính
-Trong tác phẩm *Đường cách mệnh* (1927), Hồ Chí Minh nhấn mạnh:
+## Bo bo là gì?
+Bo bo là cách gọi dân dã của ngô (bắp) trong bữa ăn thời bao cấp. Khi gạo khan hiếm, ngô được dùng thay thế hoặc độn vào cơm để no lòng.
 
-> “Cách mệnh trước hết phải có đảng cách mệnh… Đảng có vững thì cách mệnh mới thành công.”
+## Ký ức tem phiếu
+Thời tem phiếu, mỗi người chỉ được định lượng gạo rất ít. Bo bo — hạt ngô xay vỡ — trở thành "cứu tinh" của nhiều gia đình. Nấu bo bo thay cơm, hoặc trộn bo bo với gạo để có nồi cơm no hơn, là ký ức không thể quên của thế hệ sống qua thập niên 80.
 
-Đảng ra đời từ 3 yếu tố:
-- Chủ nghĩa Mác – Lênin  
-- Phong trào công nhân  
-- **Phong trào yêu nước** (sáng tạo của Hồ Chí Minh)
-
-## Ý nghĩa
-- Đặt nền móng tư tưởng hình thành Đảng Cộng sản Việt Nam  
-- Định hướng con đường cách mạng Việt Nam  
+## Cách nấu
+Vo bo bo nhẹ, cho vào nồi với nước ngập khoảng 1 đốt tay. Đun sôi rồi vặn nhỏ lửa, nấu khoảng 20–25 phút cho chín mềm. Nêm chút muối, đảo đều. Ăn nóng thay cơm.
     `,
     image: [
-      "https://upload.wikimedia.org/wikipedia/commons/7/7c/Ho_Chi_Minh_1946.jpg",
+      "/images/bobo.png",
     ],
-    linkResource: [
-      "https://vi.wikipedia.org/wiki/%C4%90%C6%B0%E1%BB%9Dng_c%C3%A1ch_m%E1%BB%87nh",
-    ],
+    linkResource: [],
   },
-
   {
     id: 2,
-    slug: "cot-moc-2-xay-dung-dang-trong-sach-vung-manh",
-    title: "Cột mốc 2: Xây dựng Đảng trong sạch, vững mạnh",
-    milestone: "1960",
+    slug: "com-don-khoai",
+    title: "Cơm độn khoai — No lòng thời tem phiếu",
+    milestone: "1976–1986",
     shortDescription:
-      "Tư tưởng Hồ Chí Minh về Đảng là đạo đức, là văn minh; đặt ra chuẩn mực đạo đức của đảng viên.",
+      "Cơm nấu cùng khoai lang (hoặc khoai sọ) để tăng thể tích, no lâu hơn khi gạo không đủ. Nồi cơm vừa thơm gạo vừa ngọt khoai.",
     content: `
-## Nội dung chính
-Trong bài phát biểu kỷ niệm 30 năm thành lập Đảng (1960), Hồ Chí Minh khẳng định:
+## Cơm độn khoai là gì?
+Cơm độn khoai là cơm nấu cùng khoai lang (hoặc khoai sọ) để tăng thể tích, no lâu hơn khi gạo không đủ.
 
-> “Đảng ta là đạo đức, là văn minh.”
+## Bối cảnh
+Định lượng gạo mỗi tháng không đủ cho cả gia đình. Các bà các mẹ mua thêm khoai lang, khoai sọ — rẻ và no — rồi nấu chung với gạo. Nồi cơm độn khoai vừa thơm gạo vừa ngọt khoai, là bữa cơm "đủ no" của nhiều thế hệ.
 
-Những nguyên tắc quan trọng:
-- Kiên định chủ nghĩa Mác – Lênin  
-- Tập trung dân chủ  
-- Tự phê bình và phê bình  
-- Kỷ luật nghiêm minh  
-- Đoàn kết thống nhất  
-
-## Ý nghĩa
-- Đặt chuẩn mực đạo đức xuyên suốt  
-- Là cơ sở cho công tác xây dựng Đảng hiện nay  
+## Cách nấu
+Vo gạo, cho vào nồi. Khoai lang gọt vỏ, cắt miếng vừa ăn, rửa sạch. Cho khoai vào cùng gạo, thêm nước như nấu cơm. Nấu chín, đảo nhẹ cho cơm và khoai trộn đều. Ăn nóng.
     `,
     image: [
-      "https://upload.wikimedia.org/wikipedia/commons/1/12/Ho_Chi_Minh_portrait.jpg",
+      "/images/comdonkhoai.png",
     ],
-    linkResource: ["https://hochiminh.vn", "https://nhandan.vn/tu-tuong-hcm"],
+    linkResource: [],
   },
-
   {
     id: 3,
-    slug: "cot-moc-3-tu-tuong-ve-can-bo-va-cong-tac-can-bo",
-    title: "Cột mốc 3: Tư tưởng về cán bộ và công tác cán bộ",
-    milestone: "1957",
+    slug: "chao-cam",
+    title: "Cháo cám — Ký ức một thời kham khổ",
+    milestone: "1976–1986",
     shortDescription:
-      "Hồ Chí Minh nhấn mạnh: cán bộ là gốc của mọi công việc; phẩm chất và năng lực cán bộ quyết định thành bại của cách mạng.",
+      "Cháo từ cám — phần bột còn sót sau khi xay xát gạo — vốn dùng cho heo, nhưng thời bao cấp nhiều nhà phải ăn để chống đói.",
     content: `
-## Nội dung chính
-Hồ Chí Minh khẳng định:
+## Cháo cám là gì?
+Cháo cám làm từ cám — phần bột còn sót sau khi xay xát gạo — vốn dùng cho heo, nhưng thời bao cấp nhiều nhà phải ăn để chống đói.
 
-> “Cán bộ là gốc của mọi công việc.”
+## Câu chuyện
+Khi thiếu gạo đến mức không đủ nấu cơm, cháo cám là món "cùng đường". Cám xay nhỏ, nấu với nước thành cháo loãng, ăn no bụng dù không ngon. Câu chuyện cháo cám là minh chứng cho sự kham khổ và sức sống của người Việt trong giai đoạn khó khăn.
 
-Người yêu cầu cán bộ phải:
-- Trung thành với Đảng  
-- Có đạo đức: Cần – Kiệm – Liêm – Chính  
-- Có năng lực thực tiễn  
-- Gắn bó với nhân dân  
-
-Trong bài *Quét sạch chủ nghĩa cá nhân* (1969), Người cảnh báo:
-> “Một số cán bộ mang nặng chủ nghĩa cá nhân… tham danh, trục lợi, quan liêu.”
-
-## Ý nghĩa
-- Cơ sở xây dựng đội ngũ cán bộ “vừa hồng vừa chuyên”  
+## Cách nấu
+Cám hòa với chút nước lạnh cho tan. Đun nước sôi, từ từ đổ cám đã hòa vào, khuấy đều. Đun nhỏ lửa 10–15 phút. Nêm muối, rắc hành lá nếu có. Ăn nóng.
     `,
     image: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Ho_Chi_Minh_and_Viet_Minh_leaders.jpg/440px-Ho_Chi_Minh_and_Viet_Minh_leaders.jpg",
+      "/images/chaocam.png",
     ],
-    linkResource: ["https://dangcongsan.vn"],
+    linkResource: [],
   },
-
   {
     id: 4,
-    slug: "cot-moc-4-nha-nuoc-cua-dan-do-dan-vi-dan",
-    title: "Cột mốc 4: Nhà nước của dân, do dân, vì dân",
-    milestone: "1945",
+    slug: "banh-bot-mi-hap",
+    title: "Bánh bột mì hấp — Món quà vặt thời bao cấp",
+    milestone: "1976–1986",
     shortDescription:
-      "Ngay sau khi giành độc lập, Hồ Chí Minh đặt nền tảng tư tưởng cho Nhà nước dân chủ nhân dân.",
+      "Bột mì thời bao cấp được phân phối theo tem phiếu. Bánh bột mì hấp đơn giản — bột, đường, men — là món nhiều gia đình làm để có bữa phụ no và ngọt.",
     content: `
-## Nội dung chính
-Hồ Chí Minh khẳng định (1945):
+## Bánh bột mì hấp
+Bột mì thời bao cấp được phân phối theo tem phiếu. Bánh bột mì hấp đơn giản — bột, đường, men — là món nhiều gia đình làm để có bữa phụ no và ngọt.
 
-> “Tất cả quyền lực nhà nước đều thuộc về nhân dân.”
+## Ký ức
+Không có bánh ngọt bán sẵn như bây giờ. Bột mì hấp với chút đường, thơm mềm, là "bánh" mà trẻ con mong đợi. Món dễ làm, nguyên liệu ít, in đậm trong ký ức ẩm thực thời đó.
 
-Nhân dân vừa là chủ, vừa là người trực tiếp tham gia xây dựng chính quyền.
-
-Người dạy cán bộ:
-
-> “Dân là chủ thì cán bộ là đầy tớ.” — 1953  
-
-## Ý nghĩa
-- Xây dựng nhà nước phục vụ nhân dân, không đặc quyền đặc lợi  
+## Cách làm
+Hòa men với nước ấm, để 5 phút. Trộn bột mì, đường, men, thêm nước từ từ nhào thành bột mịn. Ủ 30–60 phút. Chia thành viên nhỏ, đặt vào xửng hấp. Hấp 15–20 phút. Ăn nóng.
     `,
     image: [
-      "https://upload.wikimedia.org/wikipedia/commons/2/2c/QuocHoiKhoa1.jpg",
+      "https://images.unsplash.com/photo-1509440157946-7cbf7229790f?w=800&q=80",
     ],
-    linkResource: ["https://thuvienphapluat.vn"],
+    linkResource: [],
   },
-
   {
     id: 5,
-    slug: "cot-moc-5-nha-nuoc-phap-quyen-nhan-nghia",
-    title: "Cột mốc 5: Nhà nước pháp quyền và pháp quyền nhân nghĩa",
-    milestone: "1946",
+    slug: "tem-phieu-dinh-luong",
+    title: "Tem phiếu và định lượng — Cơ chế phân phối thời bao cấp",
+    milestone: "1976–1986",
     shortDescription:
-      "Hiến pháp 1946 đặt nền móng cho nhà nước pháp quyền đầu tiên ở Việt Nam.",
+      "Gạo, thịt, đường, vải vóc… đều được cấp theo định lượng. Bữa ăn của nhiều gia đình phải \"độn\" thêm bo bo, khoai, sắn.",
     content: `
-## Nội dung chính
-Ngày 3/9/1945, Hồ Chí Minh yêu cầu:
+## Tem phiếu là gì?
+Thời bao cấp (khoảng 1976–1986), kinh tế Việt Nam vận hành theo cơ chế kế hoạch hóa, phân phối theo tem phiếu. Gạo, thịt, đường, vải vóc… đều được cấp theo định lượng, không đủ cho nhu cầu hàng ngày.
 
-> “Cần phải có một Hiến pháp dân chủ.”
-
-Kết quả là **Hiến pháp 1946**, mang tinh thần:
-- Quyền lực thuộc về nhân dân  
-- Tôn trọng quyền con người  
-- Nhà nước hoạt động theo pháp luật  
-
-Hồ Chí Minh nhấn mạnh:
-
-> “Trăm điều phải có thần linh pháp quyền.”
-
-## Ý nghĩa
-- Cơ sở hình thành Nhà nước pháp quyền XHCN Việt Nam  
+## Bữa ăn gia đình
+Bữa ăn của nhiều gia đình phải "độn" thêm bo bo, khoai, sắn, và không ít lần phải ăn cháo cám để no bụng. Ẩm thực thời ấy không chỉ là chuyện no đói — mà còn là ký ức, văn hóa và sự thích nghi của cả một thế hệ.
     `,
     image: [
-      "https://upload.wikimedia.org/wikipedia/commons/6/6b/Co_nghi_vien_1946.jpg",
+      "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80",
     ],
-    linkResource: ["https://vi.wikipedia.org/wiki/Hi%E1%BA%BFn_ph%C3%A1p_1946"],
+    linkResource: [],
   },
-
   {
     id: 6,
-    slug: "cot-moc-6-kiem-soat-quyen-luc-nha-nuoc",
-    title: "Cột mốc 6: Kiểm soát quyền lực nhà nước",
-    milestone: "1946–1959",
+    slug: "mon-an-don-gian",
+    title: "Các món ăn đơn giản — No lòng và hoài niệm",
+    milestone: "1976–1986",
     shortDescription:
-      "Kiểm soát quyền lực là yêu cầu tất yếu để ngăn chặn lạm quyền, quan liêu, thoái hóa.",
+      "Cơm độn khoai, bo bo, cháo cám, bánh bột mì hấp… in đậm trong tâm trí những ai đã sống qua giai đoạn đó.",
     content: `
-## Nội dung chính
-Hồ Chí Minh cảnh báo:
-
-> “Dân ghét cán bộ cậy quyền cậy thế.” — 1948
-
-Các hình thức kiểm soát:
-- Đảng kiểm tra  
-- Quốc hội giám sát  
-- Nhân dân phê bình  
-- Thực thi pháp luật nghiêm minh  
-
-Hiến pháp 1946 quy định:
-- Bộ trưởng “không được tín nhiệm thì phải từ chức”
+## Ẩm thực thời bao cấp
+Ẩm thực thời ấy không chỉ là chuyện no đói — mà còn là ký ức, văn hóa và sự thích nghi của cả một thế hệ. Các món như cơm độn khoai, bo bo, cháo cám, bánh bột mì hấp… in đậm trong tâm trí những ai đã sống qua giai đoạn đó.
 
 ## Ý nghĩa
-- Bảo đảm quyền lực không bị tha hóa  
+Dự án Hương Vị Bao Cấp mong muốn lưu lại và chia sẻ những câu chuyện ẩm thực này, kết nối lịch sử với thế hệ trẻ qua website và trải nghiệm thực tế.
     `,
     image: [
-      "https://upload.wikimedia.org/wikipedia/commons/9/9f/Ho_Chi_Minh_with_officers_1957.jpg",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80",
     ],
-    linkResource: ["https://nhandan.vn"],
+    linkResource: [],
   },
-
   {
     id: 7,
-    slug: "cot-moc-7-phong-chong-tham-nhung-quan-lieu-lang-phi",
-    title: "Cột mốc 7: Phòng chống tham nhũng, quan liêu, lãng phí",
-    milestone: "1969",
+    slug: "ve-thoi-bao-cap",
+    title: "Về thời bao cấp — Bối cảnh và ý nghĩa ẩm thực",
+    milestone: "1976–1986",
     shortDescription:
-      "Trong bài báo cuối đời, Hồ Chí Minh cảnh báo tham nhũng là giặc nội xâm, nguy hiểm hơn cả giặc ngoại xâm.",
+      "Bối cảnh lịch sử và ý nghĩa ẩm thực thời bao cấp Việt Nam. Kết nối lịch sử với thế hệ trẻ.",
     content: `
-## Nội dung chính
-Hồ Chí Minh viết trong bài báo Nhân Dân (3/2/1969):
+## Bối cảnh lịch sử
+Thời bao cấp (khoảng 1976–1986) là giai đoạn kinh tế Việt Nam vận hành theo cơ chế kế hoạch hóa, phân phối theo tem phiếu. Gạo, thịt, đường, vải vóc… đều được cấp theo định lượng, không đủ cho nhu cầu hàng ngày.
 
-> “Tham ô, lãng phí, quan liêu là giặc nội xâm.”
-
-Những sắc lệnh quan trọng:
-- 1946: Nhận hối lộ phạt 5–20 năm tù  
-- Tham ô lớn có thể tử hình  
-
-Biện pháp:
-- Nêu gương  
-- Dựa vào dân để giám sát  
-- Kỷ luật nghiêm minh  
-- Công khai, minh bạch  
-
-## Ý nghĩa
-- Nền tảng cho cuộc chiến chống tham nhũng hiện nay  
+## Ý nghĩa ẩm thực
+Ẩm thực thời ấy không chỉ là chuyện no đói — mà còn là ký ức, văn hóa và sự thích nghi của cả một thế hệ. Dự án Hương Vị Bao Cấp mong muốn lưu lại và chia sẻ những câu chuyện ẩm thực này, kết nối lịch sử với thế hệ trẻ qua website và trải nghiệm thực tế.
     `,
     image: [
-      "https://upload.wikimedia.org/wikipedia/commons/8/89/Ho_Chi_Minh_and_Vietnamese_children.jpg",
+      "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=800&q=80",
     ],
-    linkResource: ["https://dangcongsan.vn"],
+    linkResource: [],
   },
 ];

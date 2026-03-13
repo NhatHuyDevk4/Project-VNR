@@ -68,12 +68,11 @@ const TimelinePage = ({ showHeader = true }: TimelinePageProps) => {
 
             <div className="flex items-center justify-center gap-4 mb-4">
               <Clock className="w-12 h-12 text-amber-400" />
-              <h1 className="text-6xl font-bold text-white">Timeline</h1>
+              <h1 className="text-6xl font-bold text-white">Hành trình ẩm thực</h1>
             </div>
 
             <p className="text-white/80 text-xl max-w-2xl mx-auto">
-              Hành trình 7 cột mốc quan trọng trong tư tưởng Hồ Chí Minh về xây
-              dựng Đảng và Nhà nước
+              Bảy món ăn gắn với ký ức tem phiếu — đơn giản, no lòng và đầy hoài niệm
             </p>
           </div>
         )}

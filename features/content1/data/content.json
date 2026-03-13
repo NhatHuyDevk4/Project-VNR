@@ -1,101 +1,93 @@
 {
-  "title": "Tính tất yếu và vai trò lãnh đạo của Đảng Cộng sản Việt Nam",
+  "title": "Bo bo — Món ăn từ ngô thời tem phiếu",
   "introduction": {
-    "quote": "Cách mạng trước hết phải có ‘đảng cách mệnh, để trong thì vận động và tổ chức dân chúng, ngoài thì liên lạc với dân tộc bị áp bức và vô sản giai cấp ở mọi nơi. Đảng có vững, cách mệnh mới thành công, cũng như người cầm lái có vững thuyền mới chạy’",
-    "author": "Hồ Chí Minh",
-    "source": "Đường cách mệnh (1927)",
+    "quote": "Khi gạo khan hiếm, ngô được dùng thay thế hoặc độn vào cơm. Bo bo — hạt ngô xay vỡ — trở thành 'cứu tinh' của nhiều gia đình thời tem phiếu.",
+    "author": "Ký ức ẩm thực",
+    "source": "Thời bao cấp (1976–1986)",
     "metaphor": {
-      "title": "Đảng như người cầm lái",
-      "description": "Khẳng định đảng cộng sản 'như người cầm lái' cho con thuyền là quan điểm nhất quán của Hồ Chí Minh về vai trò lãnh đạo của Đảng Cộng sản Việt Nam trong suốt cả quá trình cách mạng, cả trong cách mạng dân tộc dân chủ nhân dân và cả trong cách mạng xã hội chủ nghĩa."
+      "title": "Bo bo như bữa cơm no",
+      "description": "Bo bo là cách gọi dân dã của ngô (bắp) trong bữa ăn thời bao cấp. Khi gạo khan hiếm, ngô được dùng thay thế hoặc độn vào cơm để no lòng. Nấu bo bo thay cơm, hoặc trộn bo bo với gạo để có nồi cơm no hơn, là ký ức không thể quên của thế hệ sống qua thập niên 80."
     }
   },
   "necessity": {
-    "title": "Tính tất yếu của sự lãnh đạo",
+    "title": "Vì sao có bo bo trong bữa ăn",
     "mainPoints": [
       {
         "id": 1,
-        "title": "Sự lãnh đạo của Đảng là một tất yếu",
-        "content": "Sự lãnh đạo của Đảng Cộng sản Việt Nam là một tất yếu, vai trò lãnh đạo của Đảng cũng là một tất yếu - điều đó xuất phát từ yêu cầu phát triển của dân tộc Việt Nam.",
+        "title": "Định lượng gạo không đủ",
+        "content": "Thời tem phiếu, mỗi người chỉ được định lượng gạo rất ít. Gạo, thịt, đường đều được cấp theo tem phiếu, không đủ cho nhu cầu hàng ngày.",
         "icon": "necessity"
       },
       {
         "id": 2,
-        "title": "Nguyên tắc vận hành của xã hội",
-        "content": "Sự bảo đảm, phát huy vai trò lãnh đạo của Đảng Cộng sản Việt Nam trong suốt tiến trình phát triển của đất nước theo mục tiêu chủ nghĩa xã hội là một nguyên tắc vận hành của xã hội Việt Nam từ khi có Đảng.",
+        "title": "Ngô — nguồn no bụng",
+        "content": "Ngô (bắp) có thể trồng hoặc phân phối, giá rẻ hơn gạo. Bo bo — hạt ngô xay vỡ — dễ nấu, no lòng, trở thành món thay thế hoặc độn vào cơm.",
         "icon": "principle"
       }
     ]
   },
   "foundation": {
-    "title": "Nền tảng lý luận của Đảng",
-    "description": "Đảng Cộng sản Việt Nam do Hồ Chí Minh sáng lập và rèn luyện là một đảng chính trị tồn tại và phát triển theo những quan điểm của V.I.Lênin về đảng kiểu mới của giai cấp vô sản.",
+    "title": "Nguồn gốc món bo bo",
+    "description": "Bo bo là cách gọi dân dã của ngô trong bữa ăn thời bao cấp. Kinh tế Việt Nam thời ấy vận hành theo cơ chế kế hoạch hóa, phân phối theo tem phiếu.",
     "hoChiMinhContribution": {
-      "title": "Đóng góp sáng tạo của Hồ Chí Minh",
-      "loyalty": "Hồ Chí Minh là người trung thành với học thuyết Mác - Lênin, trong đó có lý luận của V.I.Lênin về đảng kiểu mới của giai cấp vô sản",
-      "creativity": "Đồng thời vận dụng sáng tạo và phát triển lý luận đó vào điều kiện cụ thể của Việt Nam"
+      "title": "Ý nghĩa văn hóa",
+      "loyalty": "Ẩm thực thời ấy không chỉ là chuyện no đói — mà còn là ký ức, văn hóa và sự thích nghi của cả một thế hệ.",
+      "creativity": "Các món như bo bo, cơm độn khoai, cháo cám in đậm trong tâm trí những ai đã sống qua giai đoạn đó."
     }
   },
   "birthOfParty": {
-    "title": "Sự ra đời của Đảng Cộng sản Việt Nam",
+    "title": "Cách nấu bo bo",
     "comparison": {
       "world": {
-        "title": "Trên thế giới (nói chung)",
-        "formula": "Chủ nghĩa xã hội khoa học + Phong trào công nhân",
-        "elements": [
-          "Chủ nghĩa xã hội khoa học",
-          "Phong trào công nhân"
-        ]
+        "title": "Nguyên liệu",
+        "formula": "Bo bo (ngô xay vỡ) + Nước + Muối",
+        "elements": ["Bo bo: 200g", "Nước: khoảng 400ml", "Muối: ít"]
       },
       "vietnam": {
-        "title": "Ở Việt Nam (theo Hồ Chí Minh)",
-        "formula": "Chủ nghĩa Mác - Lênin + Phong trào công nhân + Phong trào yêu nước",
-        "elements": [
-          "Chủ nghĩa Mác - Lênin",
-          "Phong trào công nhân",
-          "Phong trào yêu nước"
-        ],
-        "innovation": "Hồ Chí Minh đưa thêm vào yếu tố thứ ba: Phong trào yêu nước"
+        "title": "Cách nấu",
+        "formula": "Vo bo bo → Cho nước → Đun 20–25 phút → Nêm muối",
+        "elements": ["Vo bo bo nhẹ, bỏ bụi bẩn", "Cho vào nồi, thêm nước ngập 1 đốt tay", "Đun sôi rồi vặn nhỏ lửa", "Nêm chút muối, đảo đều. Ăn nóng thay cơm"],
+        "innovation": "Có thể trộn bo bo với gạo để có nồi cơm no hơn"
       }
     },
     "reasoning": {
-      "title": "Lý do phù hợp với Việt Nam",
-      "context": "Quan điểm của Hồ Chí Minh là hoàn toàn phù hợp với xã hội thuộc địa và phong kiến như Việt Nam",
+      "title": "Vì sao no lòng",
+      "context": "Bo bo giàu tinh bột, nấu chín mềm dễ ăn. Khi thiếu gạo, một nồi bo bo đủ cho cả nhà no bụng.",
       "contradictions": {
-        "title": "Mâu thuẫn dân tộc",
-        "description": "Mọi giai cấp, tầng lớp, trừ tư sản mại bản và đại địa chủ, còn đều có mâu thuẫn dân tộc",
-        "mainContradiction": "Mâu thuẫn cơ bản giữa toàn thể nhân dân Việt Nam với các thế lực đế quốc và tay sai"
+        "title": "Ký ức thời đó",
+        "description": "Nhiều gia đình nhớ mãi mùi bo bo, vị bo bo — đơn giản nhưng là \"cứu tinh\" trong những năm tháng khó khăn.",
+        "mainContradiction": "Không ngon bằng cơm trắng, nhưng no và sống qua được thời tem phiếu."
       }
     }
   },
   "historicalDevelopment": {
-    "title": "Quá trình phát triển lịch sử",
+    "title": "Các món ăn thời bao cấp",
     "movements": [
       {
         "id": 1,
-        "title": "Kết hợp phong trào công nhân và yêu nước",
-        "description": "Trong thực tế, những phong trào đấu tranh của công nhân đã kết hợp được rất nhuần nhuyễn với phong trào yêu nước.",
+        "title": "Bo bo",
+        "description": "Hạt ngô xay vỡ, nấu thay cơm hoặc độn với gạo. Món đặc trưng in đậm ký ức thập niên 80.",
         "icon": "unity"
       },
       {
         "id": 2,
-        "title": "Chuyển hướng từ dân chủ tư sản sang cộng sản",
-        "description": "Một số người Việt Nam yêu nước lúc đầu đi theo xu hướng dân chủ tư sản, nhưng qua thực tế được sự tác động của chủ nghĩa Mác - Lênin, đã dần dần tiến theo xu hướng cộng sản, rõ nhất là từ năm 1925 trở đi.",
+        "title": "Cơm độn khoai",
+        "description": "Cơm nấu cùng khoai lang, khoai sọ để tăng thể tích, no lâu hơn khi gạo không đủ.",
         "icon": "transition",
-        "milestone": "1925"
+        "milestone": "1976–1986"
       },
       {
         "id": 3,
-        "title": "Hội Việt Nam Cách mệnh Thanh niên",
-        "description": "Hàng loạt tổ chức yêu nước ra đời, trong đó nổi rõ nhất là tổ chức Hội Việt Nam Cách mệnh Thanh niên do Hồ Chí Minh lập ra.",
-        "icon": "organization",
-        "founder": "Hồ Chí Minh"
+        "title": "Cháo cám",
+        "description": "Cháo từ cám — phần bột còn sót sau khi xay xát gạo. Nhiều nhà phải ăn để chống đói.",
+        "icon": "organization"
       },
       {
         "id": 4,
-        "title": "Đấu tranh giai cấp quyện chặt với đấu tranh dân tộc",
-        "description": "Đấu tranh giai cấp quyện chặt với đấu tranh dân tộc. Thật khó mà tách bạch mục tiêu cơ bản giữa các phong trào đó, tuy lực lượng, phương thức, khẩu hiệu đấu tranh có khác nhau, nhưng mục tiêu chung là: Giành độc lập, tự do cho dân tộc.",
+        "title": "Bánh bột mì hấp",
+        "description": "Bột mì phân phối theo tem phiếu. Bánh bột mì hấp đơn giản — bột, đường, men — là món quà vặt trẻ con mong đợi.",
         "icon": "intertwined",
-        "commonGoal": "Giành độc lập, tự do cho dân tộc"
+        "commonGoal": "No lòng, sống qua thời bao cấp"
       }
     ]
   },
@@ -103,17 +95,14 @@
     "title": "Kết luận",
     "mainPoints": [
       {
-        "title": "Nhu cầu tất yếu của xã hội",
-        "content": "Đảng Cộng sản Việt Nam ra đời, tồn tại và phát triển chính là do nhu cầu tất yếu của xã hội Việt Nam từ đầu năm 1930 trở đi.",
-        "milestone": "1930"
+        "title": "Ý nghĩa ẩm thực",
+        "content": "Bo bo, cơm độn khoai, cháo cám, bánh bột mì hấp — những món đơn giản ấy là ký ức không quên của cả một thế hệ.",
+        "milestone": "1976–1986"
       },
       {
-        "title": "Sứ mệnh lịch sử",
-        "content": "Đảng đã được toàn dân tộc trao cho sứ mệnh lãnh đạo đất nước trong sự nghiệp giải phóng dân tộc và đi lên chủ nghĩa xã hội.",
-        "missions": [
-          "Giải phóng dân tộc",
-          "Đi lên chủ nghĩa xã hội"
-        ]
+        "title": "Dự án Hương Vị Bao Cấp",
+        "content": "Lưu lại và chia sẻ những câu chuyện ẩm thực thời tem phiếu, kết nối lịch sử với thế hệ trẻ qua website và trải nghiệm thực tế.",
+        "missions": ["Ký ức ẩm thực", "Văn hóa và lịch sử"]
       }
     ]
   }

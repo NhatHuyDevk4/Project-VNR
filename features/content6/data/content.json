@@ -1,201 +1,30 @@
 {
-  "title": "Xây dựng Nhà nước pháp quyền",
-  "subtitle": "Nhà nước hợp hiến, hợp pháp - Thượng tôn pháp luật - Pháp quyền nhân nghĩa",
+  "title": "Tem phiếu và cách nấu — Đơn giản, no lòng",
+  "subtitle": "Bối cảnh thời bao cấp (1976–1986) — Phân phối theo định lượng — Ẩm thực và ký ức",
   "sections": [
     {
       "id": "constitutional",
-      "title": "Nhà nước hợp hiến, hợp pháp",
+      "title": "Tem phiếu và định lượng",
       "icon": "scale",
-      "introduction": "Hồ Chí Minh luôn chú trọng vấn đề xây dựng nền tảng pháp lý cho Nhà nước Việt Nam mới. Người đã sớm thấy rõ tầm quan trọng của Hiến pháp và pháp luật trong đời sống chính trị - xã hội.",
-      "historicalDemand": {
-        "title": "Yêu sách của nhân dân An Nam (1919)",
-        "event": "Hội nghị Vécxây (Pháp)",
-        "year": "1919",
-        "demands": [
-          "Cải cách nền pháp lý ở Đông Dương bằng cách làm cho người bản xứ cũng được quyền hưởng những bảo đảm về mặt pháp luật như người Âu châu",
-          "Xoá bỏ hoàn toàn các toà án đặc biệt dùng làm công cụ để khủng bố và áp bức bộ phận trung thực nhất trong nhân dân An Nam",
-          "Thay thế chế độ ra các sắc lệnh bằng chế độ ra các đạo luật"
-        ]
-      },
-      "foundingActions": {
-        "title": "Hành động ngay sau Cách mạng Tháng Tám",
-        "date": "3-9-1945",
-        "context": "Chỉ một ngày sau khi đọc bản Tuyên ngôn độc lập, trong phiên họp đầu tiên của Chính phủ lâm thời",
-        "proposal": {
-          "quote": "Chúng ta phải có một hiến pháp dân chủ. Tôi đề nghị Chính phủ tổ chức càng sớm càng hay cuộc TỔNG TUYỂN CỬ với chế độ phổ thông đầu phiếu",
-          "author": "Hồ Chí Minh",
-          "purpose": [
-            "Lập nên Quốc hội",
-            "Lập ra Chính phủ và các cơ quan, bộ máy hợp hiến",
-            "Thể hiện quyền lực tối cao của nhân dân",
-            "Có cơ sở pháp lý vững chắc để làm việc với quân Đồng Minh",
-            "Có quan hệ quốc tế bình đẳng",
-            "Thiết lập cơ chế quyền lực hợp pháp theo đúng thông lệ của một Nhà nước pháp quyền hiện đại"
-          ]
-        }
-      },
-      "historicElection": {
-        "title": "Cuộc Tổng tuyển cử lịch sử",
-        "date": "6-1-1946",
-        "characteristics": [
-          "Phổ thông đầu phiếu",
-          "Trực tiếp",
-          "Bỏ phiếu kín"
-        ],
-        "significance": [
-          "Lần đầu tiên trong lịch sử hàng nghìn năm của dân tộc Việt Nam",
-          "Lần đầu tiên ở Đông Nam châu Á",
-          "Tất cả mọi người dân từ 18 tuổi trở lên, không phân biệt nam nữ, giàu nghèo, dân tộc, đảng phái, tôn giáo... đều đi bỏ phiếu"
-        ],
-        "outcome": {
-          "date": "2-3-1946",
-          "event": "Quốc hội khoá I nước Việt Nam Dân chủ Cộng hoà họp phiên đầu tiên",
-          "result": "Hồ Chí Minh được bầu làm Chủ tịch Chính phủ liên hiệp đầu tiên",
-          "legitimacy": "Chính phủ có đầy đủ tư cách pháp lý để giải quyết một cách có hiệu quả những vấn đề đối nội và đối ngoại"
-        }
-      }
+      "introduction": "Thời bao cấp (khoảng 1976–1986), kinh tế Việt Nam vận hành theo cơ chế kế hoạch hóa, phân phối theo tem phiếu. Gạo, thịt, đường, vải vóc… đều được cấp theo định lượng.",
+      "historicalDemand": {"title": "Bối cảnh thời bao cấp", "event": "Kinh tế kế hoạch hóa", "year": "1976–1986", "demands": ["Phân phối theo tem phiếu", "Định lượng không đủ cho nhu cầu", "Gia đình phải độn thêm bo bo, khoai, sắn"]},
+      "foundingActions": {"title": "Bữa ăn gia đình", "date": "1976–1986", "context": "Bữa ăn của nhiều gia đình phải độn thêm, đôi khi phải ăn cháo cám để no bụng.", "proposal": {"quote": "Ẩm thực thời ấy không chỉ là chuyện no đói — mà còn là ký ức, văn hóa và sự thích nghi của cả một thế hệ.", "author": "Hương Vị Bao Cấp", "purpose": ["No lòng", "Tiết kiệm", "Tận dụng nguyên liệu tại chỗ", "Chia sẻ trong gia đình", "Ký ức không quên"]}},
+      "historicElection": {"title": "Các món ăn đặc trưng", "date": "1976–1986", "characteristics": ["Bo bo", "Cơm độn khoai", "Cháo cám", "Bánh bột mì hấp"], "significance": ["Món đơn giản", "No lòng", "In đậm trong tâm trí những ai đã sống qua giai đoạn đó"], "outcome": {"date": "Hôm nay", "event": "Dự án Hương Vị Bao Cấp", "result": "Lưu lại và chia sẻ câu chuyện ẩm thực", "legitimacy": "Kết nối lịch sử với thế hệ trẻ"}}
     },
     {
       "id": "supremacy",
-      "title": "Nhà nước thượng tôn pháp luật",
+      "title": "Cách nấu đơn giản",
       "icon": "gavel",
-      "introduction": "Trong tư tưởng Hồ Chí Minh, Nhà nước quản lý bằng bộ máy và bằng nhiều biện pháp khác nhau, nhưng quan trọng nhất là quản lý bằng Hiến pháp và pháp luật nói chung.",
-      "legislation": {
-        "title": "Công tác lập pháp",
-        "description": "Hồ Chí Minh luôn chú trọng xây dựng hệ thống luật pháp dân chủ, hiện đại",
-        "achievements": {
-          "role": "Chủ tịch nước",
-          "constitutions": [
-            {
-              "year": "1946",
-              "role": "Đứng đầu Ủy ban soạn thảo Hiến pháp"
-            },
-            {
-              "year": "1959",
-              "role": "Đứng đầu Ủy ban soạn thảo Hiến pháp"
-            }
-          ],
-          "statistics": {
-            "laws": 16,
-            "decrees": 613,
-            "stateOrganizationDecrees": 243,
-            "otherDocuments": "nhiều văn bản dưới luật khác"
-          },
-          "context": "Trong bối cảnh đất nước phải vừa kháng chiến, vừa kiến quốc vô cùng khó khăn"
-        }
-      },
-      "implementation": {
-        "title": "Đưa pháp luật vào cuộc sống",
-        "aspects": [
-          {
-            "id": 1,
-            "title": "Nâng cao hiểu biết pháp luật của người dân",
-            "quote": "Làm sao cho dân biết hưởng quyền dân chủ, biến dùng quyền dân chủ của mình, dám nói, dám làm",
-            "author": "Hồ Chí Minh",
-            "focus": "Giáo dục pháp luật cho mọi người, đặc biệt cho thế hệ trẻ"
-          },
-          {
-            "id": 2,
-            "title": "Nâng cao dân trí",
-            "description": "Việc thực thi pháp luật có quan hệ rất lớn đến trình độ dân trí của nhân dân",
-            "actions": [
-              "Nâng cao dân trí",
-              "Phát huy tính tích cực chính trị của nhân dân",
-              "Làm cho nhân dân có ý thức chính trị trong việc tham gia công việc của chính quyền các cấp"
-            ]
-          },
-          {
-            "id": 3,
-            "title": "Tính nghiêm minh của pháp luật",
-            "quote": "Pháp luật Việt Nam tuy khoan hồng với những người biết cải tà quy chính, nhưng sẽ thẳng tay trừng trị những tên Việt gian đầu sỏ đã bán nước buôn dân",
-            "author": "Hồ Chí Minh",
-            "requirements": [
-              "Pháp luật phải đúng và phải đủ",
-              "Tăng cường tuyền truyền, giáo dục pháp luật cho mọi người dân",
-              "Người thực thi pháp luật phải thật sự công tâm và nghiêm minh"
-            ],
-            "criticism": "Thưởng có khi quá rộng, mà phạt thì không nghiêm"
-          },
-          {
-            "id": 4,
-            "title": "Giám sát và gương mẫu",
-            "supervision": "Khuyến khích nhân dân phê bình, giám sát công việc của Nhà nước, giám sát quá trình Nhà nước thực thi pháp luật",
-            "exemplary": {
-              "quote": "Các bạn là những người phụ trách thi hành pháp luật. Lẽ tất nhiên các bạn cần phải nêu cao cái gương 'phụng công, thủ pháp, chí công, vô tư' cho nhân dân noi theo",
-              "author": "Hồ Chí Minh",
-              "target": "Cán bộ các cấp, các ngành, đặc biệt là cán bộ thuộc ngành hành pháp và tư pháp"
-            },
-            "hoChiMinhExample": "Bản thân Hồ Chí Minh là một tấm gương sáng về sống và làm việc theo Hiến pháp và pháp luật. Sống và làm việc theo Hiến pháp và pháp luật đã trở thành nền nếp, thành thói quen, thành lối ứng xử tự nhiên của Hồ Chí Minh."
-          }
-        ]
-      }
+      "introduction": "Bo bo, cơm độn khoai, cháo cám — cách nấu đều đơn giản: vo, cho nước, đun. Bữa ăn no là ưu tiên hàng đầu.",
+      "legislation": {"title": "Nguyên liệu tại chỗ", "description": "Gạo, ngô, khoai, sắn — những thứ có thể trồng hoặc phân phối theo tem phiếu — được tận dụng tối đa.", "achievements": {"role": "Bữa ăn", "constitutions": [{"year": "Bo bo", "role": "Hạt ngô xay vỡ, nấu thay cơm"}, {"year": "Cơm độn khoai", "role": "Cơm nấu cùng khoai lang, khoai sọ"}], "statistics": {"laws": "Đơn giản", "decrees": "No lòng", "stateOrganizationDecrees": "Tiết kiệm"}, "context": "Thời tem phiếu, không lãng phí, không đòi hỏi xa xỉ."}},
+      "implementation": {"title": "Ý nghĩa văn hóa", "aspects": [{"id": 1, "title": "Ký ức ẩm thực", "quote": "Các món như cơm độn khoai, bo bo, cháo cám, bánh bột mì hấp… in đậm trong tâm trí những ai đã sống qua giai đoạn đó.", "author": "Hương Vị Bao Cấp", "focus": "Lưu lại và chia sẻ cho thế hệ trẻ"}, {"id": 2, "title": "Sự thích nghi", "description": "Gia đình nào cũng phải thích nghi: độn thêm bo bo, khoai, sắn. Đó là cách để sống qua những năm tháng khó khăn.", "actions": ["Độn thêm", "Tận dụng", "Chia sẻ"]}]}}
     },
     {
       "id": "humanistic",
-      "title": "Pháp quyền nhân nghĩa",
+      "title": "Phục vụ no lòng, vì gia đình",
       "icon": "heart",
-      "definition": "Pháp quyền nhân nghĩa tức là trước hết Nhà nước phải tôn trọng, bảo đảm thực hiện đầy đủ các quyền con người, chăm lo đến lợi ích của mọi người.",
-      "humanRights": {
-        "title": "Tiếp cận toàn diện quyền con người",
-        "approach": "Tiếp thu và vận dụng sáng tạo các lý thuyết hiện đại về quyền con người",
-        "categories": [
-          {
-            "id": 1,
-            "title": "Quyền tự nhiên",
-            "description": "Quyền cao nhất là quyền sống",
-            "icon": "life"
-          },
-          {
-            "id": 2,
-            "title": "Quyền chính trị - dân sự",
-            "description": "Các quyền tham gia chính trị và quyền công dân",
-            "icon": "vote"
-          },
-          {
-            "id": 3,
-            "title": "Quyền kinh tế, văn hóa, xã hội",
-            "description": "Quyền về đời sống vật chất và tinh thần",
-            "icon": "economy"
-          },
-          {
-            "id": 4,
-            "title": "Quyền của nhóm người cụ thể",
-            "description": "Phụ nữ, trẻ em, người dân tộc thiểu số, v.v.",
-            "icon": "group"
-          }
-        ],
-        "revolutionaryGoal": "Mục tiêu giải phóng con người, làm cho mọi người có được cuộc sống hạnh phúc, tự do xứng với phẩm giá con người, được hưởng dụng các quyền con người một cách đầy đủ nhất đã hòa quyện một cách hữu cơ và trở thành mục tiêu cao nhất của sự nghiệp cách mạng của dân tộc Việt Nam.",
-        "constitutionalRecognition": "Hiến pháp của đất nước đã ghi nhận một cách toàn diện quyền con người ở Việt Nam. Đó là nền tảng pháp lý để bảo vệ và thực thi các quyền con người đó một cách triệt để."
-      },
-      "humanisticLaw": {
-        "title": "Pháp luật có tính nhân văn, khuyến thiện",
-        "abolishment": "Ngay khi thành lập, Chính phủ lâm thời nước Việt Nam Dân chủ Cộng hòa đã lập tức tuyên bố xoá bỏ mọi luật pháp hà khắc của chính quyền thực dân phản động.",
-        "characteristics": [
-          {
-            "id": 1,
-            "title": "Ghi nhận và bảo vệ quyền con người",
-            "description": "Ghi nhận đầy đủ và bảo vệ quyền con người"
-          },
-          {
-            "id": 2,
-            "title": "Nghiêm minh nhưng công bằng",
-            "description": "Tính nghiêm minh nhưng khách quan và công bằng, tuyệt đối chống đối xử với con người một cách dã man",
-            "quote": "Chính phủ Việt Nam sẽ tha thứ hay trừng trị họ theo luật pháp tuỳ theo thái độ của họ hiện nay và về sau. Nhưng sẽ không có ai bị tàn sát",
-            "author": "Hồ Chí Minh"
-          },
-          {
-            "id": 3,
-            "title": "Tính khuyến thiện",
-            "description": "Bảo vệ cái đúng, cái tốt, lấy mục đích giáo dục, cảm hóa, thức tỉnh con người làm căn bản"
-          },
-          {
-            "id": 4,
-            "title": "Dựa trên nền tảng đạo đức",
-            "description": "Việc xây dựng và thi hành pháp luật phải dựa trên nền tảng đạo đức của xã hội và các giá trị đạo đức thấm sâu vào trong mọi quy định của pháp luật"
-          }
-        ],
-        "essence": "Pháp luật trong Nhà nước pháp quyền nhân nghĩa phải là pháp luật vì con người."
-      }
+      "definition": "Bữa ăn thời bao cấp phục vụ một mục tiêu giản dị: no bụng, giữ sức, và đầy tình thương trong gia đình.",
+      "humanRights": {"title": "Giá trị bữa ăn đơn giản", "approach": "Đơn giản không có nghĩa là kém — no lòng và tình thương mới là điều quan trọng.", "categories": [{"id": 1, "title": "No lòng", "description": "Mục tiêu hàng đầu của mỗi bữa ăn", "icon": "life"}, {"id": 2, "title": "Tiết kiệm", "description": "Không lãng phí, tận dụng tối đa", "icon": "vote"}, {"id": 3, "title": "Tình thương", "description": "Các bà các mẹ nhường phần cho con cháu", "icon": "economy"}, {"id": 4, "title": "Ký ức", "description": "In đậm trong tâm trí cả một thế hệ", "icon": "group"}], "revolutionaryGoal": "Dự án Hương Vị Bao Cấp mong muốn lưu lại và chia sẻ những câu chuyện ẩm thực này.", "constitutionalRecognition": "Ẩm thực thời bao cấp là một phần không thể thiếu của văn hóa ẩm thực Việt Nam."}, "humanisticLaw": {"title": "Kết nối thế hệ", "abolishment": "Ký ức ẩm thực cần được ghi nhận và truyền lại.", "characteristics": [{"id": 1, "title": "Lưu lại câu chuyện", "description": "Bo bo, cơm độn khoai, cháo cám, bánh bột mì hấp"}, {"id": 2, "title": "Chia sẻ", "description": "Qua website và trải nghiệm thực tế", "quote": "Kết nối lịch sử với thế hệ trẻ.", "author": "Hương Vị Bao Cấp"}, {"id": 3, "title": "Văn hóa", "description": "Ẩm thực thời ấy là ký ức, văn hóa và sự thích nghi của cả một thế hệ."}, {"id": 4, "title": "Ý nghĩa", "description": "Bữa ăn đơn giản ấy thể hiện sự kiên cường, tình thương và sức sống của người Việt."}], "essence": "Hương Vị Bao Cấp — Ẩm thực thời tem phiếu Việt Nam."}}
     }
   ]
 }

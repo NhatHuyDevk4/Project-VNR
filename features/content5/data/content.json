@@ -1,128 +1,31 @@
 {
-  "title": "Tư tưởng Hồ Chí Minh về Nhà nước do nhân dân, vì nhân dân",
-  "subtitle": "Nguyên lý cơ bản về bản chất dân chủ của Nhà nước Việt Nam",
+  "title": "Tem phiếu và bữa ăn do dân làm, vì no lòng",
+  "subtitle": "Bữa ăn thời bao cấp — đơn giản, no lòng và đầy hoài niệm",
   "sections": [
     {
       "id": "by-people",
-      "title": "Nhà nước do nhân dân",
+      "title": "Bữa ăn do dân làm",
       "icon": "users",
-      "introduction": "Nguyên lý 'Nhà nước do nhân dân – Dân làm chủ' là nền tảng của tư tưởng Hồ Chí Minh về quyền lực nhà nước thuộc về nhân dân.",
+      "introduction": "Thời tem phiếu, gạo, thịt, đường được cấp theo định lượng. Gia đình tự nấu, tự độn thêm bo bo, khoai, sắn — bữa ăn do chính các bà các mẹ làm ra để cả nhà no lòng.",
       "principles": [
-        {
-          "title": "Mọi quyền lực Nhà nước thuộc về nhân dân",
-          "description": "Quyền lực tối cao do nhân dân quyết định. Nhân dân vừa là chủ thể quyền lực, vừa là người trao quyền cho Nhà nước.",
-          "points": [
-            "Quyền lực tối cao do nhân dân quyết định",
-            "Nhân dân là chủ thể quyền lực",
-            "Nhân dân là người trao quyền cho Nhà nước"
-          ]
-        },
-        {
-          "title": "Nhân dân lập nên Nhà nước",
-          "description": "Thông qua bầu cử phổ thông đầu phiếu.",
-          "points": [
-            "Thông qua bầu cử phổ thông đầu phiếu",
-            "Tổng tuyển cử 6/1/1946: lần đầu ở Đông Nam Á",
-            "Mọi công dân ≥18 tuổi đều có quyền bầu cử"
-          ],
-          "highlight": {
-            "date": "6/1/1946",
-            "event": "Tổng tuyển cử đầu tiên",
-            "significance": "Lần đầu tiên ở Đông Nam Á mọi công dân ≥18 tuổi đều có quyền bầu cử"
-          }
-        },
-        {
-          "title": "Quyền làm chủ của nhân dân",
-          "description": "Nhân dân thực hiện quyền làm chủ theo hai hình thức: trực tiếp và gián tiếp.",
-          "points": [
-            "Thực hiện theo 2 hình thức: trực tiếp và gián tiếp",
-            "Quyền góp ý, phê bình, giám sát",
-            "Quyền bãi miễn đại biểu không xứng đáng"
-          ]
-        },
-        {
-          "title": "Trách nhiệm của người chủ",
-          "description": "Nhân dân không chỉ có quyền mà còn có trách nhiệm đối với Nhà nước.",
-          "points": [
-            "Tuân thủ pháp luật, giữ trật tự",
-            "Nộp thuế, tham gia công việc chung",
-            "Bảo vệ tài sản công và lợi ích quốc gia"
-          ]
-        }
+        {"title": "Định lượng không đủ", "description": "Định lượng gạo mỗi tháng không đủ cho cả gia đình. Mọi nhà đều phải tìm cách: mua thêm khoai, nấu bo bo, đôi khi cả cháo cám.", "points": ["Gạo, thịt, đường cấp theo tem phiếu", "Không đủ nhu cầu hàng ngày", "Phải độn thêm, tận dụng tại chỗ"]},
+        {"title": "Các bà các mẹ đảm đương", "description": "Mua thêm khoai lang, khoai sọ — rẻ và no — rồi nấu chung với gạo. Nồi cơm độn khoai vừa thơm gạo vừa ngọt khoai.", "points": ["Khoai lang, khoai sọ rẻ và no", "Nấu chung với gạo", "Bữa cơm 'đủ no' của nhiều thế hệ"], "highlight": {"date": "1976–1986", "event": "Thời bao cấp", "significance": "Kinh tế kế hoạch hóa, phân phối theo tem phiếu"}},
+        {"title": "Chia sẻ trong gia đình", "description": "Mỗi suất ít ỏi được chia đều. Các bà các mẹ thường nhường phần cho con cháu, ông bà — tình thương gắn với từng bữa ăn.", "points": ["Chia đều cho cả nhà", "Nhường phần cho con cháu", "Tình thương trong bữa ăn đơn giản"]},
+        {"title": "Trách nhiệm với bữa ăn", "description": "Không lãng phí, không đòi hỏi xa xỉ. Nguyên liệu tại chỗ được tận dụng tối đa.", "points": ["Tiết kiệm", "Không lãng phí", "Tận dụng gạo, ngô, khoai, sắn"]}
       ]
     },
     {
       "id": "for-people",
-      "title": "Nhà nước vì nhân dân",
+      "title": "Bữa ăn vì no lòng",
       "icon": "heart",
-      "introduction": "Nguyên lý 'Nhà nước vì nhân dân' thể hiện mục tiêu tối cao của Nhà nước là phục vụ hạnh phúc và lợi ích của nhân dân.",
+      "introduction": "Mục tiêu của bữa ăn thời ấy là no bụng, giữ sức cho cả gia đình. Ẩm thực thời bao cấp không cầu kỳ — hướng đến no lòng và tình thương.",
       "principles": [
-        {
-          "title": "Mục tiêu tối cao: phục vụ nhân dân",
-          "description": "Chính phủ tồn tại để mưu cầu hạnh phúc cho mọi người dân.",
-          "points": [
-            "Chính phủ tồn tại để 'mưu cầu hạnh phúc cho mọi người dân'",
-            "Việc gì có lợi cho dân thì hết sức làm",
-            "Phục vụ nhân dân là nhiệm vụ cao nhất"
-          ],
-          "quote": {
-            "text": "Việc gì có lợi cho dân thì hết sức làm.",
-            "author": "Hồ Chí Minh"
-          }
-        },
-        {
-          "title": "Không có đặc quyền, đặc lợi",
-          "description": "Nhà nước không được hưởng lợi riêng, cán bộ là công bộc của dân.",
-          "points": [
-            "Nhà nước không được hưởng lợi riêng",
-            "Cán bộ là công bộc của dân",
-            "Không phải 'quan cách mạng'"
-          ]
-        },
-        {
-          "title": "Đạo đức công vụ của cán bộ",
-          "description": "Cán bộ nhà nước phải thực hiện đạo đức công vụ cao nhất.",
-          "points": [
-            "Thực hiện: Cần – Kiệm – Liêm – Chính",
-            "Chí công vô tư",
-            "Không lạm quyền, không nhũng nhiễu",
-            "Không mưu lợi cá nhân"
-          ],
-          "ethics": [
-            "Cần",
-            "Kiệm",
-            "Liêm",
-            "Chính",
-            "Chí công vô tư"
-          ]
-        },
-        {
-          "title": "Chống 'giặc nội xâm'",
-          "description": "Tham ô, lãng phí, quan liêu bị coi là giặc nội xâm đe dọa Nhà nước.",
-          "points": [
-            "Tham ô – lãng phí – quan liêu bị coi là 'giặc nội xâm'",
-            "Yêu cầu xây dựng Nhà nước trong sạch",
-            "Nhà nước liêm chính, vì dân phục vụ"
-          ],
-          "warning": {
-            "text": "Tham ô, lãng phí, quan liêu là giặc nội xâm",
-            "consequences": [
-              "Đe dọa sự tồn vong của Nhà nước",
-              "Làm mất lòng tin của nhân dân",
-              "Phá hoại nền tảng của chế độ"
-            ]
-          }
-        }
+        {"title": "Mục tiêu: no lòng", "description": "Bo bo, cơm độn khoai, cháo cám — đều hướng đến mục tiêu no bụng, giữ sức trong điều kiện khan hiếm.", "points": ["No bụng là ưu tiên", "Giữ sức cho cả nhà", "Đơn giản nhưng đủ"], "quote": {"text": "Nồi cơm độn khoai vừa thơm gạo vừa ngọt khoai, là bữa cơm 'đủ no' của nhiều thế hệ.", "author": "Ký ức ẩm thực"}},
+        {"title": "Không đòi hỏi xa xỉ", "description": "Thời tem phiếu không có điều kiện ăn sang. Mọi thứ đều thực tế và đầy tình thương.", "points": ["Không xa xỉ", "Thực tế", "Tình thương trong từng bữa"]},
+        {"title": "Ký ức và văn hóa", "description": "Ẩm thực thời ấy không chỉ là chuyện no đói — mà còn là ký ức, văn hóa và sự thích nghi của cả một thế hệ.", "points": ["Ký ức không quên", "Văn hóa ẩm thực", "Sự thích nghi"], "ethics": ["Đơn giản", "No lòng", "Tiết kiệm", "Chia sẻ", "Tình thương"]},
+        {"title": "Dự án Hương Vị Bao Cấp", "description": "Lưu lại và chia sẻ những câu chuyện ẩm thực này, kết nối lịch sử với thế hệ trẻ qua website và trải nghiệm thực tế.", "points": ["Lưu lại câu chuyện ẩm thực", "Kết nối thế hệ", "Website và trải nghiệm thực tế"], "warning": {"text": "Nếu không ghi nhớ và chia sẻ, ký ức ẩm thực thời bao cấp có thể mờ dần.", "consequences": ["Mất dần ký ức", "Thế hệ trẻ không biết", "Mất một phần văn hóa"]}}
       ]
     }
   ],
-  "conclusion": {
-    "title": "Kết luận",
-    "content": "Tư tưởng Hồ Chí Minh về Nhà nước của dân – do dân – vì dân vừa là nền tảng lý luận, vừa là kim chỉ nam cho quá trình xây dựng Nhà nước Việt Nam hiện đại",
-    "keyPoints": [
-      "Nền tảng lý luận vững chắc",
-      "Kim chỉ nam cho xây dựng Nhà nước",
-      "Định hướng phát triển Việt Nam hiện đại"
-    ]
-  }
+  "conclusion": {"title": "Kết luận", "content": "Cơm độn khoai, bo bo, cháo cám, bánh bột mì hấp — những món đơn giản ấy là ký ức không quên của cả một thế hệ. Dự án Hương Vị Bao Cấp mong muốn lưu lại và truyền lại cho thế hệ trẻ.", "keyPoints": ["Ký ức ẩm thực", "Văn hóa và lịch sử", "Kết nối thế hệ"]}
 }
