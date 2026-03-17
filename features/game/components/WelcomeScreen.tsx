@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Star, Trophy, HelpCircle } from "lucide-react";
 import { useEffect, useRef } from "react";
