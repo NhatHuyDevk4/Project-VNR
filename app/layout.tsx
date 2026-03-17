@@ -20,8 +20,8 @@ const crimsonText = Crimson_Text({
 });
 
 export const metadata: Metadata = {
-  title: "Tư tưởng của chủ tịch Hồ Chí Minh",
-  description: "Nội dung được tạo và hoàn thiện bởi nhóm 4",
+  title: "Hương Vị Bao Cấp",
+  description: "Ẩm thực thời kỳ bao cấp Việt Nam — ký ức, văn hoá và lịch sử.",
 };
 
 export default function RootLayout({

@@ -31,15 +31,15 @@ const PrincipleHeader = () => {
       </div>
 
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-amber-100 mb-6">
-        Nguyên Tắc Tổ Chức và Sinh Hoạt
+        Nguyên tắc ẩm thực thời bao cấp
       </h1>
 
       {/* Subtitle with accent */}
       <div className="inline-block relative">
         <p className="text-amber-200/80 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed px-6 py-4 rounded-xl bg-amber-900/10 border border-amber-700/20">
-          Để đảm bảo vai trò lãnh đạo và duy trì bản chất cách mạng, Chủ tịch Hồ
-          Chí Minh đã xác định các nguyên tắc nền tảng cho việc xây dựng Đảng
-          Cộng sản Việt Nam trở nên trong sạch, vững mạnh.
+          Thời tem phiếu, bữa ăn đơn giản — bo bo, cơm độn khoai, cháo cám — là
+          ký ức không quên của cả một thế hệ. Những nguyên tắc nấu ăn và thích nghi
+          ấy in đậm trong văn hóa ẩm thực Việt Nam.
         </p>
       </div>
 

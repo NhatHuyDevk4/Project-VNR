@@ -107,7 +107,7 @@ const TypewriterText = ({
 
 const AnimatedTitle = () => {
   const text =
-    "Chương IV: TƯ TƯỞNG HỒ CHÍ MINH VỀ ĐẢNG CỘNG SẢN VIỆT NAM VÀ NHÀ NƯỚC CỦA NHÂN DÂN, DO NHÂN DÂN, VÌ NHÂN DÂN";
+    "HƯƠNG VỊ BAO CẤP — ẨM THỰC THỜI KỲ TEM PHIẾU VIỆT NAM";
   const titleRef = useRef<HTMLHeadingElement>(null);
   const charsRef = useRef<(HTMLSpanElement | null)[]>([]);
   const underlineContainerRef = useRef<HTMLDivElement>(null);
@@ -415,7 +415,7 @@ const AnimatedTitle = () => {
         {/* Card Container for Quote */}
         <div className="relative rounded-2xl border-2 border-amber-700/40 bg-black/20 backdrop-blur-sm p-3">
           <TypewriterText
-            text="Bao nhiêu lợi ích đều vì dân. Bao nhiêu quyền hạn đều của dân. Công việc đổi mới xây dựng là trách nhiệm của dân."
+            text="Thời tem phiếu, bữa ăn đơn giản — bo bo, cơm độn khoai, cháo cám — là ký ức không quên của cả một thế hệ."
             delay={5.5}
             className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal leading-relaxed text-center ${dancingScript.className}`}
             style={{

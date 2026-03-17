@@ -24,12 +24,12 @@ const aiTools: AITool[] = [
     name: "ChatGPT",
     icon: <MessageSquare className="w-8 h-8" />,
     description:
-      "Trợ lý AI mạnh mẽ hỗ trợ nghiên cứu, viết nội dung và giải đáp thắc mắc về tư tưởng Hồ Chí Minh.",
+      "Trợ lý AI mạnh mẽ hỗ trợ nghiên cứu, viết nội dung và giải đáp thắc mắc về ẩm thực thời bao cấp, tem phiếu và văn hóa ăn uống Việt Nam.",
     features: [
-      "Tổng hợp và phân tích tài liệu lịch sử",
-      "Hỗ trợ viết nội dung học thuật",
-      "Giải đáp câu hỏi về tư tưởng chính trị",
-      "Đề xuất ý tưởng sáng tạo cho dự án",
+      "Tổng hợp và phân tích tài liệu về thời bao cấp",
+      "Hỗ trợ viết nội dung về ẩm thực, món ăn",
+      "Giải đáp câu hỏi về bo bo, cơm độn khoai, cháo cám",
+      "Đề xuất ý tưởng sáng tạo cho dự án Hương Vị Bao Cấp",
     ],
     link: "https://chat.openai.com",
   },
@@ -40,7 +40,7 @@ const aiTools: AITool[] = [
       "AI đa phương thức của Google, kết hợp văn bản, hình ảnh và dữ liệu để tạo nội dung phong phú. Hỗ trợ tạo hình ảnh AI từ mô tả văn bản.",
     features: [
       "Tìm kiếm và tổng hợp thông tin",
-      "Phân tích hình ảnh lịch sử",
+      "Phân tích hình ảnh ẩm thực, món ăn",
       "Tạo hình ảnh AI từ mô tả",
       "Tạo sơ đồ tư duy",
       "Đề xuất cấu trúc nội dung",
@@ -75,60 +75,52 @@ const aiTools: AITool[] = [
 
 const referenceLinks = [
   {
-    title: "Thư mục tài liệu chính",
+    title: "Thư mục tài liệu dự án",
     url: "https://drive.google.com/drive/u/1/folders/1oF-H7fpcAPZw7JGKDVIwdICHPJblJTrc",
   },
   {
-    title: "Bảo vật quốc gia - Đường Kách Mệnh",
-    url: "https://baotanglichsu.vn/vi/Articles/1001/13639/gioi-thieu-bao-vat-quoc-gia-9-djuong-kach-menh-anh-sang-cho-con-djuong-cach-mang-viet-nam.html",
+    title: "Bảo tàng Lịch sử Việt Nam",
+    url: "https://baotanglichsu.vn",
   },
   {
-    title: "Phát hành tác phẩm Đường Kách Mệnh ở Italy",
-    url: "https://baotanghochiminh.vn/phat-hanh-tac-pham-duong-kach-menh-o-italy.htm",
+    title: "Ẩm thực Việt Nam - Wikipedia",
+    url: "https://vi.wikipedia.org/wiki/%E1%BA%A8m_th%E1%BB%B1c_Vi%E1%BB%87t_Nam",
   },
   {
-    title: "Tư liệu văn kiện Đại hội III",
-    url: "https://tulieuvankien.dangcongsan.vn/ban-chap-hanh-trung-uong-dang/dai-hoi-dang/lan-thu-iii",
+    title: "Thời bao cấp tại Việt Nam",
+    url: "https://vi.wikipedia.org/wiki/Th%E1%BB%9Di_bao_c%E1%BA%A5p_t%E1%BA%A1i_Vi%E1%BB%87t_Nam",
   },
   {
-    title: "Dấu ấn Đại hội III",
-    url: "https://nhandan.vn/dau-an-cac-ky-dai-hoi-dai-hoi-iii-xay-dung-cnxh-o-mien-bac-dau-tranh-giai-phong-mien-nam-post445353.html",
+    title: "Văn hóa ẩm thực Việt Nam",
+    url: "https://vi.wikipedia.org/wiki/V%C4%83n_h%C3%B3a_%E1%BA%A9m_th%E1%BB%B1c_Vi%E1%BB%87t_Nam",
   },
   {
-    title: "Tư tưởng Hồ Chí Minh về cán bộ và công tác cán bộ",
-    url: "https://tuyengiao.vn/hoc-tap-va-lam-theo-loi-bac/tu-tuong-ho-chi-minh-ve-can-bo-va-cong-tac-can-bo-132338",
+    title: "Ngô (bắp) trong ẩm thực",
+    url: "https://vi.wikipedia.org/wiki/Ng%C3%B4",
   },
   {
-    title: "Cán bộ là cái gốc của mọi công việc",
-    url: "https://dangcongsan.vn/tu-tuong-van-hoa/can-bo-la-cai-goc-cua-moi-cong-viec-554476.html",
+    title: "Khoai lang - Wikipedia",
+    url: "https://vi.wikipedia.org/wiki/Khoai_lang",
   },
   {
-    title: "Tư tưởng về nhà nước của dân, do dân, vì dân",
-    url: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/noi-dung-tu-tuong-dao-duc/tu-tuong-ho-chi-minh-ve-nha-nuoc-cua-dan-do-dan-vi-dan-26",
+    title: "Bột mì và bánh truyền thống",
+    url: "https://vi.wikipedia.org/wiki/B%E1%BB%99t_m%C3%AC",
   },
   {
-    title: "Nhà nước pháp quyền của dân",
-    url: "https://tuyenquang.dcs.vn/DetailView/99978/22/Tu-tuong-Ho-Chi-Minh-ve-nha-nuoc-phap-quyen-cua-dan-do-dan-vi-dan.html",
+    title: "Tem phiếu và phân phối",
+    url: "https://vi.wikipedia.org/wiki/Tem_phi%E1%BA%BFu",
   },
   {
-    title: "Xây dựng nhà nước trong Hiến pháp 1946",
-    url: "https://tapchilichsudang.vn/tu-tuong-ho-chi-minh-ve-xay-dung-nha-nuoc-cua-dan-do-dan-vi-dan-trong-hien-phap-nam-1946.html",
+    title: "Lịch sử kinh tế Việt Nam",
+    url: "https://vi.wikipedia.org/wiki/Kinh_t%E1%BA%BF_Vi%E1%BB%87t_Nam",
   },
   {
-    title: "Ảnh tư liệu Quốc hội",
-    url: "https://quochoi.vn/tulieuquochoi/anhtulieu/Pages/anhtulieu.aspx?ItemID=823",
+    title: "Ẩm thực và ký ức",
+    url: "https://vi.wikipedia.org/wiki/%E1%BA%A8m_th%E1%BB%B1c",
   },
   {
-    title: "Kiểm soát quyền lực trong công tác cán bộ",
-    url: "https://dangcongsan.vn/tu-tuong-van-hoa/kiem-soat-quyen-luc-trong-cong-tac-can-bo-theo-tu-tuong-ho-chi-minh-565403.html",
-  },
-  {
-    title: "Phòng chống tham nhũng theo tư tưởng Hồ Chí Minh",
-    url: "https://www.quanlynhanuoc.vn/2024/08/01/phong-chong-tham-nhung-theo-tu-tuong-ho-chi-minh/",
-  },
-  {
-    title: "Bác Hồ nói về tham nhũng và chống tham nhũng",
-    url: "https://tulieuvankien.dangcongsan.vn/c-mac-angghen-lenin-ho-chi-minh/ho-chi-minh/nghien-cuu-hoc-tap-tu-tuong/bac-ho-noi-ve-tham-nhung-va-chong-tham-nhung-2413",
+    title: "Văn hóa Việt Nam",
+    url: "https://vi.wikipedia.org/wiki/V%C4%83n_h%C3%B3a_Vi%E1%BB%87t_Nam",
   },
 ];
 
@@ -311,11 +303,10 @@ const UsedAIPage = () => {
         {/* Reference Links Section */}
         <div className="mt-16">
           <h3 className="text-3xl font-bold text-amber-100 mb-6 text-center">
-            Nguồn Tài Liệu Tham Khảo
+            Nguồn tài liệu tham khảo
           </h3>
           <p className="text-amber-200/70 text-center mb-8">
-            Các nguồn tài liệu chính thức được sử dụng trong quá trình nghiên
-            cứu
+            Các nguồn tham khảo về ẩm thực, thời bao cấp và văn hóa Việt Nam
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

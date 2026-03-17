@@ -14,73 +14,73 @@ export interface Principle {
 export const PRINCIPLES_DATA: Principle[] = [
   {
     number: "01",
-    title: "Nguyên tắc Tập trung dân chủ",
-    subtitle: "Nền tảng của sự thống nhất",
+    title: "Đơn giản, no lòng",
+    subtitle: "Tinh thần bữa ăn thời tem phiếu",
     description:
-      "Hồ Chí Minh đưa ra quan điểm về tập trung dân chủ với hai mặt khăng khít: Tập trung trên nền tảng dân chủ và Dân chủ phải đi đến tập trung.",
+      "Ẩm thực thời bao cấp không cầu kỳ — bo bo, cơm độn khoai, cháo cám — đều hướng đến mục tiêu no bụng, giữ sức cho cả gia đình trong điều kiện khan hiếm.",
     points: [
       {
-        label: "Tập trung trên cơ sở dân chủ",
+        label: "Nguyên liệu tại chỗ",
         content:
-          "Khuyến khích đảng viên bày tỏ hết ý kiến trong Đảng để tạo tinh thần trách nhiệm và tính tích cực. Ý kiến sau khi thảo luận được cấp trên lắng nghe, rồi mới tập trung.",
+          "Gạo, ngô, khoai, sắn — những thứ có thể trồng hoặc phân phối theo tem phiếu — được tận dụng tối đa. Không lãng phí, không đòi hỏi xa xỉ.",
       },
       {
-        label: "Dân chủ đi đến tập trung",
+        label: "Cách nấu dân dã",
         content:
-          "Tập trung dân chủ là điều kiện tiên quyết để Đảng trong sạch và vững mạnh. Cần tránh hai căn bệnh: (1) Độc đoán, chuyên quyền, coi thường tập thể; (2) Dựa dẫm tập thể, không dám quyết đoán.",
+          "Nấu một nồi cơm độn, một nồi bo bo, hay một nồi cháo cám đều đơn giản: vo, cho nước, đun. Bữa ăn no là ưu tiên hàng đầu.",
       },
       {
-        label: "Tổ chức và kỷ luật",
+        label: "Chia sẻ trong gia đình",
         content:
-          "Tập thể lãnh đạo, cá nhân phụ trách. Cá nhân phục tùng tổ chức, thiểu số phục tùng đa số, cấp dưới phục tùng cấp trên, toàn Đảng phục tùng Trung ương.",
+          "Mỗi suất định lượng ít ỏi được chia đều. Các bà các mẹ thường nhường phần cho con cháu, ông bà — tình thương gắn với từng bữa ăn.",
       },
     ],
   },
   {
     number: "02",
-    title: "Nguyên tắc Tự phê bình và Phê bình",
-    subtitle: '"Thang thuốc tốt nhất"',
+    title: "Tem phiếu và sự thích nghi",
+    subtitle: '"Sống qua thời đó"',
     description:
-      "Hồ Chí Minh coi tự phê bình và phê bình là phương pháp và công cụ không thể thiếu để xây dựng Đảng, như 'mỗi ngày phải rửa mặt'.",
+      "Thời bao cấp (1976–1986), gạo, thịt, đường, vải vóc đều cấp theo tem phiếu. Gia đình nào cũng phải thích nghi: độn thêm bo bo, khoai, sắn, đôi khi cả cháo cám.",
     points: [
       {
-        label: "Vai trò củng cố đoàn kết",
+        label: "Định lượng không đủ",
         content:
-          'Phê bình là "thang thuốc" tốt nhất để củng cố đoàn kết và thống nhất. Giúp phần tốt nảy nở như hoa mùa xuân, còn phần xấu mất dần đi.',
+          "Định lượng gạo mỗi tháng không đủ cho cả nhà. Mua thêm khoai lang, khoai sọ — rẻ và no — để nấu chung với gạo thành cơm độn khoai.",
       },
       {
-        label: "Yêu cầu phương pháp",
+        label: "Bo bo thay cơm",
         content:
-          'Phê bình phải trung thực, kiên quyết, đúng người, đúng việc, có văn hóa. Đồng thời giữ được "tình đồng chí thương yêu lẫn nhau".',
+          "Khi gạo khan hiếm, bo bo (hạt ngô xay vỡ) trở thành \"cứu tinh\". Nấu bo bo thay cơm hoặc trộn bo bo với gạo để có nồi cơm no hơn.",
       },
       {
-        label: "Mục đích",
+        label: "Cháo cám — cùng đường",
         content:
-          "Tăng cường sức mạnh của Đảng, đảm bảo sự thống nhất và đoàn kết, sửa chữa sai lầm, khuyết điểm.",
+          "Khi thiếu gạo đến mức không đủ nấu cơm, cháo cám là món \"cùng đường\". Cám vốn cho heo ăn, nhưng nhiều nhà phải dùng để chống đói.",
       },
     ],
   },
   {
     number: "03",
-    title: "Nguyên tắc Kỷ luật nghiêm minh, tự giác",
-    subtitle: "Sức mạnh đồng nhất",
+    title: "Ký ức ẩm thực",
+    subtitle: "Văn hóa và hoài niệm",
     description:
-      "Để Đảng là một khối thống nhất và hành động theo một ý chí duy nhất, Đảng phải xây dựng trên nguyên tắc kỷ luật nghiêm minh và tự giác.",
+      "Ẩm thực thời ấy không chỉ là chuyện no đói — mà còn là ký ức, văn hóa và sự thích nghi của cả một thế hệ. Các món đơn giản in đậm trong tâm trí những ai đã sống qua giai đoạn đó.",
     points: [
       {
-        label: "Tính nghiêm minh",
+        label: "Món in đậm ký ức",
         content:
-          '"Đảng tổ chức rất nghiêm, khác với các đảng phái khác". Chấp hành kỷ luật là điều kiện bắt buộc. Không có kỷ luật sắt, Đảng không thể thắng lợi.',
+          "Cơm độn khoai, bo bo, cháo cám, bánh bột mì hấp — món nào cũng gắn với một giai đoạn, một câu chuyện gia đình, một ký ức không quên.",
       },
       {
-        label: "Tính tự giác",
+        label: "Kết nối thế hệ",
         content:
-          "Kỷ luật phải là kỷ luật tự giác, nền tảng là lòng tự giác của đảng viên về nhiệm vụ đối với Đảng. Khi giác ngộ kỷ luật, mới thật sự tạo sức mạnh cho Đảng.",
+          "Dự án Hương Vị Bao Cấp mong muốn lưu lại và chia sẻ những câu chuyện ẩm thực này, kết nối lịch sử với thế hệ trẻ qua website và trải nghiệm thực tế.",
       },
       {
-        label: "Thực hiện nghiêm",
+        label: "Ý nghĩa văn hóa",
         content:
-          "Kỷ luật phải được thực hiện nghiêm từ trên xuống dưới, đảm bảo sự thống nhất trong hành động.",
+          "Bữa ăn đơn giản ấy thể hiện sự kiên cường, tình thương và sức sống của người Việt trong giai đoạn khó khăn — đáng được ghi nhận và truyền lại.",
       },
     ],
   },
