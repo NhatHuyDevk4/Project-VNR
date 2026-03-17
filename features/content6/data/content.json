@@ -1,30 +1,186 @@
 {
-  "title": "Tem phiếu và cách nấu — Đơn giản, no lòng",
-  "subtitle": "Bối cảnh thời bao cấp (1976–1986) — Phân phối theo định lượng — Ẩm thực và ký ức",
+  "title": "Tem phieu va cach nau - Don gian, no long",
+  "subtitle": "Boi canh thoi bao cap (1976-1986) - Phan phoi theo dinh luong - Am thuc va ky uc",
   "sections": [
     {
       "id": "constitutional",
-      "title": "Tem phiếu và định lượng",
+      "title": "Tem phieu va dinh luong",
       "icon": "scale",
-      "introduction": "Thời bao cấp (khoảng 1976–1986), kinh tế Việt Nam vận hành theo cơ chế kế hoạch hóa, phân phối theo tem phiếu. Gạo, thịt, đường, vải vóc… đều được cấp theo định lượng.",
-      "historicalDemand": {"title": "Bối cảnh thời bao cấp", "event": "Kinh tế kế hoạch hóa", "year": "1976–1986", "demands": ["Phân phối theo tem phiếu", "Định lượng không đủ cho nhu cầu", "Gia đình phải độn thêm bo bo, khoai, sắn"]},
-      "foundingActions": {"title": "Bữa ăn gia đình", "date": "1976–1986", "context": "Bữa ăn của nhiều gia đình phải độn thêm, đôi khi phải ăn cháo cám để no bụng.", "proposal": {"quote": "Ẩm thực thời ấy không chỉ là chuyện no đói — mà còn là ký ức, văn hóa và sự thích nghi của cả một thế hệ.", "author": "Hương Vị Bao Cấp", "purpose": ["No lòng", "Tiết kiệm", "Tận dụng nguyên liệu tại chỗ", "Chia sẻ trong gia đình", "Ký ức không quên"]}},
-      "historicElection": {"title": "Các món ăn đặc trưng", "date": "1976–1986", "characteristics": ["Bo bo", "Cơm độn khoai", "Cháo cám", "Bánh bột mì hấp"], "significance": ["Món đơn giản", "No lòng", "In đậm trong tâm trí những ai đã sống qua giai đoạn đó"], "outcome": {"date": "Hôm nay", "event": "Dự án Hương Vị Bao Cấp", "result": "Lưu lại và chia sẻ câu chuyện ẩm thực", "legitimacy": "Kết nối lịch sử với thế hệ trẻ"}}
+      "introduction": "Thoi bao cap, nhieu mat hang nhu gao, thit, duong va vai voc duoc phan phoi theo tem phieu. Bua an gia dinh vi the gan lien voi su tiet kiem, su chia se va cach tan dung moi nguon luong thuc co san.",
+      "historicalDemand": {
+        "title": "Boi canh thoi bao cap",
+        "event": "Co che phan phoi",
+        "year": "1976-1986",
+        "demands": [
+          "Luong thuc duoc cap theo dinh luong va so nhan khau.",
+          "Nguon thuc pham khan hiem nen bua an thuong phai don them khoai, san hoac bo bo.",
+          "Moi gia dinh uu tien muc tieu no bung, giu suc va tiet kiem lau dai."
+        ]
+      },
+      "foundingActions": {
+        "title": "Bua an gia dinh",
+        "date": "Giai doan 1976-1986",
+        "context": "Trong nhieu gia dinh, mam com la noi the hien ro nhat tinh than vuot kho. Mon an co the gian di, nhung cach chuan bi, chia phan va nhuong nhau lai rat dam tinh than gia dinh.",
+        "proposal": {
+          "quote": "Am thuc thoi bao cap khong chi la chuyen no doi, ma con la ky uc ve su ben bi, su tan tien va tinh thuong trong moi nep nha.",
+          "author": "Huong Vi Bao Cap",
+          "purpose": [
+            "Giu no long trong dieu kien thieu thon.",
+            "Tan dung nguyen lieu dia phuong va theo mua.",
+            "Duy tri nep song tiet kiem trong gia dinh.",
+            "Luu lai ky uc cho the he sau."
+          ]
+        }
+      },
+      "historicElection": {
+        "title": "Nhung mon an tieu bieu",
+        "date": "Ky uc am thuc thoi bao cap",
+        "characteristics": [
+          "Bo bo nau thay com",
+          "Com don khoai, san hoac bap",
+          "Chao cam, chao loang cho bua kho",
+          "Banh bot mi hap, khoai luoc, san luoc"
+        ],
+        "significance": [
+          "Phan anh ro su thieu thon cua thoi ky phan phoi theo tem phieu.",
+          "The hien kha nang thich nghi cua moi gia dinh Viet Nam.",
+          "Tro thanh ky uc tap the cua nhieu the he da tung song trong giai doan nay."
+        ],
+        "outcome": {
+          "date": "Hom nay",
+          "event": "Tai hien ky uc am thuc bao cap",
+          "result": "Cac cau chuyen ve bua an gian di duoc gom lai thanh tu lieu hoc tap va trai nghiem.",
+          "legitimacy": "Nhung mon an gian di nay giup ket noi lich su doi song voi cam nhan cua nguoi hoc hom nay."
+        }
+      }
     },
     {
       "id": "supremacy",
-      "title": "Cách nấu đơn giản",
+      "title": "Cach nau don gian",
       "icon": "gavel",
-      "introduction": "Bo bo, cơm độn khoai, cháo cám — cách nấu đều đơn giản: vo, cho nước, đun. Bữa ăn no là ưu tiên hàng đầu.",
-      "legislation": {"title": "Nguyên liệu tại chỗ", "description": "Gạo, ngô, khoai, sắn — những thứ có thể trồng hoặc phân phối theo tem phiếu — được tận dụng tối đa.", "achievements": {"role": "Bữa ăn", "constitutions": [{"year": "Bo bo", "role": "Hạt ngô xay vỡ, nấu thay cơm"}, {"year": "Cơm độn khoai", "role": "Cơm nấu cùng khoai lang, khoai sọ"}], "statistics": {"laws": "Đơn giản", "decrees": "No lòng", "stateOrganizationDecrees": "Tiết kiệm"}, "context": "Thời tem phiếu, không lãng phí, không đòi hỏi xa xỉ."}},
-      "implementation": {"title": "Ý nghĩa văn hóa", "aspects": [{"id": 1, "title": "Ký ức ẩm thực", "quote": "Các món như cơm độn khoai, bo bo, cháo cám, bánh bột mì hấp… in đậm trong tâm trí những ai đã sống qua giai đoạn đó.", "author": "Hương Vị Bao Cấp", "focus": "Lưu lại và chia sẻ cho thế hệ trẻ"}, {"id": 2, "title": "Sự thích nghi", "description": "Gia đình nào cũng phải thích nghi: độn thêm bo bo, khoai, sắn. Đó là cách để sống qua những năm tháng khó khăn.", "actions": ["Độn thêm", "Tận dụng", "Chia sẻ"]}]}}
+      "introduction": "Nhieu mon an thoi bao cap co cach che bien rat co ban: vo sach, don them nuoc, nau mem va chia deu cho ca nha. Su don gian trong cach nau phan anh uu tien lon nhat khi ay la du no va de bao quan.",
+      "legislation": {
+        "title": "Nguyen lieu tai cho",
+        "description": "Gao, ngo, khoai, san va bo bo la nhung nguyen lieu pho bien, de duoc phan phoi hoac tu trong trot. Cach nau an vi the xoay quanh viec tan dung toi da nhung gi san co.",
+        "achievements": {
+          "role": "Dac diem bua an",
+          "constitutions": [
+            {
+              "year": "Bo bo",
+              "role": "Hat cung duoc ngam, vo sach roi nau mem de thay mot phan com."
+            },
+            {
+              "year": "Com don khoai",
+              "role": "Gao duoc nau cung khoai, san hoac bap de tang do no cho ca nha."
+            }
+          ],
+          "statistics": {
+            "laws": 3,
+            "decrees": 4,
+            "stateOrganizationDecrees": 2,
+            "otherDocuments": "nguyen tac pho bien: no long, tiet kiem, tan dung"
+          },
+          "context": "Cach nau va cach an deu uu tien su tiet kiem, tranh lang phi va phu hop voi dieu kien cung ung luc bay gio."
+        }
+      },
+      "implementation": {
+        "title": "Y nghia van hoa",
+        "aspects": [
+          {
+            "id": 1,
+            "title": "Ky uc am thuc",
+            "quote": "Nhung mon an gian di nhat lai la dieu o lai lau nhat trong tri nho cua nhieu nguoi.",
+            "author": "Huong Vi Bao Cap",
+            "description": "Com don, bo bo hay chao cam khong duoc nho vi su phong phu, ma vi chung gan voi mot giai doan gia dinh cung nhau vuot qua kho khan."
+          },
+          {
+            "id": 2,
+            "title": "Su thich nghi",
+            "description": "Moi nha co mot cach xu ly nguyen lieu khac nhau, nhung diem chung la tan dung toi da va chia deu cho moi nguoi trong bua an.",
+            "actions": [
+              "Don them khoai, san hoac bap vao noi com.",
+              "Nau loang hon de phan bua cho dong nguoi hon.",
+              "Uu tien tre nho va nguoi lao dong nang trong cach chia khau phan."
+            ]
+          },
+          {
+            "id": 3,
+            "title": "Nep song tiet kiem",
+            "requirements": [
+              "Khong bo phi bat ky phan an nao con lai.",
+              "Tan dung nguyen lieu theo mua va theo kha nang duoc cap.",
+              "Giup tre nho hieu gia tri cua lao dong va hat gao."
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "humanistic",
-      "title": "Phục vụ no lòng, vì gia đình",
+      "title": "Phuc vu no long, vi gia dinh",
       "icon": "heart",
-      "definition": "Bữa ăn thời bao cấp phục vụ một mục tiêu giản dị: no bụng, giữ sức, và đầy tình thương trong gia đình.",
-      "humanRights": {"title": "Giá trị bữa ăn đơn giản", "approach": "Đơn giản không có nghĩa là kém — no lòng và tình thương mới là điều quan trọng.", "categories": [{"id": 1, "title": "No lòng", "description": "Mục tiêu hàng đầu của mỗi bữa ăn", "icon": "life"}, {"id": 2, "title": "Tiết kiệm", "description": "Không lãng phí, tận dụng tối đa", "icon": "vote"}, {"id": 3, "title": "Tình thương", "description": "Các bà các mẹ nhường phần cho con cháu", "icon": "economy"}, {"id": 4, "title": "Ký ức", "description": "In đậm trong tâm trí cả một thế hệ", "icon": "group"}], "revolutionaryGoal": "Dự án Hương Vị Bao Cấp mong muốn lưu lại và chia sẻ những câu chuyện ẩm thực này.", "constitutionalRecognition": "Ẩm thực thời bao cấp là một phần không thể thiếu của văn hóa ẩm thực Việt Nam."}, "humanisticLaw": {"title": "Kết nối thế hệ", "abolishment": "Ký ức ẩm thực cần được ghi nhận và truyền lại.", "characteristics": [{"id": 1, "title": "Lưu lại câu chuyện", "description": "Bo bo, cơm độn khoai, cháo cám, bánh bột mì hấp"}, {"id": 2, "title": "Chia sẻ", "description": "Qua website và trải nghiệm thực tế", "quote": "Kết nối lịch sử với thế hệ trẻ.", "author": "Hương Vị Bao Cấp"}, {"id": 3, "title": "Văn hóa", "description": "Ẩm thực thời ấy là ký ức, văn hóa và sự thích nghi của cả một thế hệ."}, {"id": 4, "title": "Ý nghĩa", "description": "Bữa ăn đơn giản ấy thể hiện sự kiên cường, tình thương và sức sống của người Việt."}], "essence": "Hương Vị Bao Cấp — Ẩm thực thời tem phiếu Việt Nam."}}
+      "definition": "Bua an thoi bao cap co the thieu thon, nhung gia tri con lai rat ro: giu suc, giu nep nha va giu tinh thuong trong gia dinh.",
+      "humanRights": {
+        "title": "Gia tri cua bua an gian di",
+        "approach": "Su gian di cua bua an khong lam giam y nghia cua no. Chinh trong dieu kien it lua chon, tinh thuong va su nhuong nhau cang tro nen de nhan thay.",
+        "categories": [
+          {
+            "id": 1,
+            "title": "No long",
+            "description": "Muc tieu truoc het cua moi bua an la du suc cho sinh hoat va lao dong.",
+            "icon": "life"
+          },
+          {
+            "id": 2,
+            "title": "Tiet kiem",
+            "description": "Nguyen lieu nao cung duoc can do, tan dung va che bien hop ly.",
+            "icon": "vote"
+          },
+          {
+            "id": 3,
+            "title": "Tinh thuong",
+            "description": "Nguoi lon thuong nhuong phan ngon hon cho tre nho va nguoi om yeu.",
+            "icon": "economy"
+          },
+          {
+            "id": 4,
+            "title": "Ky uc",
+            "description": "Nhung bua an gian di tro thanh mot phan ky uc tap the cua nhieu the he.",
+            "icon": "group"
+          }
+        ],
+        "revolutionaryGoal": "Viec tai hien nhung mon an nay giup nguoi hoc hieu hon doi song xa hoi trong mot giai doan lich su gan gui va nhieu bien dong.",
+        "constitutionalRecognition": "Am thuc thoi bao cap la mot lop ky uc van hoa dac biet, gan voi tinh than vuot kho, tiet kiem va doan ket gia dinh."
+      },
+      "humanisticLaw": {
+        "title": "Ket noi the he",
+        "abolishment": "Nhung cau chuyen quanh bo bo, com don hay chao cam can duoc ghi lai nhu mot phan ky uc doi song, khong chi nhu ten goi cua mon an.",
+        "characteristics": [
+          {
+            "id": 1,
+            "title": "Luu lai cau chuyen",
+            "description": "Moi mon an deu gan voi mot hoan canh cu the: thieu gao, thieu chat dot, dong con va can mot bua an de di qua ngay dai."
+          },
+          {
+            "id": 2,
+            "title": "Chia se trai nghiem",
+            "description": "Khi duoc ke lai trong lop hoc hay tren nen tang so, nhung ky uc nay tro thanh cau noi giua lich su va trai nghiem ca nhan.",
+            "quote": "Ky uc am thuc chi that su song khi no duoc ke lai va lang nghe.",
+            "author": "Huong Vi Bao Cap"
+          },
+          {
+            "id": 3,
+            "title": "Nhin lai van hoa doi song",
+            "description": "Tu mot bua com don gian, nguoi hoc co the hieu them ve co che phan phoi, cach to chuc doi song va tam ly xa hoi cua mot thoi ky."
+          },
+          {
+            "id": 4,
+            "title": "Gia tri con lai",
+            "description": "Dieu dong lai sau cung khong chi la vi mon an ngon hay do, ma la tinh than ben bi va su yeu thuong trong gia dinh Viet Nam."
+          }
+        ],
+        "essence": "Huong Vi Bao Cap la cau chuyen ve bua an gian di, ky uc tap the va suc song ben bi cua con nguoi Viet Nam."
+      }
     }
   ]
 }

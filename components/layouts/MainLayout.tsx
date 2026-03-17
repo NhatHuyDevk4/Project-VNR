@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ReactNode } from "react";
 import NavigateButton from "./NavigateButton";
 import MusicPlay from "../MusicPlay";
@@ -14,30 +13,32 @@ interface MainLayoutProps {
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <ChatProvider>
-      <div className="relative min-h-screen w-full overflow-hidden">
-        {/* Background Image Layer */}
-        <div className="fixed inset-0 z-0">
-          <Image
-            src="/images/bg-1.png"
-            alt="Background"
-            fill
-            priority
-            quality={90}
-            className="object-cover"
-            sizes="100vw"
-          />
-          {/* Optional: Add overlay for better content readability */}
-          <div className="absolute inset-0 bg-black/30" />
+      <div className="relative min-h-screen w-full bg-paper-texture font-archival text-ink selection:bg-seal/20 selection:text-seal">
+        
+        {/* Archival layout container */}
+        <div className="flex min-h-screen max-w-7xl mx-auto shadow-document bg-[#F9F1E1] border-x border-border">
+          {/* Book Spine / Index Sidebar (Desktop) */}
+          <div className="hidden md:flex flex-col w-72 border-r border-border bg-[#EADCBF] shrink-0 sticky top-0 h-screen overflow-y-auto">
+            <NavigateButton />
+          </div>
+
+          {/* Main Content Area */}
+          <div className="flex-1 relative flex flex-col min-w-0">
+            {/* Mobile Header / Nav */}
+            <div className="md:hidden z-50">
+                <NavigateButton mobile /> 
+            </div>
+
+            <main className="flex-1 relative z-10 p-6 md:p-12 lg:p-16 overflow-y-auto w-full">
+               {children}
+            </main>
+          </div>
         </div>
 
-        {/* Navigation Sidebar */}
-        <NavigateButton />
-
         {/* Music Player */}
-        <MusicPlay />
-
-        {/* Content Layer */}
-        <div className="relative z-10">{children}</div>
+        <div className="fixed bottom-6 right-6 z-50">
+           <MusicPlay />
+        </div>
         <ChatUI />
         <TextExplainerUI />
       </div>

@@ -6,7 +6,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Sparkles, MessageSquare, BookOpen, Code } from "lucide-react";
 
-// Register GSAP ScrollTrigger plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -22,52 +21,53 @@ interface AITool {
 const aiTools: AITool[] = [
   {
     name: "ChatGPT",
-    icon: <MessageSquare className="w-8 h-8" />,
+    icon: <MessageSquare className="h-8 w-8" />,
     description:
-      "Trợ lý AI mạnh mẽ hỗ trợ nghiên cứu, viết nội dung và giải đáp thắc mắc về ẩm thực thời bao cấp, tem phiếu và văn hóa ăn uống Việt Nam.",
+      "Tro ly AI ho tro nghien cuu, viet noi dung va giai dap cac cau hoi ve am thuc thoi bao cap, tem phieu va van hoa doi song.",
     features: [
-      "Tổng hợp và phân tích tài liệu về thời bao cấp",
-      "Hỗ trợ viết nội dung về ẩm thực, món ăn",
-      "Giải đáp câu hỏi về bo bo, cơm độn khoai, cháo cám",
-      "Đề xuất ý tưởng sáng tạo cho dự án Hương Vị Bao Cấp",
+      "Tong hop tai lieu ve thoi bao cap",
+      "Ho tro viet noi dung va tom tat",
+      "Giai dap cau hoi ve bo bo, com don khoai, chao cam",
+      "De xuat huong trinh bay cho du an",
     ],
     link: "https://chat.openai.com",
   },
   {
     name: "Google Gemini",
-    icon: <Sparkles className="w-8 h-8" />,
+    icon: <Sparkles className="h-8 w-8" />,
     description:
-      "AI đa phương thức của Google, kết hợp văn bản, hình ảnh và dữ liệu để tạo nội dung phong phú. Hỗ trợ tạo hình ảnh AI từ mô tả văn bản.",
+      "Cong cu AI da phuong thuc cua Google, phu hop khi can tong hop thong tin, phan tich hinh anh va mo rong y tuong noi dung.",
     features: [
-      "Tìm kiếm và tổng hợp thông tin",
-      "Phân tích hình ảnh ẩm thực, món ăn",
-      "Tạo hình ảnh AI từ mô tả",
-      "Tạo sơ đồ tư duy",
-      "Đề xuất cấu trúc nội dung",
+      "Tim kiem va tong hop thong tin",
+      "Phan tich hinh anh",
+      "De xuat cau truc noi dung",
+      "Mo rong y tuong trinh bay",
     ],
     link: "https://gemini.google.com",
   },
   {
     name: "NotebookLM",
-    icon: <BookOpen className="w-8 h-8" />,
+    icon: <BookOpen className="h-8 w-8" />,
     description:
-      "Công cụ AI của Google chuyên phân tích nội dung từ giáo trình chuẩn, tài liệu học thuật và tạo video AI tóm tắt nội dung.",
+      "Cong cu phu hop cho viec doc nhieu tai lieu, tong hop y chinh va dat cau hoi dua tren nguon da nap vao.",
     features: [
-      "Phân tích sâu tài liệu giáo trình",
-      "Tổng hợp kiến thức từ nhiều nguồn",
-      "Tạo video AI tóm tắt nội dung",
-      "Trích xuất thông tin quan trọng",
-      "Hỏi đáp dựa trên tài liệu",
+      "Tom tat tai lieu dai",
+      "Trich xuat y chinh",
+      "Hoi dap dua tren nguon tai lieu",
+      "Ho tro hoc tap theo chu de",
     ],
     link: "https://notebooklm.google.com",
   },
   {
     name: "Cursor",
-    icon: <Code className="w-8 h-8" />,
+    icon: <Code className="h-8 w-8" />,
     description:
-      "Trình soạn thảo code tích hợp AI, hỗ trợ lập trình viên viết code nhanh hơn với khả năng hiểu ngữ cảnh dự án và gợi ý thông minh.",
+      "Trinh soan thao code co AI ho tro, phu hop cho viec sua giao dien, tai cau truc component va tang toc qua trinh phat trien.",
     features: [
-      "Code completion thông minh với AI",
+      "Code completion",
+      "Refactor nhanh",
+      "Doc context codebase",
+      "Ho tro sua UI theo component",
     ],
     link: "https://cursor.sh",
   },
@@ -75,52 +75,20 @@ const aiTools: AITool[] = [
 
 const referenceLinks = [
   {
-    title: "Thư mục tài liệu dự án",
+    title: "Thu muc tai lieu du an",
     url: "https://drive.google.com/drive/u/1/folders/1oF-H7fpcAPZw7JGKDVIwdICHPJblJTrc",
   },
   {
-    title: "Bảo tàng Lịch sử Việt Nam",
+    title: "Bao tang Lich su Viet Nam",
     url: "https://baotanglichsu.vn",
   },
   {
-    title: "Ẩm thực Việt Nam - Wikipedia",
+    title: "Am thuc Viet Nam - Wikipedia",
     url: "https://vi.wikipedia.org/wiki/%E1%BA%A8m_th%E1%BB%B1c_Vi%E1%BB%87t_Nam",
   },
   {
-    title: "Thời bao cấp tại Việt Nam",
+    title: "Thoi bao cap tai Viet Nam",
     url: "https://vi.wikipedia.org/wiki/Th%E1%BB%9Di_bao_c%E1%BA%A5p_t%E1%BA%A1i_Vi%E1%BB%87t_Nam",
-  },
-  {
-    title: "Văn hóa ẩm thực Việt Nam",
-    url: "https://vi.wikipedia.org/wiki/V%C4%83n_h%C3%B3a_%E1%BA%A9m_th%E1%BB%B1c_Vi%E1%BB%87t_Nam",
-  },
-  {
-    title: "Ngô (bắp) trong ẩm thực",
-    url: "https://vi.wikipedia.org/wiki/Ng%C3%B4",
-  },
-  {
-    title: "Khoai lang - Wikipedia",
-    url: "https://vi.wikipedia.org/wiki/Khoai_lang",
-  },
-  {
-    title: "Bột mì và bánh truyền thống",
-    url: "https://vi.wikipedia.org/wiki/B%E1%BB%99t_m%C3%AC",
-  },
-  {
-    title: "Tem phiếu và phân phối",
-    url: "https://vi.wikipedia.org/wiki/Tem_phi%E1%BA%BFu",
-  },
-  {
-    title: "Lịch sử kinh tế Việt Nam",
-    url: "https://vi.wikipedia.org/wiki/Kinh_t%E1%BA%BF_Vi%E1%BB%87t_Nam",
-  },
-  {
-    title: "Ẩm thực và ký ức",
-    url: "https://vi.wikipedia.org/wiki/%E1%BA%A8m_th%E1%BB%B1c",
-  },
-  {
-    title: "Văn hóa Việt Nam",
-    url: "https://vi.wikipedia.org/wiki/V%C4%83n_h%C3%B3a_Vi%E1%BB%87t_Nam",
   },
 ];
 
@@ -132,7 +100,6 @@ const UsedAIPage = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate title
       if (titleRef.current) {
         gsap.fromTo(
           titleRef.current,
@@ -146,7 +113,6 @@ const UsedAIPage = () => {
         );
       }
 
-      // Animate subtitle
       if (subtitleRef.current) {
         gsap.fromTo(
           subtitleRef.current,
@@ -161,7 +127,6 @@ const UsedAIPage = () => {
         );
       }
 
-      // Animate intro card
       if (introRef.current) {
         gsap.fromTo(
           introRef.current,
@@ -176,7 +141,6 @@ const UsedAIPage = () => {
         );
       }
 
-      // Animate tool cards with stagger
       const validCards = cardsRef.current.filter(Boolean);
       if (validCards.length > 0) {
         gsap.fromTo(
@@ -203,94 +167,84 @@ const UsedAIPage = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-6 py-16">
-      <div className="max-w-6xl mx-auto">
-        {/* Back Button */}
+    <div className="container mx-auto px-6 py-16 text-ink">
+      <div className="mx-auto max-w-6xl">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-amber-300 hover:text-amber-200 mb-8 transition-colors"
+          className="mb-8 inline-flex items-center gap-2 text-seal transition-colors hover:text-ink"
         >
-          <span>←</span> Quay lại
+          <span>-</span> Quay lai
         </Link>
 
-        {/* Title */}
         <h1
           ref={titleRef}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-amber-100 mb-4 text-center"
+          className="mb-4 text-center text-4xl font-bold text-seal sm:text-5xl md:text-6xl"
         >
-          Công Cụ AI Sử Dụng
+          Cong Cu AI Su Dung
         </h1>
 
-        {/* Subtitle */}
         <p
           ref={subtitleRef}
-          className="text-amber-200/70 text-center mb-12 text-lg"
+          className="mb-12 text-center text-lg text-ink-light"
         >
-          Các công cụ AI hỗ trợ nghiên cứu, phát triển và hoàn thiện dự án
+          Cac cong cu AI ho tro nghien cuu, phat trien va hoan thien du an
         </p>
 
-        {/* Introduction Card */}
         <div
           ref={introRef}
-          className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-12"
+          className="mb-12 rounded-2xl border border-ink/10 bg-[#f8efdc] p-8 shadow-document"
         >
-          <p className="text-amber-100 text-lg leading-relaxed mb-4">
-            Dự án này được xây dựng với sự hỗ trợ của công cụ AI, giúp tối ưu
-            hóa quá trình nghiên cứu và sáng tạo nội dung.
+          <p className="mb-4 text-lg leading-relaxed text-ink">
+            Du an nay duoc xay dung voi su ho tro cua cong cu AI, giup toi uu hoa qua trinh nghien cuu va sang tao noi dung.
           </p>
-          <p className="text-amber-200/80 text-base">
-            Mỗi công cụ đóng vai trò quan trọng trong việc đảm bảo chất lượng và
-            tính chính xác của thông tin.
+          <p className="text-base text-ink-light">
+            Moi cong cu dong vai tro rieng trong viec tong hop thong tin, phan tich du lieu va ho tro phat trien giao dien.
           </p>
         </div>
 
-        {/* AI Tools Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {aiTools.map((tool, index) => (
             <div
               key={tool.name}
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/20"
+              className="group rounded-2xl border border-ink/10 bg-[#f8efdc] p-6 shadow-document transition-all duration-300 hover:border-seal/30 hover:shadow-document-hover"
             >
-              {/* Icon & Title */}
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 bg-amber-600/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-amber-500/30 group-hover:scale-110 transition-transform duration-300">
-                  <div className="text-amber-300">{tool.icon}</div>
+              <div className="mb-4 flex items-start gap-4">
+                <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-seal/20 bg-seal/5 text-seal transition-transform duration-300 group-hover:scale-110">
+                  {tool.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-amber-100 mb-1">
+                  <h3 className="mb-1 text-2xl font-bold text-seal">
                     {tool.name}
                   </h3>
                   <a
                     href={tool.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-amber-400 hover:text-amber-300 hover:underline transition-colors"
+                    className="text-sm text-ink-light transition-colors hover:text-seal hover:underline"
                   >
                     {tool.link.replace("https://", "")}
                   </a>
                 </div>
               </div>
 
-              {/* Description */}
-              <p className="text-amber-200/80 mb-4 leading-relaxed">
+              <p className="mb-4 leading-relaxed text-ink-light">
                 {tool.description}
               </p>
 
-              {/* Features */}
               <div className="space-y-2">
-                <p className="text-sm font-semibold text-amber-300 mb-2">
-                  Tính năng chính:
+                <p className="mb-2 text-sm font-semibold text-seal">
+                  Tinh nang chinh:
                 </p>
                 <ul className="space-y-1.5">
                   {tool.features.map((feature, idx) => (
                     <li
                       key={idx}
-                      className="text-sm text-white flex items-start gap-2"
+                      className="flex items-start gap-2 text-sm text-ink"
                     >
-                      <span className="text-amber-500 mt-1">•</span>
+                      <span className="mt-1 text-seal">-</span>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -300,26 +254,25 @@ const UsedAIPage = () => {
           ))}
         </div>
 
-        {/* Reference Links Section */}
         <div className="mt-16">
-          <h3 className="text-3xl font-bold text-amber-100 mb-6 text-center">
-            Nguồn tài liệu tham khảo
+          <h3 className="mb-6 text-center text-3xl font-bold text-seal">
+            Nguon tai lieu tham khao
           </h3>
-          <p className="text-amber-200/70 text-center mb-8">
-            Các nguồn tham khảo về ẩm thực, thời bao cấp và văn hóa Việt Nam
+          <p className="mb-8 text-center text-ink-light">
+            Cac nguon tham khao ve am thuc, thoi bao cap va van hoa Viet Nam
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {referenceLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-start gap-3 p-4 rounded-xl bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/20 hover:border-amber-500/50 transition-all duration-300"
+                className="group flex items-start gap-3 rounded-xl border border-ink/10 bg-[#f8efdc] p-4 transition-all duration-300 hover:border-seal/30 hover:bg-[#f4ead5]"
               >
                 <svg
-                  className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5"
+                  className="mt-0.5 h-5 w-5 flex-shrink-0 text-seal"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -331,11 +284,11 @@ const UsedAIPage = () => {
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                   />
                 </svg>
-                <div className="flex-1 min-w-0">
-                  <p className="text-amber-100 group-hover:text-amber-50 transition-colors font-medium">
+                <div className="min-w-0 flex-1">
+                  <p className="font-medium text-ink transition-colors group-hover:text-seal">
                     {link.title}
                   </p>
-                  <p className="text-amber-300/50 text-xs mt-1 truncate">
+                  <p className="mt-1 truncate text-xs text-ink-light">
                     {link.url}
                   </p>
                 </div>
@@ -344,11 +297,9 @@ const UsedAIPage = () => {
           </div>
         </div>
 
-        {/* Footer Note */}
         <div className="mt-12 text-center">
-          <p className="text-amber-200/60 text-sm">
-            Các công cụ AI được sử dụng một cách có trách nhiệm, với sự kiểm
-            chứng và xác minh thông tin từ các nguồn đáng tin cậy.
+          <p className="text-sm text-ink-light">
+            Cac cong cu AI duoc su dung co kiem chung, co doi chieu va chi dong vai tro ho tro trong qua trinh phat trien.
           </p>
         </div>
       </div>

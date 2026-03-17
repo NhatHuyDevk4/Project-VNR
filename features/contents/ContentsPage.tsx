@@ -4,71 +4,43 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Card from "@/components/Card";
 import { CONTENT_ROUTES } from "@/common/constants/routes";
-
-// Register GSAP ScrollTrigger plugin
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const ContentsPage = () => {
   const pathname = usePathname();
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate title
-      if (titleRef.current) {
-        gsap.fromTo(
-          titleRef.current,
-          { opacity: 0, y: -30, scale: 0.95 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power3.out",
-          }
-        );
-      }
+      // Fade in container
+      gsap.fromTo(
+        containerRef.current,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
 
-      // Animate subtitle
-      if (subtitleRef.current) {
-        gsap.fromTo(
-          subtitleRef.current,
-          { opacity: 0, y: -20 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            delay: 0.3,
-            ease: "power2.out",
-          }
-        );
-      }
-
-      // Animate content items with stagger
+      // Animate lit items
       const validItems = itemsRef.current.filter(Boolean);
       if (validItems.length > 0) {
         gsap.fromTo(
           validItems,
           {
             opacity: 0,
-            y: 40,
-            scale: 0.95,
+            x: -20,
           },
           {
             opacity: 1,
-            y: 0,
-            scale: 1,
+            x: 0,
             duration: 0.6,
             stagger: 0.1,
-            delay: 0.5,
-            ease: "back.out(1.2)",
+            delay: 0.3,
+            ease: "power2.out",
           }
         );
       }
@@ -78,104 +50,71 @@ const ContentsPage = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-6 py-16">
-      <div className="max-w-4xl mx-auto">
-        {/* Title */}
-        <h1
-          ref={titleRef}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-amber-100 mb-4 text-center"
-        >
-          Về thời bao cấp
+    <div className="max-w-4xl mx-auto py-12 px-6" ref={containerRef}>
+      
+      {/* Archival Header */}
+      <div className="mb-16 border-b-2 border-ink space-y-4 pb-8 text-center md:text-left relative">
+        <h1 className="font-archival text-4xl md:text-5xl lg:text-6xl font-bold text-ink uppercase tracking-wider">
+          Mục Lục Hồ Sơ
         </h1>
-
-        {/* Subtitle */}
-        <p
-          ref={subtitleRef}
-          className="text-amber-200/70 text-center mb-16 text-lg"
-        >
-          Bối cảnh lịch sử và ý nghĩa ẩm thực thời bao cấp Việt Nam
+        <p className="font-archival text-lg text-ink-light italic">
+          Ghi chép bối cảnh lịch sử và ý nghĩa ẩm thực thời kỳ tem phiếu
         </p>
 
-        {/* Content List */}
-        <div className="space-y-4">
-          {CONTENT_ROUTES.map((link, index) => {
-            const isActive = pathname === link.path;
-
-            return (
-              <Link
-                key={link.path}
-                href={link.path}
-                ref={(el) => {
-                  itemsRef.current[index] = el;
-                }}
-                className={`group block transition-all duration-300 ${
-                  isActive ? "scale-[1.02]" : "hover:scale-[1.01]"
-                }`}
-              >
-                <Card
-                  variant="list"
-                  delay={index * 0.1}
-                  className={`relative transition-all duration-300 !bg-black/20 ${
-                    isActive
-                      ? "!border-amber-600/60 !bg-amber-900/20"
-                      : "hover:!border-amber-700/50 hover:!bg-black/20"
-                  }`}
-                >
-                  <div className="flex items-baseline gap-6">
-                    {/* Number */}
-                    <span
-                      className={`text-5xl font-bold transition-colors duration-300 ${
-                        isActive
-                          ? "text-amber-500"
-                          : "text-amber-800/50 group-hover:text-amber-600/70"
-                      }`}
-                    >
-                      {link.number}
-                    </span>
-
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h2
-                        className={`text-2xl font-semibold mb-2 transition-colors duration-300 ${
-                          isActive
-                            ? "text-amber-100"
-                            : "text-amber-200/80 group-hover:text-amber-100"
-                        }`}
-                      >
-                        {link.name}
-                      </h2>
-                      <p
-                        className={`text-sm transition-colors duration-300 ${
-                          isActive
-                            ? "text-amber-300/70"
-                            : "text-amber-400/50 group-hover:text-amber-300/60"
-                        }`}
-                      >
-                        Nhấn để xem nội dung
-                      </p>
-                    </div>
-
-                    {/* Arrow */}
-                    <div
-                      className={`text-2xl transition-all duration-300 ${
-                        isActive
-                          ? "text-amber-500 translate-x-0"
-                          : "text-amber-700/40 -translate-x-2 group-hover:translate-x-0 group-hover:text-amber-600/60"
-                      }`}
-                    >
-                      →
-                    </div>
-                  </div>
-
-                  {/* Active indicator line */}
-                  {isActive && (
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-amber-500 rounded-l-xl" />
-                  )}
-                </Card>
-              </Link>
-            );
-          })}
+        {/* Vintage stamp decoration */}
+        <div className="absolute right-0 top-0 w-20 h-20 border-[3px] border-seal rounded-full opacity-30 flex items-center justify-center transform rotate-12 pointer-events-none hidden md:flex">
+          <span className="text-seal font-bold text-[10px] tracking-widest text-center uppercase leading-tight">
+            Lưu trữ<br/>Tối mật
+          </span>
         </div>
+      </div>
+
+      {/* Table of Contents List */}
+      <div className="space-y-6">
+        {CONTENT_ROUTES.map((link, index) => {
+          const isActive = pathname === link.path;
+
+          return (
+            <Link
+              key={link.path}
+              href={link.path}
+              ref={(el) => {
+                itemsRef.current[index] = el;
+              }}
+              className={`group flex items-baseline w-full relative transition-transform duration-300 hover:translate-x-2 ${
+                isActive ? "text-seal font-bold" : "text-ink"
+              }`}
+            >
+              {/* Chapter Number/Identifier */}
+              <div className="w-12 shrink-0 font-mono text-xl tracking-tighter opacity-70">
+                {link.number}.
+              </div>
+
+              {/* Title */}
+              <div className="font-archival text-xl md:text-2xl tracking-wide group-hover:underline decoration-2 underline-offset-4 decoration-ink/40">
+                {link.name}
+              </div>
+
+              {/* Dot Leaders */}
+              <div className="flex-1 mx-4 border-b-2 border-dotted border-ink/30 mb-2 opacity-50 relative top-[-6px]"></div>
+
+              {/* Page Number Placeholder / Era */}
+              <div className="w-20 text-right shrink-0 font-mono text-sm opacity-60 tracking-widest">
+                [T.{link.number}]
+              </div>
+              
+              {isActive && (
+                 <div className="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-seal shadow-[0_0_5px_rgba(139,30,30,0.5)]"></div>
+              )}
+            </Link>
+          );
+        })}
+      </div>
+      
+      {/* Archival Footer signature */}
+      <div className="mt-20 pt-8 border-t border-ink/20 flex flex-col items-end opacity-60">
+         <span className="font-archival italic text-sm">Xác nhận sao y bản chính</span>
+         <span className="font-archival font-bold text-xl mt-4" style={{ fontFamily: "var(--font-serif), 'Brush Script MT', cursive" }}>Nguyễn Văn A</span>
       </div>
     </div>
   );
