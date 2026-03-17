@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { use } from "react";
 import { notFound, useRouter } from "next/navigation";
@@ -6,10 +6,21 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import {
+  ArrowLeft,
+  BookOpenText,
+  CalendarDays,
+  ExternalLink,
+  FileAudio2,
+  Files,
+  Image as ImageIcon,
+} from "lucide-react";
 import "katex/dist/katex.min.css";
-import TextExplainerUI from "@/features/chat/TextExplainerUI";
 import { getPostBySlug } from "@/features/tai-lieu/data";
 import AudioPlayer from "@/components/AudioPlayer";
+import { DocumentCard } from "@/components/ui/DocumentCard";
+import { MarginalNote } from "@/components/ui/MarginalNote";
+import { RecordStamp } from "@/components/ui/RecordStamp";
 
 export default function TaiLieuSlugPage({
   params,
@@ -25,91 +36,214 @@ export default function TaiLieuSlugPage({
   }
 
   return (
-    <>
-      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen px-4 py-8 md:px-6 md:py-12 text-ink">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8">
+        <div className="flex flex-wrap items-center justify-between gap-4">
           <button
             onClick={() => router.back()}
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 sm:mb-8 transition-colors group"
+            className="inline-flex items-center gap-2 border-b border-transparent pb-1 text-sm font-semibold uppercase tracking-[0.24em] text-ink-light transition-colors hover:border-seal hover:text-seal"
           >
-            <span className="group-hover:-translate-x-1 transition-transform">
-              ←
-            </span>{" "}
-            Quay lại
+            <ArrowLeft className="h-4 w-4" />
+            Quay lai kho tu lieu
           </button>
 
-          <div
-            className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/20"
-            data-page-content
-          >
-            <div className="mb-6">
-              <div className="flex items-center gap-2 justify-between">
-                <div className="inline-block px-3 py-1 bg-amber-600/20 backdrop-blur-sm border border-amber-600/30 rounded-full mb-4">
-                  <span className="text-amber-200 text-sm font-medium">
-                    {post.milestone}
-                  </span>
-                </div>
-                {post.audio && (
-                  <div className="mb-4">
-                    <AudioPlayer src={post.audio} title={post.title} />
+          <RecordStamp label="Da luu tru" date={post.milestone} />
+        </div>
+
+        <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_320px]">
+          <div className="space-y-8">
+            <DocumentCard className="bg-paper-texture">
+              <div className="flex flex-wrap items-start justify-between gap-4 border-b border-ink/10 pb-6">
+                <div className="space-y-3">
+                  <div className="flex flex-wrap items-center gap-3 text-sm text-ink-light">
+                    <span className="inline-flex items-center gap-2 border border-seal/20 bg-seal/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-seal">
+                      <Files className="h-4 w-4" />
+                      Ho so {post.id.toString().padStart(2, "0")}
+                    </span>
+                    <span className="inline-flex items-center gap-2 border border-ink/15 bg-white/55 px-3 py-1">
+                      <CalendarDays className="h-4 w-4 text-seal" />
+                      {post.milestone}
+                    </span>
                   </div>
-                )}
+
+                  <div className="space-y-4">
+                    <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">
+                      {post.title}
+                    </h1>
+                    {post.shortDescription && (
+                      <p className="max-w-3xl text-base leading-8 text-ink-light md:text-lg">
+                        {post.shortDescription}
+                      </p>
+                    )}
+                  </div>
+                </div>
               </div>
-              <h1
-                className="text-3xl sm:text-4xl font-bold text-white mb-4"
-                data-page-title
-              >
-                {post.title}
-              </h1>
-              <p className="text-white/80 text-base sm:text-lg">
-                {post.shortDescription}
-              </p>
-            </div>
 
-            {post.image && post.image.length > 0 && (
-              <div className="mb-6">
-                <img
-                  src={post.image[0]}
-                  alt={post.title}
-                  className="w-full max-w-2xl mx-auto rounded-xl shadow-lg"
-                />
+              {post.image?.[0] && (
+                <div className="mt-8 space-y-3">
+                  <div className="overflow-hidden border border-ink/15 bg-[#efe2c5] p-3 shadow-sm">
+                    <img
+                      src={post.image[0]}
+                      alt={post.title}
+                      className="max-h-[520px] w-full object-cover"
+                      loading="lazy"
+                      crossOrigin="anonymous"
+                    />
+                  </div>
+                  <p className="text-sm italic leading-6 text-ink-light">
+                    Hinh dinh kem trong ho so hien vat, dung de tang kha nang ghi nho noi dung khi hoc.
+                  </p>
+                </div>
+              )}
+            </DocumentCard>
+
+            <DocumentCard className="bg-[#f8efdc]">
+              <div className="border-b border-ink/10 pb-5">
+                <h2 className="text-2xl font-bold">Noi dung tu lieu</h2>
+                <p className="mt-2 text-sm leading-7 text-ink-light md:text-base">
+                  Trinh bay theo nhip doc thoang hon de nguoi hoc de tap trung vao moc chinh, cau chuyen va y nghia lich su.
+                </p>
               </div>
-            )}
 
-            <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-white/90 prose-strong:text-amber-200 prose-li:text-white/90 prose-blockquote:border-amber-500 prose-blockquote:text-white/80 text-white">
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm, remarkMath]}
-                rehypePlugins={[rehypeKatex]}
-              >
-                {post.content}
-              </ReactMarkdown>
-            </div>
+              <MarginalNote title="Goi y doc nhanh" className="mt-6">
+                Hay doc tieu de lon truoc, xem anh hien vat, sau do moi di vao tung muc nho de giu mach hieu tot hon.
+              </MarginalNote>
 
-            {post.linkResource && post.linkResource.length > 0 && (
-              <div className="mt-8 pt-6 border-t border-white/20">
-                <h3 className="text-white font-semibold mb-3">
-                  Tài liệu tham khảo:
-                </h3>
-                <ul className="space-y-2">
-                  {post.linkResource.map((link, index) => (
-                    <li key={index}>
-                      <a
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-amber-300 hover:text-amber-200 underline text-sm"
-                      >
-                        {link}
-                      </a>
-                    </li>
+              <div className="prose mt-8 max-w-none prose-headings:font-archival prose-headings:text-seal prose-p:text-ink prose-p:leading-8 prose-li:text-ink prose-li:leading-8 prose-strong:text-ink prose-a:text-seal prose-blockquote:border-l-4 prose-blockquote:border-accent-green prose-blockquote:bg-[#e9dcc0] prose-blockquote:px-5 prose-blockquote:py-3 prose-blockquote:text-accent-green">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm, remarkMath]}
+                  rehypePlugins={[rehypeKatex]}
+                  components={{
+                    h2: ({ children }) => (
+                      <h2 className="mt-10 border-b border-ink/10 pb-3 text-3xl font-bold leading-tight">
+                        {children}
+                      </h2>
+                    ),
+                    h3: ({ children }) => (
+                      <h3 className="mt-8 text-2xl font-bold leading-tight text-ink">
+                        {children}
+                      </h3>
+                    ),
+                    p: ({ children }) => (
+                      <p className="text-[1rem] leading-8 text-ink md:text-[1.06rem]">{children}</p>
+                    ),
+                    ul: ({ children }) => (
+                      <ul className="my-5 space-y-3 pl-6 text-[1rem] leading-8 text-ink marker:text-seal">
+                        {children}
+                      </ul>
+                    ),
+                    li: ({ children }) => <li>{children}</li>,
+                    blockquote: ({ children }) => (
+                      <blockquote className="my-8 border-l-4 border-accent-green bg-[#e7dbc2] px-6 py-4 italic leading-8 text-accent-green">
+                        {children}
+                      </blockquote>
+                    ),
+                  }}
+                >
+                  {post.content}
+                </ReactMarkdown>
+              </div>
+            </DocumentCard>
+
+            {post.image && post.image.length > 1 && (
+              <DocumentCard className="bg-[#f8efdc]">
+                <div className="flex items-center gap-3 border-b border-ink/10 pb-4">
+                  <ImageIcon className="h-5 w-5 text-seal" />
+                  <h2 className="text-2xl font-bold">Hinh anh bo sung</h2>
+                </div>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {post.image.slice(1).map((image, index) => (
+                    <div key={image + index} className="overflow-hidden border border-ink/15 bg-[#efe2c5] p-2 shadow-sm">
+                      <img
+                        src={image}
+                        alt={`${post.title} - hinh ${index + 2}`}
+                        className="h-64 w-full object-cover"
+                        loading="lazy"
+                        crossOrigin="anonymous"
+                      />
+                    </div>
                   ))}
-                </ul>
-              </div>
+                </div>
+              </DocumentCard>
             )}
           </div>
+
+          <aside className="space-y-6 xl:sticky xl:top-8 xl:self-start">
+            {post.audio && (
+              <DocumentCard className="bg-[#efe2c5] p-6">
+                <div className="mb-4 flex items-center gap-3 border-b border-ink/10 pb-4">
+                  <FileAudio2 className="h-5 w-5 text-seal" />
+                  <div>
+                    <h2 className="text-lg font-bold">Ban nghe tu lieu</h2>
+                    <p className="text-sm text-ink-light">Nghe lai noi dung de on tap nhanh.</p>
+                  </div>
+                </div>
+                <AudioPlayer src={post.audio} title={post.title} />
+              </DocumentCard>
+            )}
+
+            <DocumentCard className="bg-[#efe2c5] p-6">
+              <div className="mb-4 flex items-center gap-3 border-b border-ink/10 pb-4">
+                <BookOpenText className="h-5 w-5 text-seal" />
+                <div>
+                  <h2 className="text-lg font-bold">Thong tin ho so</h2>
+                  <p className="text-sm text-ink-light">Tom tat nhanh truoc khi doc sau.</p>
+                </div>
+              </div>
+
+              <div className="space-y-4 text-sm text-ink-light">
+                <div className="flex items-start justify-between gap-4 border-b border-dashed border-ink/10 pb-3">
+                  <span className="uppercase tracking-[0.22em]">Ma ho so</span>
+                  <span className="font-mono text-ink">{post.slug.toUpperCase()}</span>
+                </div>
+                <div className="flex items-start justify-between gap-4 border-b border-dashed border-ink/10 pb-3">
+                  <span className="uppercase tracking-[0.22em]">Moc thoi gian</span>
+                  <span className="font-semibold text-ink">{post.milestone}</span>
+                </div>
+                <div className="flex items-start justify-between gap-4 border-b border-dashed border-ink/10 pb-3">
+                  <span className="uppercase tracking-[0.22em]">So anh</span>
+                  <span className="font-semibold text-ink">{post.image?.length ?? 0}</span>
+                </div>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="uppercase tracking-[0.22em]">Tai lieu nguon</span>
+                  <span className="font-semibold text-ink">{post.linkResource?.length ?? 0}</span>
+                </div>
+              </div>
+            </DocumentCard>
+
+            {post.linkResource && post.linkResource.length > 0 && (
+              <DocumentCard className="bg-[#efe2c5] p-6">
+                <div className="mb-4 border-b border-ink/10 pb-4">
+                  <h2 className="text-lg font-bold">Tai lieu tham khao</h2>
+                  <p className="mt-1 text-sm text-ink-light">
+                    Mo nguon goc khi can kiem tra hoac doc mo rong.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  {post.linkResource.map((link, index) => (
+                    <a
+                      key={link + index}
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start justify-between gap-3 border border-ink/15 bg-white/60 px-4 py-3 text-sm text-ink transition-colors hover:border-seal/30 hover:bg-white"
+                    >
+                      <div>
+                        <div className="text-[11px] uppercase tracking-[0.2em] text-seal">
+                          Nguon {index + 1}
+                        </div>
+                        <div className="mt-1 break-all leading-6 text-ink-light">{link}</div>
+                      </div>
+                      <ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-seal" />
+                    </a>
+                  ))}
+                </div>
+              </DocumentCard>
+            )}
+          </aside>
         </div>
       </div>
-      <TextExplainerUI isEnabled={true} />
-    </>
+    </div>
   );
 }

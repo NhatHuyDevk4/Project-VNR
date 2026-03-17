@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Star, Trophy, HelpCircle } from "lucide-react";
 import { useEffect, useRef } from "react";
@@ -23,7 +23,6 @@ export default function WelcomeScreen({
   const starsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Animate stars
     starsRef.current.forEach((star, index) => {
       if (star) {
         gsap.fromTo(
@@ -41,7 +40,6 @@ export default function WelcomeScreen({
       }
     });
 
-    // Animate title
     if (titleRef.current) {
       gsap.fromTo(
         titleRef.current,
@@ -50,7 +48,6 @@ export default function WelcomeScreen({
       );
     }
 
-    // Animate subtitle
     if (subtitleRef.current) {
       gsap.fromTo(
         subtitleRef.current,
@@ -59,7 +56,6 @@ export default function WelcomeScreen({
       );
     }
 
-    // Animate main button
     if (buttonRef.current) {
       gsap.fromTo(
         buttonRef.current,
@@ -75,7 +71,6 @@ export default function WelcomeScreen({
       );
     }
 
-    // Animate secondary buttons
     if (secondaryRef.current) {
       gsap.fromTo(
         secondaryRef.current,
@@ -88,24 +83,23 @@ export default function WelcomeScreen({
   return (
     <div
       ref={containerRef}
-      className="min-h-screen flex items-center justify-center p-6 relative overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden p-6 text-ink"
     >
-      {/* Decorative stars with amber theme */}
       <div
         ref={(el) => {
           starsRef.current[0] = el;
         }}
-        className="absolute top-8 left-8"
+        className="absolute left-8 top-8"
       >
-        <Star className="w-16 h-16 text-amber-400 fill-amber-400 drop-shadow-lg" />
+        <Star className="h-16 w-16 fill-[#c9a227] text-[#c9a227] drop-shadow-[0_6px_12px_rgba(201,162,39,0.25)]" />
       </div>
       <div
         ref={(el) => {
           starsRef.current[1] = el;
         }}
-        className="absolute top-8 right-8"
+        className="absolute right-8 top-8"
       >
-        <Star className="w-16 h-16 text-amber-400 fill-amber-400 drop-shadow-lg" />
+        <Star className="h-16 w-16 fill-[#c9a227] text-[#c9a227] drop-shadow-[0_6px_12px_rgba(201,162,39,0.25)]" />
       </div>
       <div
         ref={(el) => {
@@ -113,7 +107,7 @@ export default function WelcomeScreen({
         }}
         className="absolute bottom-8 left-1/4"
       >
-        <Star className="w-12 h-12 text-amber-300 fill-amber-300 opacity-60" />
+        <Star className="h-12 w-12 fill-[#c9a227] text-[#c9a227] opacity-60" />
       </div>
       <div
         ref={(el) => {
@@ -121,68 +115,57 @@ export default function WelcomeScreen({
         }}
         className="absolute bottom-8 right-1/4"
       >
-        <Star className="w-12 h-12 text-amber-300 fill-amber-300 opacity-60" />
+        <Star className="h-12 w-12 fill-[#c9a227] text-[#c9a227] opacity-60" />
       </div>
 
-      <div className="text-center max-w-4xl">
-        {/* Title */}
+      <div className="max-w-4xl text-center">
         <h1
           ref={titleRef}
-          className="text-5xl md:text-7xl font-bold text-amber-400 mb-6 drop-shadow-2xl"
+          className="mb-6 text-5xl font-bold text-seal drop-shadow-[0_12px_32px_rgba(139,30,30,0.16)] md:text-7xl"
         >
-          HƯƠNG VỊ BAO CẤP
+          HUONG VI BAO CAP
         </h1>
 
         <h2
           ref={subtitleRef}
-          className="text-xl md:text-2xl font-semibold text-white/90 mb-12 px-4 leading-relaxed"
+          className="mb-12 px-4 text-xl font-semibold leading-relaxed text-ink md:text-2xl"
         >
-          Ẩm thực thời tem phiếu —
+          Am thuc thoi tem phieu
           <br />
-          Bo bo, cơm độn khoai, cháo cám
+          Bo bo, com don khoai, chao cam
         </h2>
 
-        {/* Main CTA Button */}
         <button
           ref={buttonRef}
           onClick={onStart}
-          className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 
-                   text-white text-xl md:text-2xl font-bold py-4 px-12 rounded-2xl 
-                   shadow-2xl shadow-amber-500/50 hover:shadow-amber-500/70
-                   transition-all duration-300 hover:scale-105 mb-8"
+          className="mb-8 rounded-2xl bg-gradient-to-r from-seal to-[#a82b2b] px-12 py-4 text-xl font-bold text-[#F5E6C8] shadow-2xl shadow-[rgba(139,30,30,0.24)] transition-all duration-300 hover:scale-105 hover:shadow-[rgba(139,30,30,0.32)] md:text-2xl"
         >
-          BẮT ĐẦU CHƠI
+          BAT DAU CHOI
         </button>
 
-        {/* Secondary Buttons */}
         <div
           ref={secondaryRef}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <button
             onClick={onShowInstructions}
-            className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md
-                     text-white border-2 border-white/30 hover:border-amber-400/50
-                     font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105"
+            className="flex items-center gap-2 rounded-xl border-2 border-ink/15 bg-[#f8efdc]/90 px-6 py-3 font-semibold text-ink transition-all duration-300 hover:scale-105 hover:border-seal/30 hover:bg-[#f3e7cf]"
           >
-            <HelpCircle className="w-5 h-5" />
-            Hướng dẫn
+            <HelpCircle className="h-5 w-5" />
+            Huong dan
           </button>
 
           <button
             onClick={onShowLeaderboard}
-            className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md
-                     text-white border-2 border-white/30 hover:border-amber-400/50
-                     font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105"
+            className="flex items-center gap-2 rounded-xl border-2 border-ink/15 bg-[#f8efdc]/90 px-6 py-3 font-semibold text-ink transition-all duration-300 hover:scale-105 hover:border-seal/30 hover:bg-[#f3e7cf]"
           >
-            <Trophy className="w-5 h-5" />
-            Bảng xếp hạng
+            <Trophy className="h-5 w-5" />
+            Bang xep hang
           </button>
         </div>
 
-        {/* Game Description */}
-        <p className="mt-12 text-white/80 text-lg max-w-2xl mx-auto">
-          Trả lời câu hỏi về ẩm thực thời bao cấp để thu thập mảnh ghép và hoàn thành bức tranh!
+        <p className="mx-auto mt-12 max-w-2xl text-lg text-ink-light">
+          Tra loi cau hoi ve am thuc thoi bao cap de thu thap manh ghep va hoan thanh buc tranh.
         </p>
       </div>
     </div>
