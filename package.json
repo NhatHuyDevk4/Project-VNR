@@ -34,7 +34,7 @@
     "katex": "^0.16.26",
     "langchain": "^1.1.5",
     "lucide-react": "^0.556.0",
-    "next": "16.0.7",
+    "next": "^16.0.10",
     "pdf-parse": "^1.1.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
