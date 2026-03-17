@@ -1,207 +1,207 @@
-﻿import { PostType } from "@/common/types/post.type";
+import { PostType } from "@/common/types/post.type";
 
 export const posts: PostType[] = [
   {
     id: 1,
     slug: "bo-bo",
-    title: "Bo bo - Dau vet cua nhung bua an cam hoi thoi bao cap",
+    title: "Bo bo - Dấu vết của những bữa ăn cầm hơi thời bao cấp",
     milestone: "1976-1986",
     audio: "/audio/cotmoc1.mp3",
     shortDescription:
-      "Bo bo thuong xuat hien khi gao thieu, tro thanh nguyen lieu thay the hoac don com trong nhieu gia dinh. Ho so nay giai thich vi sao bo bo in dam trong ky uc ve doi song tem phieu.",
-    content: `## Khai quat
-Bo bo la cach goi quen thuoc cua nhieu gia dinh danh cho hat ngo hoac phan ngo xay vo dung trong bua an khi nguon gao phan phoi khong du. Trong ky uc thoi bao cap, bo bo khong phai mon an duoc lua chon vi ngon, ma vi no giup keo dai khau phan va chong doi.
+      "Bo bo thường xuất hiện khi gạo thiếu, trở thành nguyên liệu thay thế hoặc độn cơm trong nhiều gia đình. Hồ sơ này giải thích vì sao bo bo in đậm trong ký ức về đời sống tem phiếu.",
+    content: `## Khái quát
+Bo bo là cách gọi quen thuộc của nhiều gia đình dành cho hạt ngô hoặc phần ngô xay vỡ dùng trong bữa ăn khi nguồn gạo phân phối không đủ. Trong ký ức thời bao cấp, bo bo không phải món ăn được lựa chọn vì ngon, mà vì nó giúp kéo dài khẩu phần và chống đói.
 
-## Boi canh lich su
-Tu lieu bao chi ve giai doan ngan song cam cho va nhung vu mua that bat cho thay luong thuc la ap luc thuong truc cua doi song thuong nhat. Khi gao khan hiem, nguoi dan phai dung them ngo, khoai, san de bu vao dinh luong hang thang. Bo bo vi the tro thanh hinh anh tieu bieu cho su chat chiu cua thoi ky 1976-1986.
+## Bối cảnh lịch sử
+Tư liệu báo chí về giai đoạn ngắn sống cầm chừng và những vụ mùa thất bát cho thấy lương thực là áp lực thường trực của đời sống thường nhật. Khi gạo khan hiếm, người dân phải dùng thêm ngô, khoai, sắn để bù vào định lượng hàng tháng. Bo bo vì thế trở thành hình ảnh tiêu biểu cho sự chắt chiu của thời kỳ 1976-1986.
 
-## Trong doi song gia dinh
-Bo bo thuong duoc nau rieng nhu com, hoac tron cung gao de noi com trong day hon va an duoc lau hon. Nhieu loi ke nhac den cam giac an bo bo kho quen luc dau, nhung dan tro thanh mot phan cua nhip song gia dinh: an de cam hoi, de cho den ky linh gao moi, va de ca nha van co mot bua com dung nghia.
+## Trong đời sống gia đình
+Bo bo thường được nấu riêng như cơm, hoặc trộn cùng gạo để nồi cơm trong đầy hơn và ăn được lâu hơn. Nhiều lời kể nhắc đến cảm giác ăn bo bo khó quên lúc đầu, nhưng dần trở thành một phần của nhịp sống gia đình: ăn để cầm hơi, để chờ đến kỳ lĩnh gạo mới, và để cả nhà vẫn có một bữa cơm đúng nghĩa.
 
-## Gia tri tu lieu
-Ngay nay, bo bo la mot hien vat ky uc hon la mot mon an pho bien. Khi nhin lai bo bo, nguoi hoc co the hieu ro hon ve thieu thon luong thuc, co che phan phoi va suc thich nghi cua con nguoi trong thoi bao cap. No giup bien khai niem lich su truu tuong thanh mot chi tiet rat cu the cua doi song.
+## Giá trị tư liệu
+Ngày nay, bo bo là một hiện vật ký ức hơn là một món ăn phổ biến. Khi nhìn lại bo bo, người học có thể hiểu rõ hơn về thiếu thốn lương thực, cơ chế phân phối và sức thích nghi của con người trong thời bao cấp. Nó giúp biến khái niệm lịch sử trừu tượng thành một chi tiết rất cụ thể của đời sống.
 
-## Goi y doc ho so
-Hay xem bo bo nhu mot chi dau xa hoi: chi can mot nguyen lieu thay the cung du ke lai cau chuyen ve luong thuc, khau phan va no luc xoay xo cua ca mot the he.`,
+## Gợi ý đọc hồ sơ
+Hãy xem bo bo như một chỉ dấu xã hội: chỉ cần một nguyên liệu thay thế cũng đủ kể lại câu chuyện về lương thực, khẩu phần và nỗ lực xoay xở của cả một thế hệ.`,
     image: ["/images/bobo.png"],
     linkResource: [
-      "https://tuoitre.vn/hanh-trinh-hat-gao-viet---ky-2-nhung-vu-mua-that-bat-350046.htm",
-      "https://tuoitre.vn/hanh-trinh-hat-gao-viet---ky-3-hat-gao-thoi-ngan-song-cam-cho-350232.htm",
-      "https://nhandan.vn/nho-mot-thoi-tram-thu-cai-gi-cung-phan-phoi-post193142.html"
+      "https://plo.vn/noi-am-anh-bo-bo-trong-dem-dai-doi-kem-post330259.html",
+      "https://kienthuc.net.vn/su-that-cuc-thu-vi-ve-huyen-thoai-bo-bo-thoi-bao-cap-post682691.html",
+      "https://vietnamdaily.kienthuc.net.vn/su-that-thu-vi-ve-huyen-thoai-bo-bo-thoi-bao-cap-post1446335.html"
     ],
   },
   {
     id: 2,
     slug: "com-don-khoai",
-    title: "Com don khoai - Bua com du no trong ky uc nhieu gia dinh",
+    title: "Cơm độn khoai - Bữa cơm đủ no trong ký ức nhiều gia đình",
     milestone: "1976-1986",
     audio: "/audio/cotmoc2.mp3",
     shortDescription:
-      "Com don khoai la hinh anh tieu bieu cua bua an gia dinh thoi bao cap: it gao hon, them khoai de no lau hon. Noi dung ho so nhan vao hoan canh hinh thanh va y nghia doi song cua mon an nay.",
-    content: `## Khai quat
-Com don khoai la com nau cung khoai lang hoac khoai so de tang the tich noi com. Day la mot cach ung bien rat pho bien trong thoi bao cap, khi gao duoc phan phoi theo dinh luong va thuong khong dap ung du nhu cau cua ca gia dinh.
+      "Cơm độn khoai là hình ảnh tiêu biểu của bữa ăn gia đình thời bao cấp: ít gạo hơn, thêm khoai để no lâu hơn. Nội dung hồ sơ nhằm vào hoàn cảnh hình thành và ý nghĩa đời sống của món ăn này.",
+    content: `## Khái quát
+Cơm độn khoai là cơm nấu cùng khoai lang hoặc khoai sọ để tăng thể tích nồi cơm. Đây là một cách ứng biến rất phổ biến trong thời bao cấp, khi gạo được phân phối theo định lượng và thường không đáp ứng đủ nhu cầu của cả gia đình.
 
-## Vi sao mon nay xuat hien
-Nhieu nguon tu lieu ve bua com thoi bao cap cho thay nguoi noi tro luon phai tinh toan de bua an vua du no, vua khong vuot qua so gao duoc cap. Khoai la lua chon phu hop vi re hon, de kiem hon o mot so noi va co the nau chung voi gao ma van tao cam giac thanh mot bua com tron ven.
+## Vì sao món này xuất hiện
+Nhiều nguồn tư liệu về bữa cơm thời bao cấp cho thấy người nội trợ luôn phải tính toán để bữa ăn vừa đủ no, vừa không vượt quá số gạo được cấp. Khoai là lựa chọn phù hợp vì rẻ hơn, dễ kiếm hơn ở một số nơi và có thể nấu chung với gạo mà vẫn tạo cảm giác thành một bữa cơm trọn vẹn.
 
-## Nhip song trong bep
-Mot noi com don khoai thuong gan voi rat nhieu thao tac quen thuoc: vo gao ky de khong hao, cat khoai vua mieng, canh nuoc chuan de com khong nhao, roi xoi that nhe tay de hat com khong nat. Bua com vi the khong chi la chuyen an uong, ma con phan anh tinh toan, tiet kiem va kinh nghiem giu bep cua nguoi me, nguoi ba.
+## Nhịp sống trong bếp
+Một nồi cơm độn khoai thường gắn với rất nhiều thao tác quen thuộc: vo gạo kỹ để không hao, cắt khoai vừa miếng, canh nước chuẩn để cơm không nhão, rồi xới thật nhẹ tay để hạt cơm không nát. Bữa cơm vì thế không chỉ là chuyện ăn uống, mà còn phản ánh tính toán, tiết kiệm và kinh nghiệm giữ bếp của người mẹ, người bà.
 
-## Y nghia ky uc
-Ngay nay, nhac den com don khoai la nhac den mot giai doan ma no bung da la dieu quan trong. Mon an nay cho thay lich su khong chi nam o van kien hay con so, ma con nam o chinh chiec noi com cua moi gia dinh. Do la ky uc cua thieu thon nhung cung la ky uc cua su cham lo va ben bi.
+## Ý nghĩa ký ức
+Ngày nay, nhắc đến cơm độn khoai là nhắc đến một giai đoạn mà no bụng đã là điều quan trọng. Món ăn này cho thấy lịch sử không chỉ nằm ở văn kiện hay con số, mà còn nằm ở chính chiếc nồi cơm của mỗi gia đình. Đó là ký ức của thiếu thốn nhưng cũng là ký ức của sự chăm lo và bền bỉ.
 
-## Goc nhin hoc tap
-Khi doc ho so nay, nguoi hoc co the lien he giua khau phan luong thuc, doi song gia dinh va co che bao cap de hieu vi sao mot mon an gian di lai tro thanh ky hieu cua ca thoi ky.`,
+## Góc nhìn học tập
+Khi đọc hồ sơ này, người học có thể liên hệ giữa khẩu phần lương thực, đời sống gia đình và cơ chế bao cấp để hiểu vì sao một món ăn giản dị lại trở thành ký hiệu của cả thời kỳ.`,
     image: ["/images/comdonkhoai.png"],
     linkResource: [
-      "https://www.sggp.org.vn/rung-rung-thuong-nho-bua-com-gia-dinh-thoi-bao-cap-post573542.html",
-      "https://www.sggp.org.vn/song-ma-an-san-post8256.html",
-      "https://nhandan.vn/qua-khu-tang-chung-ta-mon-qua-vo-gia-post344950.html"
+      "https://thanhnien.vn/com-don-cua-ky-uc-185632975.htm",
+      "https://baogialai.com.vn/mot-thoi-com-don-post15633.html",
+      "https://vnexpress.net/doi-song-cooking-mam-com-he-goi-nho-thoi-bao-cap-gia-100-000-dong-4598390.html"
     ],
   },
   {
     id: 3,
     slug: "chao-cam",
-    title: "Chao cam - Chung tich cua nhung ngay thieu gao keo dai",
+    title: "Cháo cám - Chứng tích của những ngày thiếu gạo kéo dài",
     milestone: "1976-1986",
     audio: "/audio/cotmoc3.mp3",
     shortDescription:
-      "Chao cam goi lai ky uc rat khac nghiet cua doi song bao cap: an de cam hoi, chu khong phai de thuong thuc. Ho so nay dat mon an trong boi canh thieu luong thuc va suc chiu dung cua con nguoi.",
-    content: `## Khai quat
-Chao cam la mon an gan voi ky uc ngheo kho nhat cua thoi thieu gao. Cam von la phan bot con lai sau xay xat, nhung trong nhung giai doan cang thang ve luong thuc, nhieu gia dinh van phai tan dung de nau thanh mon an cam hoi.
+      "Cháo cám gọi lại ký ức rất khắc nghiệt của đời sống bao cấp: ăn để cầm hơi, chứ không phải để thưởng thức. Hồ sơ này đặt món ăn trong bối cảnh thiếu lương thực và sức chịu đựng của con người.",
+    content: `## Khái quát
+Cháo cám là món ăn gắn với ký ức nghèo khó nhất của thời thiếu gạo. Cám vốn là phần bột còn lại sau xay xát, nhưng trong những giai đoạn căng thẳng về lương thực, nhiều gia đình vẫn phải tận dụng để nấu thành món ăn cầm hơi.
 
-## Boi canh hinh thanh
-Cac hoi uc ve bua an thoi bao cap thuong nhac toi viec nguoi dan phai keo gian khau phan bang moi cach co the. Khi gao khong du, bua an co the chuyen thanh chao loang, com don, hoac nhung mon tan dung tu nguyen lieu phu. Chao cam xuat hien trong chinh hoan canh ay: nhu mot giai phap bat dac di de chong doi va giu cho gia dinh con mot bua nong.
+## Bối cảnh hình thành
+Các hồi ức về bữa ăn thời bao cấp thường nhắc tới việc người dân phải kéo giãn khẩu phần bằng mọi cách có thể. Khi gạo không đủ, bữa ăn có thể chuyển thành cháo loãng, cơm độn, hoặc những món tận dụng từ nguyên liệu phụ. Cháo cám xuất hiện trong chính hoàn cảnh ấy: như một giải pháp bất đắc dĩ để chống đói và giữ cho gia đình còn một bữa nóng.
 
-## Dieu con lai sau mon an
-Dieu khien chao cam duoc nho lau khong nam o huong vi, ma o cam giac thieu thon ma no dai dien. Nhac toi chao cam la nhac toi ap luc bep nuc, noi lo khau phan va ca su nhan nai cua nhung gia dinh phai xoay xo tung ngay. No la lat cat chan thuc ve doi song dan sinh trong giai doan kho khan.
+## Điều còn lại sau món ăn
+Điều khiến cháo cám được nhớ lâu không nằm ở hương vị, mà ở cảm giác thiếu thốn mà nó đại diện. Nhắc tới cháo cám là nhắc tới áp lực bếp núc, nỗi lo khẩu phần và cả sự nhẫn nại của những gia đình phải xoay xở từng ngày. Nó là lát cắt chân thực về đời sống dân sinh trong giai đoạn khó khăn.
 
-## Gia tri tu lieu
-Trong nghien cuu ky uc xa hoi, nhung mon nhu chao cam giup soi ro mat doi thuong cua lich su: lich su cua bua an, cua su chiu dung va cua kinh nghiem ton tai. Ho so nay vi the khong chi noi ve mon an, ma con noi ve suc ben tinh than cua con nguoi Viet Nam trong thoi bao cap.
+## Giá trị tư liệu
+Trong nghiên cứu ký ức xã hội, những món như cháo cám giúp soi rõ mặt đời thường của lịch sử: lịch sử của bữa ăn, của sự chịu đựng và của kinh nghiệm tồn tại. Hồ sơ này vì thế không chỉ nói về món ăn, mà còn nói về sức bền tinh thần của con người Việt Nam trong thời bao cấp.
 
-## Goi y khi doc
-Neu bo bo hay com don khoai cho thay su thich ung, thi chao cam cho thay gioi han cua thieu thon. Doc ho so nay se giup nguoi hoc cam nhan sau hon mat dan sinh cua lich su kinh te - xa hoi.`,
+## Gợi ý khi đọc
+Nếu bo bo hay cơm độn khoai cho thấy sự thích ứng, thì cháo cám cho thấy giới hạn của thiếu thốn. Đọc hồ sơ này sẽ giúp người học cảm nhận sâu hơn mặt dân sinh của lịch sử kinh tế - xã hội.`,
     image: ["/images/chaocam.png"],
     linkResource: [
-      "https://www.sggp.org.vn/rung-rung-thuong-nho-bua-com-gia-dinh-thoi-bao-cap-post573542.html",
-      "https://nhandan.vn/qua-khu-tang-chung-ta-mon-qua-vo-gia-post344950.html",
-      "https://nhandan.vn/nho-mot-thoi-tram-thu-cai-gi-cung-phan-phoi-post193142.html"
+      "https://baonghean.vn/10-mon-an-kho-quen-thoi-bao-cap-148281.html",
+      "https://laodongthudo.vn/co-ai-con-nho-bua-com-thoi-bao-cap-133755.html",
+      "https://baophapluat.vn/chuyen-la-cam-gao-cho-lon-gio-sieu-dat-do-nha-giau-an-sang-thay-pho-post320475.html"
     ],
   },
   {
     id: 4,
     slug: "banh-bot-mi-hap",
-    title: "Banh bot mi hap - Mon qua vat hiem hoi trong thoi tem phieu",
+    title: "Bánh bột mì hấp - Món quà vặt hiếm hoi trong thời tem phiếu",
     milestone: "1976-1986",
     audio: "/audio/cotmoc4.mp3",
     shortDescription:
-      "Khi bot mi la thu khong phai luc nao cung san, banh bot mi hap tro thanh mon qua gian di nhung dang nho. Ho so nay nhan vao gia tri cam xuc cua mon an trong doi song thieu thon.",
-    content: `## Khai quat
-Banh bot mi hap la mon qua vat goi nho manh ve doi song gia dinh thoi bao cap. Khong cau ky nguyen lieu, khong co nhieu lop vi nhu banh hien dai, mon banh nay duoc nho vi tinh gian di, mem, ngot nhe va vi no gan voi nhung dip hiem hoi co bot mi trong nha.
+      "Khi bột mì là thứ không phải lúc nào cũng sẵn, bánh bột mì hấp trở thành món quà giản dị nhưng đáng nhớ. Hồ sơ này nhằm vào giá trị cảm xúc của món ăn trong đời sống thiếu thốn.",
+    content: `## Khái quát
+Bánh bột mì hấp là món quà vặt gợi nhớ mạnh về đời sống gia đình thời bao cấp. Không cầu kỳ nguyên liệu, không có nhiều lớp vị như bánh hiện đại, món bánh này được nhớ vì tính giản dị, mềm, ngọt nhẹ và vì nó gắn với những dịp hiếm hoi có bột mì trong nhà.
 
-## Bot mi trong boi canh bao cap
-Trong dieu kien phan phoi co kiem soat, nhung nguyen lieu nhu bot mi hay duong khong phai luc nao cung de mua. Khi co duoc mot phan bot mi, nhieu gia dinh uu tien lam mon gi vua tiet kiem, vua chia duoc cho nhieu nguoi. Banh hap dap ung dung tinh than do: de lam, it hao nguyen lieu, phu hop voi can bep gia dinh.
+## Bột mì trong bối cảnh bao cấp
+Trong điều kiện phân phối có kiểm soát, những nguyên liệu như bột mì hay đường không phải lúc nào cũng dễ mua. Khi có được một phần bột mì, nhiều gia đình ưu tiên làm món gì vừa tiết kiệm, vừa chia được cho nhiều người. Bánh hấp đáp ứng đúng tinh thần đó: dễ làm, ít hao nguyên liệu, phù hợp với căn bếp gia đình.
 
-## Mot ky uc rat khac voi mon an cam hoi
-Neu bo bo hay chao cam gan voi chong doi, banh bot mi hap gan nhieu hon voi niem vui nho. Do co the la mon tre con cho doi, la me banh lam vao buoi chieu, hay la cam giac ca nha cung chia nhau thu qua gian di ma van thay am long. Chinh vi hiem ma mon banh tro nen dang nho.
+## Một ký ức rất khác với món ăn cầm hơi
+Nếu bo bo hay cháo cám gắn với chống đói, bánh bột mì hấp gắn nhiều hơn với niềm vui nhỏ. Đó có thể là món trẻ con chờ đợi, là mẹ bánh làm vào buổi chiều, hay là cảm giác cả nhà cùng chia nhau thử quà giản dị mà vẫn thấy ấm lòng. Chính vì hiếm mà món bánh trở nên đáng nhớ.
 
-## Gia tri van hoa doi song
-Banh bot mi hap cho thay thoi bao cap khong chi co thieu thon, ma con co ca nghe thuat lam cho cuoc song bot kho khan bang nhung niem vui rat nho. Tu mot mon banh, nguoi hoc co the nhin thay kha nang vun ven, to chuc va giu nep sinh hoat gia dinh trong dieu kien vat chat han che.
+## Giá trị văn hóa đời sống
+Bánh bột mì hấp cho thấy thời bao cấp không chỉ có thiếu thốn, mà còn có cả nghệ thuật làm cho cuộc sống bớt khó khăn bằng những niềm vui rất nhỏ. Từ một món bánh, người học có thể nhìn thấy khả năng vun vén, tổ chức và giữ nếp sinh hoạt gia đình trong điều kiện vật chất hạn chế.
 
-## Goc nhin tu lieu
-Ho so nay nen duoc doc nhu mot lat cat cua van hoa bep nuc: noi moi nguyen lieu hiem deu mang gia tri lon hon gia tri dinh duong don thuan.`,
+## Góc nhìn tư liệu
+Hồ sơ này nên được đọc như một lát cắt của văn hóa bếp núc: nơi mỗi nguyên liệu hiếm đều mang giá trị lớn hơn giá trị dinh dưỡng đơn thuần.`,
     image: ["https://images.unsplash.com/photo-1509440157946-7cbf7229790f?w=800&q=80"],
     linkResource: [
-      "https://thanhnien.vn/tram-nam-an-mac-sai-gon-tram-nam-gam-o-banh-mi-1851044157.htm",
-      "https://nhandan.vn/nho-mot-thoi-tram-thu-cai-gi-cung-phan-phoi-post193142.html",
-      "https://www.sggp.org.vn/rung-rung-thuong-nho-bua-com-gia-dinh-thoi-bao-cap-post573542.html"
+      "https://plo.vn/banh-chap-chap-hay-chep-chep-tu-thoi-bao-cap-den-thoi-covid-post591895.html",
+      "https://tienphong.vn/dung-tem-phieu-mua-banh-mi-gia-dinh-thoi-bao-cap-post782295.tpo",
+      "https://dantri.com.vn/doi-song/gioi-tre-xep-hang-dung-tem-phieu-mua-thuc-pham-nhu-thoi-bao-cap-20161214113401717.htm"
     ],
   },
   {
     id: 5,
     slug: "tem-phieu-dinh-luong",
-    title: "Tem phieu va dinh luong - Co che phan phoi cua mot thoi ky",
+    title: "Tem phiếu và định lượng - Cơ chế phân phối của một thời kỳ",
     milestone: "1976-1986",
     audio: "/audio/cotmoc5.mp3",
     shortDescription:
-      "Tem phieu la chia khoa de hieu doi song bao cap: tu mua gao, mua thit den xep hang. Ho so nay tong hop co che dinh luong va anh huong truc tiep cua no len bua an gia dinh.",
-    content: `## Tem phieu la gi
-Tem phieu la hinh thuc phan phoi hang hoa theo dinh luong trong thoi bao cap. Voi nhieu mat hang thiet yeu nhu gao, thit, duong, vai hoac chat dot, nguoi dan khong chi can tien ma con can dung loai tem phieu duoc cap moi co the mua hang.
+      "Tem phiếu là chìa khóa để hiểu đời sống bao cấp: từ mua gạo, mua thịt đến xếp hàng. Hồ sơ này tổng hợp cơ chế định lượng và ảnh hưởng trực tiếp của nó lên bữa ăn gia đình.",
+    content: `## Tem phiếu là gì
+Tem phiếu là hình thức phân phối hàng hóa theo định lượng trong thời bao cấp. Với nhiều mặt hàng thiết yếu như gạo, thịt, đường, vải hoặc chất đốt, người dân không chỉ cần tiền mà còn cần đúng loại tem phiếu được cấp mới có thể mua hàng.
 
-## Cach co che nay van hanh
-Tai lieu cua Bao tang Lich su Quoc gia cho thay tem phieu duoc in theo tung nhom hang va gan chat voi khau phan. Viec mua luong thuc vi the khong con la lua chon tu do theo nhu cau, ma la mot hoat dong phu thuoc vao dinh muc, noi dang ky va nguon cung thuc te tai cua hang phan phoi.
+## Cách cơ chế này vận hành
+Tài liệu của Bảo tàng Lịch sử Quốc gia cho thấy tem phiếu được in theo từng nhóm hàng và gắn chặt với khẩu phần. Việc mua lương thực vì thế không còn là lựa chọn tự do theo nhu cầu, mà là một hoạt động phụ thuộc vào định mức, nơi đăng ký và nguồn cung thực tế tại cửa hàng phân phối.
 
-## Tac dong toi bua an va doi song
-Khi khau phan gioi han va nguon hang khong on dinh, bua an gia dinh buoc phai co keo theo tem phieu. Chinh tu day xuat hien nhung thuc hanh quen thuoc nhu don com bang khoai, ngo, san; xep hang dai; danh dum tung phan luong thuc; va tinh toan rat ky cho moi bua trong thang. Tem phieu khong chi la cong cu phan phoi ma con dinh hinh nep song hang ngay.
+## Tác động tới bữa ăn và đời sống
+Khi khẩu phần giới hạn và nguồn hàng không ổn định, bữa ăn gia đình bước phải có kèo theo tem phiếu. Chính từ đây xuất hiện những thực hành quen thuộc như độn cơm bằng khoai, ngô, sắn; xếp hàng dài; dành dụm từng phần lương thực; và tính toán rất kỹ cho mỗi bữa trong tháng. Tem phiếu không chỉ là công cụ phân phối mà còn định hình nếp sống hàng ngày.
 
-## Tem phieu nhu mot hien vat lich su
-Ngay nay, tem phieu la hien vat rat giau gia tri nghien cuu vi no phan anh dong thoi lich su kinh te, hanh chinh va dan sinh. Chi nhin vao mot to tem phieu, nguoi hoc co the thay cach nha nuoc quan ly hang hoa, cach gia dinh to chuc sinh hoat va cach xa hoi van hanh trong dieu kien khan hiem.
+## Tem phiếu như một hiện vật lịch sử
+Ngày nay, tem phiếu là hiện vật rất giàu giá trị nghiên cứu vì nó phản ánh đồng thời lịch sử kinh tế, hành chính và dân sinh. Chỉ nhìn vào một tờ tem phiếu, người học có thể thấy cách nhà nước quản lý hàng hóa, cách gia đình tổ chức sinh hoạt và cách xã hội vận hành trong điều kiện khan hiếm.
 
-## Goi y tiep can ho so
-Neu muon hieu sau ve thoi bao cap, hay bat dau tu tem phieu. Day la diem giao nhau giua chinh sach, thi truong va bua com gia dinh.`,
+## Gợi ý tiếp cận hồ sơ
+Nếu muốn hiểu sâu về thời bao cấp, hãy bắt đầu từ tem phiếu. Đây là điểm giao nhau giữa chính sách, thị trường và bữa cơm gia đình.`,
     image: ["https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80"],
     linkResource: [
-      "https://baotanglichsu.vn/VI/Articles/3096/71317/djoi-net-ve-bo-suu-tap-tem-phieu-thoi-ky-bao-cap-tai-bao-tang-lich-su-quoc-gia.html",
-      "https://nhandan.vn/nho-mot-thoi-tram-thu-cai-gi-cung-phan-phoi-post193142.html",
-      "https://nld.com.vn/van-hoa-van-nghe/trung-bay-cuoc-song-o-ha-noi-thoi-bao-cap-1975-1986-154523.htm"
+      "https://baotanglichsu.vn/vi/Articles/3096/71317/djoi-net-ve-bo-suu-tap-tem-phieu-thoi-ky-bao-cap-tai-bao-tang-lich-su-quoc-gia.html",
+      "https://vnexpress.net/mot-thoi-bao-cap-trong-2-000-tam-tem-phieu-4260689.html",
+      "https://dantri.com.vn/xa-hoi/ky-uc-gian-kho-qua-bo-suu-tap-tem-phieu-so-gao-thoi-bao-cap-20210327093329955.htm"
     ],
   },
   {
     id: 6,
     slug: "mon-an-don-gian",
-    title: "Cac mon an don gian - Ky uc am thuc cua doi song thieu thon",
+    title: "Các món ăn đơn giản - Ký ức ẩm thực của đời sống thiếu thốn",
     milestone: "1976-1986",
     audio: "/audio/cotmoc6.mp3",
     shortDescription:
-      "Nhung mon an gian di thoi bao cap khong noi bat vi ky thuat nau nuong, ma vi chung gan voi cach con nguoi thich nghi voi phan phoi, thieu thon va nhip song gia dinh.",
-    content: `## Tu mon an den ky uc xa hoi
-Am thuc thoi bao cap thuong duoc nhac bang nhung mon rat don so: bo bo, com don khoai, chao cam, san luoc, banh bot mi hap. Diem chung cua chung la duoc tao nen tu su tiet kiem va thich ung nhieu hon la tu nhu cau thuong thuc.
+      "Những món ăn giản dị thời bao cấp không nổi bật vì kỹ thuật nấu nướng, mà vì chúng gắn với cách con người thích nghi với phân phối, thiếu thốn và nhịp sống gia đình.",
+    content: `## Từ món ăn đến ký ức xã hội
+Ẩm thực thời bao cấp thường được nhắc bằng những món rất đơn sơ: bo bo, cơm độn khoai, cháo cám, sắn luộc, bánh bột mì hấp. Điểm chung của chúng là được tạo nên từ sự tiết kiệm và thích ứng nhiều hơn là từ nhu cầu thưởng thức.
 
-## Vi sao nhung mon nay dang luu giu
-Bua an la noi lich su hien ra gan gui nhat. Nhung mon an don gian cho thay ro cach moi gia dinh xoay xo voi khau phan, nguon hang va thoi quen sinh hoat hang ngay. Chung giup nguoi hoc nhin thay chieu sau dan sinh cua thoi bao cap thay vi chi nho giai doan ay qua khai niem kinh te.
+## Vì sao những món này đáng lưu giữ
+Bữa ăn là nơi lịch sử hiện ra gần gũi nhất. Những món ăn đơn giản cho thấy rõ cách mỗi gia đình xoay xở với khẩu phần, nguồn hàng và thói quen sinh hoạt hàng ngày. Chúng giúp người học nhìn thấy chiều sâu dân sinh của thời bao cấp thay vì chỉ nhớ giai đoạn ấy qua khái niệm kinh tế.
 
-## Gia tri tinh than
-Nhieu hoi uc ve thoi bao cap khong chi ke chuyen doi no, ma con ke chuyen nhuong nhau phan an, danh mon ngon it oi cho tre nho, hoac co giu ne nep bua com gia dinh trong hoan canh kho khan. Vi vay, cac mon an gian di cung la noi luu giu tinh cam gia dinh, su nhan nai va tinh than chat chiu.
+## Giá trị tinh thần
+Nhiều hồi ức về thời bao cấp không chỉ kể chuyện đói no, mà còn kể chuyện nhường nhau phần ăn, dành món ngon ít ỏi cho trẻ nhỏ, hoặc cố giữ nền nếp bữa cơm gia đình trong hoàn cảnh khó khăn. Vì vậy, các món ăn giản dị cũng là nơi lưu giữ tình cảm gia đình, sự nhẫn nại và tinh thần chắt chiu.
 
-## Cach doc nhom ho so nay
-Thay vi xem tung mon nhu mot cau chuyen tach roi, hay xem chung nhu mot chuoi bang chung ve cach doi song van hanh duoi co che bao cap. Moi mon bo sung cho nhau de tao thanh buc tranh hoan chinh hon ve ky uc mot thoi.
+## Cách đọc nhóm hồ sơ này
+Thay vì xem từng món như một câu chuyện tách rời, hãy xem chúng như một chuỗi bằng chứng về cách đời sống vận hành dưới cơ chế bao cấp. Mỗi món bổ sung cho nhau để tạo thành bức tranh hoàn chỉnh hơn về ký ức một thời.
 
-## Y nghia voi nguoi hoc hom nay
-Nhung mon an don gian giup ket noi lich su voi trai nghiem cam xuc. Chung lam cho bai hoc ve thoi bao cap bot kho cung, dong thoi goi ra cau hoi ve gia tri cua du day, cua tiet kiem va cua ky uc gia dinh.`,
+## Ý nghĩa với người học hôm nay
+Những món ăn đơn giản giúp kết nối lịch sử với trải nghiệm cảm xúc. Chúng làm cho bài học về thời bao cấp bớt khô cứng, đồng thời gợi ra câu hỏi về giá trị của dư dả, của tiết kiệm và của ký ức gia đình.`,
     image: ["https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80"],
     linkResource: [
-      "https://www.sggp.org.vn/rung-rung-thuong-nho-bua-com-gia-dinh-thoi-bao-cap-post573542.html",
-      "https://nhandan.vn/qua-khu-tang-chung-ta-mon-qua-vo-gia-post344950.html",
-      "https://baotanglichsu.vn/vi/Articles/4087/hien-vat-thoi-ky-bao-cap-truoc-nam-1985"
+      "https://laodongthudo.vn/co-ai-con-nho-bua-com-thoi-bao-cap-133755.html",
+      "https://vnexpress.net/doi-song-cooking-mam-com-he-goi-nho-thoi-bao-cap-gia-100-000-dong-4598390.html",
+      "https://baonghean.vn/10-mon-an-kho-quen-thoi-bao-cap-148281.html"
     ],
   },
   {
     id: 7,
     slug: "ve-thoi-bao-cap",
-    title: "Ve thoi bao cap - Boi canh lich su va y nghia cua ky uc am thuc",
+    title: "Về thời bao cấp - Bối cảnh lịch sử và ý nghĩa của ký ức ẩm thực",
     milestone: "1976-1986",
     audio: "/audio/cotmoc7.mp3",
     shortDescription:
-      "Ho so tong quan giup dat cac mon an va hien vat vao dung boi canh lich su 1976-1986: co che phan phoi, doi song khan hiem va nhung ky uc con lai den hom nay.",
-    content: `## Thoi bao cap trong doi song thuong nhat
-Thoi bao cap thuong duoc hieu la giai doan nen kinh te van hanh theo co che ke hoach hoa va phan phoi bang dinh muc. Trong sinh hoat hang ngay, dieu do hien len qua tem phieu, xep hang, khau phan luong thuc, hang hoa khan hiem va thoi quen tiet kiem gan nhu o moi gia dinh.
+      "Hồ sơ tổng quan giúp đặt các món ăn và hiện vật vào đúng bối cảnh lịch sử 1976-1986: cơ chế phân phối, đời sống khan hiếm và những ký ức còn lại đến hôm nay.",
+    content: `## Thời bao cấp trong đời sống thường nhật
+Thời bao cấp thường được hiểu là giai đoạn nền kinh tế vận hành theo cơ chế kế hoạch hóa và phân phối bằng định mức. Trong sinh hoạt hàng ngày, điều đó hiện lên qua tem phiếu, xếp hàng, khẩu phần lương thực, hàng hóa khan hiếm và thói quen tiết kiệm gần như ở mọi gia đình.
 
-## Vi sao am thuc la canh cua tot de hieu lich su
-Am thuc phan anh rat ro nhung gi mot xa hoi dang co va dang thieu. Qua mot bua com, nguoi hoc co the nhin ra muc song, nguon cung, nep sinh hoat, vai tro cua nguoi noi tro va ca cach con nguoi ung xu voi kho khan. Boi vay, ky uc am thuc la con duong rat hieu qua de tiep can lich su bao cap theo huong gan gui.
+## Vì sao ẩm thực là cánh cửa tốt để hiểu lịch sử
+Ẩm thực phản ánh rất rõ những gì một xã hội đang có và đang thiếu. Qua một bữa cơm, người học có thể nhìn ra mức sống, nguồn cung, nếp sinh hoạt, vai trò của người nội trợ và cả cách con người ứng xử với khó khăn. Bởi vậy, ký ức ẩm thực là con đường rất hiệu quả để tiếp cận lịch sử bao cấp theo hướng gần gũi.
 
-## Tu hien vat den cau chuyen
-Nhung hien vat nhu tem phieu, so gao, do dung luong thuc, anh bep nuc hoac cac mon an tieu bieu deu la manh ghep cua mot cau chuyen lon hon ve doi song dan sinh. Chung khong chi minh hoa cho lich su, ma con giup nguoi xem cam nhan truc tiep bau khong khi xa hoi cua ca mot thoi ky.
+## Từ hiện vật đến câu chuyện
+Những hiện vật như tem phiếu, sổ gạo, đồ dùng lương thực, ảnh bếp núc hoặc các món ăn tiêu biểu đều là mảnh ghép của một câu chuyện lớn hơn về đời sống dân sinh. Chúng không chỉ minh họa cho lịch sử, mà còn giúp người xem cảm nhận trực tiếp bầu không khí xã hội của cả một thời kỳ.
 
-## Y nghia cua viec luu giu ho so
-Luu lai cac ho so ve bo bo, com don khoai, chao cam hay tem phieu la cach chuyen hoa ky uc doi thuong thanh tu lieu hoc tap. Khi duoc trinh bay co he thong, cac chi tiet nho ay giup nguoi hoc hieu lich su bang mat nhin doi song, thay vi chi bang cac khai niem vi mo.
+## Ý nghĩa của việc lưu giữ hồ sơ
+Lưu lại các hồ sơ về bo bo, cơm độn khoai, cháo cám hay tem phiếu là cách chuyển hóa ký ức đời thường thành tư liệu học tập. Khi được trình bày có hệ thống, các chi tiết nhỏ ấy giúp người học hiểu lịch sử bằng góc nhìn đời sống, thay vì chỉ bằng các khái niệm vĩ mô.
 
-## Goi y kham pha
-Ho so nay nen duoc xem nhu trang mo dau cho toan bo kho tu lieu. Tu day, nguoi hoc co the di tiep sang tung mon an va tung hien vat de thay lich su bao cap hien ra day du hon, gan hon va co cam xuc hon.`,
+## Gợi ý khám phá
+Hồ sơ này nên được xem như trang mở đầu cho toàn bộ kho tư liệu. Từ đây, người học có thể đi tiếp sang từng món ăn và từng hiện vật để thấy lịch sử bao cấp hiện ra đầy đủ hơn, gần hơn và có cảm xúc hơn.`,
     image: ["https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=800&q=80"],
     linkResource: [
       "https://baotanglichsu.vn/vi/Articles/4087/hien-vat-thoi-ky-bao-cap-truoc-nam-1985",
       "https://baotanglichsu.vn/vi/Articles/3091/18094/ha-noi-se-trien-lam-bao-cap-xep-hang-ve-qua-khu.html",
-      "https://nld.com.vn/van-hoa-van-nghe/trung-bay-cuoc-song-o-ha-noi-thoi-bao-cap-1975-1986-154523.htm"
+      "https://danviet.vn/thoi-bao-cap-la-giai-doan-nao-thoi-bao-cap-keo-dai-bao-lau-do-thoi-bao-cap-trong-the-nao-20221031235047089.htm"
     ],
   },
 ];

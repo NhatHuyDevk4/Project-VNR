@@ -20,7 +20,7 @@ export function DocumentCard({
   };
 
   const hoverClasses = variant === "hoverable" 
-    ? "transition-all duration-300 hover:shadow-document-hover hover:-translate-y-1 cursor-pointer" 
+    ? "transition-all duration-300 hover:shadow-document-hover hover:-translate-y-1 hover:border-seal/10 cursor-pointer" 
     : "";
 
   return (

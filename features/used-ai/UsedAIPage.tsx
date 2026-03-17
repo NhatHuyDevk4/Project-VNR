@@ -23,12 +23,12 @@ const aiTools: AITool[] = [
     name: "ChatGPT",
     icon: <MessageSquare className="h-8 w-8" />,
     description:
-      "Tro ly AI ho tro nghien cuu, viet noi dung va giai dap cac cau hoi ve am thuc thoi bao cap, tem phieu va van hoa doi song.",
+      "Trợ lý AI hỗ trợ nghiên cứu, viết nội dung và giải đáp các câu hỏi về ẩm thực thời bao cấp, tem phiếu và văn hóa đời sống.",
     features: [
-      "Tong hop tai lieu ve thoi bao cap",
-      "Ho tro viet noi dung va tom tat",
-      "Giai dap cau hoi ve bo bo, com don khoai, chao cam",
-      "De xuat huong trinh bay cho du an",
+      "Tổng hợp tài liệu về thời bao cấp",
+      "Hỗ trợ viết nội dung và tóm tắt",
+      "Giải đáp câu hỏi về bo bo, cơm độn khoai, cháo cám",
+      "Đề xuất hướng trình bày cho dự án",
     ],
     link: "https://chat.openai.com",
   },
@@ -36,12 +36,12 @@ const aiTools: AITool[] = [
     name: "Google Gemini",
     icon: <Sparkles className="h-8 w-8" />,
     description:
-      "Cong cu AI da phuong thuc cua Google, phu hop khi can tong hop thong tin, phan tich hinh anh va mo rong y tuong noi dung.",
+      "Công cụ AI đa phương thức của Google, phù hợp khi cần tổng hợp thông tin, phân tích hình ảnh và mở rộng ý tưởng nội dung.",
     features: [
-      "Tim kiem va tong hop thong tin",
-      "Phan tich hinh anh",
-      "De xuat cau truc noi dung",
-      "Mo rong y tuong trinh bay",
+      "Tìm kiếm và tổng hợp thông tin",
+      "Phân tích hình ảnh",
+      "Đề xuất cấu trúc nội dung",
+      "Mở rộng ý tưởng trình bày",
     ],
     link: "https://gemini.google.com",
   },
@@ -49,12 +49,12 @@ const aiTools: AITool[] = [
     name: "NotebookLM",
     icon: <BookOpen className="h-8 w-8" />,
     description:
-      "Cong cu phu hop cho viec doc nhieu tai lieu, tong hop y chinh va dat cau hoi dua tren nguon da nap vao.",
+      "Công cụ phù hợp cho việc đọc nhiều tài liệu, tổng hợp ý chính và đặt câu hỏi dựa trên nguồn đã nạp vào.",
     features: [
-      "Tom tat tai lieu dai",
-      "Trich xuat y chinh",
-      "Hoi dap dua tren nguon tai lieu",
-      "Ho tro hoc tap theo chu de",
+      "Tóm tắt tài liệu dài",
+      "Trích xuất ý chính",
+      "Hỏi đáp dựa trên nguồn tài liệu",
+      "Hỗ trợ học tập theo chủ đề",
     ],
     link: "https://notebooklm.google.com",
   },
@@ -62,12 +62,12 @@ const aiTools: AITool[] = [
     name: "Cursor",
     icon: <Code className="h-8 w-8" />,
     description:
-      "Trinh soan thao code co AI ho tro, phu hop cho viec sua giao dien, tai cau truc component va tang toc qua trinh phat trien.",
+      "Trình soạn thảo code có AI hỗ trợ, phù hợp cho việc sửa giao diện, tái cấu trúc component và tăng tốc quá trình phát triển.",
     features: [
       "Code completion",
       "Refactor nhanh",
-      "Doc context codebase",
-      "Ho tro sua UI theo component",
+      "Đọc context codebase",
+      "Hỗ trợ sửa UI theo component",
     ],
     link: "https://cursor.sh",
   },
@@ -180,14 +180,14 @@ const UsedAIPage = () => {
           ref={titleRef}
           className="mb-4 text-center text-4xl font-bold text-seal sm:text-5xl md:text-6xl"
         >
-          Cong Cu AI Su Dung
+          Công cụ AI sử dụng
         </h1>
 
         <p
           ref={subtitleRef}
           className="mb-12 text-center text-lg text-ink-light"
         >
-          Cac cong cu AI ho tro nghien cuu, phat trien va hoan thien du an
+          Các công cụ AI hỗ trợ nghiên cứu, phát triển và hoàn thiện dự án
         </p>
 
         <div
@@ -195,10 +195,10 @@ const UsedAIPage = () => {
           className="mb-12 rounded-2xl border border-ink/10 bg-[#f8efdc] p-8 shadow-document"
         >
           <p className="mb-4 text-lg leading-relaxed text-ink">
-            Du an nay duoc xay dung voi su ho tro cua cong cu AI, giup toi uu hoa qua trinh nghien cuu va sang tao noi dung.
+            Dự án này được xây dựng với sự hỗ trợ của công cụ AI, giúp tối ưu hóa quá trình nghiên cứu và sáng tạo nội dung.
           </p>
           <p className="text-base text-ink-light">
-            Moi cong cu dong vai tro rieng trong viec tong hop thong tin, phan tich du lieu va ho tro phat trien giao dien.
+            Mỗi công cụ đóng vai trò riêng trong việc tổng hợp thông tin, phân tích dữ liệu và hỗ trợ phát triển giao diện.
           </p>
         </div>
 
@@ -236,7 +236,7 @@ const UsedAIPage = () => {
 
               <div className="space-y-2">
                 <p className="mb-2 text-sm font-semibold text-seal">
-                  Tinh nang chinh:
+                  Tính năng chính:
                 </p>
                 <ul className="space-y-1.5">
                   {tool.features.map((feature, idx) => (
@@ -256,10 +256,10 @@ const UsedAIPage = () => {
 
         <div className="mt-16">
           <h3 className="mb-6 text-center text-3xl font-bold text-seal">
-            Nguon tai lieu tham khao
+            Nguồn tài liệu tham khảo
           </h3>
           <p className="mb-8 text-center text-ink-light">
-            Cac nguon tham khao ve am thuc, thoi bao cap va van hoa Viet Nam
+            Các nguồn tham khảo về ẩm thực, thời bao cấp và văn hóa Việt Nam
           </p>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -299,7 +299,7 @@ const UsedAIPage = () => {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-ink-light">
-            Cac cong cu AI duoc su dung co kiem chung, co doi chieu va chi dong vai tro ho tro trong qua trinh phat trien.
+            Các công cụ AI được sử dụng có kiểm chứng, có đối chiếu và chỉ đóng vai trò hỗ trợ trong quá trình phát triển.
           </p>
         </div>
       </div>

@@ -220,5 +220,5 @@ html.lenis body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted-foreground);
+  background: color-mix(in srgb, var(--color-seal) 40%, var(--border));
 }

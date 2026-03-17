@@ -15,47 +15,55 @@ interface TimelineDetailPageProps {
 
 const TimelineDetailPage: React.FC<TimelineDetailPageProps> = ({ post }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const actionsBarRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Animate header
-    if (headerRef.current) {
-      gsap.fromTo(
-        headerRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
-      );
-    }
-
-    // Animate content as opening a dossier
-    if (contentRef.current) {
-      gsap.fromTo(
-        contentRef.current,
-        { opacity: 0, y: 30, rotationX: 10 },
-        { opacity: 1, y: 0, rotationX: 0, duration: 0.8, delay: 0.2, ease: "power3.out" }
-      );
-    }
+    const ctx = gsap.context(() => {
+      if (actionsBarRef.current) {
+        gsap.fromTo(
+          actionsBarRef.current,
+          { opacity: 0, y: -12 },
+          { opacity: 1, y: 0, duration: 0.5, delay: 0, ease: "power2.out" }
+        );
+      }
+      if (headerRef.current) {
+        gsap.fromTo(
+          headerRef.current,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, delay: 0.1, ease: "power3.out" }
+        );
+      }
+      if (contentRef.current) {
+        gsap.fromTo(
+          contentRef.current,
+          { opacity: 0, y: 30, rotationX: 10 },
+          { opacity: 1, y: 0, rotationX: 0, duration: 0.8, delay: 0.25, ease: "power3.out" }
+        );
+      }
+    });
+    return () => ctx.revert();
   }, []);
 
   return (
     <div ref={containerRef} className="container mx-auto px-4 md:px-6 py-12 font-archival text-ink">
       <div className="max-w-4xl mx-auto">
         {/* Archival Actions */}
-        <div className="flex justify-between items-center mb-8">
+        <div ref={actionsBarRef} className="flex justify-between items-center mb-8 opacity-0">
            <Link
              href="/tai-lieu"
              className="inline-flex items-center gap-2 text-ink-light hover:text-seal transition-colors font-bold text-sm tracking-widest uppercase border-b border-transparent hover:border-seal pb-1"
            >
-             <ArrowLeft className="w-4 h-4" /> Đóng Hồ Sơ
+             <ArrowLeft className="w-4 h-4" /> Đóng hồ sơ
            </Link>
            <div className="font-mono text-xs tracking-[0.2em] text-ink/50 uppercase">
-              Tài liệu Đính kèm
+              Tài liệu đính kèm
            </div>
         </div>
 
         {/* Header / Dossier Cover Data */}
-        <div ref={headerRef} className="mb-12 border-b-2 border-double border-ink/20 pb-8 text-center relative mt-8">
+        <div ref={headerRef} className="mb-12 border-b-2 border-double border-ink/20 pb-8 text-center relative mt-8 opacity-0">
           
           <div className="absolute top-0 right-0 w-24 h-24 border-[3px] border-seal rounded-full opacity-60 flex items-center justify-center transform rotate-12 pointer-events-none hidden md:flex mix-blend-multiply bg-[#F9F1E1]">
             <span className="text-seal font-bold text-xs tracking-widest text-center uppercase leading-tight">
@@ -82,7 +90,7 @@ const TimelineDetailPage: React.FC<TimelineDetailPageProps> = ({ post }) => {
         </div>
 
         {/* Main Document Content */}
-        <div ref={contentRef} style={{ perspective: "1000px" }}>
+        <div ref={contentRef} className="opacity-0" style={{ perspective: "1000px" }}>
            <DocumentCard padding="lg" className="w-full">
              
              {/* Archival Document Header */}
