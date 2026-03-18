@@ -1,7 +1,11 @@
 "use client";
 
 import ContentPageShell from "@/components/content/ContentPageShell";
-import type { FoodArticleData } from "../../features/contents/foodArticles";
+import type {
+  FoodArticleData,
+  FoodArticlePoint,
+  FoodArticleVirtues,
+} from "../../features/contents/foodArticles";
 import { Star, AlertTriangle, PenTool } from "lucide-react";
 import { DocumentCard } from "@/components/ui/DocumentCard";
 import { MarginalNote } from "@/components/ui/MarginalNote";
@@ -11,8 +15,8 @@ interface FoodArticlePageProps {
 }
 
 export default function FoodArticlePage({ data }: FoodArticlePageProps) {
-  const purposeSections = data.moralityPoints.slice(0, 2);
-  const virtuesData = data.moralityPoints[2] as any;
+  const purposeSections = data.moralityPoints.slice(0, 2) as FoodArticlePoint[];
+  const virtuesData = data.moralityPoints[2] as FoodArticleVirtues;
   const sidebar = data.sidebarNotes?.length
     ? data.sidebarNotes.map((note, index) => (
         <div key={note.title} className={index > 0 ? "mt-80" : undefined}>
@@ -28,8 +32,6 @@ export default function FoodArticlePage({ data }: FoodArticlePageProps) {
       title={data.title}
       subtitle={data.subtitle}
       eyebrow="Ẩm thực bao cấp"
-      meta={data.meta}
-      metaSide="right"
       showHeader={true}
       sidebar={sidebar ?? undefined}
     >
