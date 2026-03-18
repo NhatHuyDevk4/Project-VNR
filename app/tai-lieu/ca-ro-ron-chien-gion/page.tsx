@@ -1,0 +1,5 @@
+import TaiLieuDetailPage from '@/features/tai-lieu/TaiLieuDetailPage';
+
+export default function TaiLieuPage() {
+  return <TaiLieuDetailPage slug='ca-ro-ron-chien-gion' />;
+}

@@ -1,45 +1,42 @@
 "use client";
 
-import { useState } from "react";
 import contentData from "./data/content.json";
-import { Anchor, Compass, Ship, Users, Sparkles, BookOpen, Award, Target, Info } from "lucide-react";
-import ContentNavigation from "@/components/ContentNavigation";
+import { Anchor, Sparkles } from "lucide-react";
+import ContentPageShell from "@/components/content/ContentPageShell";
 import { DocumentCard } from "@/components/ui/DocumentCard";
 import { MarginalNote } from "@/components/ui/MarginalNote";
 
 export default function Content1Page() {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
-
   return (
-    <div className="min-h-screen bg-paper-texture font-archival text-ink selection:bg-seal selection:text-[#F9F1E1]">
-      <div className="container mx-auto px-4 md:px-8 py-16">
-        <div className="max-w-5xl mx-auto">
-          
-          {/* Document Header */}
-          <div className="text-center mb-16 border-b-4 border-double border-ink/30 pb-12 relative animate-fade-in">
-             <div className="absolute top-0 left-0 text-left font-mono text-xs tracking-widest text-ink/50 uppercase">
-                Hồ sơ số: 01<br/>
-                Lưu trữ mật
-             </div>
-             
-             <div className="inline-block mt-8 mb-6 border border-ink/20 px-6 py-2 shadow-sm bg-[#F9F1E1]">
-               <span className="text-xs tracking-[0.3em] uppercase font-bold text-seal">Chuyên đề học tập</span>
-             </div>
+    <ContentPageShell
+      title={contentData.title}
+      eyebrow="Chuyên đề học tập"
+      meta="Hồ sơ số: 01\nLưu trữ mật"
+      sidebar={
+        <>
+          <MarginalNote
+            title="Chú thích Thư khế"
+            className="border-accent-gold text-accent-gold"
+          >
+            <span className="text-ink-light text-sm italic">
+              Hình tượng con tàu thể hiện rõ khát vọng tìm đường cứu nước của Bác từ Bến cảng Nhà Rồng.
+            </span>
+          </MarginalNote>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-6 uppercase tracking-tight leading-tight">
-              {contentData.title}
-            </h1>
-            
-            <div className="flex justify-center items-center gap-4 text-ink-light">
-               <span className="w-12 h-px bg-ink/30"></span>
-               <Ship className="w-6 h-6 text-seal opacity-80" />
-               <span className="w-12 h-px bg-ink/30"></span>
-            </div>
+          <div className="mt-64">
+            <MarginalNote
+              title="Sự khác biệt"
+              className="border-seal text-seal"
+            >
+              <span className="text-ink-light text-sm italic">
+                Ở Châu Âu, phong trào công nhân phát triển trước dẫn đến sự ra đời của Đảng. Tại Việt Nam, phong trào yêu nước lại là ngòi nổ mạnh mẽ nhất.
+              </span>
+            </MarginalNote>
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-             {/* Main Content Column */}
-             <div className="lg:col-span-8 lg:col-start-3 space-y-16">
+        </>
+      }
+    >
+      <div className="space-y-16">
                 
                 {/* Introduction Quote */}
                 <section>
@@ -125,10 +122,6 @@ export default function Content1Page() {
                    </DocumentCard>
                 </section>
 
-                <div className="flex justify-center my-12 opacity-30">
-                  <span className="text-2xl tracking-[1em] text-ink">***</span>
-                </div>
-
                 {/* Birth of Party - Comparison */}
                 <section>
                   <h2 className="text-3xl font-bold text-ink mb-10 flex items-center gap-4 border-b border-ink/20 pb-4">
@@ -192,10 +185,6 @@ export default function Content1Page() {
                     </div>
                   </DocumentCard>
                 </section>
-
-                <div className="flex justify-center my-12 opacity-30">
-                  <span className="text-2xl tracking-[1em] text-ink">***</span>
-                </div>
 
                 {/* Historical Development */}
                 <section>
@@ -273,47 +262,7 @@ export default function Content1Page() {
                   </DocumentCard>
                 </section>
 
-             </div>
-
-             {/* Right Sidebar for Marginal Notes (Desktop only) */}
-             <div className="hidden lg:block lg:col-span-2 space-y-32 pt-32">
-                <MarginalNote 
-                  title="Chú thích Thư khế"
-                  className="border-accent-gold text-accent-gold"
-                >
-                  <span className="text-ink-light text-sm italic">
-                    Hình tượng con tàu thể hiện rõ khát vọng tìm đường cứu nước của Bác từ Bến cảng Nhà Rồng.
-                  </span>
-                </MarginalNote>
-                
-                <div className="mt-64">
-                   <MarginalNote 
-                     title="Sự khác biệt"
-                     className="border-seal text-seal"
-                   >
-                     <span className="text-ink-light text-sm italic">
-                       Ở Châu Âu, phong trào công nhân phát triển trước dẫn đến sự ra đời của Đảng. Tại Việt Nam, phong trào yêu nước lại là ngòi nổ mạnh mẽ nhất.
-                     </span>
-                   </MarginalNote>
-                </div>
-
-                <div className="mt-[600px]">
-                   <DocumentCard padding="sm" className="bg-[#EADCBF] transform rotate-3">
-                      <p className="font-archival italic text-sm text-ink-light text-center">
-                         Hồ sơ lưu trữ<br/>có dấu xác nhận<br/>của Cục Lịch sử.
-                      </p>
-                   </DocumentCard>
-                </div>
-             </div>
-          </div>
-
-          {/* Footer Navigation */}
-          <div className="mt-24 border-t-2 border-ink pb-12 pt-12">
-             <ContentNavigation />
-          </div>
-
-        </div>
       </div>
-    </div>
+    </ContentPageShell>
   );
 }

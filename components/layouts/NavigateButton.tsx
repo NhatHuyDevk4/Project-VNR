@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Home,
-  Gamepad2,
   BookOpen,
   Bot,
   ClipboardList,
@@ -25,7 +24,6 @@ const NavigateButton = ({ mobile }: NavigateButtonProps) => {
     { name: "Trang bìa", path: "/", icon: Home },
     { name: "Mục lục hồ sơ", path: "/contents", icon: ClipboardList },
     { name: "Tư liệu hiện vật", path: "/tai-lieu", icon: BookOpen },
-    { name: "Học vụ xác nhận", path: "/game", icon: Gamepad2 },
     { name: "Phụ lục AI", path: "/used-ai", icon: Bot },
   ];
 

@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Quote, Sparkles, Star, Award, Bookmark, CheckSquare } from "lucide-react";
 import contentData from "./data/nha-nuoc-content.json";
-import ContentNavigation from "@/components/ContentNavigation";
+import ContentPageShell from "@/components/content/ContentPageShell";
 import { DocumentCard } from "@/components/ui/DocumentCard";
 
 interface Content {
@@ -163,7 +163,13 @@ export default function Content4Page() {
   const currentSectionData = contentData.sections[currentSection];
 
   return (
-    <div className="min-h-screen bg-paper-texture font-archival text-ink selection:bg-seal selection:text-[#F9F1E1]">
+    <ContentPageShell
+      title={contentData.title}
+      eyebrow="Tài liệu tham khảo"
+      meta={`Hồ sơ lưu trữ: 04\nTheo: ${contentData.title}`}
+      showHeader={false}
+      mainClassName="lg:col-span-10 lg:col-start-2 space-y-16"
+    >
       <div className="container mx-auto px-4 md:px-8 py-16">
         <div className="max-w-5xl mx-auto">
           
@@ -255,13 +261,8 @@ export default function Content4Page() {
              </div>
           </DocumentCard>
 
-          {/* Content Navigation Footer */}
-          <div className="mt-24 border-t-2 border-ink pb-8 pt-8">
-             <ContentNavigation />
-          </div>
-
         </div>
       </div>
-    </div>
+    </ContentPageShell>
   );
 }

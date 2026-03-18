@@ -8,7 +8,7 @@ import HeroHeader from "./components/HeroHeader";
 import ByPeopleSection from "./components/ByPeopleSection";
 import ForPeopleSection from "./components/ForPeopleSection";
 import ConclusionSection from "./components/ConclusionSection";
-import ContentNavigation from "@/components/ContentNavigation";
+import ContentPageShell from "@/components/content/ContentPageShell";
 
 const iconMap = {
   users: Users,
@@ -23,7 +23,14 @@ export default function Content5Page() {
   const forPeopleData = sections.find(s => s.id === "for-people") as any;
 
   return (
-    <div className="min-h-screen">
+    <ContentPageShell
+      title={contentData.title}
+      subtitle={contentData.subtitle}
+      eyebrow="Tài liệu tham khảo"
+      meta={`Hồ sơ lưu trữ: 05\nTheo: ${contentData.title}`}
+      showHeader={false}
+      mainClassName="lg:col-span-10 lg:col-start-2 space-y-16"
+    >
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="max-w-7xl mx-auto">
           {/* Hero Header */}
@@ -69,9 +76,8 @@ export default function Content5Page() {
           <ConclusionSection data={contentData.conclusion} />
 
           {/* Content Navigation */}
-          <ContentNavigation />
         </div>
       </div>
-    </div>
+    </ContentPageShell>
   );
 }

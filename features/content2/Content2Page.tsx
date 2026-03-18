@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import contentData from "./data/content.json";
-import { BookOpen, Star, AlertTriangle, PenTool } from "lucide-react";
-import ContentNavigation from "@/components/ContentNavigation";
+import { Star, AlertTriangle, PenTool } from "lucide-react";
+import ContentPageShell from "@/components/content/ContentPageShell";
 import { DocumentCard } from "@/components/ui/DocumentCard";
 import { MarginalNote } from "@/components/ui/MarginalNote";
 
@@ -11,35 +11,39 @@ export default function Content2Page() {
   const moralityPoints = contentData.moralityPoints;
   const purposeSections = moralityPoints.slice(0, 2);
   const virtuesData = moralityPoints[2] as any;
-  const servantQuotes = virtuesData.servantQuotes || [];
 
   return (
-    <div className="min-h-screen bg-paper-texture font-archival text-ink selection:bg-seal selection:text-[#F9F1E1]">
-      <div className="container mx-auto px-4 md:px-8 py-16">
-        <div className="max-w-5xl mx-auto">
-          
-          {/* Document Header */}
-          <div className="text-center mb-16 border-b-4 border-double border-ink/30 pb-12 relative animate-fade-in">
-             <div className="absolute top-0 right-0 text-right font-mono text-xs tracking-widest text-ink/50 uppercase">
-                Mã BC: 02<br/>
-                Ký sự Đời sống
-             </div>
-             
-             <div className="inline-block mt-8 mb-6 border border-ink/20 px-6 py-2 shadow-sm bg-[#F9F1E1]">
-               <span className="text-xs tracking-[0.3em] uppercase font-bold text-seal">Chuyên đề Lịch sử</span>
-             </div>
+    <ContentPageShell
+      title={contentData.title}
+      subtitle={contentData.subtitle}
+      eyebrow="Chuyên đề Lịch sử"
+      meta="Mã BC: 02\nKý sự Đời sống"
+      metaSide="right"
+      sidebar={
+        <>
+          <MarginalNote
+            title="Chú thích Bếp Nút"
+            className="border-accent-gold text-accent-gold"
+          >
+            <span className="text-ink-light text-sm italic">
+              Giai đoạn này phụ nữ thường đóng vai trò chính trong việc co kéo sổ gạo sao cho cả nhà no bụng.
+            </span>
+          </MarginalNote>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ink mb-6 uppercase tracking-tight leading-tight">
-              {contentData.title}
-            </h1>
-            <p className="text-xl md:text-2xl text-ink-light italic">
-               {contentData.subtitle}
-            </p>
+          <div className="mt-80">
+            <MarginalNote
+              title="Văn hóa Tem Phiếu"
+              className="border-seal text-seal"
+            >
+              <span className="text-ink-light text-sm italic">
+                Khái niệm "Độn" chỉ sự bù đắp vào phần thiếu hụt của tiêu chuẩn cơ bản. Cơm độn ngũ cốc là biểu tượng lớn nhất của thời kỳ này.
+              </span>
+            </MarginalNote>
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-             {/* Main Content Column */}
-             <div className="lg:col-span-8 lg:col-start-3 space-y-16">
+        </>
+      }
+    >
+      <div className="space-y-16">
                 
                 {/* Introduction */}
                 <section>
@@ -61,10 +65,6 @@ export default function Content2Page() {
                     </div>
                   </DocumentCard>
                 </section>
-
-                <div className="flex justify-center my-12 opacity-30">
-                  <span className="text-2xl tracking-[1em] text-ink">***</span>
-                </div>
 
                 {/* Purpose Sections */}
                 <section>
@@ -154,10 +154,6 @@ export default function Content2Page() {
                    </DocumentCard>
                 </section>
 
-                <div className="flex justify-center my-12 opacity-30">
-                  <span className="text-2xl tracking-[1em] text-ink">***</span>
-                </div>
-
                 {/* Civilized Party */}
                 <section>
                   <h2 className="text-3xl font-bold text-ink mb-6 flex items-center gap-4 border-b border-ink/20 pb-4">
@@ -227,39 +223,7 @@ export default function Content2Page() {
                   </DocumentCard>
                 </section>
 
-             </div>
-
-             {/* Right Sidebar for Marginal Notes (Desktop only) */}
-             <div className="hidden lg:block lg:col-span-2 space-y-32 pt-32">
-                <MarginalNote 
-                  title="Chú thích Bếp Nút"
-                  className="border-accent-gold text-accent-gold"
-                >
-                  <span className="text-ink-light text-sm italic">
-                    Giai đoạn này phụ nữ thường đóng vai trò chính trong việc co kéo sổ gạo sao cho cả nhà no bụng.
-                  </span>
-                </MarginalNote>
-                
-                <div className="mt-80">
-                   <MarginalNote 
-                     title="Văn hóa Tem Phiếu"
-                     className="border-seal text-seal"
-                   >
-                     <span className="text-ink-light text-sm italic">
-                       Khái niệm "Độn" chỉ sự bù đắp vào phần thiếu hụt của tiêu chuẩn cơ bản. Cơm độn ngũ cốc là biểu tượng lớn nhất của thời kỳ này.
-                     </span>
-                   </MarginalNote>
-                </div>
-             </div>
-          </div>
-
-          {/* Footer Navigation */}
-          <div className="mt-24 border-t-2 border-ink pb-12 pt-12">
-             <ContentNavigation />
-          </div>
-
-        </div>
       </div>
-    </div>
+    </ContentPageShell>
   );
 }

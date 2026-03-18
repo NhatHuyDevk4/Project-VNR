@@ -3,11 +3,18 @@
 import PrincipleHeader from "./components/PrincipleHeader";
 import PrincipleCard from "./components/PrincipleCard";
 import { PRINCIPLES_DATA } from "./constants/principles";
-import ContentNavigation from "@/components/ContentNavigation";
+import ContentPageShell from "@/components/content/ContentPageShell";
 
 const PrinciplePage = () => {
   return (
-    <div className="container mx-auto px-6 py-16">
+    <ContentPageShell
+      title="Cháo cám — Ký ức một thời kham khổ"
+      eyebrow="Tài liệu tham khảo"
+      meta="Hồ sơ lưu trữ: 03\nTheo: Cháo cám — Ký ức một thời kham khổ"
+      showHeader={false}
+      mainClassName="lg:col-span-10 lg:col-start-2 space-y-16"
+    >
+      <div className="container mx-auto px-6 py-16">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <PrincipleHeader />
@@ -30,11 +37,9 @@ const PrinciplePage = () => {
           <div className="w-3 h-3 rounded-full bg-amber-500/60" />
           <div className="h-px w-20 bg-gradient-to-l from-transparent to-amber-500/50" />
         </div>
-
-        {/* Content Navigation */}
-        <ContentNavigation />
       </div>
-    </div>
+      </div>
+    </ContentPageShell>
   );
 };
 
