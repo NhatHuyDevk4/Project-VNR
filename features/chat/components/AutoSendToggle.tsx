@@ -23,9 +23,8 @@ export default function AutoSendToggle({
           : "bg-gradient-to-r from-amber-900/60 to-amber-950/60 border-2 border-amber-700/30"
       )}
       style={{ width: "80px", height: "36px" }}
-      title={enabled ? "Bôi text → Tự động gửi" : "Bôi text → Hiện menu"}
+      title={enabled ? "Boi text → Tu dong gui" : "Boi text → Hien menu"}
     >
-      {/* Sliding background */}
       <div
         className={cn(
           "absolute top-0.5 h-[32px] w-[38px] rounded-full shadow-md transition-all duration-300",
@@ -35,7 +34,6 @@ export default function AutoSendToggle({
         )}
       />
 
-      {/* Left icon - Text selection */}
       <div
         className={cn(
           "relative z-10 flex h-[32px] w-[38px] items-center justify-center rounded-full transition-colors duration-300",
@@ -45,7 +43,6 @@ export default function AutoSendToggle({
         <Type className="h-4 w-4" strokeWidth={2.5} />
       </div>
 
-      {/* Right icon - Chat */}
       <div
         className={cn(
           "relative z-10 flex h-[32px] w-[38px] items-center justify-center rounded-full transition-colors duration-300",

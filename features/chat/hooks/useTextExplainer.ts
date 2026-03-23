@@ -11,11 +11,6 @@ export function useTextExplainer(isEnabled = true) {
 
   const handleTextSelected = useCallback(
     (text: string) => {
-      // Only auto-send if:
-      // 1. Auto-send is enabled
-      // 2. Chat is already open
-      // 3. Text is not empty
-      // 4. This is a NEW selection (not the same text)
       if (
         isAutoSendEnabled &&
         isChatOpen &&
@@ -75,10 +70,7 @@ export function useTextExplainer(isEnabled = true) {
     const context = extractTextContext(selectedText, 200);
     const enrichedPrompt = buildEnrichedPrompt(context);
 
-    // Mark this text as sent to avoid duplicate
     lastSentTextRef.current = selectedText;
-
-    // Enable auto-send mode if not already enabled
     await enableAutoSend();
 
     openChat();
@@ -89,7 +81,6 @@ export function useTextExplainer(isEnabled = true) {
     }, 100);
   };
 
-  // Hide popup if auto-send is enabled AND chat is open
   const shouldShowPopup = isVisible && (!isAutoSendEnabled || !isChatOpen);
 
   return {

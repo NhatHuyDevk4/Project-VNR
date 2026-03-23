@@ -7,7 +7,6 @@ import {
   ArrowRight,
   BookOpenText,
   Files,
-  Headphones,
   LibraryBig,
 } from "lucide-react";
 import { getAllPosts } from "@/features/tai-lieu/data";
@@ -24,7 +23,6 @@ const truncate = (text: string, maxLength: number) => {
 
 const TaiLieuPage = () => {
   const posts = getAllPosts();
-  const totalAudio = posts.filter((post) => post.audio).length;
   const totalResources = posts.reduce(
     (count, post) => count + (post.linkResource?.length ?? 0),
     0
@@ -105,13 +103,13 @@ const TaiLieuPage = () => {
                   </h1>
                   <p className="max-w-3xl text-base leading-8 text-ink-light md:text-lg">
                     Mỗi tư liệu được trình bày như một hồ sơ hiện vật: có mốc thời gian,
-                    mô tả ngắn, hình đính kèm, audio và nguồn tham khảo. Mục tiêu là giúp
+                    mô tả ngắn, hình đính kèm và nguồn tham khảo. Mục tiêu là giúp
                     người học xem thoải mái hơn, ít rối mắt hơn và dễ tìm lại nội dung cần đọc.
                   </p>
                 </div>
               </div>
 
-              <div className="grid min-w-[240px] gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              <div className="grid min-w-[240px] gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                 <div className="border border-ink/15 bg-white/55 p-4 shadow-sm transition-all duration-200 hover:bg-white/70 hover:shadow-sm hover:border-seal/20">
                   <div className="mb-2 flex items-center gap-2 text-seal">
                     <Files className="h-4 w-4" />
@@ -119,14 +117,6 @@ const TaiLieuPage = () => {
                   </div>
                   <div className="text-3xl font-bold">{posts.length}</div>
                   <p className="mt-1 text-sm text-ink-light">Mục đang lưu trữ</p>
-                </div>
-                <div className="border border-ink/15 bg-white/55 p-4 shadow-sm transition-all duration-200 hover:bg-white/70 hover:shadow-sm hover:border-seal/20">
-                  <div className="mb-2 flex items-center gap-2 text-seal">
-                    <Headphones className="h-4 w-4" />
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em]">Audio</span>
-                  </div>
-                  <div className="text-3xl font-bold">{totalAudio}</div>
-                  <p className="mt-1 text-sm text-ink-light">Bản nghe đính kèm</p>
                 </div>
                 <div className="border border-ink/15 bg-white/55 p-4 shadow-sm transition-all duration-200 hover:bg-white/70 hover:shadow-sm hover:border-seal/20">
                   <div className="mb-2 flex items-center gap-2 text-seal">
@@ -153,7 +143,7 @@ const TaiLieuPage = () => {
               <ul className="space-y-3 text-sm leading-7 text-ink-light md:text-base">
                 <li className="transition-transform duration-200 hover:translate-x-1">- Mở theo thứ tự mốc thời gian để giữ mạch lịch sử.</li>
                 <li className="transition-transform duration-200 hover:translate-x-1">- Dùng phần mô tả ngắn để quét nhanh trước khi đọc sâu.</li>
-                <li className="transition-transform duration-200 hover:translate-x-1">- Khi cần ôn tập, nghe audio và xem lại nguồn ở cột phụ.</li>
+                <li className="transition-transform duration-200 hover:translate-x-1">- Khi cần ôn tập, đọc lại văn bản và xem lại nguồn ở cột phụ.</li>
               </ul>
             </div>
           </DocumentCard>
@@ -180,7 +170,7 @@ const TaiLieuPage = () => {
                     <p className="mt-1 text-sm text-ink-light">{post.milestone}</p>
                   </div>
                   <div className="border border-ink/15 bg-white/60 px-2 py-1 text-[11px] uppercase tracking-[0.2em] text-ink-light">
-                    {post.audio ? "Có audio" : "Văn bản"}
+                    Văn bản
                   </div>
                 </div>
 
@@ -217,7 +207,7 @@ const TaiLieuPage = () => {
                   <div className="border border-ink/10 bg-white/55 px-3 py-2">
                     <div className="text-[11px] uppercase tracking-[0.2em] text-seal">Định dạng</div>
                     <div className="mt-1 font-semibold text-ink">
-                      {post.audio ? "Bài + audio" : "Bài đọc"}
+                      Bài đọc
                     </div>
                   </div>
                 </div>

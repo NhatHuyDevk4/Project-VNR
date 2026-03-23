@@ -75,19 +75,19 @@ const aiTools: AITool[] = [
 
 const referenceLinks = [
   {
-    title: "Thu muc tai lieu du an",
+    title: "Thư mục tài liệu dự án",
     url: "https://drive.google.com/drive/u/1/folders/1oF-H7fpcAPZw7JGKDVIwdICHPJblJTrc",
   },
   {
-    title: "Bao tang Lich su Viet Nam",
+    title: "Bảo tàng Lịch sử Việt Nam",
     url: "https://baotanglichsu.vn",
   },
   {
-    title: "Am thuc Viet Nam - Wikipedia",
+    title: "Ẩm thực Việt Nam - Wikipedia",
     url: "https://vi.wikipedia.org/wiki/%E1%BA%A8m_th%E1%BB%B1c_Vi%E1%BB%87t_Nam",
   },
   {
-    title: "Thoi bao cap tai Viet Nam",
+    title: "Thời bao cấp tại Việt Nam",
     url: "https://vi.wikipedia.org/wiki/Th%E1%BB%9Di_bao_c%E1%BA%A5p_t%E1%BA%A1i_Vi%E1%BB%87t_Nam",
   },
 ];

@@ -26,11 +26,11 @@ export default function ChatUI() {
     isChatOpen,
     toggleChat,
     closeChat,
-    isAutoSendEnabled,
-    toggleAutoSend,
     handleSend,
     handleNewChat,
     handleDeleteSession,
+    isAutoSendEnabled,
+    toggleAutoSend,
   } = useChatUI();
 
   if (!isChatOpen) {

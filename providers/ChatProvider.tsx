@@ -16,7 +16,6 @@ import {
   createSession,
   deleteSession,
 } from "@/lib/idb/chatIdb";
-import { sendChatMessage } from "@/actions/chatActions";
 
 interface ChatContextValue {
   // Sessions
@@ -145,24 +144,30 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         // Reload messages to show user message immediately
         await loadMessages(sessionId);
 
-        // Call Server Action for assistant response
-        const data = await sendChatMessage(
-          content.trim(),
-          messages.map((m) => ({
-            role: m.role,
-            content: m.content,
-          }))
-        );
+        // Call API for assistant response
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: content.trim(),
+            history: messages.map((m) => ({
+              role: m.role,
+              content: m.content,
+            })),
+          }),
+        });
 
-        if (data.error) {
-          throw new Error(data.error);
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || "Loi khong xac dinh");
         }
 
         // Save assistant message to IDB
         const assistantMessage: ChatMessage = {
           sessionId,
           role: "assistant",
-          content: data.answer || "Xin lỗi, tôi không thể trả lời câu hỏi này.",
+          content: data.reply || "Xin loi, toi khong the tra loi cau hoi nay.",
           createdAt: new Date().toISOString(),
         };
         await saveMessage(assistantMessage);

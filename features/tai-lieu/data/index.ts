@@ -6,7 +6,6 @@ export const posts: PostType[] = [
     slug: "bo-bo",
     title: "Bo bo - Dấu vết của những bữa ăn cầm hơi thời bao cấp",
     milestone: "1976-1986",
-    audio: "/audio/cotmoc1.mp3",
     shortDescription:
       "Bo bo thường xuất hiện khi gạo thiếu, trở thành nguyên liệu thay thế hoặc độn cơm trong nhiều gia đình. Hồ sơ này giải thích vì sao bo bo in đậm trong ký ức về đời sống tem phiếu.",
     content: `## Khái quát
@@ -35,7 +34,6 @@ Hãy xem bo bo như một chỉ dấu xã hội: chỉ cần một nguyên liệ
     slug: "com-don-khoai",
     title: "Cơm độn khoai - Bữa cơm đủ no trong ký ức nhiều gia đình",
     milestone: "1976-1986",
-    audio: "/audio/cotmoc2.mp3",
     shortDescription:
       "Cơm độn khoai là hình ảnh tiêu biểu của bữa ăn gia đình thời bao cấp: ít gạo hơn, thêm khoai để no lâu hơn. Nội dung hồ sơ nhằm vào hoàn cảnh hình thành và ý nghĩa đời sống của món ăn này.",
     content: `## Khái quát

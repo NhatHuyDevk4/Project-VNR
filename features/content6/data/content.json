@@ -1,115 +1,115 @@
 {
-  "title": "Tem phieu va cach nau - Don gian, no long",
-  "subtitle": "Boi canh thoi bao cap (1976-1986) - Phan phoi theo dinh luong - Am thuc va ky uc",
+  "title": "Tếm phiếu và cách nấu - Đơn giản, no lòng",
+  "subtitle": "Bối cảnh thời bao cấp (1976-1986) - Phân phối theo định lượng - Ẩm thực và ký ức",
   "sections": [
     {
       "id": "constitutional",
-      "title": "Tem phieu va dinh luong",
+      "title": "Tếm phiếu và định lượng",
       "icon": "scale",
-      "introduction": "Thoi bao cap, nhieu mat hang nhu gao, thit, duong va vai voc duoc phan phoi theo tem phieu. Bua an gia dinh vi the gan lien voi su tiet kiem, su chia se va cach tan dung moi nguon luong thuc co san.",
+      "introduction": "Thời bao cấp, nhiều mặt hàng như gạo, thịt, đường và vải vóc được phân phối theo tếm phiếu. Bữa ăn gia đình vì thế gắn liền với sự tiết kiệm, sự chia sẻ và cách tận dụng mọi nguồn lương thực có sẵn.",
       "historicalDemand": {
-        "title": "Boi canh thoi bao cap",
-        "event": "Co che phan phoi",
+        "title": "Bối cảnh thời bao cấp",
+        "event": "Cơ chế phân phối",
         "year": "1976-1986",
         "demands": [
-          "Luong thuc duoc cap theo dinh luong va so nhan khau.",
-          "Nguon thuc pham khan hiem nen bua an thuong phai don them khoai, san hoac bo bo.",
-          "Moi gia dinh uu tien muc tieu no bung, giu suc va tiet kiem lau dai."
+          "Lương thực được cấp theo định lượng và số nhân khẩu.",
+          "Nguồn thực phẩm khan hiếm nên bữa ăn thường phải độn thêm khoai, sắn hoặc bộ bô.",
+          "Mỗi gia đình ưu tiên mục tiêu no bụng, giữ sức và tiết kiệm lâu dài."
         ]
       },
       "foundingActions": {
-        "title": "Bua an gia dinh",
-        "date": "Giai doan 1976-1986",
-        "context": "Trong nhieu gia dinh, mam com la noi the hien ro nhat tinh than vuot kho. Mon an co the gian di, nhung cach chuan bi, chia phan va nhuong nhau lai rat dam tinh than gia dinh.",
+        "title": "Bữa ăn gia đình",
+        "date": "Giai đoạn 1976-1986",
+        "context": "Trong nhiều gia đình, mâm cơm là nơi thể hiện rõ nhất tinh thần vượt khó. Món ăn có thể giản dị, nhưng cách chuẩn bị, chia phần và nhường nhau lại rất đậm tình tinh thần gia đình.",
         "proposal": {
-          "quote": "Am thuc thoi bao cap khong chi la chuyen no doi, ma con la ky uc ve su ben bi, su tan tien va tinh thuong trong moi nep nha.",
-          "author": "Huong Vi Bao Cap",
+          "quote": "Ẩm thực thời bao cấp không chỉ là chuyện no đói, mà còn là ký ức về sự bền bỉ, sự tận tieni và tình thương trong mỗi gia đình.",
+          "author": "Hương Vị Bao Cấp",
           "purpose": [
-            "Giu no long trong dieu kien thieu thon.",
-            "Tan dung nguyen lieu dia phuong va theo mua.",
-            "Duy tri nep song tiet kiem trong gia dinh.",
-            "Luu lai ky uc cho the he sau."
+            "Giữ no lòng trong điều kiện thiếu thốn.",
+            "Tận dụng nguyên liệu địa phương và theo mùa.",
+            "Duy trì nếp sống tiết kiệm trong gia đình.",
+            "Lưu lại ký ức cho thế hệ sau."
           ]
         }
       },
       "historicElection": {
-        "title": "Nhung mon an tieu bieu",
-        "date": "Ky uc am thuc thoi bao cap",
+        "title": "Những món ăn tiêu biểu",
+        "date": "Ký ức ẩm thực thời bao cấp",
         "characteristics": [
-          "Bo bo nau thay com",
-          "Com don khoai, san hoac bap",
-          "Chao cam, chao loang cho bua kho",
-          "Banh bot mi hap, khoai luoc, san luoc"
+          "Bộ bô nấu thay cơm",
+          "Cơm độn khoai, sắn hoặc bắp",
+          "Cháo cám, cháo loãng cho bữa khó",
+          "Bánh bột mì hấp, khoai luộc, sắn luộc"
         ],
         "significance": [
-          "Phan anh ro su thieu thon cua thoi ky phan phoi theo tem phieu.",
-          "The hien kha nang thich nghi cua moi gia dinh Viet Nam.",
-          "Tro thanh ky uc tap the cua nhieu the he da tung song trong giai doan nay."
+          "Phản ánh rõ sự thiếu thốn của thời kỳ phân phối theo tếm phiếu.",
+          "Thể hiện khả năng thích nghi của mỗi gia đình Việt Nam.",
+          "Trở thành ký ức tập thể của nhiều thế hệ đã từng sống trong giai đoạn này."
         ],
         "outcome": {
-          "date": "Hom nay",
-          "event": "Tai hien ky uc am thuc bao cap",
-          "result": "Cac cau chuyen ve bua an gian di duoc gom lai thanh tu lieu hoc tap va trai nghiem.",
-          "legitimacy": "Nhung mon an gian di nay giup ket noi lich su doi song voi cam nhan cua nguoi hoc hom nay."
+          "date": "Hôm nay",
+          "event": "Tái hiện ký ức ẩm thực bao cấp",
+          "result": "Những câu chuyện về bữa ăn giản dị được gom lại thành tư liệu học tập và trải nghiệm.",
+          "legitimacy": "Những món ăn giản dị này giúp kết nối lịch sử đời sống với cảm nhận của người học hôm nay."
         }
       }
     },
     {
       "id": "supremacy",
-      "title": "Cach nau don gian",
+      "title": "Cách nấu đơn giản",
       "icon": "gavel",
-      "introduction": "Nhieu mon an thoi bao cap co cach che bien rat co ban: vo sach, don them nuoc, nau mem va chia deu cho ca nha. Su don gian trong cach nau phan anh uu tien lon nhat khi ay la du no va de bao quan.",
+      "introduction": "Nhiều món ăn thời bao cấp có cách chế biến rất cơ bản: vo sạch, độn thêm nước, nấu mềm và chia đều cho cả nhà. Sự đơn giản trong cách nấu phản ánh ưu tiên lớn nhất khi đó là đủ no và dễ bảo quản.",
       "legislation": {
-        "title": "Nguyen lieu tai cho",
-        "description": "Gao, ngo, khoai, san va bo bo la nhung nguyen lieu pho bien, de duoc phan phoi hoac tu trong trot. Cach nau an vi the xoay quanh viec tan dung toi da nhung gi san co.",
+        "title": "Nguyên liệu tại chỗ",
+        "description": "Gạo, ngô, khoai, sắn và bộ bô là những nguyên liệu phổ biến, dễ được phân phối hoặc tự trồng tại ruộng. Cách nấu ăn vì thế xoay quanh việc tận dụng tối đa những gì sẵn có.",
         "achievements": {
-          "role": "Dac diem bua an",
+          "role": "Đặc điểm bữa ăn",
           "constitutions": [
             {
-              "year": "Bo bo",
-              "role": "Hat cung duoc ngam, vo sach roi nau mem de thay mot phan com."
+              "year": "Bộ bô",
+              "role": "Hạt ngô được ngâm, vo sạch rồi nấu mềm để thay một phần cơm."
             },
             {
-              "year": "Com don khoai",
-              "role": "Gao duoc nau cung khoai, san hoac bap de tang do no cho ca nha."
+              "year": "Cơm độn khoai",
+              "role": "Gạo được nấu cùng khoai, sắn hoặc bắp để tăng độ no cho cả nhà."
             }
           ],
           "statistics": {
             "laws": 3,
             "decrees": 4,
             "stateOrganizationDecrees": 2,
-            "otherDocuments": "nguyen tac pho bien: no long, tiet kiem, tan dung"
+            "otherDocuments": "nguyên tắc phổ biến: no lòng, tiết kiệm, tận dụng"
           },
-          "context": "Cach nau va cach an deu uu tien su tiet kiem, tranh lang phi va phu hop voi dieu kien cung ung luc bay gio."
+          "context": "Cách nấu và cách ăn đều ưu tiên sự tiết kiệm, tránh lãng phí và phù hợp với điều kiện cung ứng lúc bấy giờ."
         }
       },
       "implementation": {
-        "title": "Y nghia van hoa",
+        "title": "Ý nghĩa văn hóa",
         "aspects": [
           {
             "id": 1,
-            "title": "Ky uc am thuc",
-            "quote": "Nhung mon an gian di nhat lai la dieu o lai lau nhat trong tri nho cua nhieu nguoi.",
-            "author": "Huong Vi Bao Cap",
-            "description": "Com don, bo bo hay chao cam khong duoc nho vi su phong phu, ma vi chung gan voi mot giai doan gia dinh cung nhau vuot qua kho khan."
+            "title": "Ký ức ẩm thực",
+            "quote": "Những món ăn giản dị nhất lại là điều ở lại lâu nhất trong trí nhớ của nhiều người.",
+            "author": "Hương Vị Bao Cấp",
+            "description": "Cơm độn, bộ bô hay cháo cám không được nhớ vì sự phong phú, mà vì chúng gắn liền với một giai đoạn gia đình cùng nhau vượt qua khó khăn."
           },
           {
             "id": 2,
-            "title": "Su thich nghi",
-            "description": "Moi nha co mot cach xu ly nguyen lieu khac nhau, nhung diem chung la tan dung toi da va chia deu cho moi nguoi trong bua an.",
+            "title": "Sự thích nghi",
+            "description": "Mỗi nhà có một cách xử lý nguyên liệu khác nhau, nhưng điểm chung là tận dụng tối đa và chia đều cho mỗi người trong bữa ăn.",
             "actions": [
-              "Don them khoai, san hoac bap vao noi com.",
-              "Nau loang hon de phan bua cho dong nguoi hon.",
-              "Uu tien tre nho va nguoi lao dong nang trong cach chia khau phan."
+              "Độn thêm khoai, sắn hoặc bắp vào nồi cơm.",
+              "Nấu loãng hơn để phân bổ cho đông người hơn.",
+              "Ưu tiên trẻ nhỏ và người lao động nặng trong cách chia khẩu phần."
             ]
           },
           {
             "id": 3,
-            "title": "Nep song tiet kiem",
+            "title": "Nếp sống tiết kiệm",
             "requirements": [
-              "Khong bo phi bat ky phan an nao con lai.",
-              "Tan dung nguyen lieu theo mua va theo kha nang duoc cap.",
-              "Giup tre nho hieu gia tri cua lao dong va hat gao."
+              "Không bỏ phí bất kỳ phần ăn nào còn lại.",
+              "Tận dụng nguyên liệu theo mùa và theo khả năng được cấp.",
+              "Giúp trẻ nhỏ hiểu giá trị của lao động và hạt gạo."
             ]
           }
         ]
@@ -117,69 +117,69 @@
     },
     {
       "id": "humanistic",
-      "title": "Phuc vu no long, vi gia dinh",
+      "title": "Phục vụ no lòng, vì gia đình",
       "icon": "heart",
-      "definition": "Bua an thoi bao cap co the thieu thon, nhung gia tri con lai rat ro: giu suc, giu nep nha va giu tinh thuong trong gia dinh.",
+      "definition": "Bữa ăn thời bao cấp có thể thiếu thốn, nhưng giá trị còn lại rất rõ: giữ sức, giữ nếp nhà và giữ tình thương trong gia đình.",
       "humanRights": {
-        "title": "Gia tri cua bua an gian di",
-        "approach": "Su gian di cua bua an khong lam giam y nghia cua no. Chinh trong dieu kien it lua chon, tinh thuong va su nhuong nhau cang tro nen de nhan thay.",
+        "title": "Giá trị của bữa ăn giản dị",
+        "approach": "Sự giản dị của bữa ăn không làm giảm ý nghĩa của nó. Chính trong điều kiện ít lựa chọn, tình thương và sự nhường nhau càng trở nên dễ nhận thấy.",
         "categories": [
           {
             "id": 1,
-            "title": "No long",
-            "description": "Muc tieu truoc het cua moi bua an la du suc cho sinh hoat va lao dong.",
+            "title": "No lòng",
+            "description": "Mục tiêu trước hết của mỗi bữa ăn là đủ sức cho sinh hoạt và lao động.",
             "icon": "life"
           },
           {
             "id": 2,
-            "title": "Tiet kiem",
-            "description": "Nguyen lieu nao cung duoc can do, tan dung va che bien hop ly.",
+            "title": "Tiết kiệm",
+            "description": "Nguyên liệu nào cũng được cân đo, tận dụng và chế biến hợp lý.",
             "icon": "vote"
           },
           {
             "id": 3,
-            "title": "Tinh thuong",
-            "description": "Nguoi lon thuong nhuong phan ngon hon cho tre nho va nguoi om yeu.",
+            "title": "Tình thương",
+            "description": "Người lớn thường nhường phần ngon hơn cho trẻ nhỏ và người ốm yếu.",
             "icon": "economy"
           },
           {
             "id": 4,
-            "title": "Ky uc",
-            "description": "Nhung bua an gian di tro thanh mot phan ky uc tap the cua nhieu the he.",
+            "title": "Ký ức",
+            "description": "Những bữa ăn giản dị trở thành một phần ký ức tập thể của nhiều thế hệ.",
             "icon": "group"
           }
         ],
-        "revolutionaryGoal": "Viec tai hien nhung mon an nay giup nguoi hoc hieu hon doi song xa hoi trong mot giai doan lich su gan gui va nhieu bien dong.",
-        "constitutionalRecognition": "Am thuc thoi bao cap la mot lop ky uc van hoa dac biet, gan voi tinh than vuot kho, tiet kiem va doan ket gia dinh."
+        "revolutionaryGoal": "Việc tái hiện những món ăn này giúp người học hiểu hơn đời sống xã hội trong một giai đoạn lịch sử gần gũi và nhiều biến động.",
+        "constitutionalRecognition": "Ẩm thực thời bao cấp là một lớp ký ức văn hóa đặc biệt, gắn liền với tinh thần vượt khó, tiết kiệm và đoàn kết gia đình."
       },
       "humanisticLaw": {
-        "title": "Ket noi the he",
-        "abolishment": "Nhung cau chuyen quanh bo bo, com don hay chao cam can duoc ghi lai nhu mot phan ky uc doi song, khong chi nhu ten goi cua mon an.",
+        "title": "Kết nối thế hệ",
+        "abolishment": "Những câu chuyện quanh bộ bô, cơm độn hay cháo cám cần được ghi lại như một phần ký ức đời sống, không chỉ như tên gọi của món ăn.",
         "characteristics": [
           {
             "id": 1,
-            "title": "Luu lai cau chuyen",
-            "description": "Moi mon an deu gan voi mot hoan canh cu the: thieu gao, thieu chat dot, dong con va can mot bua an de di qua ngay dai."
+            "title": "Lưu lại câu chuyện",
+            "description": "Mỗi món ăn đều gắn với một hoàn cảnh cụ thể: thiếu gạo, thiếu chất đạm, đông con và cần một bữa ăn để đi qua ngày dài."
           },
           {
             "id": 2,
-            "title": "Chia se trai nghiem",
-            "description": "Khi duoc ke lai trong lop hoc hay tren nen tang so, nhung ky uc nay tro thanh cau noi giua lich su va trai nghiem ca nhan.",
-            "quote": "Ky uc am thuc chi that su song khi no duoc ke lai va lang nghe.",
-            "author": "Huong Vi Bao Cap"
+            "title": "Chia sẻ trải nghiệm",
+            "description": "Khi được kể lại trong lớp học hay trên nền tảng số, những ký ức này trở thành câu nối giữa lịch sử và trải nghiệm cá nhân.",
+            "quote": "Ký ức ẩm thực chỉ thật sự sống khi nó được kể lại và lắng nghe.",
+            "author": "Hương Vị Bao Cấp"
           },
           {
             "id": 3,
-            "title": "Nhin lai van hoa doi song",
-            "description": "Tu mot bua com don gian, nguoi hoc co the hieu them ve co che phan phoi, cach to chuc doi song va tam ly xa hoi cua mot thoi ky."
+            "title": "Nhìn lại văn hóa đời sống",
+            "description": "Từ một bữa cơm giản dị, người học có thể hiểu thêm về cơ chế phân phối, cách tổ chức đời sống và tâm lý xã hội của một thời kỳ."
           },
           {
             "id": 4,
-            "title": "Gia tri con lai",
-            "description": "Dieu dong lai sau cung khong chi la vi mon an ngon hay do, ma la tinh than ben bi va su yeu thuong trong gia dinh Viet Nam."
+            "title": "Giá trị còn lại",
+            "description": "Điều đọng lại sau cùng không chỉ là vi món ăn ngon hay dở, mà là tinh thần bền bỉ và sự yêu thương trong gia đình Việt Nam."
           }
         ],
-        "essence": "Huong Vi Bao Cap la cau chuyen ve bua an gian di, ky uc tap the va suc song ben bi cua con nguoi Viet Nam."
+        "essence": "Hương Vị Bao Cấp là câu chuyện về bữa ăn giản dị, ký ức tập thể và sức sống bền bỉ của con người Việt Nam."
       }
     }
   ]

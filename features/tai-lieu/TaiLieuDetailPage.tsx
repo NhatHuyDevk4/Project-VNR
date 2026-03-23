@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useEffect, useRef } from 'react';
 import { notFound, useRouter } from 'next/navigation';
@@ -12,13 +12,11 @@ import {
   BookOpenText,
   CalendarDays,
   ExternalLink,
-  FileAudio2,
   Files,
   Image as ImageIcon,
 } from 'lucide-react';
 import 'katex/dist/katex.min.css';
 import { getPostBySlug } from '@/features/tai-lieu/data';
-import AudioPlayer from '@/components/AudioPlayer';
 import { DocumentCard } from '@/components/ui/DocumentCard';
 import { MarginalNote } from '@/components/ui/MarginalNote';
 import { RecordStamp } from '@/components/ui/RecordStamp';
@@ -206,19 +204,6 @@ export default function TaiLieuDetailPage({ slug }: { slug: string }) {
           </div>
 
           <aside ref={asideRef} className="space-y-6 xl:sticky xl:top-8 xl:self-start">
-            {post.audio && (
-              <DocumentCard data-aside-card className="bg-[#efe2c5] p-6 opacity-0">
-                <div className="mb-4 flex items-center gap-3 border-b border-ink/10 pb-4">
-                  <FileAudio2 className="h-5 w-5 text-seal" />
-                  <div>
-                    <h2 className="text-lg font-bold">Bản nghe tư liệu</h2>
-                    <p className="text-sm text-ink-light">Nghe lại nội dung để ôn tập nhanh.</p>
-                  </div>
-                </div>
-                <AudioPlayer src={post.audio} title={post.title} />
-              </DocumentCard>
-            )}
-
             <DocumentCard data-aside-card className="bg-[#efe2c5] p-6 opacity-0">
               <div className="mb-4 flex items-center gap-3 border-b border-ink/10 pb-4">
                 <BookOpenText className="h-5 w-5 text-seal" />
