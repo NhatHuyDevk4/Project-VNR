@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY!) || 'AIzaSyAms63d1TEgavQW67PAwxfAH9srj1vZmrs';
-console.log(process.env.GOOGLE_GENERATIVE_AI_API_KEY);
+
 const SYSTEM_PROMPT = `Vai trò:
 Bạn là chuyên gia về ẩm thực và văn hóa Việt Nam thời Bao cấp (1976-1986).
 Bạn am hiểu sâu sắc về hệ thống tem phiếu, các món ăn đặc trưng như bo bo, cơm độn khoai/sắn, cháo cám, bánh bột mì hấp.
