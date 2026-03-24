@@ -16,6 +16,7 @@ import {
   createSession,
   deleteSession,
 } from "@/lib/idb/chatIdb";
+import { chatWithGemini, type ChatMessage as ChatMessageType } from "@/service/apiChatGemini";
 
 interface ChatContextValue {
   // Sessions
@@ -144,30 +145,24 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         // Reload messages to show user message immediately
         await loadMessages(sessionId);
 
-        // Call API for assistant response
-        const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            message: content.trim(),
-            history: messages.map((m) => ({
-              role: m.role,
-              content: m.content,
-            })),
-          }),
+        // Call server action for assistant response
+        const result = await chatWithGemini({
+          message: content.trim(),
+          history: messages.map((m) => ({
+            role: m.role as "user" | "assistant",
+            content: m.content,
+          })),
         });
 
-        const data = await response.json();
-
-        if (!response.ok) {
-          throw new Error(data.error || "Loi khong xac dinh");
+        if (result.error) {
+          throw new Error(result.error);
         }
 
         // Save assistant message to IDB
         const assistantMessage: ChatMessage = {
           sessionId,
           role: "assistant",
-          content: data.reply || "Xin loi, toi khong the tra loi cau hoi nay.",
+          content: result.reply || "Xin loi, toi khong the tra loi cau hoi nay.",
           createdAt: new Date().toISOString(),
         };
         await saveMessage(assistantMessage);
