@@ -10,6 +10,7 @@ interface ChatInputProps {
   onChange: (value: string) => void;
   onSend: () => void;
   isLoading: boolean;
+  textAreaRef?: React.RefObject<HTMLTextAreaElement | null>;
 }
 
 export default function ChatInput({
@@ -17,8 +18,10 @@ export default function ChatInput({
   onChange,
   onSend,
   isLoading,
-}: ChatInputProps) {
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  textAreaRef: textAreaRefProp,
+}: Readonly<ChatInputProps>) {
+  const internalRef = useRef<HTMLTextAreaElement>(null);
+  const textareaRef = textAreaRefProp ?? internalRef;
   const isResettingRef = useRef(false);
   const {
     isListening,
@@ -128,7 +131,9 @@ export default function ChatInput({
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
           placeholder={
-            isListening ? "Đang nghe bạn nói..." : "Nhập tin nhắn..."
+            isListening
+              ? "Đang nghe bạn nói..."
+              : "Chạm gợi ý phía trên hoặc nhập tin nhắn..."
           }
           disabled={isLoading}
           rows={1}
@@ -147,7 +152,7 @@ export default function ChatInput({
           className={cn(
             "shrink-0 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-200",
             canSend
-              ? "bg-gradient-to-br from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
+              ? "bg-linear-to-br from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
               : "bg-amber-900/40 text-amber-500/40 cursor-not-allowed"
           )}
           aria-label="Gửi tin nhắn"
